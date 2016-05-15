@@ -2,7 +2,9 @@
 title: "First post in family section"
 layout: post
 date: 2016-05-15 19:10
-tag: family
+tag: 
+- family
+- english
 img: indigo/indigo.png
 projects: true
 description: "First post in family section."
