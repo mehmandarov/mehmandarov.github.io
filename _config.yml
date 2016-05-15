@@ -6,7 +6,7 @@ bio: 'Passionate Computer Scientist'
 external-image: false
 picture: 'assets/images/profile.jpg'
 
-url: http://mehmandarov.github.io
+url: http://mehmandarov.com
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
@@ -15,7 +15,7 @@ markdown: kramdown
 highlighter: rouge
 
 # To enable google analytics, supply your token below
-# analytics-google: 'UA-MYANALYTICS'
+analytics-google: 'UA-65607286-1'
 
 # To enable piwik tracking, supply your url & site ID below
 # analytics-piwik-url: 'piwik.my-host.com'
