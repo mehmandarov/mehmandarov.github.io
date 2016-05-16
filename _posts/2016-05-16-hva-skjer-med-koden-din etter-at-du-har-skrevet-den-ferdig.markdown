@@ -1,7 +1,7 @@
 ---
 title: "Hva skjer med koden din etter at du har skrevet den ferdig?"
 layout: post
-date: 2016-05-16 12:45
+date: 2016-05-16 9:45
 tag:
 - automation
 - deploy
@@ -17,7 +17,7 @@ _Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt 
 
 - [Automatiser](#automatiser)
 - [Automatiske tester og sjekk av kodekvalitet](#automatiske-tester-og-sjekk-av-kodekvalitet)
-- [Miljøer](#miljoer)
+- [Miljøer](#miljer)
 - [Versjoner](#versjoner)
 - [Veien videre](#veien-videre)
 
