@@ -64,7 +64,7 @@ show-tags: true
 related: true
 
 # do you want some animations?
-animation: true
+animation: false
 
 gems:
   - jemoji
