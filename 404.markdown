@@ -3,14 +3,14 @@ layout: page
 title: "404"
 permalink: /404
 ---
+![Robo-hound][2]
+
 ## 404: Even our highly trained robot hound Rover couldn't fetch that page for you.
 
-There doesn't appear to be anything here. Sorry about that.
+It doesn't appear to be anything here. Sorry about that.
 
 If you've followed a link expecting something to be here, you can [contact us][1].
 
-![Robo-hound][2]
-<figcaption class="caption">Our highly trained robot hound Rover.</figcaption>
 
 [1]: https://github.com/mehmandarov/mehmandarov.github.io/issues
 [2]: {{ site.url }}/assets/images/robohound-rover.jpg
