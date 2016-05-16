@@ -22,7 +22,7 @@ Getting the site up and running, introducing it to you, and plans for the future
 
 ## Welcome!
 
-Finally the site is up and running! The plan is to use it for mostly two things - geeky stuff and family history. Labs is where you will find posts about programming, software development, tech and all other geeky awesomness. Family is where you will find the promised dash of family history and posts from other family members.
+Finally the site is up and running! The plan is to use it for mostly two things - geeky stuff and family history. _Labs_ is where you will find posts about programming, software development, tech and all other geeky awesomness. _Family_ is where you will find the promised dash of family history and posts from other family members.
 
 ---
 
@@ -30,7 +30,7 @@ Finally the site is up and running! The plan is to use it for mostly two things 
 
 Now, over to geeky stuff. I wanted the site itself to be a part of the technology playground I will be writing about here. I wanted it to be simple, extensible, responsive, and preferably open source. I also wanted to experiment with a site without a database, logins and all those (hackable) bells and whistles. The concerns were actually not as much about the security, but more about the simplicity of operation - things like upgrades, back-ups, deployment and versioning.
 
-After spending some time searching, doing the research and comparing different alternatives, I ended up choosing Jekyll - the engine behind, amongst others, GitHub. Static files, markdown, version control, GitHub integration, open source, great themes and templates. Check, check and check! What else can you wish for?
+After spending some time searching, doing the research and comparing different alternatives, I ended up choosing [Jekyll](https://jekyllrb.com/) - the engine behind, amongst others, [GitHub](https://github.com). Static files, markdown, version control, GitHub integration, open source, great themes and templates. Check, check and check! What else can you wish for?
 
 ---
 
