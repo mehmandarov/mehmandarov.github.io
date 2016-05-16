@@ -10,9 +10,7 @@ blog: true
 star: false
 ---
 
-## Summary
-
-Getting the site up and running, introducing it to you, and plans for the future.
+_Getting the site up and running, introducing it to you, and plans for the future._
 
 - [Welcome](#welcome)
 - [What is this thing?](#what-is-this-thing)
