@@ -13,7 +13,7 @@ blog: true
 star: false
 ---
 
-_Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt for Informatikk (Ifi), Universitetet i Oslo. Den ble publisert sist fredag, og er tilgjengelig for alle studenter på Ifi. Nå vil jeg også å dele den med alle dere andre som ikke kunne sikre dere en utgave av INDEX på fredag. Enjoy!_
+_Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt for Informatikk (Ifi), Universitetet i Oslo. Den ble publisert 30.05.2016, og er tilgjengelig for alle studenter på Ifi. Nå vil jeg også å dele den med alle dere andre som ikke kunne sikre dere en utgave av INDEX på fredag. Enjoy!_
 
 - [Automatiser](#automatiser)
 - [Automatiske tester og sjekk av kodekvalitet](#automatiske-tester-og-sjekk-av-kodekvalitet)
