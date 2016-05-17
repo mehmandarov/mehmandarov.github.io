@@ -1,6 +1,6 @@
 # mehmandarov.com
 
-Source code for cmehmandarov.com. Based on [Indigo](https://github.com/sergiokopplin/indigo) theme.
+Source code for mehmandarov.com. Based on [Indigo](https://github.com/sergiokopplin/indigo) theme.
 
 ## Bugs and Issues
 
