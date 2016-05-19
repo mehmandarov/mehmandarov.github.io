@@ -12,4 +12,4 @@ Have a bug or an issue with this site? [Open a new issue](https://github.com/meh
 
 ## Copyright and License
 
-Copyright 2016 Rustam Mehmandarov. Code released under the [Apache 2.0](https://creativeunion.github.io/LICENSE) license.
+Copyright 2016 Rustam Mehmandarov. Code released under the [Apache 2.0](https://mehmandarov.github.io/LICENSE) license.
