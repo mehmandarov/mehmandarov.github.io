@@ -579,7 +579,7 @@ pre {
   margin-bottom: 2rem;
 }
 .post > .post-tags > .item {
-  padding: 1px 9px;
+  padding: 3px 6px;
   border-radius: 3px;
   font-size: 1.1rem;
   background: #ededed;
@@ -597,6 +597,11 @@ pre {
 .post > h3 a,
 .post > h4 a {
   text-decoration: none;
+}
+.post > .title-image {
+  max-height: 120px;
+  display: block;
+  margin: 0 auto;
 }
 .tags {
   margin-top: 125px;
