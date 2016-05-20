@@ -68,8 +68,9 @@ Når du utvikler et system bør du vite hvilket miljø og oppsett dette vil kjø
 
 Versjonering av koden vil gjøre at du lett kan svare på to viktige spørsmål:
 
-Hvilken versjon av koden kjører her?
-Hvilken funksjonalitet er en del av bestemt versjon?
+* Hvilken versjon av koden kjører her?
+* Hvilken funksjonalitet er en del av bestemt versjon?
+
 Begge disse spørsmålene er noe du kommer til å spørre deg selv og vil bli spurt om fra andre. Svarene på disse vil hjelpe deg når du skal jobbe med feil som blir fikset eller oppdaget, eller ny funksjonalitet som blir rullet ut. Dersom du lager et større produkt, vil du også få bruk for disse når du skal lage Release Notes for den nyeste versjonen. Versjoner vil også hjelpe deg å holde styr på en oppdatert dokumentasjon for ditt system.
 
 ---
