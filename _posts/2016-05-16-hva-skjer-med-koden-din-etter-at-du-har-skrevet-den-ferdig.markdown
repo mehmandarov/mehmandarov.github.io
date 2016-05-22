@@ -13,7 +13,9 @@ blog: true
 star: false
 ---
 
-_Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt for Informatikk (Ifi), Universitetet i Oslo. Den ble publisert 30.05.2016, og er tilgjengelig for alle studenter på Ifi. Nå vil jeg også å dele den med alle dere andre som ikke kunne sikre dere en utgave av INDEX på fredag. Enjoy!_
+_**Update 21.05.2016:** [English version][3] of this article._
+
+_Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt for Informatikk (Ifi), Universitetet i Oslo. Den ble publisert 30.04.2016, og er tilgjengelig for alle studenter på Ifi. Nå vil jeg også å dele den med alle dere andre som ikke kunne sikre dere en utgave av INDEX på fredag. Enjoy!_
 
 - [Automatiser](#automatiser)
 - [Automatiske tester og sjekk av kodekvalitet](#automatiske-tester-og-sjekk-av-kodekvalitet)
@@ -21,7 +23,7 @@ _Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt 
 - [Versjoner](#versjoner)
 - [Veien videre](#veien-videre)
 
-![The Article Screenshot][1]
+![The Screenshot of the Article] [1]
 
 ---
 
@@ -43,7 +45,7 @@ En prosess med å bygge, deploye og levere et system består ofte av flere steg 
 
 Automatisering kan oppnås ved hjelp av forskjellige verktøy. Alt fra enkle make- og shell-skript til ganske avanserte byggeverktøy som Apache Maven og Gradle kan hjelpe deg, litt avhengig av oppgaven som skal gjøres. Oftest blir det en kombinasjon av noen ovennevnte verktøy. Disse kan hjelpe deg både med generell automatisering av bygge- og deploy-prosessen, og med automatisering av punktene under.
 
-![CI to the resque][2]
+![CI to the Rescue][2]
 <figcaption class="caption">Illustrasjon laget etter mine tegninger, og for denne artikkelen av Mahasty Assi</figcaption>
 
 ---
@@ -86,3 +88,4 @@ _Denne artikkelen ble publisert i magasinet INDEX (2. utgave, 2016), Institutt f
 
 [1]: {{ site.url }}/assets/images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_article-2016-04-27_full.png
 [2]: {{ site.url }}/assets/images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_ci-superhero.png
+[3]: {{ site.url }}/what-happens-to-your-code-after-a-commit/
