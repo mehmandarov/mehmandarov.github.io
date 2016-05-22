@@ -40,7 +40,9 @@ Welcome to my workday. I often work with large IT systems consisting of hundreds
 
 A process to build, deploy and deliver a system consists of several steps, and most of them can usually be automated. 
 
-There are many reasons why you might want to automate this process. One reason is that it should be easier for you, and everyone else, to build the system. Automation shortens the time it takes to build it, making it easier to test a change you made to the codebase. The second reason is that it makes it easier for others to take over or help on a project without having to familiarize themselves with the entire build process to get started. It will also make it easier to build with different build configurations. In addition to all this, it will also eliminate the human factor in the whole process – we humans make mistakes, and by automating the manual labor we minimize the chance of making those errors.
+There are many reasons why you might want to automate this process. One reason is that it should be easier for you, and everyone else, to build the system. Automation shortens the time it takes to build it, making it easier to test a change you made to the codebase. 
+
+The second reason is that it makes it easier for others to take over or help on a project without having to familiarize themselves with the entire build process to get started. It will also make it easier to build with different build configurations. In addition to all this, it will also eliminate the human factor in the whole process – we humans make mistakes, and by automating the manual labor we minimize the chance of making those errors.
 
 Depending on the task at hand, the automation can be achieved by using various tools. Everything from simple make and shell scripts, to a sophisticated build tools, like _Apache Maven_ and _Gradle_, can help you reaching your goals. Most often it will be not one, but a combination of the above mentioned tools. These can help you with both general automation of builds and deploy process, and automating the steps that will be described below.
 
