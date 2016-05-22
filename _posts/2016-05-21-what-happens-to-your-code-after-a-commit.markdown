@@ -14,7 +14,7 @@ star: false
 ---
 
 
-_I have written an article for the student magazine INDEX at the Department for Informatics (Ifi), University of Oslo. It was published on 30.04.2016, in Norwegian, and I have [previously shared it][3] with you here. I was also asked to share an English version of the article. This is not only a translation to English, but rather a 2.0 version of the previous post._
+_I have written an article for the student magazine INDEX at the Department for Informatics (Ifi), University of Oslo. It was published on 30.04.2016, in Norwegian, and I have [previously shared it][3] with you here. I was also asked to share an English version of the article. This post is not only a simple translation to English, but rather a 2.0 version of the previous post._
 
 - [Automation](#automation)
 - [Automatic tests and code quality checks](#automatic-tests-and-code-quality-checks)
