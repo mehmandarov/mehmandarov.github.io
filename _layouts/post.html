@@ -2,13 +2,10 @@
 layout: page
 ---
 
-{% if page.img %}
-    <img class="title-image" src="{{ page.img }}" alt="{{ page.title }}">
+{% if page.image and page.headerImage %}
+    <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
 {% endif %}
 
-{% if page.image %}
-<img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
-{% endif %}
 <h1 class="title">{{ page.title }}</h1>
 
 <span class="date">
@@ -30,7 +27,9 @@ layout: page
     {% include related.html %}
 {% endif %}
 
-{% include author.html %}
+{% if site.show-author %}
+    {% include author.html %}
+{% endif %}
 
 {% if site.disqus %}
     {% include disqus.html %}
