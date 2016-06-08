@@ -71,7 +71,7 @@ blog-nav-links: false
 show-author: true
 
 # do you want some animations?
-animation: true'
+animation: true
 
 sass:
     sass_dir: _sass
