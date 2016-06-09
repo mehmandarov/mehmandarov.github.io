@@ -73,6 +73,9 @@ show-author: true
 # do you want some animations?
 animation: true
 
+# set timezone
+timezone: Europe/Oslo
+
 sass:
     sass_dir: _sass
     style: :compressed
