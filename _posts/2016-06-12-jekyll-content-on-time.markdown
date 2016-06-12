@@ -1,5 +1,5 @@
 ---
-title: "Posting Jekyll content on time"
+title: "Posting Jekyll Content on Time"
 layout: post
 date: 2016-06-12 11:04 +0200
 tag:

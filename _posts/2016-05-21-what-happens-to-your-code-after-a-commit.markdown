@@ -1,5 +1,5 @@
 ---
-title: "What happens to your code after a commit?"
+title: "What Happens to Your Code After a Commit?"
 layout: post
 date: 2016-05-21 9:45
 tag:

@@ -1,5 +1,5 @@
 ---
-title: "It is alive!"
+title: "It Is Alive!"
 layout: post
 date: 2016-05-15 17:45
 tag:
