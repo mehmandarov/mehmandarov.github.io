@@ -32,7 +32,7 @@ For your post to be processed according to your time zone, you can either add a 
 
 ## Setting the date in the front matter
 
-To specify the UTC offset for each post use the following format: ```YYYY-MM-DD HH:MM:SS +/-TTTT```, e.g. ```2016-06-12 10:30:00 +0200```. This might be useful if you want specify the offset for some specific posts.
+To specify the UTC offset for each post use the following format: ```YYYY-MM-DD HH:MM:SS +/-TTTT```, e.g. ```2016-06-12 11:04:00 +0200```. This might be useful if you want specify the offset for some specific posts.
 
 {% highlight yaml %}
 ---
