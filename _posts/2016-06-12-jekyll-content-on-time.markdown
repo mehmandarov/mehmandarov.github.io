@@ -21,7 +21,7 @@ _Posting of content in Jekyll relies on the date assigned to the post, and the t
 
 ## What's going on?
 
-So, you have written a brand new post. You have run tests on a local Jekyll server and everything looks great. You finally commit the changes to your GitHub site repository, and push the changes to the server. You are excited and full of anticipation to see your new blog post online, you hit refresh in your browser, and... nothing. Another refresh – still nothing.
+So, you have written a brand new post. You have run tests on a local [Jekyll][4] server and everything looks great. You finally commit the changes to your GitHub site repository, and push the changes to the server. You are excited and full of anticipation to see your new blog post online, you hit refresh in your browser, and... nothing. Another refresh – still nothing.
 
 One of the reasons for this is that you have specified a date/time for your post in the [YAML front matter][1] in the header. 
 
@@ -62,3 +62,4 @@ If not specified, Jekyll will use the local time zone, as set by your operating 
 [1]: https://jekyllrb.com/docs/frontmatter/
 [2]: https://en.wikipedia.org/wiki/Tz_database
 [3]: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+[4]: https://jekyllrb.com/
