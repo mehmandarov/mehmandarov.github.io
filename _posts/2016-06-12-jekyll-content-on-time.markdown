@@ -27,7 +27,7 @@ One of the reasons for this is that you have specified a date/time for your post
 
 By setting date in the front matter you can override the date/time assigned to the post in the format ```YYYY-MM-DD HH:MM:SS```. However, this notation will use the local time zone, set by your operating system. This works fine when running a local installation of Jekyll. However, if your Jekyll installation is running on a remote server (e.g. on the GitHub Pages server) the time on that server is likely not to be the same as the time on your local machine. Jekyll will then wait before processing the contents of the post until the specified time hits the clock on the server.
 
-For your post to be processed according to your time zone, you can can either add a UTC offset for your time zone for the post in question, or you can specify a time zone in the Jekyll configuration file.
+For your post to be processed according to your time zone, you can either add a UTC offset for your time zone for the post in question, or you can specify a time zone in the Jekyll configuration file.
 
 
 ## Setting the date in the front matter
