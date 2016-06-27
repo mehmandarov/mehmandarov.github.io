@@ -1,6 +1,6 @@
 # main text of home
 name: Rustam Mehmandarov
-bio: 'Passionate Computer Scientist'
+bio: Passionate Computer Scientist
 
 # twitter summary info
 description: A blog about technology and related stuff
@@ -35,26 +35,20 @@ twitter: rmehmandarov
 # instagram: myinstagram
 # pinterest: mypinterest
 # linkedin: mylinkedin
-#youtube: myyoutube
-#spotify: myspotify
+# youtube: myyoutube
+# spotify: myspotify
 github: mehmandarov
-#medium: medium
-#vimeo: myvimeo
-#email: myemail@gmail.com
+# medium: medium
+# vimeo: myvimeo
+# email: myemail@gmail.com
 
 authors:
-    johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
+    rustam.mehmandarov:
+        name: Rustam Mehmandarov
+        bio: Passionate Computer Scientist
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: johndoe
-    jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
-        external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
+        twitter: rmehmandarov
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal

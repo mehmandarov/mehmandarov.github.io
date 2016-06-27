@@ -9,6 +9,7 @@ tag:
 - english
 blog: true
 star: false
+author: rustam.mehmandarov
 ---
 
 _Getting the site up and running, introducing it to you, and plans for the future._

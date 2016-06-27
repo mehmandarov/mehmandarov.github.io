@@ -9,6 +9,7 @@ tag:
 - english
 blog: true
 star: false
+author: rustam.mehmandarov
 ---
 
 _On June 16th, I will be doing a [workshop][1] at JBCNConf in Barcelona, Spain. I will be talking about semantic technologies, reasoning, and Java. I have been asked to post some information about the workshop, so here it comes._

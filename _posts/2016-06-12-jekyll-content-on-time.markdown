@@ -8,6 +8,7 @@ tag:
 - english
 blog: true
 star: false
+author: rustam.mehmandarov
 ---
 
 _Posting of content in Jekyll relies on the date assigned to the post, and the time is relative to the time zone on the server. While this works fine for local installations of Jekyll, it can sometimes be confusing when running Jekyll on the remote servers without being able to control the time zone on that server, like hosting the content on GitHub Pages._

@@ -11,6 +11,7 @@ tag:
 - norwegian
 blog: true
 star: false
+author: rustam.mehmandarov
 ---
 
 _**Update 21.05.2016:** [English version][3] of this article._

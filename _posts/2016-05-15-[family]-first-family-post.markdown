@@ -8,6 +8,7 @@ tag:
 img: indigo/indigo.png
 projects: true
 description: "First post in family section."
+author: rustam.mehmandarov
 jemoji: '<img class="emoji" title=":busts in silhouette:" alt=":busts in silhouette:" src="https://assets.github.com/images/icons/emoji/unicode/1f465.png" height="20" width="20" align="absmiddle">'
 ---
 
