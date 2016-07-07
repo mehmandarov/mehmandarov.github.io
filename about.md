@@ -8,7 +8,7 @@ layout: page
 
 ## Rustam Mehmandarov
 
-_**Leader of the Norwegian Java User Group - javaBin, and a competency network coordinator for databases and information management at work. One of the organizers of [JavaZone][1] and [Arctic IoT Challenge]. Speaker.**_
+_**Leader of the Norwegian Java User Group - javaBin, and a competency network coordinator for databases and information management at work. One of the organizers of [JavaZone][1] and [Arctic IoT Challenge][4]. Speaker.**_
 
 ---
 
