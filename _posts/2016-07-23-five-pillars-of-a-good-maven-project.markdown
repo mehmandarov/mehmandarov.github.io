@@ -2,7 +2,7 @@
 title: "Five Pillars of a Good Maven Project"
 layout: post
 date: 2016-07-23 08:26 +0200
-image: '/assets/images/_posts-images/desk-pencils_1200x800.jpg'
+image: '/assets/images/posts-images/desk-pencils_1200x800.jpg'
 description: The five main types of Maven plugins that will simplify the development process and increase maintainability of a project.
 tag:
 - field notes
