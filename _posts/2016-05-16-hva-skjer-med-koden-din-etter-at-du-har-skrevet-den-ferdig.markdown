@@ -87,6 +87,6 @@ Disse punktene – og litt mer – er en del av en kontinuerlig leveranseprosess
 
 _Denne artikkelen ble publisert i magasinet INDEX (2. utgave, 2016), Institutt for Informatikk, Universitetet i Oslo._
 
-[1]: {{ site.url }}/assets/images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_article-2016-04-27_full.png
-[2]: {{ site.url }}/assets/images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_ci-superhero.png
+[1]: {{ site.url }}/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_article-2016-04-27_full.png
+[2]: {{ site.url }}/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_ci-superhero.png
 [3]: {{ site.url }}/what-happens-to-your-code-after-a-commit/
