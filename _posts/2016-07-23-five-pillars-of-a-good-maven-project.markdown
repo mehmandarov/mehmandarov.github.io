@@ -31,7 +31,7 @@ _What makes a Maven project good to work with and easy to maintain? There are fi
 
 [Apache Maven][18] is a build automation tool used primarily for Java projects. It has been around for a while, and it does not seem to be going anywhere anytime soon (whether some of you like it or not). Recently, it has been confirmed yet again, this time in ZeroTurnaround's [Java Tools and Technologies Landscape Report 2016][1] (see the _Build Tools_ section).
 
-The good thing about Maven is that you can do almost anything with it and it's plugins. With such a great ecosystem of plugins, able to do nearly anything, one might wonder where to begin when setting up a new Maven project, or improving your old one.
+The good thing about Maven is that you can do almost anything with it and its plugins. With such a great ecosystem of plugins, able to do nearly anything, one might wonder where to begin when setting up a new Maven project, or improving your old one.
 
 I usually like to think of five main categories – or pillars – that we will be looking into in this post. Each category will have a set of example plugins that are meant to serve merely as a starting point. 
 
