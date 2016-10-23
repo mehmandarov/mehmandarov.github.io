@@ -4,9 +4,8 @@ layout: post
 date: 2016-05-21 9:45
 tag:
 - automation
-- deploy
 - continuous delivery
-- build
+- build and deploy
 - testing
 - english
 blog: true

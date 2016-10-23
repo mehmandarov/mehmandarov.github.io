@@ -8,8 +8,7 @@ tag:
 - field notes
 - maven
 - software development
-- build
-- deploy
+- build and deploy
 - automation
 - english
 blog: true
