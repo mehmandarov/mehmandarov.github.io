@@ -144,16 +144,15 @@ initpost_file() {
 
 main() {
 
-    # Show help
-    if [[ "${1}" == "-h" || "${1}" == "--help" ]]; then
+    if [[ "${1}" == "-h" || "${1}" == "--help" ]]; then # Show help
         initpost_help ${1}
         exit
-    fi
-
-    # Create
-    if [[ "${1}" == "-c" || "${1}" == "--create" ]]; then
+    elif [[ "${1}" == "-c" || "${1}" == "--create" ]]; then # Create
         initpost_file $*
         exit
+	else
+		printf "No known arguments provied. Please use one of the arguments mentioned below.\n\n"
+		initpost_help
     fi
 
 }
