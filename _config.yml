@@ -38,6 +38,9 @@ twitter: rmehmandarov
 # youtube: myyoutube
 # spotify: myspotify
 github: mehmandarov
+# stackoverflow: 7044681/mystackoverflow
+# quora: userquora
+# reddit: username
 # medium: medium
 # vimeo: myvimeo
 # email: myemail@gmail.com
@@ -102,5 +105,3 @@ gems:
 
 jekyll-mentions:
     base_url: https://github.com
-
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, indigo-gh-pages.zip, Rakefile, screen-shot.png, travis.sh, tasks]
