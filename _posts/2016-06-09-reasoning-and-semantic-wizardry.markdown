@@ -13,6 +13,8 @@ star: false
 author: rustam.mehmandarov
 ---
 
+_**Update 2016-10-21**: In addition to Barcelona, I also did this workshop for javaBin Sørlandet, javaBin Trondheim, and javaBin Oslo (in cooperation with Semantic Meetup in Oslo) this autumn._
+
 _On June 16th, I will be doing a [workshop][1] at JBCNConf in Barcelona, Spain. I will be talking about semantic technologies, reasoning, and Java. I have been asked to post some information about the workshop, so here it comes._
 
 - [What is it all about?](#what-is-it-all-about)
