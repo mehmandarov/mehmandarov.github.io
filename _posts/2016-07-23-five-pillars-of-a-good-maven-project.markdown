@@ -10,6 +10,7 @@ tag:
 - software development
 - build and deploy
 - automation
+- java
 - english
 blog: true
 star: false
