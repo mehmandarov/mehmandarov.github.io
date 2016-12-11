@@ -18,7 +18,7 @@ I hold a master's degree in Computer Science from the University of Oslo, and I 
 
 In addition to being passionate about agile development, web development, architecture and geographical information systems, I am also a guru of both Linux and Windows worlds.
 
-On my spare time, I work with Java communities – leading the Norwegian Java User Group – [javaBin][6], and [JavaZone][1]; and cooperating with other Java User Groups around the world. 
+On my spare time, I work with Java communities: leading the Norwegian Java User Group – [javaBin][6], and [JavaZone][1]; and cooperating with other Java User Groups around the world. 
 
 Apart from that, I enjoy sharing my knowledge with others, working out, as well as coding in Python and Java [but not simultaneously].
 
