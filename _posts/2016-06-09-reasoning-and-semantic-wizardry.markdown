@@ -7,6 +7,7 @@ tag:
 - workshop
 - conference talk
 - semantic technologies
+- java
 - english
 blog: true
 star: false
