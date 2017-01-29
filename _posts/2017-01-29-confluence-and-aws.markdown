@@ -156,7 +156,7 @@ And we are ready to deploy to AWS! Start with creating a new Lambda Function and
 
 ![Start with selecting a blueprint] [6]
 
-I didn't choose any triggers for now and continue to the configuration page. When presented with function configuration you need to give it a name, description, runtime, and a .zip file with the code. At the end you will need to define a handler (which will typically be ```filename.function_name```), and a role.
+I didn't choose any triggers for now and continued to the configuration page. When presented with function configuration you need to give it a name, description, runtime, and a .zip file with the code. At the end you will need to define a handler (which will typically be ```filename.function_name```), and a role.
 
 ![Fill out the rest of info] [7]
 
