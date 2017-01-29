@@ -30,7 +30,7 @@ Some mundane tasks can easily be automated. In my case I needed something that c
 
 ## Posting via Confluence REST API
 
-[Confluence][1], a team collaboration software written in Java and quite often used in corporate environments, offers a [REST API][2] that makes it possible to perform many operations on the content. In this case I was interested in posting new content with some text, and I was getting tired of doing that manually every week. So, I thought: ["I spend a lot of time on this task. I should write a program automating it!"][3]. 
+[Confluence][1]{:target="_blank"}, a team collaboration software written in Java and quite often used in corporate environments, offers a [REST API][2]{:target="_blank"} that makes it possible to perform many operations on the content. In this case I was interested in posting new content with some text, and I was getting tired of doing that manually every week. So, I thought: ["I spend a lot of time on this task. I should write a program automating it!"][3]{:target="_blank"}. 
 
 The first take on that problem was a simple Python script:
 
@@ -89,7 +89,7 @@ Now we are one step closer to automation. The script works, and we can post cont
 
 Well, now I needed something to run that script, and something to trigger that action. The trigger is the time as I wanted to run our script weekly, but first I needed to deploy our script to the Cloud. Scheduling and triggers would come later.
 
-Since we had some infrastructure on AWS already, I decided to deploy the script on the same platform. I wanted to deploy it as a simple stand-alone function in the Cloud – in AWS world it is called a [Lambda function][4].
+Since we had some infrastructure on AWS already, I decided to deploy the script on the same platform. I wanted to deploy it as a simple stand-alone function in the Cloud – in AWS world it is called a [Lambda function][4]{:target="_blank"}.
 
 I started by wrapping our code into a function and making it AWS Lambda function compatible – to define a function that takes two arguments: ```event``` and ```context```. I choose to call the function ```blogpost_handler```:
 
@@ -135,7 +135,7 @@ def blogpost_handler(event, context):
     return response.json()
 {% endhighlight %}
 
-Now, I needed [to package][5] the code to make it ready to deploy:
+Now, I needed [to package][5]{:target="_blank"} the code to make it ready to deploy:
 
 {% highlight bash %}
 # 1. create folder
@@ -166,7 +166,7 @@ At the end of the wizard you can run it manually by pressing Test button. If you
 
 ## Schedule it!
 
-Now that I have automated the task and deployed it to the Cloud, I needed something to trigger that function. In this case I wanted to schedule it to run weekly, so function was set to be triggered by the [CloudWatch][9].
+Now that I have automated the task and deployed it to the Cloud, I needed something to trigger that function. In this case I wanted to schedule it to run weekly, so function was set to be triggered by the [CloudWatch][9]{:target="_blank"} events. It offers a good support for [scheduling Lambda expressions][10]{:target="_blank"}.
 
 I defined event source as a cron expression, and a target as a Lambda function I created in the previous step.
 
