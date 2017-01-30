@@ -24,13 +24,13 @@ _How do you automate a job without setting up a dedicated machine?_
 
 ---
 
-Some mundane tasks can easily be automated. In my case I needed something that could post to our Confluence instance at specific time every week. This is because  we use blog posts in Confluence for announcing our weekly volunteer meetings and as an informal attendance management.
+Some mundane tasks can easily be automated. In my case, I needed something that could post to our Confluence instance at specific time every week. This is because  we use blog posts in Confluence for announcing our weekly volunteer meetings and as an informal attendance management.
 
 ---
 
 ## Posting via Confluence REST API
 
-[Confluence][1]{:target="_blank"}, a team collaboration software written in Java and quite often used in corporate environments, offers a [REST API][2]{:target="_blank"} that makes it possible to perform many operations on the content. In this case I was interested in posting new content with some text, and I was getting tired of doing that manually every week. So, I thought: ["I spend a lot of time on this task. I should write a program automating it!"][3]{:target="_blank"}. 
+[Confluence][1]{:target="_blank"}, a team collaboration software written in Java and quite often used in corporate environments, offers a [REST API][2]{:target="_blank"} that makes it possible to perform many operations on the content. In this case, I was interested in posting new content with some text, and I was getting tired of doing that manually every week. So, I thought: ["I spend a lot of time on this task. I should write a program automating it!"][3]{:target="_blank"}. 
 
 The first take on that problem was a simple Python script:
 
@@ -167,7 +167,7 @@ At the end of the wizard you can run it manually by pressing Test button. If you
 
 ## Schedule it!
 
-Now that I have automated the task and deployed it to the Cloud, I needed something to trigger that function. In this case I wanted to schedule it to run weekly, so function was set to be triggered by the [CloudWatch][9]{:target="_blank"} events. It offers a good support for [scheduling Lambda expressions][10]{:target="_blank"}.
+Now that I have automated the task and deployed it to the Cloud, I needed something to trigger that function. In this case, I wanted to schedule it to run weekly, so function was set to be triggered by the [CloudWatch][9]{:target="_blank"} events. It offers a good support for [scheduling Lambda expressions][10]{:target="_blank"}.
 
 I defined event source as a cron expression, and a target as a Lambda function I created in the previous step.
 
