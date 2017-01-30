@@ -71,6 +71,7 @@ sudo pip install requests
 {% endhighlight %}
 
 Also, you will need to update the following values in the script:
+
 * ```url``` – the URL to your site
 * ```type``` – can be a ```blogpost``` or a ```page```
 * ```title``` – page or post title
