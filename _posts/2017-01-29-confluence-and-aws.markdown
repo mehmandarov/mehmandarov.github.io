@@ -86,7 +86,7 @@ The script uses basic authentication to post the content and, if successful, ret
 
 ## Creating a Lambda Function in AWS
 
-Now we are one step closer to automation. The script works, and we can post content with a simple push a button. What now?
+Now we are one step closer to automation. The script works, and we can post content with a simple push of a button. What now?
 
 Well, now I needed something to run that script, and something to trigger that action. The trigger is the time as I wanted to run our script weekly, but first I needed to deploy our script to the Cloud. Scheduling and triggers would come later.
 
