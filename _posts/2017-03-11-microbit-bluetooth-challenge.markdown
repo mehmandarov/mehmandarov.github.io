@@ -1,0 +1,108 @@
+---
+title: "Micro:bit Bluetooth Challenge"
+layout: post
+date: 2017-03-11 13:06 +0200
+image: '/assets/images/posts-images/clouds.jpg'
+description: Scissor-Paper-Rock challenge using micro:bit and Bluetooth
+tag:
+- iot
+- python
+- english
+- conference
+blog: true
+star: false
+author: rustam.mehmandarov
+---
+
+_Can you build Scissor-Paper-Rock challenge using micro:bit and Bluetooth?_
+
+- [The Challenge](#the-challenge)
+- [The Building Blocks](#the-building-blocks)
+
+
+---
+
+This post is a challenge for the Reace Condition badge for [Arctic IoT Challenge][3]{:target="_blank"}. It's description for the badge is as follows:
+
+> At random, the jury will present a challenge. Timeboxed to one hour, the first team with a working solution gets all the points.
+
+This time I am designing the challenge and here it comes:
+
+---
+
+## The Challenge
+
+We want you to simulate a popuar Scissor-Paper-Rock game using micro:bit chips. Every team gets two chips.
+
+* On shake the micro:bit should pick a random shape (scissor, paper, or rock) and show it using LED array on the chip
+* The two chips should connect to each other and send the data over to each other
+* The opposite chip comperes then its own shape to the one received and decides weather it won or lost.
+* Each of the two micro:bits shows then "Won" or "Lost" on the LED array.
+
+---
+
+## The Building Blocks
+
+### Connecting to micro:bit
+Connect the micro:bit to your computer with a micro USB cable. It should appear as a USB disk on your machine.
+
+### The Editor and the Language
+Yan can use Python and the editor here: [http://python.microbit.org/editor.html][1]{:target="_blank"}.
+
+After you are done writing the code, click download and you will get a binary file you will be using in the next step. Check out the [help section][4]{:target="_blank"} for more information.
+
+Python documentation for the API can be found [here][4]{:target="_blank"}.
+
+### Deploying to micro:bit
+Copy the binary *.hex file from the previous step on to the micro:bit like you would copy to any USB drive.
+
+### Sending Data Between micro:bits
+Now, over to connecting micro:bits and sending data over. Take a look at the example below. Make sure to change *group=1* to a number between 0 and 255. Both chips shuould belong to the same group to connect to eachother. You will be assigned a number.
+
+{% highlight python %}
+from microbit import *
+from radio import *
+from random import*
+
+#turn radio on and 
+on()
+config(group=1, length=251)
+
+while True:
+    if button_a.was_pressed():
+        #send the images
+        send("Hello, World!")
+     
+    #receive data    
+    data = receive()
+    
+    #check that we have received any data
+    if data != None:
+        
+        #split the data into different pictures by the marker
+        display.scroll(data)
+
+        #clear the screen
+        display.clear()
+{% endhighlight %}
+
+### The Scissor-Paper-Rock Game
+Have a look at the [simple implementation of the game][6]. You will need to translate it to MicroPython and extend.
+
+![Pseudocode for the Scissor-Paper-Rock Game] [7]
+
+
+---
+
+
+[1]: http://python.microbit.org/editor.html
+[2]: http://microbit-micropython.readthedocs.io/en/latest/radio.html
+[3]: http://ariot.no/Home/Badges
+[4]: http://python.microbit.org/help.html
+[5]: https://microbit-micropython.readthedocs.io/en/latest/index.html
+[6]: https://www.microbit.co.uk/blocks/lessons/rock-paper-scissors/challenges
+[7]: {{ site.url }}/assets/images/posts-images/2017-03-11-microbit-bluetooth-challenge-1.jpg
+
+
+
+
