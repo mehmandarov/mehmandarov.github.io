@@ -52,7 +52,7 @@ Yan can use Python and the editor here: [http://python.microbit.org/editor.html]
 
 After you are done writing the code, click download and you will get a binary file you will be using in the next step. Check out the [help section][4]{:target="_blank"} for more information.
 
-Python documentation for the API can be found [here][4]{:target="_blank"}.
+Python documentation for the API can be found [here][5]{:target="_blank"}.
 
 ### Deploying to micro:bit
 Copy the binary *.hex file from the previous step on to the micro:bit like you would copy to any USB drive.
@@ -93,7 +93,7 @@ Have a look at the [simple implementation of the game][6]. You will need to tran
 ![Pseudocode for the Scissor-Paper-Rock Game] [7]
 
 ## Extra
-The winning team gets to submit your code to [GitHub repo][8].
+The winning team gets to submit their code to [GitHub repo][8].
 
 ---
 
