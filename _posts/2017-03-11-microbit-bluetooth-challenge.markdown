@@ -18,6 +18,7 @@ _Can you build Scissor-Paper-Rock challenge using micro:bit and Bluetooth?_
 
 - [The Challenge](#the-challenge)
 - [The Building Blocks](#the-building-blocks)
+- [Extra](#extra)
 
 
 ---
@@ -91,6 +92,8 @@ Have a look at the [simple implementation of the game][6]. You will need to tran
 
 ![Pseudocode for the Scissor-Paper-Rock Game] [7]
 
+## Extra
+The winning team gets to submit your code to [GitHub repo][8]
 
 ---
 
@@ -102,6 +105,7 @@ Have a look at the [simple implementation of the game][6]. You will need to tran
 [5]: https://microbit-micropython.readthedocs.io/en/latest/index.html
 [6]: https://www.microbit.co.uk/blocks/lessons/rock-paper-scissors/challenges
 [7]: {{ site.url }}/assets/images/posts-images/2017-03-11-microbit-bluetooth-challenge-1.jpg
+[8]: https://github.com/mehmandarov/scissor-paper-rock-microbit
 
 
 
