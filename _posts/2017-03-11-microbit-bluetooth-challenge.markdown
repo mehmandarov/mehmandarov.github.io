@@ -93,7 +93,7 @@ Have a look at the [simple implementation of the game][6]. You will need to tran
 ![Pseudocode for the Scissor-Paper-Rock Game] [7]
 
 ## Extra
-The winning team gets to submit your code to [GitHub repo][8]
+The winning team gets to submit your code to [GitHub repo][8].
 
 ---
 
