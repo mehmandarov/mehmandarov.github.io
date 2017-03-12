@@ -23,7 +23,7 @@ _Can you build Scissor-Paper-Rock game using micro:bit and Bluetooth?_
 
 ---
 
-This post is a challenge for the Race Condition badge at [Arctic IoT Challenge][3]{:target="_blank"}. The description for the badge is as follows:
+This post is the challenge for the Race Condition badge at [Arctic IoT Challenge][3]{:target="_blank"}. The description for the badge is as follows:
 
 > At random, the jury will present a challenge. Timeboxed to one hour, the first team with a working solution gets all the points.
 
@@ -33,7 +33,7 @@ This time I am designing the challenge, so here it comes:
 
 ## The Challenge
 
-We want you to simulate a popular Scissor-Paper-Rock game using micro:bits. Every team gets two devices.
+We want you to simulate a popular Scissor-Paper-Rock game using [micro:bits][9]. Each team gets two devices.
 
 * On shake the micro:bit should pick a random shape (scissors, paper, or rock) and show it using LED array on the device
 * The two devices should connect and send the data over to each other
@@ -108,7 +108,7 @@ Have a look at the [simple implementation of the game][6]. You will need to tran
 [6]: https://www.microbit.co.uk/blocks/lessons/rock-paper-scissors/challenges
 [7]: {{ site.url }}/assets/images/posts-images/2017-03-11-microbit-bluetooth-challenge-1.jpg
 [8]: https://github.com/mehmandarov/scissor-paper-rock-microbit
-
+[9]: https://en.wikipedia.org/wiki/Micro_Bit
 
 
 
