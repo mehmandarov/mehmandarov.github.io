@@ -33,7 +33,7 @@ This time I am designing the challenge, so here it comes:
 
 ## The Challenge
 
-We want you to simulate a popular Scissor-Paper-Rock game using [micro:bits][9]. Each team gets two devices.
+We want you to simulate a popular Scissor-Paper-Rock game using [micro:bits][9]{:target="_blank"}. Each team gets two devices.
 
 * On shake the micro:bit should pick a random shape (scissors, paper, or rock) and show it using LED array on the device
 * The two devices should connect and send the data over to each other
@@ -88,14 +88,14 @@ while True:
 {% endhighlight %}
 
 ### The Scissor-Paper-Rock Game
-Have a look at the [simple implementation of the game][6]. You will need to translate it to MicroPython and extend.
+Have a look at the [simple implementation of the game][6]{:target="_blank"}. You will need to translate it to MicroPython and extend.
 
 ![Pseudocode for the Scissor-Paper-Rock Game] [7]
 
 ---
 
 ## Extra
-*[Spoiler alert!]* The winning team gets to submit their code to this [GitHub repo][8].
+*[Spoiler alert!]* The winning team gets to submit their code to this [GitHub repo][8]{:target="_blank"}.
 
 ---
 
