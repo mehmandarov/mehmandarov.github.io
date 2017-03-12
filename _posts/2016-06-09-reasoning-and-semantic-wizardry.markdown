@@ -5,7 +5,7 @@ date: 2016-6-9 00:00 +0200
 description: On June 16th, I will be doing a workshop at JBCNConf in Barcelona, Spain. I will be talking about semantic technologies, reasoning, and Java. I have been asked to post some information about the workshop, so here it comes.
 tag:
 - workshop
-- conference talk
+- conferences
 - semantic technologies
 - java
 - english

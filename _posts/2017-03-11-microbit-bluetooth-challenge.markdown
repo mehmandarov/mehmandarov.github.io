@@ -8,7 +8,7 @@ tag:
 - iot
 - python
 - english
-- conference
+- conferences
 blog: true
 star: false
 author: rustam.mehmandarov
