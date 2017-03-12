@@ -65,7 +65,7 @@ from microbit import *
 from radio import *
 from random import*
 
-#turn radio on and 
+#turn radio on and configure group
 on()
 config(group=1, length=251)
 
