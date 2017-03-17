@@ -23,7 +23,7 @@ _How to get started prototyping IoT solutions and why should you do that?_
 
 ## Motivation
 
-Playing around with IoT devices provides several advantages. Apart from the obvious ability to easily prototype systems tailored for your specific needs, it can also give you a more engaging way to gain insight into the tools and infrastructure that usually comes with IoT devices, and is relevant for most of the modern developers:
+Playing around with Internet of Things (IoT) devices provides several advantages. Apart from the obvious ability to easily prototype systems tailored for your specific needs, it can also give you a more engaging way to gain insight into the tools and infrastructure that usually comes with IoT devices, and is relevant for most of the modern developers:
 
 * Cloud
 * Distributed systems
