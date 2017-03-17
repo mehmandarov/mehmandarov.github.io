@@ -33,6 +33,8 @@ Playing around with IoT devices provides several advantages. Apart from the obvi
 
 This post is meant to provide you with a simple and minimal set-up to get you started playing around with IoT. I would like to show you just a few devices I have used and provide you with the code examples for them.
 
+---
+
 ## Building Blocks
 
 ### A Computer Brain
