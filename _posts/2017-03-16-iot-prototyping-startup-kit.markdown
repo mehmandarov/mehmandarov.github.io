@@ -43,7 +43,7 @@ In this example, it is a [Raspberry Pi 2 Model B][1] with Wifi and Bluetooth 4.0
 ### Sensors
 Now we need some sensors. It can be anything – it can be sensors connected directly to the Raspberry Pis GPIO pins, or separate sensors that are able to deliver information over the main machine for collection and processing. 
 
-In this example we will be using [SensorTag][2] from Texas Instruments. It uses Bluetooth Low Energy for communication and offers quite a few sensors and hardware buttons, such as:
+I have good experience using [SensorTag][2] from Texas Instruments. It uses Bluetooth Low Energy for communication and offers quite a few sensors and hardware buttons, such as:
 
 * Infrared and Ambient Temperature Sensor
 * Ambient Light Sensor
