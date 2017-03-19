@@ -2,7 +2,7 @@
 title: "Playing with IoT"
 layout: post
 date: 2017-03-16 11:06 +0200
-image: '/assets/images/posts-images/clouds.jpg'
+image: '/assets/images/posts-images/lego-ferrari-italia.jpg'
 description: Start-up kit for prototyping IoT solutions
 tag:
 - iot
