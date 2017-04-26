@@ -43,6 +43,7 @@ twitter: rmehmandarov
 # youtube: myyoutube
 # spotify: myspotify
 github: mehmandarov
+# lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
 # reddit: username
@@ -98,6 +99,8 @@ timezone: Europe/Oslo
 gems:
   - jekyll-seo-tag
   - jekyll-gist
+  - jekyll-feed
+  - jemoji
 
 jekyll-mentions:
     base_url: https://github.com
