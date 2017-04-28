@@ -64,7 +64,7 @@ Say you want to use the model to recognise birds outside your house in Norway. A
 
 In case you wonder if similar systems have been implemented, or if it is even possible. The answer is yes. I will provide you with some links to inspire for further reading:
 
-* [Vehicle Counting][9]{:target="_blank"} with OpenCV
+* [Vehicle classification and counting][9]{:target="_blank"} with OpenCV
 * [Wild flower detection][10]{:target="_blank"} (*in Danish*)
 
 Now, try putting it all together, and let me know how it goes! 
