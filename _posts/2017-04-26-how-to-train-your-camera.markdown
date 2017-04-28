@@ -39,12 +39,12 @@ Recognising objects is a pretty common task these days, and it has been solved i
 
 The more traditional principles behind OpenCV are well described in this [blog post][1]{:target="_blank"}, as well as in this tutorial for detecting (*brace yourselves!*) [cats in images][2]{:target="_blank"}.
 
-While this post explains how image recognition works in [TensorFlow][4]{:target="_blank"} that is using a model called a deep convolutional neural network. Like OpenCV, it will also let you [train your own image classifier][3]{:target="_blank"}.
+While [this post][4]{:target="_blank"} explains how image recognition works in TensorFlow that is using a model called a deep convolutional neural network. Like OpenCV, it will also let you [train your own image classifier][3]{:target="_blank"}.
 
 
 ## Where to Start?
 
-Basically, you have two choices – you should either train your own model, or find a model that has been trained by someone else. The more specific your image classification requirements are, the higher are chances that you will need to train your own model. This will be the same weather you go for OpenCV or TensorFlow.
+Basically, you have two choices – you should either train your own model, or find a model that has been trained by someone else. The more specific your image classification requirements are, the higher are chances that you will need to train your own model. This will be the same whether you go for OpenCV or TensorFlow.
 
 Since we want to run the model on a relatively low-end computer, you might consider doing the processing in the Cloud. However, it should also be possible to run [OpenCV][5]{:target="_blank"} and [TensorFlow][6]{:target="_blank"} on the latest Raspberry Pis.
 
@@ -53,14 +53,14 @@ Since we want to run the model on a relatively low-end computer, you might consi
 
 By now, you should know a bit about the theory. So, let's have a quick look into how we can train the models for our needs. 
 
-> _**TL;DR**_ The way this works is that you feed the model with quite a few pictures of an object, and the similar amount of images without that object.
+> _**TL;DR**_ The way this works, is that you feed the model with quite a few pictures of an object, and the similar amount of images without that object.
 
 Say you want to use the model to recognise birds outside your house in Norway. A good starting point would be to get a list of the typical species you are most likely to see in your backyard and collect as many pictures of each type as possible. Here is what you can do:
 
 1. Start by looking at [Wikipedia][7]{:target="_blank"} for a list of the Norwegian birds, or [Norwegian Encyclopaedia][8]{:target="_blank"} (*in Norwegian*).
 2. Search the web for the images of each bird type. You might want to automate that task, and make sure you are picking images with the right copyright permissions.
 3. Use those images to train your model.
-4. Set up your Raspberry Pi with a camera and the bird feeder, and get ready to identify. You might want to optimise the software not to do the image classification all the time, but only when the movement is detected.
+4. Set up your Raspberry Pi with a camera and the bird feeder, and get ready to identify. You might want to optimise the software not to do the image classification all the time, but only when movement is detected.
 
 In case you wonder if similar systems have been implemented, or if it is even possible. The answer is yes. I will provide you with some links to inspire for further reading:
 
