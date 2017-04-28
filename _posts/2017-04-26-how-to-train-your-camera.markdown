@@ -55,7 +55,7 @@ By now, you should know a bit about the theory. So, let's have a quick look into
 
 > _**TL;DR**_ The way this works is that you feed the model with quite a few pictures of an object, and the similar amount of images without that object.
 
-Say you want to use the model to recognise birds outside your house in Norway. A good starting point would be to get a list of the typical species you are most likely to see in your backyard and collect as many pictures of each type as possible.
+Say you want to use the model to recognise birds outside your house in Norway. A good starting point would be to get a list of the typical species you are most likely to see in your backyard and collect as many pictures of each type as possible. Here is what you can do:
 
 1. Start by looking at [Wikipedia][7]{:target="_blank"} for a list of the Norwegian birds, or [Norwegian Encyclopedia][8]{:target="_blank"} (*in Norwegian*).
 2. Search the web for the images of each bird type. You might want to automate that task, and make sure you are picking images with the right copyright permissions.
