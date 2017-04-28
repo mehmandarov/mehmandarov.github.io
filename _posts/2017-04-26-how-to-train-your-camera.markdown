@@ -2,7 +2,7 @@
 title: "How to Train Your Camera"
 layout: post
 date: 2017-04-26 21:46 +0200
-image: '/assets/images/posts-images/bird.jpg'
+image: '/assets/images/posts-images/bird_hd.jpg'
 description: Training Camera to Recognize Objects
 tag:
 - iot
