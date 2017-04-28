@@ -46,7 +46,7 @@ POSTPATH="${BINPATH}/_posts"
 DIST_FOLDER="$POSTPATH"
 
 # Set your blog URL
-BLOG_URL="https://koppl.in/indigo"
+BLOG_URL="https://mehmandarov.com"
 
 # Set your assets URL
 ASSETS_URL="assets/images/"
