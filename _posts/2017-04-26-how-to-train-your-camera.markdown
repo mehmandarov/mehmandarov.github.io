@@ -74,8 +74,12 @@ Here is what you can do:
 
 In case you wonder if similar systems have been implemented, or if it is even possible. The answer is yes. I will provide you with some links to inspire for further reading:
 
-* [Vehicle classification and counting][9]{:target="_blank"} with OpenCV
-* [Wild flower detection][10]{:target="_blank"} (*in Danish*)
+* [A Bird Classifier with Tensorflow][15]{:target="_blank"}
+* [Training a Bird Classifier with Tensorflow and TFLearn][14]{:target="_blank"}
+* [Vehicle classification and Counting with OpenCV][9]{:target="_blank"}
+* [Wild Flower Detection][10]{:target="_blank"} (*in Danish*)
+* [Machine Learning is Fun! Part 3: Deep Learning and Convolutional Neural Networks][13]{:target="_blank"}. (*Also, check out the other parts of the article series.*)
+
 
 Now, try putting it all together, and let me know how it goes! 
 
@@ -93,3 +97,6 @@ Now, try putting it all together, and let me know how it goes!
 [10]: http://www.fyens.dk/article/3141726?fbrefresh=true
 [11]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_1.png
 [12]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_2.png
+[13]: https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
+[14]: http://www.bitfusion.io/2016/08/31/training-a-bird-classifier-with-tensorflow-and-tflearn/
+[15]: https://www.oreilly.com/learning/dive-into-tensorflow-with-linux
