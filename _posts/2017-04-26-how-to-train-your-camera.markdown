@@ -12,6 +12,7 @@ blog: true
 star: false
 author: rustam.mehmandarov
 ---
+[\[Norwegian version - Norsk versjon\]][16]
 
 _Image recognition made simple. How to recognise a specific object from a camera feed?_
 
@@ -34,6 +35,7 @@ Recognising objects is a pretty common task these days, and it has been solved i
 
 > _**TL;DR**_ There are some traditional ways of doing image recognition and object detection, like in OpenCV, and there are some techniques based on Deep Learning object detection, like in TensorFlow. Want to know more? Keep on reading.
 
+---
 
 ## A Tiny Bit of Theory
 
@@ -44,6 +46,7 @@ While [this post][4]{:target="_blank"} explains how image recognition works in T
 ![Training your own model] [11]
 <figcaption class = "caption">Someone has to train the model that you will be using for image classification (recognition).</figcaption>
 
+---
 
 ## Where to Start?
 
@@ -51,6 +54,7 @@ Basically, you have two choices – you should either train your own model, or f
 
 Since we want to run the model on a relatively low-end computer, you might consider doing the processing in the Cloud. However, it should also be possible to run [OpenCV][5]{:target="_blank"} and [TensorFlow][6]{:target="_blank"} on the latest Raspberry Pis.
 
+---
 
 ## Doing Image Recognition
 
@@ -80,7 +84,6 @@ In case you wonder if similar systems have been implemented, or if it is even po
 * [Wild Flower Detection][10]{:target="_blank"} (*in Danish*)
 * [Machine Learning is Fun! Part 3: Deep Learning and Convolutional Neural Networks][13]{:target="_blank"}. (*Also, check out the other parts of the article series.*)
 
-
 Now, try putting it all together, and let me know how it goes! 
 
 *Good luck!*
@@ -100,3 +103,4 @@ Now, try putting it all together, and let me know how it goes!
 [13]: https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
 [14]: http://www.bitfusion.io/2016/08/31/training-a-bird-classifier-with-tensorflow-and-tflearn/
 [15]: https://www.oreilly.com/learning/dive-into-tensorflow-with-linux
+[16]: {{ site.url }}/hvordan-laere-opp-ditt-eget-kamera/
