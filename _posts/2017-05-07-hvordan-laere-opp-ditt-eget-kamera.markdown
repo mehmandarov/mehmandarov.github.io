@@ -14,7 +14,7 @@ author: rustam.mehmandarov
 ---
 [\[English version – Engelsk versjon\]][16]
 
-_Image recognition made simple. How to recognise a specific object from a camera feed?_
+_Bildegjenkjenning gjort enkelt. Slik gjenkjenner du en bestemt gjenstand ved hjelp av et kamera._
 
 - [Utfordringen](#utfordringen)
 - [Litt teori](#litt-teori)
