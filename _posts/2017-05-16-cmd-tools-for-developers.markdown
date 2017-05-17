@@ -25,14 +25,14 @@ _Getting an overview of your project with some simple command line tools._
 ---
 
 ## Introduction
-This post will give you an overview of some command line tools that will be able to help you to get the feeling on how your project is doing. Most of the tools are widely available in the main Linux distributions and MacOS (some of them might need installation of [Homebrew][3] for Mac). On Windows it can be also made available via [Cygwin][2], or [Bash on Windows][1].
+This post will give you an overview of some command line tools that will be able to help you to get the feeling on how your project is doing. Most of the tools are widely available in the main Linux distributions and MacOS (some of them might need installation of [Homebrew][3]{:target="_blank"} for Mac). On Windows it can be also made available via [Cygwin][2]{:target="_blank"}, or [Bash on Windows][1]{:target="_blank"}.
 
 The commands below have been run and tested on a MacOS machine, and might sometimes need some slight modifications to be run on a Linux or a Windows machine. However, it should be able to give an idea of what it is possible to do with these tools. I will also be linking to the documentation for each of the programs in the post. 
 
 ---
 
 ## Directory Structure
-Let's start with something simple. Sometimes all you want to see is the contents and structure of the project without leaving the command line. The `tree` [command][4]  might be able to help you out here. 
+Let's start with something simple. Sometimes all you want to see is the contents and structure of the project without leaving the command line. The `tree` [command][4]{:target="_blank"} might be able to help you out here. 
 
 It is highly customizable, takes lots of parameters, and is widely available for an installation via most of the package mangers. Command Prompt on Windows also contains a native alternative with the same name.
 
@@ -47,7 +47,7 @@ sourcecodefolder
 
 
 ## Code Metrics
-If you want to see some metrics about the code in your project, like what languages that are used in the project, as well as information about number files, blank lines, comments, and lines of code, you might want to try the `cloc` [command][5] (it stands for *Count Lines of Code*).
+If you want to see some metrics about the code in your project, like what languages that are used in the project, as well as information about number files, blank lines, comments, and lines of code, you might want to try the `cloc` [command][5]{:target="_blank"} (it stands for *Count Lines of Code*).
 
 Simply install the program and point it at the project directory, or a zip file:
 
@@ -133,7 +133,7 @@ A short explanation for the script is almost the same as above. The only differe
 ## Dependencies
 Now, over to a bit more advanced stuff – analysing dependencies in your project. Why would you want to do that? Well, in short: dependencies increase complexity, and cyclic dependencies are bad for your project and your health. They also hurt your modularity and complicate the build process.
 
-This kind of analysis can be done with [jdepend][6]. It is easy to run and can be run both separately, and as a part of a build tool, like [Maven][7]. 
+This kind of analysis can be done with [jdepend][6]{:target="_blank"}. It is easy to run and can be run both separately, and as a part of a build tool, like [Maven][7]{:target="_blank"}. 
 
 For some basic dependency analysis you can also use the command line, and do something like this:
 
@@ -154,7 +154,7 @@ A short explanation for the script:
 5. add some namespaces to ignore some strings (`grep` with a `-v` option)
 
 ## SonarQube
-Last but not least, you might want to load your code for further analysis to [SonarQube][8]. This is an extremely powerful and free tool for doing the static analysis of your code. Normally, you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]. However, there might be some cases when you might want to load this data manually, via a command line.
+Last but not least, you might want to load your code for further analysis to [SonarQube][8]{:target="_blank"}. This is an extremely powerful and free tool for doing the static analysis of your code. Normally, you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]{:target="_blank"}. However, there might be some cases when you might want to load this data manually, via a command line.
 
 To load the code to SonarQube you will first need to add a property file in the root directory of each module. It might look like this:
 
@@ -167,13 +167,13 @@ sonar.sources=.
 sonar.sourceEncoding=ISO-8859-1
 {% endhighlight %}
 
-Then you will need to install and run [SonarQube Scanner][10] from each module directory that contains `sonar-project.properties` file:
+Then you will need to install and run [SonarQube Scanner][10]{:target="_blank"} from each module directory that contains `sonar-project.properties` file:
 
 {% highlight bash %}
 sonar-scanner
 {% endhighlight %}
 
-As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11] in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database this SonarQube image uses out of the box should not be used for anything other than testing.
+As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11]{:target="_blank"} in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database this SonarQube image uses out of the box should not be used for anything other than testing.
 
 
 
