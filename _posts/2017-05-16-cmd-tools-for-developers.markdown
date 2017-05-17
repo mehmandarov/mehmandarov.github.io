@@ -25,7 +25,7 @@ _Getting an overview of your project with some simple command line tools._
 ---
 
 ## Introduction
-This post will give you an overview of some command line tools that will be able help you to get the feeling on how your project is doing. Most of the tools are widely available in the main Linux distributions and MacOS (some of them might need installation of [Homebrew][3] for Mac). On Windows it can be also made available via [Cygwin][2], or [Bash on Windows][1].
+This post will give you an overview of some command line tools that will be able to help you to get the feeling on how your project is doing. Most of the tools are widely available in the main Linux distributions and MacOS (some of them might need installation of [Homebrew][3] for Mac). On Windows it can be also made available via [Cygwin][2], or [Bash on Windows][1].
 
 The commands below have been run and tested on a MacOS machine, and might sometimes need some slight modifications to be run on a Linux or a Windows machine. However, it should be able to give an idea of what it is possible to do with these tools. I will also be linking to the documentation for each of the programs in the post. 
 
@@ -154,9 +154,9 @@ A short explanation for the script:
 5. add some namespaces to ignore some strings (`grep` with a `-v` option)
 
 ## SonarQube
-Last but not least, you might want to load your code for further analysis to [SonarQube][8]. This is an extremely powerful and free tool for doing the static analysis of your code. Normally you would do that via a plug-in via your continuous integration (CI) software, like [Jenkins][9]. However, there might be some cases when you might want to load this data manually, via command line.
+Last but not least, you might want to load your code for further analysis to [SonarQube][8]. This is an extremely powerful and free tool for doing the static analysis of your code. Normally you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]. However, there might be some cases when you might want to load this data manually, via a command line.
 
-To load the code to SonarQube you will first need to add a property file in the root of each module. It might look like something:
+To load the code to SonarQube you will first need to add a property file in the root directory of each module. It might look like this:
 
 {% highlight text %}
 # Contents of sonar-project.properties file:
@@ -167,13 +167,13 @@ sonar.sources=.
 sonar.sourceEncoding=ISO-8859-1
 {% endhighlight %}
 
-Then you will need to install and run [SonarQube Scanner][10] from each module directory that contains `sonar-project.properties file:
+Then you will need to install and run [SonarQube Scanner][10] from each module directory that contains `sonar-project.properties` file:
 
 {% highlight bash %}
 sonar-scanner
 {% endhighlight %}
 
-As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up a [Docker image][11] in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database it uses out of the box should not be used for anything other than testing.
+As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11] in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database it uses out of the box should not be used for anything other than testing.
 
 
 
