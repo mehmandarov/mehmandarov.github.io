@@ -154,7 +154,7 @@ A short explanation for the script:
 5. add some namespaces to ignore some strings (`grep` with a `-v` option)
 
 ## SonarQube
-Last but not least, you might want to load your code for further analysis to [SonarQube][8]. This is an extremely powerful and free tool for doing the static analysis of your code. Normally you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]. However, there might be some cases when you might want to load this data manually, via a command line.
+Last but not least, you might want to load your code for further analysis to [SonarQube][8]. This is an extremely powerful and free tool for doing the static analysis of your code. Normally, you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]. However, there might be some cases when you might want to load this data manually, via a command line.
 
 To load the code to SonarQube you will first need to add a property file in the root directory of each module. It might look like this:
 
@@ -173,7 +173,7 @@ Then you will need to install and run [SonarQube Scanner][10] from each module d
 sonar-scanner
 {% endhighlight %}
 
-As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11] in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database it uses out of the box should not be used for anything other than testing.
+As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11] in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database this SonarQube image uses out of the box should not be used for anything other than testing.
 
 
 
