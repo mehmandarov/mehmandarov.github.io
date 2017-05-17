@@ -27,14 +27,14 @@ _Getting an overview of your project with some simple command line tools._
 ## Introduction
 This post will give you an overview of some command line tools that will be able help you to get the feeling on how your project is doing. Most of the tools are widely available in the main Linux distributions and MacOS (some of them might need installation of [Homebrew][3] for Mac). On Windows it can be also made available via [Cygwin][2], or [Bash on Windows][1].
 
-The commands below have been run and tested on a MacOS machine, and might sometimes need some slight modifications to be run on Linux or Windows machine. However, it should be able to give an idea of what it is possible to do with these tools. I will also be linking to the documentation for each of the programs in the post. 
+The commands below have been run and tested on a MacOS machine, and might sometimes need some slight modifications to be run on a Linux or a Windows machine. However, it should be able to give an idea of what it is possible to do with these tools. I will also be linking to the documentation for each of the programs in the post. 
 
 ---
 
 ## Directory Structure
 Let's start with something simple. Sometimes all you want to see is the contents and structure of the project without leaving the command line. The `tree` [command][4]  might be able to help you out here. 
 
-It is highly customizable, takes lots of parameters and is widely available for an installation via most of the package mangers. Command Prompt on Windows also contains a native alternative with the same name.
+It is highly customizable, takes lots of parameters, and is widely available for an installation via most of the package mangers. Command Prompt on Windows also contains a native alternative with the same name.
 
 {% highlight bash %}
 $ tree sourcecodefolder/ -L 1 -d
@@ -78,11 +78,11 @@ $ cloc --by-percent cmb sourcecode.zip
 
 ## Encoding and MIME types
 
-Files with different or wrong encoding might mean trouble with showing non-ASCII characters correctly, or even give you compilation errors. Therefore, finding and marking those files as quickly as possible might help you managing your project. 
+Files, within a single project, with different, or wrong, encoding might mean trouble with showing non-ASCII characters correctly. They might even give you compilation errors. Therefore, finding and marking those files as quickly as possible might help you managing your project. 
 
-While MIME types on the other hand are not as bad at causing troubles the diversity of the MIME types among the same kind of files, like `*.java` files in this example, might indicate lack of standard for developer tools and code standard in the project. 
+While MIME types on the other hand are not as bad at causing trouble, the diversity of the MIME types among the same kind of files, like `*.java` files in this example, might indicate lack of standard for developer tools and code standard in the project. 
 
-This kind of information can be extracted with `file` command for each file, or it might be done a bit more automatic for the whole project, and it might look like something like this: 
+This kind of information can be extracted with `file` command for each file, or it might be done a bit more automatic for the whole project, and it might look like this: 
 
 {% highlight bash %}
 $ find . -name *.java | \
@@ -131,14 +131,15 @@ A short explanation for the script is almost the same as above. The only differe
 {% endhighlight %}
 
 ## Dependencies
-Now, over to a bit more advanced stuff – analysing dependencies in your project. Why would you want to do that? Well, in short: dependencies increase complexity and cyclic dependencies are bad for your project and your health. They also hurt your modularity and complicate build process.
+Now, over to a bit more advanced stuff – analysing dependencies in your project. Why would you want to do that? Well, in short: dependencies increase complexity, and cyclic dependencies are bad for your project and your health. They also hurt your modularity and complicate the build process.
 
-This kind of analysis can be done with [jdepend][6]. It easy to run and can be run both separately, and as a part of a build tool, like [Maven][7]. 
+This kind of analysis can be done with [jdepend][6]. It is easy to run and can be run both separately, and as a part of a build tool, like [Maven][7]. 
 
-For some basic dependency analysis you can also use the command line and do something like this:
+For some basic dependency analysis you can also use the command line, and do something like this:
 
 {% highlight bash %}
-$ find some_module/ -name *.java | xargs cat $1 | \
+$ find some_module/ -name *.java | \
+    xargs cat $1 | \
     gawk 'match($0, /import (no.*);/, gr) {print gr[1]}' | \
     sort | uniq  | \
     grep -v no.ignore.this.namespace # -v option add strings to ignore
@@ -150,7 +151,7 @@ A short explanation for the script:
 2. print them to console with the `cat` command
 3. grab the output and extract import statements with some specific pattern with regex (`gawk`)
 4. sort, extract unique values (`sort`, `uniq`)
-5. add some namespaces to ignore (`grep` with a `-v` option)
+5. add some namespaces to ignore some strings (`grep` with a `-v` option)
 
 ## SonarQube
 Last but not least, you might want to load your code for further analysis to [SonarQube][8]. This is an extremely powerful and free tool for doing the static analysis of your code. Normally you would do that via a plug-in via your continuous integration (CI) software, like [Jenkins][9]. However, there might be some cases when you might want to load this data manually, via command line.
