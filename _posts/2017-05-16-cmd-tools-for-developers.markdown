@@ -6,7 +6,7 @@ image: '/assets/images/posts-images/graph.jpg'
 description: Getting an overview of your project with simple command line tools.
 tag:
 - java
-- development
+- software development
 - english
 blog: true
 star: false
