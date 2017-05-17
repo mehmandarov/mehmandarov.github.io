@@ -20,6 +20,7 @@ _Bildegjenkjenning gjort enkelt. Slik gjenkjenner du en bestemt gjenstand ved hj
 - [Litt teori](#litt-teori)
 - [Hvor starter jeg?](#hvor-starter-jeg)
 - [La oss kjøre bildegjenkjenning](#la-oss-kjøre-bildegjenkjenning)
+- [Bonus: Video](#bonus-video)
 
 ---
 
@@ -42,7 +43,7 @@ De mer tradisjonelle prinsippene bak OpenCV for å oppdage er godt beskrevet i [
 
 Mens [dette innlegget][4]{:target="_blank"} forklarer hvordan bildegjenkjenning virker i TensorFlow, som bruker en modell kalt dypt konvolverende nevrale nettverk, vil det også la deg [trene opp din egen bildeklassifiserer][3]{:target="_blank"}, slik som OpenCV.
 
-![Training your own model] [11]
+![Training your own model][11]{: class="bigger-image" }
 <figcaption class = "caption">Noen må lære opp modellen som du skal bruke til bildeklassifisering (-gjenkjenning).</figcaption>
 
 ---
@@ -64,7 +65,7 @@ Nå vet du litt om teorien. La oss så ta en rask titt på hvordan vi kan lære 
 
 La oss si at du vil bruke modellen til å gjenkjenne fugler utenfor huset ditt i Norge. Et godt utgangspunkt vil da være å få en liste over de typiske artene som du mest sannsynlig ser i hagen din, og samle så mange bilder av hver art som mulig.
 
-![Your own model in action] [12]
+![Your own model in action][12]{: class="bigger-image" }
 <figcaption class = "caption">Din opplærte modell i aksjon.</figcaption>
 
 Her er hva du kan gjøre:
@@ -87,6 +88,14 @@ Lurer du på om lignende systemer har blitt implementert eller om det er mulig? 
 Prøv nå å sette alt dette sammen, og fortell meg gjerne hvordan det går!
 
 *Lykke til!*
+
+---
+
+## Bonus: Video
+
+En video vi har laget av mine tegninger og en kort forklaring på hvordan dette virker.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kOXBCWvmtD4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
 [1]: http://www.learnopencv.com/image-recognition-and-object-detection-part1/
 [2]: http://www.pyimagesearch.com/2016/06/20/detecting-cats-in-images-with-opencv/

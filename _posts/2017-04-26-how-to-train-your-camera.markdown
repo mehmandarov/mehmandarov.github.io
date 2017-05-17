@@ -43,7 +43,7 @@ The more traditional principles behind OpenCV are well described in this [blog p
 
 While [this post][4]{:target="_blank"} explains how image recognition works in TensorFlow that is using a model called a deep convolutional neural network. Like OpenCV, it will also let you [train your own image classifier][3]{:target="_blank"}.
 
-![Training your own model] [11]
+![Training your own model][11]{: class="bigger-image" }
 <figcaption class = "caption">Someone has to train the model that you will be using for image classification (recognition).</figcaption>
 
 ---
@@ -64,7 +64,7 @@ By now, you should know a bit about the theory. So, let's have a quick look into
 
 Say you want to use the model to recognise birds outside your house in Norway. A good starting point would be to get a list of the typical species you are most likely to see in your backyard and collect as many pictures of each type as possible. 
 
-![Your own model in action] [12]
+![Your own model in action][12]{: class="bigger-image" }
 <figcaption class = "caption">Your trained model in action.</figcaption>
 
 Here is what you can do:
