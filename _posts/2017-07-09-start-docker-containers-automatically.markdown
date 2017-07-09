@@ -28,7 +28,7 @@ After your Docker containers are set up and running, you might need to be able t
 
 One of them is to use [restart policies][1]{:target="_blank"} provided by Docker. They can be set to control whether your containers start automatically when they exit, or when Docker restarts. 
 
-Alternatively, you can use a process managers such as `upstart`, `systemd`, or `supervisor` instead. In this post, I want to show you how it is done with [`systemd`][2]{:target="_blank"}.
+Alternatively, you can use a process manager such as `upstart`, `systemd`, or `supervisor` instead. In this post, I want to show you how it is done with [`systemd`][2]{:target="_blank"}.
 
 ## Create the Service File
 
@@ -46,13 +46,13 @@ CONTAINER ID        IMAGE                       COMMAND                  CREATED
 e85753d57a67        easypi/dokuwiki-arm         "/bin/sh -c 'php-f..."   1 days ago          Up 23 hours               0.0.0.0:80->80/tcp   mywiki
 {% endhighlight %}
 
-Now, we will need to create file (choose an appropriate file name for the service):
+Now, we will need to create a file (choose an appropriate file name for the service):
 
 {% highlight shell_session %}
 $ sudo nano /etc/systemd/system/docker-dokuwiki.service
 {% endhighlight %}
 
-Paste the following into the file. Make sure to set a proper `Description`, and make sure to update the container name in `ExecStart` and `ExecStop`:
+Paste the following into the file. Set a proper `Description`, and make sure to update the container name in `ExecStart` and `ExecStop`:
 
 {% highlight yml %}
 [Unit]
