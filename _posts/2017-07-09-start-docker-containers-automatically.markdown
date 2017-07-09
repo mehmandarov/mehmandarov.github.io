@@ -90,7 +90,7 @@ $ sudo systemctl start docker-dokuwiki.service
 $ sudo systemctl enable docker-dokuwiki.service
 {% endhighlight %}
 
-To disable a service run the following commands (_remember to change the service name_):
+To disable the service run the following commands (_remember to change the service name_):
 
 {% highlight shell_session %}
 $ sudo systemctl stop docker-dokuwiki.service
