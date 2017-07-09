@@ -14,7 +14,7 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_Staring your Docker containers automatically using `systemd`._
+_Starting your Docker containers automatically using `systemd`._
 
 - [Introduction](#introduction)
 - [Create the Service File](#create-the-service-file)
@@ -24,11 +24,11 @@ _Staring your Docker containers automatically using `systemd`._
 
 ## Introduction
 
-After your Docker containers are set up and running, you might need to be able to start some of them automatically on reboot or a crash. There are several ways of getting this done.
+After your Docker containers are set up and running, you might need to be able to start some of them automatically on a reboot or a crash. There are several ways of getting this done.
 
 One of them is to use [restart policies][1]{:target="_blank"} provided by Docker. They can be set to control whether your containers start automatically when they exit, or when Docker restarts. 
 
-Alternatively, you can use a process managers such as `upstart`, `systemd`, or `supervisor` instead. In this post I want to show you how it is done with [`systemd`][2]{:target="_blank"}.
+Alternatively, you can use a process managers such as `upstart`, `systemd`, or `supervisor` instead. In this post, I want to show you how it is done with [`systemd`][2]{:target="_blank"}.
 
 ## Create the Service File
 
@@ -52,7 +52,7 @@ Now, we will need to create file (choose an appropriate file name for the servic
 $ sudo nano /etc/systemd/system/docker-dokuwiki.service
 {% endhighlight %}
 
-Paste the following into the file, and make sure to set a proper `Description`, and make sure to update the container name in `ExecStart` and `ExecStop`:
+Paste the following into the file. Make sure to set a proper `Description`, and make sure to update the container name in `ExecStart` and `ExecStop`:
 
 {% highlight yml %}
 [Unit]
