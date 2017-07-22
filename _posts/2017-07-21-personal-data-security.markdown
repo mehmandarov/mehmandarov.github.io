@@ -59,14 +59,14 @@ Well, of course bugs happen, so I don't want to jump into conclusions about lack
 However, when we provide data to a company we expect them to handle it with integrity and care, and not leak personal data to the outside world. While phone number might be considered a low-risk data to be leaked for most of us, it might still be quite sensitive for some groups of people, like some high-profile politicians, celebrities, or anybody else how might have a wish, or even a need, to hide their contact information.
 
 ## Norwegian Personal Data Act (Personopplysningsloven)
-Also, according to The Norwegian Data Protection Authority (Datatilsynet) any information that can be used to identify a person is [considered personal][3]. Further, [Personal Data Act][5] chapter 2, section 13 _(Norwegian: [Personopplysningsloven][4])_ requires that _"the processor shall by means of planned, systematic measures ensure satisfactory data security with regard to confidentiality, integrity and accessibility in connection with the processing of personal data"_.
+Also, according to The Norwegian Data Protection Authority (Datatilsynet) any information that can be used to identify a person is [considered personal][3]{:target="_blank"}. Further, [Personal Data Act][5]{:target="_blank"} chapter 2, section 13 _(Norwegian: [Personopplysningsloven][4]{:target="_blank"})_ requires that _"the processor shall by means of planned, systematic measures ensure satisfactory data security with regard to confidentiality, integrity and accessibility in connection with the processing of personal data"_.
 
-Further, according to the Personal Data Act section 46, The Norwegian Data Protection Authority (Datatilsynet) may impose a fee for violations of the act, or the regulations, with an amount up to ten times the [basic amount][7] of the National Insurance, equivalent to 925,760 NOK (as of May 2017).
+Further, according to the Personal Data Act section 46, The Norwegian Data Protection Authority (Datatilsynet) may impose a fee for violations of the act, or the regulations, with an amount up to ten times the [basic amount][7]{:target="_blank"} of the National Insurance, equivalent to 925,760 NOK (as of May 2017).
 
 ## EU GDPR
 If the fines mentioned above sound bad, just wait to see how expensive it will get with the introduction of EU General Data Protection Regulation (GDPR) next year.
 
-With the introduction of [GDPR][6] in 2018, the maximum amount of fines will be raised significantly with an upper limit of 20 million NOK, or the company's 4% of the total global annual turnover in the previous fiscal year, if this is higher (GDPR art. 83, item 5).
+With the introduction of [GDPR][6]{:target="_blank"} in 2018, the maximum amount of fines will be raised significantly with an upper limit of 20 million NOK, or the company's 4% of the total global annual turnover in the previous fiscal year, if this is higher (GDPR art. 83, item 5).
 
 ## The Bottom Line
 Storing any kind of personal information is an important task and requires rigorous testing and planning on what data you collect, why and how it is protected. Deviating from that can be rather harmful to your company both in regard to reputation and the financial penalties.
