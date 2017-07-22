@@ -2,7 +2,7 @@
 title: "Personal Data Security"
 layout: post
 date: 2017-07-21 10:23
-image: '/assets/images/posts-images/whale_small.jpeg'
+image: '/assets/images/posts-images/caution_keyboard_small.jpeg'
 description:
 tag:
 - security
