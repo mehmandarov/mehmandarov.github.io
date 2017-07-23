@@ -12,7 +12,7 @@ tag:
 - automation
 - java
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -107,6 +107,8 @@ By now, your code should be looking great, with all the right licenses and up an
 A video of a talk I gave about this topic at [JavaZone][17] in Oslo (in Norwegian).
 
 <iframe src="https://player.vimeo.com/video/138955650?byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+---
 
 [1]: http://zeroturnaround.com/rebellabs/java-tools-and-technologies-landscape-2016-trends/
 [2]: http://www.mojohaus.org/versions-maven-plugin/

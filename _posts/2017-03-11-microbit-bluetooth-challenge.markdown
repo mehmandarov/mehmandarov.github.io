@@ -9,7 +9,7 @@ tag:
 - python
 - english
 - conferences
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -98,7 +98,6 @@ Have a look at the [simple implementation of the game][6]{:target="_blank"}. You
 *[Spoiler alert!]* The winning team gets to submit their code to this [GitHub repo][8]{:target="_blank"}.
 
 ---
-
 
 [1]: http://python.microbit.org/editor.html
 [2]: http://microbit-micropython.readthedocs.io/en/latest/radio.html

@@ -10,7 +10,7 @@ tag:
 - cloud
 - python
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---

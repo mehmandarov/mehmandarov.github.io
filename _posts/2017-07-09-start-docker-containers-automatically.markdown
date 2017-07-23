@@ -9,7 +9,7 @@ tag:
 - docker
 - field notes
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -111,7 +111,7 @@ As a next step, you might want to look at (external documentation links):
 * Available [`docker start`][5]{:target="_blank"} options.
 * Available [`docker start`][5]{:target="_blank"} options.
 
-
+---
 
 [1]:https://docs.docker.com/engine/admin/start-containers-automatically/
 [2]:https://freedesktop.org/wiki/Software/systemd/

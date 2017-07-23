@@ -9,7 +9,7 @@ tag:
 - semantic technologies
 - java
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -63,6 +63,7 @@ Looking forward to running this workshop next week! See you there!
 
 _p.s. Want to read more about Zebra Puzzles? [Go ahead][3], but beware of some potential spoilers!_
 
+---
 
 [1]: http://www.jbcnconf.com/2016/infoSpeaker.html?ref=rmehmandarov
 [2]: https://maven.apache.org/

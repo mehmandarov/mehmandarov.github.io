@@ -8,7 +8,7 @@ tag:
 - java
 - software development
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -175,7 +175,7 @@ sonar-scanner
 
 As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11]{:target="_blank"} in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database this SonarQube image uses out of the box should not be used for anything other than testing.
 
-
+---
 
 [1]:https://msdn.microsoft.com/en-us/commandline/wsl/about
 [2]:http://www.cygwin.com/

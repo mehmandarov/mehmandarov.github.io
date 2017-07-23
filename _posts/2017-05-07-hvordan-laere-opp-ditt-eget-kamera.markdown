@@ -8,7 +8,7 @@ tag:
 - iot
 - machine learning
 - norwegian
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -96,6 +96,8 @@ Prøv nå å sette alt dette sammen, og fortell meg gjerne hvordan det går!
 En video vi har laget av mine tegninger og en kort forklaring på hvordan dette virker.
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/kOXBCWvmtD4?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+---
 
 [1]: http://www.learnopencv.com/image-recognition-and-object-detection-part1/
 [2]: http://www.pyimagesearch.com/2016/06/20/detecting-cats-in-images-with-opencv/

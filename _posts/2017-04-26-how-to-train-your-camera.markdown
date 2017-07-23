@@ -8,7 +8,7 @@ tag:
 - iot
 - machine learning
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -87,6 +87,8 @@ In case you wonder if similar systems have been implemented, or if it is even po
 Now, try putting it all together, and let me know how it goes! 
 
 *Good luck!*
+
+---
 
 [1]: http://www.learnopencv.com/image-recognition-and-object-detection-part1/
 [2]: http://www.pyimagesearch.com/2016/06/20/detecting-cats-in-images-with-opencv/

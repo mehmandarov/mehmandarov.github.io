@@ -7,7 +7,7 @@ tag:
 - helloworld
 - jekyll
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -39,3 +39,5 @@ After spending some time searching, doing the research and comparing different a
 The site was up and running in no time, it was simple to customize, and here is the first post. Now I will just have to automate the deployment. Right now I am looking at several options, and more information about this will be posted here soon.
 
 Looking forward to seeing how the site will develop and to the future posts. Stay tuned!
+
+---

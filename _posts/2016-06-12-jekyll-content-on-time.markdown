@@ -7,7 +7,7 @@ tag:
 - field notes
 - jekyll
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -59,7 +59,7 @@ timezone: Europe/Oslo
 
 If not specified, Jekyll will use the local time zone, as set by your operating system.
 
-
+---
 
 [1]: https://jekyllrb.com/docs/frontmatter/
 [2]: https://en.wikipedia.org/wiki/Tz_database

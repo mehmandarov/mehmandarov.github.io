@@ -9,7 +9,7 @@ tag:
 - data privacy
 - GDPR
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -75,6 +75,7 @@ That all being said, it is important to note that all of the problems I reported
 
 Least but not last, I would like to thank the company, and especially the company's CIO for great communication and quick responses and swift bug fixes.
 
+---
 
 [1]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_1.png
 [2]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_2.png

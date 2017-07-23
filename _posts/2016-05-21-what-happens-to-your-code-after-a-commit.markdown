@@ -8,7 +8,7 @@ tag:
 - build and deploy
 - testing
 - english
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -92,6 +92,7 @@ These points - and a few more - is part of a continuous delivery process that is
 
 These points may seem tedious, but they will often have an immediate effect on your development process – they will simplify the entire process of handling a system, so you can spend more time on what you like best, namely programming!
 
+---
 
 [1]: {{ site.url }}/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_article-2016-04-27_full.png
 [2]: {{ site.url }}/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_ci-superhero.png

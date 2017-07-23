@@ -8,7 +8,7 @@ tag:
 - iot
 - english
 - conferences
-blog: true
+category: blog
 star: false
 author: rustam.mehmandarov
 ---
@@ -89,6 +89,7 @@ Now that you have connected a bunch of sensors and started collecting some senso
 * [Mashape.com][6]: A list of different APIs, most of which are available to free, that might give you some ideas on how you can use your data.
 * Any simple JavaScript visualization library, like [D3][11], for making your data available in an intuitive way.
 
+---
 
 [1]: https://www.raspberrypi.org/products/raspberry-pi-2-model-b/
 [2]: http://www.ti.com/ww/en/wireless_connectivity/sensortag/tearDown.html
