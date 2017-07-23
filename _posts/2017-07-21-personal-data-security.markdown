@@ -1,7 +1,7 @@
 ---
 title: "Personal Data Security"
 layout: post
-date: 2017-07-21 10:23
+date: 2017-07-21 10:23 +0200
 image: '/assets/images/posts-images/caution_keyboard_small.jpeg'
 description:
 tag:
