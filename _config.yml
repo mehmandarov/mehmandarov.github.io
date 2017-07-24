@@ -1,6 +1,9 @@
 # main text of home
-name: Rustam Mehmandarov
+name: 
+  &id001
+  Rustam Mehmandarov
 bio: Passionate Computer Scientist
+title: *id001
 
 # twitter summary info
 description: A blog about technology and related stuff
