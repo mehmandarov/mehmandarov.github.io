@@ -2,7 +2,7 @@
 title: "How to Train Your Camera"
 layout: post
 date: 2017-04-29 20:46 +0200
-image: '/assets/images/posts-images/bird_hd.jpg'
+image: '/assets/images/posts-images/bird_small.jpg'
 description: Training your camera to recognize objects using OpenCV or TensorFlow
 tag:
 - iot

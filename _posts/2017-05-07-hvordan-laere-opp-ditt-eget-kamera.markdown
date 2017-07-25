@@ -2,7 +2,7 @@
 title: "Hvordan lære opp ditt eget kamera"
 layout: post
 date: 2017-05-07 20:46 +0200
-image: '/assets/images/posts-images/bird_hd.jpg'
+image: '/assets/images/posts-images/bird_small.jpg'
 description: Bildegjenkjenning gjort enkelt. Slik gjenkjenner du en bestemt gjenstand ved hjelp av et kamera og OpenCV eller TensorFlow
 tag:
 - iot
