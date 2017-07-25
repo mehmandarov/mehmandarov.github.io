@@ -13,7 +13,7 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_A brief introduction to ten most important and absolute basic Docker commands to get you started, and keep you alive in the command line interface._
+_A brief introduction to ten important and absolute basic Docker commands to get you started, and keep you going in the command line interface._
 
 - [Getting Started](#getting-started)
 - [Files, Folders, and Backups](#files-folders-and-backups)
@@ -25,7 +25,7 @@ In this post, I decided to share some of the basic commands you might need to ge
 
 ## Getting Started
 
-Before we get started, it might be a good idea to note that all of the commands below are written without `sudo`. If your installation is not running without `sudo` (assuming that you are running Linux), you might want to check out the [post-installation guide for Linux][1] in the Docker docs.
+Before we get started, it might be a good idea to note that all of the commands below are written without `sudo`. If your installation is not running without `sudo` (assuming that you are running Linux), you might want to check out the [post-installation guide for Linux][1]{:target="_blank"} in the Docker docs.
 
 #### 1. Check if Everything Works
 
@@ -46,7 +46,7 @@ $ docker run -d -p 80:80 hypriot/rpi-busybox-httpd
 
 #### 2. List Containers
 
-After creating containers, first thing you might want to do is to see what containers you might have up and running. To list all running containers you can use:
+After creating containers, first thing you might want to do is to see what containers you have up and running. To list all running containers you can use:
 
 {% highlight shell_session %}
 $ docker ps
@@ -66,7 +66,7 @@ However, it will not show you any stopped containers. To list _all_ local contai
 $ docker ps -a
 {% endhighlight %}
 
-The output will be more like this:
+The output will be more like this (note that is shows also stopped, or even failed containers):
 
 {% highlight text %}
 CONTAINER ID        IMAGE                       COMMAND                  CREATED             STATUS                    PORTS                NAMES
@@ -75,7 +75,7 @@ e85753d57a67        easypi/dokuwiki-arm         "/bin/sh -c 'php-f..."   1 days 
 
 {% endhighlight %}
 
-More on `docker ps` in the [Docker docs][3].
+More on `docker ps` in the [Docker docs][3]{:target="_blank"}.
 
 #### 3. List Images
 
@@ -87,11 +87,11 @@ $ docker images
 
 #### 4. Containers vs. Images?
 
-Now you might wonder what is the difference between containers and images. Well, I have a [link][4] for you. This will hopefully help you to understand how Docker manages the data within your images and containers.
+What is the difference between containers and images, you might wonder? Well, I have a [link][4]{:target="_blank"} for you. This will hopefully help you to understand how Docker manages the data within your images and containers.
 
 #### 5. Starting and Stopping Containers
 
-Another two basic commands – [starting][5] and [stopping][6] containers:
+Another two basic commands – [starting][5]{:target="_blank"} and [stopping][6]{:target="_blank"} containers:
 
 {% highlight shell_session %}
 $ docker start <container_id>
@@ -105,7 +105,7 @@ ___Note:___ The `docker run` command first creates a writeable container layer o
 ## Commands, Files, and Folders Inside a Container
 
 #### 6. Run Any Command from a Container
-You can run any command in a running container just knowing its ID (or name):
+You can [run any command][7]{:target="_blank"} in a running container just knowing its ID (or name):
 
 {% highlight shell_session %}
 $ docker exec -it <container_id_or_name> echo "Hello from container!"
@@ -123,7 +123,7 @@ $ docker exec -it <container_id_or_name> sh
 
 #### 8. Copy Files From and To Containers
 
-Another useful trick you might need is to copy some files to and from a container. Your friend here is the `docker cp` command ([link to the docs][8]):
+Another useful trick you might need is to copy some files to and from a container. Your friend here is the `docker cp` command ([link to the docs][8]{:target="_blank"}):
 
 {% highlight shell_session %}
 $ # To container:
