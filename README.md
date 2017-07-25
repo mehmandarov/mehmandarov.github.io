@@ -8,8 +8,8 @@ Have a bug or an issue with this site? [Open a new issue](https://github.com/meh
 
 ## Author
 
-* [Rustam Mehmandarov](http://mehmandarov.com)
+* [Rustam Mehmandarov](https://mehmandarov.com)
 
 ## Copyright and License
 
-Copyright 2016 Rustam Mehmandarov. Code released under the [Apache 2.0](https://mehmandarov.github.io/LICENSE) license.
+Copyright 2016-2017 Rustam Mehmandarov. Code released under the [Apache 2.0](https://mehmandarov.github.io/LICENSE) license.
