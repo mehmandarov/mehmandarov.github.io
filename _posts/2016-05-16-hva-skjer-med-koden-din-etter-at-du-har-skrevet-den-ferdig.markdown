@@ -19,7 +19,7 @@ _Jeg har skrevet en artikkel for studentmagasinet INDEX som utgis ved Institutt 
 
 - [Automatiser](#automatiser)
 - [Automatiske tester og sjekk av kodekvalitet](#automatiske-tester-og-sjekk-av-kodekvalitet)
-- [Miljøer](#miløjer)
+- [Miljøer](#miljøer)
 - [Versjoner](#versjoner)
 - [Veien videre](#veien-videre)
 
