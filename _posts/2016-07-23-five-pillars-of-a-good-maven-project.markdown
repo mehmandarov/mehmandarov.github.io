@@ -19,11 +19,11 @@ author: rustam.mehmandarov
 
 _What makes a Maven project good to work with and easy to maintain? There are five types of Maven plugins that will simplify the development process and increase maintainability of a project._
 
-- [1. Technical Aspects](#technical-aspects)
-- [2. Legal Aspects](#legal-aspects)
-- [3. Rapid Development](#rapid-development)
-- [4. Documentation](#documentation)
-- [5. Testing and QA](#testing-and-qa)
+- [1. Technical Aspects](#1-technical-aspects)
+- [2. Legal Aspects](#2-legal-aspects)
+- [3. Rapid Development](#3-rapid-development)
+- [4. Documentation](#4-documentation)
+- [5. Testing and QA](#5-testing-and-qa)
 - [Bonus: Video](#bonus-video)
 
 

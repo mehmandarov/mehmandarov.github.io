@@ -19,7 +19,7 @@ _Are you sure you are not leaking sensitive data? Or how one of the Norway's big
 - [The Story](#the-story)
 - [Information Security](#information-security)
 - [Norwegian Personal Data Act (Personopplysningsloven)](#norwegian-personal-data-act-personopplysningsloven)
-- [EU GDPR](#gdpr)
+- [EU GDPR](#eu-gdpr)
 - [The Bottom Line](#the-bottom-line)
 
 ---
