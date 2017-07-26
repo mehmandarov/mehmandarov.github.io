@@ -37,7 +37,7 @@ disqus:
   categories: [] # only show disqus for posts that have these categories, example: [blog, project]
 
 # if you don't have any of social below, comment the line
-#facebook: mehmandarov
+# facebook: mehmandarov
 twitter: rmehmandarov
 # google: mygoogle
 # instagram: myinstagram
