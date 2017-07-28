@@ -1,4 +1,4 @@
-# mehmandarov.com
+# mehmandarov.com ![Build status][1]
 
 Source code for mehmandarov.com. Based on [Indigo](https://github.com/sergiokopplin/indigo) theme.
 
@@ -13,3 +13,6 @@ Have a bug or an issue with this site? [Open a new issue](https://github.com/meh
 ## Copyright and License
 
 Copyright 2016-2017 Rustam Mehmandarov. Code released under the [Apache 2.0](https://mehmandarov.github.io/LICENSE) license.
+
+
+[1]: https://travis-ci.org/mehmandarov/mehmandarov.github.io.svg?branch=master
