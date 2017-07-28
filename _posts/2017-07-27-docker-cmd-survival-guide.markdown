@@ -16,7 +16,7 @@ author: rustam.mehmandarov
 _A brief introduction to ten important and absolute basic Docker commands to get you started, and keep you going in the command line interface._
 
 - [Getting Started](#getting-started)
-- [Files, Folders, and Backups](#files-folders-and-backups)
+- [Commands, Files, and Folders Inside a Container](#commands-files-and-folders-inside-a-container)
 - [Cleanup](#Cleanup)
 
 ---
