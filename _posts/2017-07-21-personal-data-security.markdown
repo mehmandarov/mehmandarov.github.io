@@ -81,6 +81,6 @@ Least but not last, I would like to thank the company, and especially the compan
 [2]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_2.png
 [3]:https://www.datatilsynet.no/om-personvern/personopplysninger/
 [4]:https://lovdata.no/dokument/NL/lov/2000-04-14-31
-[5]:https://www.datatilsynet.no/regelverk-og-skjema/lover-og-regler/lover-og-regler2/Personal-Data-Act-/
+[5]:https://www.datatilsynet.no/en/regulations-and-tools/regulations-and-decisions/norwegian-privacy-law/personal-data-act/
 [6]:http://www.eugdpr.org/
 [7]:http://www.skatteetaten.no/en/Rates/National-Insurance-scheme-basic-amount/
