@@ -100,7 +100,7 @@ animation: true
 # set timezone
 timezone: Europe/Oslo
 
-gems:
+plugins:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
