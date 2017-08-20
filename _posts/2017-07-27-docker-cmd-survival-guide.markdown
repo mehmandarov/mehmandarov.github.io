@@ -13,7 +13,7 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_A brief introduction to ten important and absolute basic Docker commands to get you started, and keep you going in the command line interface._
+_A brief introduction to ten essential and absolute basic Docker commands to get you started, and keep you going in the command-line interface._
 
 - [Getting Started](#getting-started)
 - [Commands, Files, and Folders Inside a Container](#commands-files-and-folders-inside-a-container)

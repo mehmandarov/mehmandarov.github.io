@@ -1,5 +1,5 @@
 ---
-title: "Solving Problems with Reasoning, Semantic Wizardry and Java"
+title: "Solving Problems with Reasoning, Semantic Wizardry, and Java"
 layout: post
 date: 2016-6-9 00:00 +0200
 description: On June 16th, I will be doing a workshop at JBCNConf in Barcelona, Spain. I will be talking about semantic technologies, reasoning, and Java. I have been asked to post some information about the workshop, so here it comes.
@@ -35,7 +35,7 @@ Ever heard of Zebra Puzzles? Those logical puzzles that are claimed to be invent
 
 Some claim that only 2% of the population can solve it without any help.
 
-However, with the help of semantic technologies we can solve it in (almost) no time. Of course you have to know RDF, OWL, Jena, reasoning, inference. The good news is that I will be showing you how it works in this session. 
+However, with the help of semantic technologies, we can solve it in (almost) no time. Of course, you have to know RDF, OWL, Jena, reasoning, inference. The good news is that I will be showing you how it works in this session. 
 
 Later, I will also post a link to the code for the rest of you to try all that at home.
 

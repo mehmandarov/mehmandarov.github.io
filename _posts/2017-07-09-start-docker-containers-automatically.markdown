@@ -72,12 +72,12 @@ WantedBy=local.target
 A couple of notes about the script above:
 1. This file is called a [unit file][4]{:target="_blank"} for `systemd`.
 2. Make sure you don't have any extra line brakes within the sections, like `Unit`, or `Service`.
-3. The `-a` option in the Docker command for `ExecStart` makes sure it is running in attached mode, i.e. attaching STDOUT/STDERR and forwarding signals.
-4. The `-t` option in the Docker command for `ExecStop` specifies seconds to wait for stop before killing the container.
+3. The `-a` option in the Docker command for `ExecStart` makes sure it is running in attached mode, i.e., attaching STDOUT/STDERR and forwarding signals.
+4. The `-t` option in the Docker command for `ExecStop` specifies seconds to wait for it to stop before killing the container.
 
 ## Activate the Service
 
-Before we can activate the service we have created, we need to reload the unit file. You will also need to run this command any time you do any modifications to the unit files:
+Before we can activate the service we have created, we need to reload the unit file. You will also need to run this command anytime you do any modifications to the unit files:
 
 {% highlight shell_session %}
 $ sudo systemctl daemon-reload

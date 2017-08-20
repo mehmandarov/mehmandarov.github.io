@@ -3,7 +3,7 @@ title: "Command Line Tools for Your Java Projects"
 layout: post
 date: 2017-05-15 20:46 +0200
 image: '/assets/images/posts-images/graph.jpg'
-description: Getting an overview of your project with simple command line tools.
+description: Getting an overview of your project with simple command-line tools.
 tag:
 - java
 - software development
@@ -78,9 +78,9 @@ $ cloc --by-percent cmb sourcecode.zip
 
 ## Encoding and MIME types
 
-Files, within a single project, with different, or wrong, encoding might mean trouble with showing non-ASCII characters correctly. They might even give you compilation errors. Therefore, finding and marking those files as quickly as possible might help you managing your project. 
+Files, within a single project, with different, or wrong, encoding might mean trouble with showing non-ASCII characters correctly. They might even give you compilation errors. Therefore, finding and marking those files as quickly as possible might help you manage your project. 
 
-While MIME types on the other hand are not as bad at causing trouble, the diversity of the MIME types among the same kind of files, like `*.java` files in this example, might indicate lack of standard for developer tools and code standard in the project. 
+While MIME types, on the other hand, are not as bad at causing trouble, the diversity of the MIME types among the same kind of files, like `*.java` files in this example, might indicate a lack of a standard for developer tools and code standard in the project. 
 
 This kind of information can be extracted with `file` command for each file, or it might be done a bit more automatic for the whole project, and it might look like this: 
 
@@ -131,7 +131,7 @@ A short explanation for the script is almost the same as above. The only differe
 {% endhighlight %}
 
 ## Dependencies
-Now, over to a bit more advanced stuff – analysing dependencies in your project. Why would you want to do that? Well, in short: dependencies increase complexity, and cyclic dependencies are bad for your project and your health. They also hurt your modularity and complicate the build process.
+Now, over to a bit more advanced stuff – analyzing dependencies in your project. Why would you want to do that? Well, in short: dependencies increase complexity, and cyclic dependencies are bad for your project and your health. They also hurt your modularity and complicate the build process.
 
 This kind of analysis can be done with [jdepend][6]{:target="_blank"}. It is easy to run and can be run both separately, and as a part of a build tool, like [Maven][7]{:target="_blank"}. 
 
@@ -154,7 +154,7 @@ A short explanation for the script:
 5. add some namespaces to ignore some strings (`grep` with a `-v` option)
 
 ## SonarQube
-Last but not least, you might want to load your code for further analysis to [SonarQube][8]{:target="_blank"}. This is an extremely powerful and free tool for doing the static analysis of your code. Normally, you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]{:target="_blank"}. However, there might be some cases when you might want to load this data manually, via a command line.
+Last but not least, you might want to load your code for further analysis to [SonarQube][8]{:target="_blank"}. This is an extremely powerful and free tool for doing the static analysis of your code. Normally, you would do that via a plug-in in your continuous integration (CI) software, like [Jenkins][9]{:target="_blank"}. However, there might be some cases when you might want to load this data manually, via a command-line.
 
 To load the code to SonarQube you will first need to add a property file in the root directory of each module. It might look like this:
 
@@ -173,7 +173,7 @@ Then you will need to install and run [SonarQube Scanner][10]{:target="_blank"} 
 sonar-scanner
 {% endhighlight %}
 
-As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want quick peek on how your project is doing, you can download and boot up as a [Docker image][11]{:target="_blank"} in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database this SonarQube image uses out of the box should not be used for anything other than testing.
+As a **_bonus_** feature, I might also suggest that if you don't have time setting up SonarQube on a separate machine, but want  to take a quick peek on how your project is doing, you can download and boot it up as a [Docker image][11]{:target="_blank"} in no time, and later decide whether you want to create a dedicated machine for running SonarQube, or keep it as it is. Just remember that the database the SonarQube image uses out of the box should not be used for anything other than testing.
 
 ---
 

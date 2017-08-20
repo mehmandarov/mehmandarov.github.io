@@ -31,19 +31,19 @@ _What makes a Maven project good to work with and easy to maintain? There are fi
 
 [Apache Maven][18] is a build automation tool used primarily for Java projects. It has been around for a while, and it does not seem to be going anywhere anytime soon (whether some of you like it or not). Recently, it has been confirmed yet again, this time in ZeroTurnaround's [Java Tools and Technologies Landscape Report 2016][1] (see the _Build Tools_ section).
 
-The good thing about Maven is that you can do almost anything with it and its plugins. With such a great ecosystem of plugins, able to do nearly anything, one might wonder where to begin when setting up a new Maven project, or improving your old one.
+The good thing about Maven is that you can do almost anything with it and its plugins. With such a great ecosystem of plugins, able to do nearly anything, one might wonder where to begin when setting up a new Maven project or improving your old one.
 
 I usually like to think of five main categories – or pillars – that we will be looking into in this post. Each category will have a set of example plugins that are meant to serve merely as a starting point. 
 
-In this post I will assume that you have some experience with build tools in general, and Maven in particular.
+In this post, I will assume that you have some experience with build tools in general and Maven in particular.
 
 ---
 
 ## 1. Technical Aspects
 
-First of all, you would like to make sure that all the technical stuff is in place. You might want to automate the packaging, the checks if the project is running latest version of all artifacts, that all the dependencies are met, and that the unused dependencies are removed. You might even want to define your own rules for all the things that cause troubles, or just simply annoy you down the line, making the build fail if they are not met. 
+First of all, you would like to make sure that all the technical stuff is in place. You might want to automate the packaging, the checks if the project is running the latest version of all artifacts, that all the dependencies are met, and that the unused dependencies are removed. You might even want to define your own rules for all the things that cause troubles, or just simply annoy you down the line, making the build fail if they are not met. 
 
-With all that automation in place you will be getting predictable results and nice packaging from the first day of the project.
+With all that automation in place, you will be getting predictable results and nice packaging from the first day of the project.
 
 Some of the plugins that should be mentioned here:
 
@@ -58,7 +58,7 @@ Some of the plugins that should be mentioned here:
 
 With all the technical stuff out of the way, we might want to make sure that the legal side is taken care of as well. 
 
-Yes, I know, it might be less fun thinking about licenses than writing code, but it is still something that has to be done. You still have to release your code under some kind of license, and you will have to make sure that the third-party licenses do not violate your own licensing. So, why not leaving that job to a plugin?
+Yes, I know, it might be less fun thinking about licenses than writing code, but it is still something that has to be done. You still have to release your code under some kind of license, and you will have to make sure that the third-party licenses do not violate your own licensing. So, why not leave that job to a plugin?
 
 The following plugin will manage the license of a maven project and its dependencies; it will also update file headers, download dependency licenses, check third-party licenses, etc.
 
@@ -68,7 +68,7 @@ The following plugin will manage the license of a maven project and its dependen
 
 ## 3. Rapid Development
 
-Now, back to coding. Or even better – to seeing the results of your hard work. Chances are that you will be needing some kind of web or application server for running your code, and you want to able to deploy to that server in no time. Yet another kind of plugins that will be helping you from the very first day of the project. 
+Now, back to coding. Or even better – to seeing the results of your hard work. The chances are that you will need some kind of web or application server for running your code, and you want to able to deploy to that server in no time. Another kind of plugins that will be helping you from the very first day of the project. 
 
 Some of the plugins that can be mentioned here:
 
@@ -81,9 +81,9 @@ Some of the plugins that can be mentioned here:
 
 ## 4. Documentation
 
-Every decent project must also be properly documented. However, this is something that developers might postpone until the end. Well, no more! These kind of plugins will help you to get started early, and will help you to produce some beautiful (_maybe?_) and maintainable docs.
+Every decent project must also be properly documented. However, this is something that developers might postpone until the end. Well, no more! This kind of plugins will help you to get started early and will help you to produce some beautiful (_maybe?_) and maintainable docs.
 
-You might even consider coupling these with some rules in the Enforcer plugin, but tread carefully as too many and too strict rules can, and usually do, backfire.
+You might even consider coupling these with some rules in the Enforcer plugin, but tread carefully as too many, and too strict rules can, and usually do, backfire.
 
 * **[Site][10] plugin**
 * **[Asciidoctor][11] plugin**
@@ -92,7 +92,7 @@ You might even consider coupling these with some rules in the Enforcer plugin, b
 
 ## 5. Testing and QA
 
-By now, your code should be looking great, with all the right licenses and up and running in no time. So, how about squashing some [virtual] bugs? The list below might help you setting up a proper QA environment and fixing bugs before the come crawling to your production servers.
+By now, your code should be looking great, with all the right licenses, and up and running in no time. So, how about squashing some [virtual] bugs? The list below might help you setting up a proper QA environment and fixing bugs before the come crawling to your production servers.
 
 * **[Surefire][12] plugin** 
 * **[Failsafe][13] plugin** 

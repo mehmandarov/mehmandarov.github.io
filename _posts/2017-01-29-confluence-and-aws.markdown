@@ -24,7 +24,7 @@ _How do you automate a job without setting up a dedicated machine?_
 
 ---
 
-Some mundane tasks can easily be automated. In my case, I needed something that could post to our Confluence instance at specific time every week. This is because  we use blog posts in Confluence for announcing our weekly volunteer meetings and as an informal attendance management.
+Some mundane tasks can easily be automated. In my case, I needed something that could post to our Confluence instance at a specific time every week. This is because we use blog posts in Confluence for announcing our weekly volunteer meetings and as a simple attendance management.
 
 ---
 
@@ -88,7 +88,7 @@ The script uses basic authentication to post the content and, if successful, ret
 
 Now we are one step closer to automation. The script works, and we can post content with a simple push of a button. What now?
 
-Well, now I needed something to run that script, and something to trigger that action. The trigger is the time as I wanted to run our script weekly, but first I needed to deploy our script to the Cloud. Scheduling and triggers would come later.
+Well, now I needed something to run that script and something to trigger that action. The trigger is the time as I wanted to run our script weekly, but first I needed to deploy our script to the Cloud. Scheduling and triggers would come later.
 
 Since we had some infrastructure on AWS already, I decided to deploy the script on the same platform. I wanted to deploy it as a simple stand-alone function in the Cloud – in AWS world it is called a [Lambda function][4]{:target="_blank"}.
 
@@ -157,11 +157,11 @@ And we are ready to deploy to AWS! Start with creating a new Lambda Function and
 
 ![Start with selecting a blueprint] [6]
 
-I didn't choose any triggers for now and continued to the configuration page. When presented with function configuration you need to give it a name, description, runtime, and a .zip file with the code. At the end you will need to define a handler (which will typically be ```filename.function_name```), and a role.
+I didn't choose any triggers for now and continued to the configuration page. When presented with function configuration you need to give it a name, description, runtime, and a .zip file with the code. At the end, you will need to define a handler (which will typically be ```filename.function_name```), and a role.
 
 ![Fill out the rest of info] [7]
 
-At the end of the wizard you can run it manually by pressing Test button. If you did all the steps above, this should now create a new post on your Confluence. Congratulations, you have now set up a stand-alone function in the Cloud!
+At the end of the wizard, you can run it manually by pressing the Test button. If you did all the steps above, this should now create a new post on your Confluence. Congratulations, you have now set up a stand-alone function in the Cloud!
 
 ---
 
@@ -193,6 +193,5 @@ Now you (and I) have a function that is scheduled to run weekly and does not req
 [8]:  {{ site.url }}/assets/images/posts-images/2017-01-29-confluence-and-aws_screen3.png
 [9]:  http://docs.aws.amazon.com/lambda/latest/dg/with-scheduled-events.html
 [10]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html
-
 
 

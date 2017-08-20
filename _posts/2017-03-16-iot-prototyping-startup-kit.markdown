@@ -23,15 +23,15 @@ _How to get started prototyping Internet of Things (IoT) solutions and why shoul
 
 ## Motivation
 
-Playing around with Internet of Things (IoT) devices provides several advantages. Apart from the obvious ability to easily prototype systems tailored for your specific needs, it can also give you a more engaging way to gain insight into the tools and infrastructure that usually comes with IoT devices, and is relevant for most of the modern developers:
+Playing around with Internet of Things (IoT) devices provides several advantages. Apart from the obvious ability to easily prototype systems tailored to your specific needs, it can also give you a more engaging way to gain insight into the tools and infrastructure that usually comes with IoT devices, and is relevant for most of the modern developers:
 
 * Cloud
 * Distributed systems
 * Data analysis
-* Data visualisation
+* Data visualization
 * Machine learning and prediction models
 
-This post is meant to give you a simple and minimal set-up to get you started playing around with IoT. I would like to show you just a few devices I have used and provide you with the code examples for them.
+This post is meant to give you a simple and minimal set-up to get you started playing around with IoT. I would like to show you just a few devices I have used and to provide you with the code examples for them.
 
 ---
 
@@ -43,7 +43,7 @@ First, we will need something to orchestrate the events, collect the data and co
 In my case, it is a [Raspberry Pi 2 Model B][1] with Wifi and Bluetooth 4.0 (BTLE) adapters. The Pi will be running Raspbian – a computer operating system, based on Debian (Linux).
 
 ### Sensors
-Now we need some sensors. It can be anything – sensors connected directly to the Raspberry Pis GPIO pins, or separate sensors that are able to deliver information over the main machine for collection and processing. 
+Now we need some sensors. It can be anything – sensors connected directly to the Raspberry Pis GPIO pins, or separate sensors that can deliver information over the main machine for collection and processing. 
 
 I have good experience using [SensorTag][2] from Texas Instruments. It uses Bluetooth Low Energy for communication and offers quite a few sensors and hardware buttons, such as:
 
@@ -51,7 +51,7 @@ I have good experience using [SensorTag][2] from Texas Instruments. It uses Blue
 * Ambient Light Sensor
 * Humidity Sensor
 * Barometric Pressure Sensor
-* 9-axis Motion Tracking Device – Accelerometer, Gyroscope and Compass
+* 9-axis Motion Tracking Device – Accelerometer, Gyroscope, and Compass
 * Magnet Sensor
 * Hardware buttons
 
@@ -78,12 +78,12 @@ Previously, I have also used devices like Zumo robots and drones:
 * [Zumo robots][9]
 * [Parrot drones][10]
 
-Just keep on adding devices, sensors and components as you wish. Sky is the limit!
+Just keep on adding devices, sensors, and components as you wish. Sky is the limit!
 
 ---
 
 ## Now what?
-Now that you have connected a bunch of sensors and started collecting some sensor data, we might like to send the data to the cloud, visualize it, or use some machine learning and prediction techniques on that data. Here are some ideas that might help you getting started:
+Now that you have connected a bunch of sensors and started collecting some sensor data, we might like to send the data to the cloud, visualize it, or use some machine learning and prediction techniques on that data. Here are some ideas that might help you get started:
 
 * [Google Firebase][5]: A simple solution for storage and publishing of the data.
 * [Mashape.com][6]: A list of different APIs, most of which are available to free, that might give you some ideas on how you can use your data.

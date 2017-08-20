@@ -25,11 +25,11 @@ _Image recognition made simple. How to recognise a specific object from a camera
 
 ## The Challenge
 
-This week I have been given a challenge to suggest a solution to the following problem:
+This week I have been given the challenge to suggest a solution to the following problem:
 
 > *"Given a simple computer, like a Raspberry Pi, a camera and a bird feeder, create a system that can identify the birds feeding there throughout the day."*
 
-Since the question was more of a theoretical kind, I decided to limit this post to introducing the building blocks and giving an explanation about how you would typically build a system like that.
+Since the question was more of a theoretical kind, I decided to limit this post to introducing the building blocks and giving an explanation of how you would typically build a system like that.
 
 Recognising objects is a pretty common task these days, and it has been solved in quite a few ways by different approaches. Let's have a look at how this works.
 
@@ -62,7 +62,7 @@ By now, you should know a bit about the theory. So, let's have a quick look into
 
 > _**TL;DR**_ The way this works, is that you feed the model with quite a few pictures of an object, and the similar amount of images without that object.
 
-Say you want to use the model to recognise birds outside your house in Norway. A good starting point would be to get a list of the typical species you are most likely to see in your backyard and collect as many pictures of each type as possible. 
+Say you want to use the model to recognize birds outside your house in Norway. A good starting point would be to get a list of the typical species you are most likely to see in your backyard and collect as many pictures of each type as possible. 
 
 ![Your own model in action][12]{: class="bigger-image" }
 <figcaption class = "caption">Your trained model in action.</figcaption>
@@ -70,11 +70,11 @@ Say you want to use the model to recognise birds outside your house in Norway. A
 Here is what you can do:
 
 1. Start by looking at [Wikipedia][7]{:target="_blank"} for a list of the Norwegian birds, or [Norwegian Encyclopaedia][8]{:target="_blank"} (*in Norwegian*).
-2. Search the web for the images of each bird type. You might want to automate that task, and make sure you are picking images with the right copyright permissions.
+2. Search the web for the images of each bird type. You might want to automate that task and make sure you are picking images with the right copyright permissions.
 3. Use those images to train your model.
 4. Set up your Raspberry Pi with a camera and the bird feeder, and get ready to identify. You might want to optimise the software not to do the image classification all the time, but only when movement is detected. 
 
-*Pro tip:* It might also be a bit challenging to take good picture of our feathered friends, so make sure your camera is well-placed, and the feeder is in a well-lit location. Obviously, without disturbing the wildlife.
+*Pro tip:* It might also be a bit challenging to take a good picture of our feathered friends, so make sure your camera is well-placed, and the feeder is in a well-lit location. Obviously, without disturbing the wildlife.
 
 In case you wonder if similar systems have been implemented, or if it is even possible. The answer is yes. I will provide you with some links to inspire for further reading:
 
