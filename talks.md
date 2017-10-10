@@ -7,20 +7,22 @@ layout: page
 
 ### 2017
 
-|--------------------------+-------------------+----------------+----------------|
-|Conference                |Country, City      |Date            |Spoke / Inolved |
-|:-------------------------+:------------------+:---------------+:---------------|
-|JavaOne 2016              |USA, San Francisco |1-5 Oct 2017    |SPOKE           |
-|JUG Hamburg               |Germany, Hamburg   |21 Sept 2017    |SPOKE           |
-|JavaZone 2017             |Norway, Oslo       |13–14 Sept 2017 |INVOLVED        |
-|JBCNConf 2017             |Spain, Barcelona   |19–21 Jun 2017  |SPOKE           |
-|DevTalks Bucharest 2017   |Romania, Bucharest |8 Jun 2017      |SPOKE           |
-|DevDays Vilnius 2017      |Lithuania, Vilnius |17–19 May 2017  |SPOKE           |
-|Riga Dev Days 2017        |Latvia, Riga       |15–17 May 2017  |SPOKE           |
-|JavaLand 2017             |Germany, Brühl     |28–30 Mar 2017  |SPOKE           |
-|Booster 2017              |Norway, Bergen     |15–17 Mar 2017  |SPOKE           |
-|Arctic IoT Challenge 2017 |Norway, Oslo       |9–12 Mar 2017   |INVOLVED SPOKE  |
-|--------------------------+-------------------+----------------+----------------|
+|--------------------------+-------------------+----------------+-------------------|
+|Conference                |Country, City      |Date            |Spoke / Inolved    |
+|:-------------------------+:------------------+:---------------+:------------------|
+|JavaDays Ukraine          |Ukraine, Kyiv      |4-5 Nov 2017    |SPOKE              |
+|Voxxed Days Belgrade 2017 |Serbia, Belgrade   |19-20 Oct 2017  |SPOKE              |
+|JavaOne 2017              |USA, San Francisco |1-5 Oct 2017    |SPOKE              |
+|JUG Hamburg               |Germany, Hamburg   |21 Sept 2017    |SPOKE              |
+|JavaZone 2017             |Norway, Oslo       |13–14 Sept 2017 |INVOLVED (leading) |
+|JBCNConf 2017             |Spain, Barcelona   |19–21 Jun 2017  |SPOKE              |
+|DevTalks Bucharest 2017   |Romania, Bucharest |8 Jun 2017      |SPOKE              |
+|DevDays Vilnius 2017      |Lithuania, Vilnius |17–19 May 2017  |SPOKE              |
+|Riga Dev Days 2017        |Latvia, Riga       |15–17 May 2017  |SPOKE              |
+|JavaLand 2017             |Germany, Brühl     |28–30 Mar 2017  |SPOKE              |
+|Booster 2017              |Norway, Bergen     |15–17 Mar 2017  |SPOKE              |
+|Arctic IoT Challenge 2017 |Norway, Oslo       |9–12 Mar 2017   |INVOLVED SPOKE     |
+|--------------------------+-------------------+----------------+-------------------|
 {:.talkstablestyle}
 
 ### 2016
