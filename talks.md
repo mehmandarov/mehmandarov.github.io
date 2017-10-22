@@ -83,7 +83,7 @@ layout: page
 |--------------+--------------+----------------+-----------------|
 |Conference    |Country, City |Date            |Spoke / Inolved  |
 |:-------------+:-------------+:---------------+:----------------|
-|JavaZone 2013 |Norway, Oslo  |11–12 Sept 2013 |INVOLVED SPOKE   |
+|JavaZone 2013 |Norway, Oslo  |11–12 Sept 2013 | SPOKE           |
 |--------------+--------------+----------------+-----------------|
 {:.talkstablestyle}
 
