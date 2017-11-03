@@ -40,7 +40,7 @@ layout: page
 |[JavaZone][1] 2016                 |Norway, Oslo       |7–8 Sept 2016    |INVOLVED SPOKE  |
 |JBCNConf 2016                      |Spain, Barcelona   |16–18 Jun 2016   |SPOKE           |
 |GeeCon 2016                        |Poland, Krakow     |19 Apr 2016      |SPOKE           |
-|[Tekna][3] Oslo                    |Norway, Oslo       |13 Mar 2016      |SPOKE           |
+|[Tekna][3] event                   |Norway, Oslo       |13 Mar 2016      |SPOKE           |
 |JavaZone Kids March 2016           |Norway, Oslo       |13 Mar 2016      |SPOKE           |
 |OUGN Spring Seminar 2016           |Norway, Oslo       |10–12 Mar 2016   |SPOKE           |
 |JavaLand 2016                      |Germany, Brühl     |8–10 Mar 2016    |SPOKE           |
@@ -92,4 +92,4 @@ layout: page
 
 [1]: https://javazone.no
 [2]: http://ariot.no
-[3]: https://www.tekna.no/en/
+[3]: https://en.wikipedia.org/wiki/Tekna_(Norway)
