@@ -17,7 +17,7 @@ _A brief introduction to ten essential and absolute basic Docker commands to get
 
 - [Getting Started](#getting-started)
 - [Commands, Files, and Folders Inside a Container](#commands-files-and-folders-inside-a-container)
-- [Cleanup](#Cleanup)
+- [Cleanup](#cleanup)
 
 ---
 
