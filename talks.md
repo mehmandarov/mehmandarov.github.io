@@ -10,6 +10,7 @@ layout: page
 |-------------------------------+-------------------+----------------+-------------------|
 |Conference                     |Country, City      |Date            |Spoke / Inolved    |
 |:------------------------------+:------------------+:---------------+:------------------|
+|[Tekna][3] event               |Norway, Oslo       |21 Nov 2017     |SPOKE              |
 |JavaDays Ukraine               |Ukraine, Kyiv      |4-5 Nov 2017    |SPOKE              |
 |Voxxed Days Belgrade           |Serbia, Belgrade   |19-20 Oct 2017  |SPOKE              |
 |JavaOne 2017                   |USA, San Francisco |1-5 Oct 2017    |SPOKE              |
