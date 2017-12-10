@@ -62,7 +62,7 @@ While those things alone don't have to mean anything, and are minor issues indiv
 In addition to that, there are also some more specific parts that will be listed as sub-sections below.
 
 #### The third-party libraries
-The role of the third party libraries and their use is often forgotten and neglected when considering code and system quality. This is quite unfortunate as this is the part of the code that you might not be able to patch easily, and is harder to maintain compared to your own codebase. Here are some simple questions might help with getting a better grip on third-party libraries:
+The role of the third party libraries and their use is often forgotten and neglected when considering code and system quality. This is quite unfortunate as this is the part of the code that you might not be able to patch easily, and is harder to maintain compared to your own codebase. Here are some simple questions that might help with getting a better grip on third-party libraries:
 
 * Do you keep track of your third-party libraries?
 * Do you regularly check if there are known issues or vulnerabilities in them?
@@ -71,7 +71,7 @@ The role of the third party libraries and their use is often forgotten and negle
 * Are the libraries you are using compatible with each other?
 * Do the libraries you are using have appropriate licenses that are compatible with your system? _(This also applies to the open source software licenses.)_
 
-The issues and vulnerabilities are being found and patched all the time. As an example for this, let me point to the Google's [OSS-Fuzz Project][5] that has found [numerous security vulnerabilities][4] in several critical open source projects. Unfortunately, even though many people are aware of the security issues in software in general, the library updates still often tend to be forgotten.
+Issues and vulnerabilities are being found and patched all the time. As an example for this, let me point to Google's [OSS-Fuzz Project][5] that has found [numerous security vulnerabilities][4] in several critical open source projects. Unfortunately, even though many people are aware of the security issues in software in general, the library updates still often tend to be forgotten.
 
 It is also worth noting that while most of the issues on my list above are security related, the last one might be of a legal sort, and probably is the most neglected of the issues listed. 
 
@@ -96,7 +96,7 @@ Stand-alone tools for code analysis:
 * [PMD][6]
 * [FindBugs][7]
 
-Maven plugins to consider (more about plugins in my [previous post][9]:
+Maven plugins to consider (more about plugins in my [previous post][9]):
 * Assembly
 * Versions
 * Dependency
@@ -155,7 +155,7 @@ No matter how obvious it might seem, it is still important to note that one shou
 
 There are several challenges connected with having and maintaining the good code quality. The first challenge is that a good code quality is not something you can achieve overnight. It takes time and energy to achieve that and it is a continuous process. You will need some tools, techniques, and methodology to prevail, and it will probably be easier to introduce all that from the beginning of a project.
 
-The second challenge would be that it might be hard to convince the stakeholders of the project to invest time and resources into something that does not bring any visible improvements to the table – thing like new feature and bug fixes are more likely to get prioritized over something that cannot be easily measured.
+The second challenge would be that it might be hard to convince the stakeholders of the project to invest time and resources into something that does not bring any visible improvements to the table – things like new features and bug fixes are more likely to get prioritized over something that cannot be easily measured.
 
 Actually, while presenting on this topic at JavaOne 2017 in San Francisco, several of the attendees asked me about the ways of getting to a beautiful nightmare-free code and infrastructure, and the ways of convincing the stakeholders that this is the way to go. Unfortunately, there is no one simple solution to this, and the most valuable thing, in this case, would be to show the real value of the good quality code.
 
