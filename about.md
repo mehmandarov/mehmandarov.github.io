@@ -8,7 +8,7 @@ layout: page
 
 ## Rustam Mehmandarov
 
-_**Passionate computer scientist. Leader of [JavaZone][1]. During the past years, heavily involved in the Norwegian Java User Group – [javaBin][6], being the leader, second-in-command, and a board member. One of the founders and organizers of [Arctic IoT Challenge][4]. Principal engineer, and a competency network coordinator for IT architecture and integration at work. Course instructor. Speaker.**_
+_**Passionate computer scientist. Leader of [JavaZone][1]. During the past years, heavily involved in the Norwegian Java User Group – [javaBin][6], being the leader, second-in-command, and a board member. One of the founders and organizers of [Arctic IoT Challenge][4]. Principal engineer, and a competency network coordinator for IT architecture and integration at work. Community builder. Course instructor. Speaker. Java Champion. **_
 
 ---
 
