@@ -5,7 +5,7 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 43 events in 12 countries._
+#### _Spoken or otherwise involved in 46 events in 12 countries._
 🇧🇾   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇸   🇪🇸   🇺🇸   🇺🇦
 
 ### 2017
@@ -25,6 +25,9 @@ layout: page
 |Riga Dev Days 2017             |Latvia, Riga       |15–17 May 2017  |SPOKE              |
 |JavaLand 2017                  |Germany, Brühl     |28–30 Mar 2017  |SPOKE              |
 |Booster 2017                   |Norway, Bergen     |15–17 Mar 2017  |SPOKE              |
+|JavaZone Academy Oslo          |Norway, Oslo       |14 Feb 2017     |SPOKE              |
+|JavaZone Academy Trondheim     |Norway, Trondheim  |15 Feb 2017     |SPOKE              |
+|JavaZone Academy Bergen        |Norway, Bergen     |16 Feb 2017     |SPOKE              |
 |[Arctic IoT Challenge][2] 2017 |Norway, Oslo       |9–12 Mar 2017   |INVOLVED SPOKE     |
 |-------------------------------+-------------------+----------------+-------------------|
 {:.talkstablestyle}
