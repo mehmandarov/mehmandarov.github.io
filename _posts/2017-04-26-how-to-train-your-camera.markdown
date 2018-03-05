@@ -103,6 +103,6 @@ Now, try putting it all together, and let me know how it goes!
 [11]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_1.png
 [12]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_2.png
 [13]: https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
-[14]: http://www.bitfusion.io/2016/08/31/training-a-bird-classifier-with-tensorflow-and-tflearn/
+[14]: https://web.archive.org/web/20161205073600/http://www.bitfusion.io:80/2016/08/31/training-a-bird-classifier-with-tensorflow-and-tflearn/
 [15]: https://www.oreilly.com/learning/dive-into-tensorflow-with-linux
 [16]: {{ site.url }}/hvordan-laere-opp-ditt-eget-kamera/
