@@ -5,8 +5,17 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 46 events in 12 countries._
+#### _Spoken or otherwise involved in 47 events in 12 countries._
 🇧🇾   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇸   🇪🇸   🇺🇸   🇺🇦
+
+### 2018
+
+|-------------------------------+-------------------+----------------+-------------------|
+|Conference                     |Country, City      |Date            |Spoke / Inolved    |
+|:------------------------------+:------------------+:---------------+:------------------|
+|Voxxed Days Bucharest          |Romania, Bucharest |22-23 Mar 2018  |SPOKE              |
+|-------------------------------+-------------------+----------------+-------------------|
+{:.talkstablestyle}
 
 ### 2017
 
