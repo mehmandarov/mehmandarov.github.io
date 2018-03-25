@@ -83,4 +83,4 @@ Least but not last, I would like to thank the company, and especially the compan
 [4]:https://lovdata.no/dokument/NL/lov/2000-04-14-31
 [5]:https://www.datatilsynet.no/en/regulations-and-tools/regulations-and-decisions/norwegian-privacy-law/personal-data-act/
 [6]:http://www.eugdpr.org/
-[7]:https://www.skatteetaten.no/en/rates/grunnbelopet-i-folketrygden/
+[7]:https://www.skatteetaten.no/en/rates/national-insurance-scheme-basic-amount/
