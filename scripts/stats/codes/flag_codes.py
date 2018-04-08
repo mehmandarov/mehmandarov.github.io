@@ -216,6 +216,7 @@ country_codes = {
     'Réunion': 'RE',
     'Romania': 'RO',
     'Russian Federation': 'RU',
+    'Russia': 'RU',
     'Rwanda': 'RW',
     'Saint Barthélemy': 'BL',
     'Saint Helena, Ascension and Tristan da Cunha': 'SH',
