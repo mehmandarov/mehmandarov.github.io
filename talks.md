@@ -5,8 +5,8 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 49 events in 13 countries._
-🇧🇾   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇺🇸   🇺🇦
+#### _Spoken or otherwise involved in 50 events in 14 countries._
+🇧🇾   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇹🇷   🇺🇸   🇺🇦
 
 ### 2018
 
@@ -18,6 +18,8 @@ layout: page
 |Moscow JUG meeting             |Russia, Moscow     |5 Apr 2018      |SPOKE              |
 |-------------------------------+-------------------+----------------+-------------------|
 |JPoint                         |Russia, Moscow     |6-7 Apr 2018    |SPOKE              |
+|-------------------------------+-------------------+----------------+-------------------|
+|Java Day Istanbul              |Turkey, Istanbul   |5 May 2018      |SPOKE              |
 |-------------------------------+-------------------+----------------+-------------------|
 {:.talkstablestyle}
 
