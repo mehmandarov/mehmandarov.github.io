@@ -14,7 +14,7 @@ layout: page
 |Conference                     |Country, City      |Date            |Spoke / Inolved        |
 |:------------------------------+:------------------+:---------------+:----------------------|
 |Oracle Code One 2018           |USA, San Francisco |22-25 Oct 2018  |SPOKE                  |
-|Heapcon                        |Serbia, Belgrade   |18-19 Oct 2017  |SPOKE                  |
+|Heapcon                        |Serbia, Belgrade   |18-19 Oct 2018  |SPOKE                  |
 |[JavaZone][1]                  |Norway, Oslo       |12-13 Sept 2018 |SPOKE                  |
 |javaBin Stavanger, JUG meeting |Norway, Stavanger  |22 Aug 2018     |SPOKE                  |
 |JBCNConf                       |Spain, Barcelona   |11-13 June 2018 |SPOKE                  |
