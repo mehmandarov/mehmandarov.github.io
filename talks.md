@@ -5,7 +5,7 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 53 events in 15 countries._
+#### _Spoken or otherwise involved in 57 events in 15 countries._
 🇧🇾   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇹🇷   🇺🇸   🇺🇦
 
 ### 2018
@@ -13,18 +13,16 @@ layout: page
 |-------------------------------+-------------------+----------------+-----------------------|
 |Conference                     |Country, City      |Date            |Spoke / Inolved        |
 |:------------------------------+:------------------+:---------------+:----------------------|
+|Oracle Code One 2018           |USA, San Francisco |22-25 Oct 2018  |SPOKE                  |
+|Heapcon                        |Serbia, Belgrade   |18-19 Oct 2017  |SPOKE                  |
+|[JavaZone][1]                  |Norway, Oslo       |12-13 Sept 2018 |SPOKE                  |
+|javaBin Stavanger, JUG meeting |Norway, Stavanger  |22 Aug 2018     |SPOKE                  |
 |JBCNConf                       |Spain, Barcelona   |11-13 June 2018 |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
 |GeekOut                        |Estonia, Tallinn   |7-8 June 2018   |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
 |Riga Dev Days                  |Latvia, Riga       |29-31 May 2018  |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
 |Java Day Istanbul              |Turkey, Istanbul   |5 May 2018      |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
 |JPoint                         |Russia, Moscow     |6-7 Apr 2018    |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
 |Moscow JUG meeting             |Russia, Moscow     |5 Apr 2018      |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
 |Voxxed Days Bucharest          |Romania, Bucharest |22-23 Mar 2018  |SPOKE                  |
 |-------------------------------+-------------------+----------------+-----------------------|
 {:.talkstablestyle}
