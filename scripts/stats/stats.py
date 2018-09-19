@@ -124,7 +124,7 @@ if __name__ == "__main__":
     current_year = latest_year
 
     loader = ptr.TableUrlLoader(
-        "http://localhost:4000/talks/",
+        "http://mehmandarov.com/talks/",
         "html")
 
     writer = ptw.TableWriterFactory.create_from_format_name("md")
