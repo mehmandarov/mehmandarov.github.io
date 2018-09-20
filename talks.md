@@ -5,7 +5,7 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 57 events in 15 countries._
+#### _Spoken or otherwise involved in 58 events in 15 countries._
 🇧🇾   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇹🇷   🇺🇸   🇺🇦
 
 ### 2018
@@ -15,7 +15,8 @@ layout: page
 |:------------------------------+:------------------+:---------------+:----------------------|
 |Oracle Code One 2018           |USA, San Francisco |22-25 Oct 2018  |SPOKE                  |
 |Heapcon                        |Serbia, Belgrade   |18-19 Oct 2018  |SPOKE                  |
-|[JavaZone][1]                  |Norway, Oslo       |12-13 Sept 2018 |SPOKE                  |
+|[JavaZone][1]                  |Norway, Oslo       |12-13 Sept 2018 |INVOLVED LEADING SPOKE |
+|JavaZone Kids                  |Norway, Oslo       |9 Sept 2015     |SPOKE                  |
 |javaBin Stavanger, JUG meeting |Norway, Stavanger  |22 Aug 2018     |SPOKE                  |
 |JBCNConf                       |Spain, Barcelona   |11-13 June 2018 |SPOKE                  |
 |GeekOut                        |Estonia, Tallinn   |7-8 June 2018   |SPOKE                  |
