@@ -5,7 +5,7 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 60 events in 15 countries._
+#### _Spoken or otherwise involved in 61 events in 15 countries._
 🇧🇾   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇹🇷   🇺🇸   🇺🇦
 
 ### 2018
@@ -13,6 +13,7 @@ layout: page
 |-------------------------------+-------------------+----------------+-----------------------|
 |Conference                     |Country, City      |Date            |Spoke / Inolved        |
 |:------------------------------+:------------------+:---------------+:----------------------|
+|Madrid JUG, JUG meeting        |Spain, Madrid      |4 Dec 2018      |SPOKE                  |
 |javaBin Trondheim, JUG meeting |Norway, Trondheim  |28 Nov 2018     |SPOKE                  |
 |Devoxx Ukraine                 |Ukraine, Kyiv      |23-24 Nov 2018  |SPOKE                  |
 |Oracle Code One 2018           |USA, San Francisco |22-25 Oct 2018  |SPOKE                  |
