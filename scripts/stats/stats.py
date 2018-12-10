@@ -134,7 +134,7 @@ if __name__ == "__main__":
         country_pr_year = []
         city_pr_year = []
 
-        for record in table_data.record_list:
+        for record in table_data.row_list:
             country_city_pr_year.append(record[1])
             parsed = record[1].split(",")
             country_pr_year.append(parsed[0])
