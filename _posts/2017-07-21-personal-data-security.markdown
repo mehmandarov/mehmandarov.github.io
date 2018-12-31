@@ -59,7 +59,7 @@ Well, of course, bugs happen, so I don't want to jump into conclusions about the
 However, when we provide data to a company, we expect them to handle it with integrity and care, and not leak personal data to the outside world. While phone number might be considered a low-risk data to be leaked for most of us, it might still be quite sensitive for some groups of people, like some high-profile politicians, celebrities, or anybody else how might have a wish, or even a need, to hide their contact information.
 
 ## Norwegian Personal Data Act (Personopplysningsloven)
-Also, according to The Norwegian Data Protection Authority (Datatilsynet), any information that can be used to identify a person is [considered personal][3]{:target="_blank"}. Further, [Personal Data Act][5]{:target="_blank"} chapter 2, section 13 _(Norwegian: [Personopplysningsloven][4]{:target="_blank"})_ requires that _"the processor shall by means of planned, systematic measures ensure satisfactory data security with regard to confidentiality, integrity, and accessibility in connection with the processing of personal data"_.
+Also, according to The Norwegian Data Protection Authority (Datatilsynet), any information that can be used to identify a person is [considered personal][3]{:target="_blank"}. Further, [Personal Data Act][5]{:target="_blank"} chapter 2, section 13 _(Norwegian: [Personopplysningsloven] from 2000)_ requires that _"the processor shall by means of planned, systematic measures ensure satisfactory data security with regard to confidentiality, integrity, and accessibility in connection with the processing of personal data"_.
 
 Further, according to the Personal Data Act section 46, The Norwegian Data Protection Authority (Datatilsynet) may impose a fee for violations of the act, or the regulations, with an amount up to ten times the [basic amount][7]{:target="_blank"} of the National Insurance, equivalent to 925,760 NOK (as of May 2017).
 
@@ -80,7 +80,6 @@ Least but not last, I would like to thank the company, and especially the compan
 [1]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_1.png
 [2]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_2.png
 [3]:https://www.datatilsynet.no/om-personvern/personopplysninger/
-[4]:https://lovdata.no/dokument/NL/lov/2000-04-14-31
 [5]:http://app.uio.no/ub/ujur/oversatte-lover/data/lov-20000414-031-eng.pdf
 [6]:http://www.eugdpr.org/
 [7]:https://www.skatteetaten.no/en/rates/national-insurance-scheme-basic-amount/
