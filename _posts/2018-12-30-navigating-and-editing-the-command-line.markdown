@@ -106,7 +106,7 @@ First, the most obvious – you can always find more gems in the `man` pages for
 $ man bash
 {% endhighlight %}
 
-Now, over to a bit more fun. Since we have been talking about the command line and shells it is worth mentioning some less-known (and sometimes _"as a curiosity"_) shortcuts in another terminal – Command Prompt `cmd.exe`:
+Now, over to something different. Since we have been talking about the command line and shells it is worth mentioning some less-known (and sometimes _"as a curiosity"_) shortcuts in another terminal – Command Prompt, `cmd.exe`:
 
 {% highlight text %}
 Function keys in cmd.exe:
