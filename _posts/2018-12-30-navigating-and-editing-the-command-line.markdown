@@ -13,7 +13,6 @@ category: blog
 star: false
 author: rustam.mehmandarov
 ---
----
 
 _A cheat sheet for moving around and editing your command line – Bash Edition._
 
