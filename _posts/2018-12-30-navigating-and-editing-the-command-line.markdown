@@ -26,6 +26,8 @@ Using the command line can simplify and even automate many of the operations we 
 
 I also have created simple graphics to illustrate some of the main shortcuts listed below. This (hi-res) image can be printed for future reference.
 
+_Note:_ Please note that all commands containing `ALT` combinations might not work depending on your system configuration, and most definitely not work on MacOS. Normally, it is because these combinations are mapped to something else. However, you can still use the same shortcuts simply by replacing `ALT` with `ESC`. 
+
 ![Navigating and Editing the Command Line (Bash Edition)] [1]
 <figcaption class = "caption"> Navigating and Editing the Command Line (Bash Edition)</figcaption>
 
