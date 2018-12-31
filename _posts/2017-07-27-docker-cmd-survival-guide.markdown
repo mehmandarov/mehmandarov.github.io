@@ -6,6 +6,7 @@ image: '/assets/images/posts-images/street-art-container_small.jpeg'
 description:
 tag:
 - docker
+- command line
 - field notes
 - english
 category: blog
