@@ -100,7 +100,7 @@ ALT+c / ESC+c  Capitalize the character under the cursor position
 
 ## Bonus
 
-First, the most obvious – you can always see the man pages for bash both in your terminal and online (for instance on this [mirror][2]). To view it in your terminal, type:
+First, the most obvious – you can always find more gems in the `man` pages for Bash both in your terminal and online (for instance on this [mirror][2]). To view it in your terminal, type:
 
 {% highlight bash %}
 $ man bash
