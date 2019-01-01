@@ -21,9 +21,9 @@ _Disposable containers may sound like a tautology. However, here we will be look
 
 This should not come as a surprise that the whole idea of using a container is something that we use to contain our application and we dispose of the whole containers when we build a new version of the application or need to upgrade something in the setup. This means that containers are generally having a lifespan of a single version, a pod (if you are running a Kuberntes cluster), or something similar.
 
-However, in this case, I want to show you how to build something that exists for an even shorter period of time and can be used as an alternative to a local setup for building and resting applications locally before pushing it to test, staging, production, etc.
+However, in this case, I want to show you how to build something that exists for an even shorter period of time and can be used as an alternative to a local setup for building and testing applications locally before pushing it to test, staging, production, etc.
 
-In this case, I would like to show you set-up for Jekyll applications, but this can be easily applied to any kind of applications written in any of your favorite languages. Until recently, I have been running a Jekyll installation locally with all dependencies installed on my machine, however, it has been a bit challenging moving between machines and reinstalling operating systems. To simplify the process, I decided to containerize the project. 
+In this case, I would like to show you how to setup Jekyll applications, but this can be easily applied to any kind of applications written in any of your favorite languages. Until recently, I have been running a Jekyll installation locally with all dependencies installed on my machine, however, it has been a bit challenging moving between machines and reinstalling operating systems. To simplify the process, I decided to containerize the project. 
 
 So I wanted the following:
 
