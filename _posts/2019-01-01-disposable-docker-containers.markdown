@@ -51,7 +51,7 @@ So, let's take a closer look at each of the lines:
 1: export JEKYLL_VERSION=3.8
 {% endhighlight %}
 
-* Just setting up versions – a bit of housekeeping. Nothing exciting here.
+Just setting up versions – a bit of housekeeping. Nothing exciting here.
 
 ---
 
@@ -59,6 +59,8 @@ So, let's take a closer look at each of the lines:
 2: docker run --rm --volume="$PWD:/srv/jekyll" \
         -it jekyll/jekyll:$JEKYLL_VERSION jekyll build
 {% endhighlight %}
+
+Here, we build the code and output it to the same disk volume as the source code, i.e. the volume that is shared with my host machine. Now I have the built version on my machine without the hassle of setting up the local build environment. In addition to that, I will be doing some clean-up, by deleting the build container after the build job is finished.
 
 * `--rm` – just execute the command and clean-up (remove the container, file system, etc.)
 * `--volume` – mapping the current directory to `/srv/jekyll` in the container
@@ -74,6 +76,8 @@ So, let's take a closer look at each of the lines:
 3. docker run --name newblog --volume="$PWD:/srv/jekyll" -p 4000:4000 \
         -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
 {% endhighlight %}
+
+This will create another container that will be running our application. Here we will need to add a few other parameters, like mapping the container ports to the ones on the local machine and giving the container a name.
 
 * `--name newblog` – give your container a name
 * `--volume` – mapping the current directory to `/srv/jekyll` in the container
