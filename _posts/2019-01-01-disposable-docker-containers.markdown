@@ -19,7 +19,7 @@ _Disposable containers may sound like a tautology. However, here we will be look
 
 ---
 
-Containers are something that we use to contain our application and we dispose of the whole container when we build a new version of the application or need to upgrade something in the setup. This means that containers are generally having a short lifespan.
+Containers are something that we use to run our applications and, normally, we dispose of the whole container when we build a new version of the application or need to upgrade something in the setup. This means that containers are generally having a short lifespan.
 
 However, in this case, I want to show you how to build something that exists for an even shorter period of time and that can be used as an alternative to a local setup for building and testing applications locally before pushing it to test, staging, production, etc.
 
