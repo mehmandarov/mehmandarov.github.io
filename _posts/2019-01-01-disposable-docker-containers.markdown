@@ -15,22 +15,22 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_Disposable containers may sound like a tautology. However, here we will be looking into – even in the context of the containers – single-use, ephemeral containers that are used for building and testing applications, and disposing of them shortly after._
+_Disposable containers may sound like a tautology. However, here we will be looking into single-use, ephemeral containers – even in the context of the containers – that are used for building and testing applications, and disposing of them shortly after._
 
 ---
 
-This should not come as a surprise that the whole idea of using a container is something that we use to contain our application and we dispose of the whole containers when we build a new version of the application or need to upgrade something in the setup. This means that containers are generally having a lifespan of a single version, a pod (if you are running a Kuberntes cluster), or something similar.
+Containers are something that we use to contain our application and we dispose of the whole container when we build a new version of the application or need to upgrade something in the setup. This means that containers are generally having a short lifespan.
 
-However, in this case, I want to show you how to build something that exists for an even shorter period of time and can be used as an alternative to a local setup for building and testing applications locally before pushing it to test, staging, production, etc.
+However, in this case, I want to show you how to build something that exists for an even shorter period of time and that can be used as an alternative to a local setup for building and testing applications locally before pushing it to test, staging, production, etc.
 
-In this case, I would like to show you how to setup Jekyll applications, but this can be easily applied to any kind of applications written in any of your favorite languages. Until recently, I have been running a Jekyll installation locally with all dependencies installed on my machine, however, it has been a bit challenging moving between machines and reinstalling operating systems. To simplify the process, I decided to containerize the project. 
+In this case, I would like to show you how to setup Jekyll applications, but this can be easily applied to any kind of applications written in any of your favorite languages, like Java or Python. Until recently, I have been running a Jekyll installation locally with all dependencies installed on my machine. However, it has been a bit challenging when moving between machines and reinstalling operating systems. To simplify the process, I decided to containerize the local build and test processes. 
 
-So I wanted the following:
+I wanted the following:
 
-* To build my code from and to the local folder on my host machine
-* Run the application (in this case this blog) from a local folder on my host machine
+* To build my code from and to the local folder on my (host) machine
+* Run the application (in this case this blog) from a local folder on my (host) machine
 * Avoid setting up the environment, or have a minimal and portable setup
-* Avoid environment clean-up – I didn't want all the containers and container images
+* Avoid environment clean-up – I didn't want to hold on to the unnecessary containers and container images
 
 ## _**TL;DR**_: The soultion 
 _**(see next section for the explanation)**_
@@ -51,7 +51,7 @@ So, let's take a closer look at each of the lines:
 1: export JEKYLL_VERSION=3.8
 {% endhighlight %}
 
-Just setting up versions – a bit of housekeeping. Nothing exciting here.
+Just setting up versions that will be used later – a bit of housekeeping. Nothing exciting here.
 
 ---
 
@@ -77,7 +77,7 @@ Here, we build the code and output it to the same disk volume as the source code
         -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
 {% endhighlight %}
 
-This will create another container that will be running our application. Here we will need to add a few other parameters, like mapping the container ports to the ones on the local machine and giving the container a name.
+This will create another container that will be running our application. Here we will need to add a few other parameters – like mapping the container ports to the ports on the local machine and giving the container a name.
 
 * `--name newblog` – give your container a name
 * `--volume` – mapping the current directory to `/srv/jekyll` in the container
