@@ -32,7 +32,7 @@ I wanted the following:
 * Avoid setting up the environment, or have a minimal and portable setup
 * Avoid environment clean-up – I didn't want to hold on to the unnecessary containers and container images
 
-## _**TL;DR**_: The soultion 
+## _**TL;DR**_: The solution 
 _**(see next section for the explanation)**_
 
 {% highlight bash %}
