@@ -23,6 +23,8 @@ Containers are something that we use to run our applications and, normally, we d
 
 However, in this case, I want to show you how to build something that exists for an even shorter period of time and that can be used as an alternative to a local setup for building and testing applications locally before pushing it to test, staging, production, etc.
 
+This is a simplified example of what is being done on a much bigger scale with moving your CI/CD pipelines to such disposable containers, and with libraries like [Testcontainers][2].
+
 In this case, I would like to show you how to setup Jekyll applications, but this can be easily applied to any kind of applications written in any of your favorite languages, like Java or Python. Until recently, I have been running a Jekyll installation locally with all dependencies installed on my machine. However, it has been a bit challenging when moving between machines and reinstalling operating systems. To simplify the process, I decided to containerize the local build and test processes. 
 
 I wanted the following:
@@ -101,7 +103,7 @@ $ docker run --rm --name newblog --volume="$PWD:/srv/jekyll" -p 4000:4000 \
        -it jekyll/jekyll:$JEKYLL_VERSION jekyll serve --watch --drafts
 {% endhighlight %}
 
-
 ---
 
 [1]: https://github.com/envygeeks/jekyll-docker/blob/master/README.md
+[2]: https://www.testcontainers.org/
