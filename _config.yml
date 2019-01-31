@@ -101,6 +101,17 @@ animation: true
 # set timezone
 timezone: Europe/Oslo
 
+# add default values to specific pages or layouts
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      layout: "post"
+    values:
+      # setting all post to not hidden by default, 
+      # can be overridden in the front matter for a specific post
+      hidden: false 
+
 plugins:
   - jekyll-seo-tag
   - jekyll-gist
@@ -117,4 +128,4 @@ compress_html:
         - development
         - stage
 
-exclude: ["travis.sh", "Rakefile", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md"]
+exclude: ["travis.sh", "Rakefile", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor"]
