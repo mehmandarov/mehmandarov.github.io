@@ -123,7 +123,7 @@ A video of a talk I gave about this topic at [JavaZone][17] in Oslo (in Norwegia
 [11]: http://asciidoctor.org/docs/asciidoctor-maven-plugin/
 [12]: http://maven.apache.org/surefire/maven-surefire-plugin/
 [13]: http://maven.apache.org/surefire/maven-failsafe-plugin/
-[14]: http://www.mojohaus.org/sonar-maven-plugin/plugin-info.html
+[14]: http://www.mojohaus.org/sonar-maven-plugin/project-info.html
 [15]: http://gleclaire.github.io/findbugs-maven-plugin/
 [16]: https://maven.apache.org/plugins/maven-pmd-plugin/
 [17]: http://2015.javazone.no/details.html?talk=86734cc36c24b081d399454534248f3aad7062ce30de5aea27de84f80a476269
