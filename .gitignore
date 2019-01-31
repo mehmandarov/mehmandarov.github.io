@@ -6,3 +6,5 @@ _site
 *.pyc
 
 Gemfile.lock
+.bundle
+vendor/
