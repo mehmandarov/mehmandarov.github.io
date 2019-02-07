@@ -102,7 +102,7 @@ En video vi har laget av mine tegninger og en kort forklaring på hvordan dette 
 [1]: http://www.learnopencv.com/image-recognition-and-object-detection-part1/
 [2]: http://www.pyimagesearch.com/2016/06/20/detecting-cats-in-images-with-opencv/
 [3]: https://research.googleblog.com/2016/03/train-your-own-image-classifier-with.html
-[4]: https://www.tensorflow.org/tutorials/image_recognition
+[4]: https://www.tensorflow.org/tutorials/keras/basic_classification
 [5]: http://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 [6]: https://svds.com/tensorflow-image-recognition-raspberry-pi/
 [7]: https://en.wikipedia.org/wiki/List_of_birds_of_Norway
