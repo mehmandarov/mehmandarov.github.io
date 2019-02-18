@@ -2,7 +2,7 @@
 title: "Computers as Movie Superstars"
 layout: post
 date: 2019-02-19 09:01
-image: '/assets/images/posts-images/containers.jpg'
+image: '/assets/images/posts-images/old-camera.jpg'
 description:
 tag:
 - javazone
@@ -12,7 +12,16 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_The untold story of a short movie for a big conference. These are some the lesser-known facts about some of the computers used in Stranger Strings made for JavaZone 2018._
+_The untold story of a short movie for a big conference. You might have seen all the Easter eggs, but I am sure you didn't know this! These are some the lesser-known facts about some of the computers used in Stranger Strings made for JavaZone 2018._
+
+- [The Beginning](#the-beginning)
+- [The New Level](#the-new-level)
+- [Story 1: An Icon of Norwegian IT History](#story-1-an-icon-of-norwegian-it-history)
+- [Story 2: A Machine for 4.300 USD](#story-2-a-machine-for-4300-usd)
+- [Story 3: Two "Portable" Computers](#story-3-two-portable-computers)
+- [Story 4: A Very Special Machine](#story-4-a-very-special-machine)
+- [Stranger Strings: The Movie](#stranger-strings-the-movie)
+
 
 ---
 
@@ -73,7 +82,7 @@ There are quite a few interesting facts connected to [Norsk Data][5]. It was a s
 
 Also, this particular piece of hardware was acquired by the University of Oslo in 1979 for the university's main library located off the new, main campus, [at Drammensveien][3] (Norwegian article). It came with all the cool stuff that might want back them, like the state-of-the-art punch card reader, and it was used to connect the library with a direct line to the rest of the university network.
 
-## Story 2: A Machine for 4.200 USD
+## Story 2: A Machine for 4.300 USD
 ### Atari Mega ST2
 Now, let's talk about Will's machine – an Atari Mega ST2. It was packing an 8 MHz Motorola 68000 processor, had a whopping 2 MB RAM, and 20 MB hard drive.
 
