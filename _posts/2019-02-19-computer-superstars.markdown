@@ -48,7 +48,7 @@ Some of these things were right out in the open, in plain sight, while others we
 
 However, the movie still has something else that was a bit more difficult to notice simply by watching it, and I think it is finally about time to reveal those things as well.
 
-When setting up the set for this movie one of the things we had to do was to find computers from the correct time period, and we needed quite a few of them. So, after asking around on social media, we were able to get hold of a few machines. And what machines!
+When setting up the set for this movie one of the things we had to do was to find computers from the correct time period, and we needed quite a few of them. So, after asking around on social media, we were able to get hold of a few machines. And what machines they were!
 
 ![The Tweet – looking for old computers in Oslo] [7]
 <figcaption class = "caption">The Tweet – looking for old computers in Oslo.</figcaption>
