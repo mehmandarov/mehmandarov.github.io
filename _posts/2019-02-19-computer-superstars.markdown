@@ -121,7 +121,11 @@ IBM XT was one of IBM's first PC models. It came with two floppy drives for 5.25
 
 So, what is so important about this machine, you might ask?
 
-The most interesting thing about this particular machine is that it belonged to [Kristen Nygaard][4]. One can even argue that it had a role in the development of [Simula][2] – the first object-oriented programming language, the language that is considered to have had a strong influence on Java and many other modern object-oriented languages.
+The most interesting thing about this particular machine is that it belonged to [Kristen Nygaard][4] – the co-inventor of object-oriented programming and the programming language Simula, together with [Ole-Johan Dahl][19]. 
+
+[Simula][2] was the first object-oriented programming language and the language that is considered to have had a strong influence on Java and many other modern object-oriented languages.
+
+So, one can argue that this machine, being the office computer of Kristen Nygaard, had a direct role in the development of Simula and work related to it.
 
 ![IBM XT (picture from the movie set). Photo: Rustam Mehmandarov] [14]
 <figcaption class = "caption">IBM XT (picture from the movie set). Photo: Rustam Mehmandarov.</figcaption>
@@ -156,3 +160,4 @@ Now, that you have read the stories behind some of the machines in the movie, it
 [16]: {{ site.url }}/assets/images/posts-images/2019-02-03-stranger-strings2.jpg
 [17]: https://en.wikipedia.org/wiki/IBM_Personal_Computer_XT
 [18]: https://javazone.no
+[19]: https://en.wikipedia.org/wiki/Ole-Johan_Dahl
