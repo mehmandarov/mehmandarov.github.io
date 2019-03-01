@@ -25,15 +25,15 @@ _Adding Slack notications for your Google Cloud Build jobs explained with code e
 
 ## Intro
 
-Recently we decided to migrate our builds from Travis CI to Google Cloud Build to speed up the builds. The process was quite easy and flawless, however, we were still missing a few minor things. One of them was the notifications from Cloud Build to our `#ops` channel in Slack. This was slightly annoying because you would not know if the build was finished and the site was deployed, or if it failed for some reason.
+Recently we decided to migrate our builds from Travis CI to Google Cloud Build to speed up the builds. The process was quite easy and flawless; however, we were still missing a few minor things. One of them was the notifications from Cloud Build to our `#ops` channel in Slack. This was slightly annoying because you would not know if the build was finished and the site was deployed, or if it failed for some reason.
 
-Integrating with Cloud Build was a bit more different than what you are used to from integrations with Jenkins or Travis CI. Normally you would just create a webhook that would call an interface in the Slack API. In Cloud Build, on the other hand, everything is getting posted to the Pub/Sub queue built into the platform, and here you would just need to subscribe to the specific queue and listen for the events. To achieve the latter you would need a small serverless function to listen for these events and to call the Slack API.
+Integrating with Cloud Build was a bit more different than what you are used to from integrations with Jenkins or Travis CI. Normally you would just create a webhook that would call an interface in the Slack API. In Cloud Build, on the other hand, everything is getting posted to the Pub/Sub queue built into the platform, and here you would just need to subscribe to the specific queue and listen for the events. To achieve the latter, you would need a small serverless function to listen for these events and to call the Slack API.
 
 ![The Architecture][1]{: class="bigger-image" }
 <figcaption class = "caption">The Architecture.</figcaption>
 <br />
 
-Note that here we will, technically, be using paid services on Google Cloud Platform, as both Cloud Build, Cloud Pub/Sub, and Cloud Functions are billable components. However, since all of the components above provide a generous free tier, you will need to work hard to get passed the free tier with this setup.
+Note that here we will, technically, be using paid services on Google Cloud Platform, as both Cloud Build, Cloud Pub/Sub, and Cloud Functions are billable components. However, since all the components above provide a generous free tier, you will need to work hard to get passed the free tier with this setup.
 
 * **Cloud Build:** Free first 120 builds-minutes per day for `Basic` machine type (`n1-standard-1`).
 * **Cloud Pub/Sub:** Free first 10GB per month ([pricing][2]).
