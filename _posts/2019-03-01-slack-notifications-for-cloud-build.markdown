@@ -14,7 +14,7 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_Adding Slack notications for your Google Cloud Build jobs explained with code examples and screenshots._
+_Adding Slack notifications for your Google Cloud Build jobs explained with code examples and screenshots._
 
 - [Intro](#intro)
 - [1. Before you begin](#1-before-you-begin)

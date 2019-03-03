@@ -80,7 +80,7 @@ There are quite a few interesting facts connected to [Norsk Data][5]. It was a s
 <figcaption class = "caption">The mainframe (behind the scenes). Photo: Rustam Mehmandarov</figcaption>
 <br />
 
-Also, this particular piece of hardware was acquired by the University of Oslo in 1979 for the university's main library located off the new, main campus, [at Drammensveien][3] (Norwegian article). It came with all the cool stuff that might want back them, like the state-of-the-art punch card reader, and it was used to connect the library with a direct line to the rest of the university network.
+Also, this particular piece of hardware was acquired by the University of Oslo in 1979 for the university's main library located off the new, main campus, [at Drammensveien][3] (Norwegian article). It came with all the cool stuff that might want back then, like the state-of-the-art punch card reader, and it was used to connect the library with a direct line to the rest of the university network.
 
 ## Story 2: A Machine for 4.300 USD
 ### Atari Mega ST2
