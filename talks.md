@@ -5,8 +5,21 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 61 events in 15 countries._
+#### _Spoken or otherwise involved in 66 events in 15 countries._
 🇧🇾   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇹🇷   🇺🇸   🇺🇦
+
+### 2019
+
+|-------------------------------+-------------------+----------------+-----------------------|
+|Conference                     |Country, City      |Date            |Spoke / Inolved        |
+|:------------------------------+:------------------+:---------------+:----------------------|
+|GDG and GDG Cloud Oslo, Meetup |Norway, Oslo       |28 Mar 2019     |SPOKE                  |
+|JavaZone Kids                  |Norway, Oslo       |24 Mar 2019     |SPOKE                  |
+|JavaLand                       |Germany, Brühl     |17-19 Mar 2019  |SPOKE                  |
+|[Arctic IoT Challenge][2] 2019 |Norway, Oslo       |7–10 Mar 2019   |INVOLVED               |
+|GDG Cloud Oslo, Meetup         |Norway, Oslo       |20 Feb 2019     |SPOKE                  |
+|-------------------------------+-------------------+----------------+-----------------------|
+{:.talkstablestyle}
 
 ### 2018
 
@@ -28,6 +41,7 @@ layout: page
 |JPoint                         |Russia, Moscow     |6-7 Apr 2018    |SPOKE                  |
 |Moscow JUG meeting             |Russia, Moscow     |5 Apr 2018      |SPOKE                  |
 |Voxxed Days Bucharest          |Romania, Bucharest |22-23 Mar 2018  |SPOKE                  |
+|[Arctic IoT Challenge][2] 2018 |Norway, Oslo       |15–18 Mar 2018  |INVOLVED               |
 |-------------------------------+-------------------+----------------+-----------------------|
 {:.talkstablestyle}
 
