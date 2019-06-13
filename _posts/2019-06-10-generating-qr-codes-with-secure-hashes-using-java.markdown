@@ -6,8 +6,6 @@ image: '/assets/images/posts-images/black-and-white-java.jpg'
 description:
 tag:
 - java
-- automation
-- cloud
 - english
 category: blog
 star: false
