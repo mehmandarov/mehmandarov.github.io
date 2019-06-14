@@ -20,11 +20,11 @@ layout: page
 |JPrime                              |Bulgaria, Sofia     |28-29 May 2019  |SPOKE                  |
 |JBCNConf                            |Spain, Barcelona    |27-29 May 2019  |SPOKE                  |
 |DevSum                              |Sweden, Stockholm   |22-24 May 2019  |SPOKE                  |
-|GDG and GDG Cloud Oslo,             |Norway, Oslo        |28 Mar 2019     |SPOKE                  |
+|GDG and GDG Cloud Oslo              |Norway, Oslo        |28 Mar 2019     |SPOKE                  |
 |JavaZone Kids                       |Norway, Oslo        |24 Mar 2019     |SPOKE                  |
 |JavaLand                            |Germany, Brühl      |17-19 Mar 2019  |SPOKE                  |
 |[Arctic IoT Challenge][2] 2019      |Norway, Oslo        |7–10 Mar 2019   |INVOLVED               |
-|GDG Cloud Oslo, Meetup              |Norway, Oslo        |20 Feb 2019     |SPOKE                  |
+|GDG Cloud Oslo                      |Norway, Oslo        |20 Feb 2019     |SPOKE                  |
 |------------------------------------+--------------------+----------------+-----------------------|
 {:.talkstablestyle}
 
