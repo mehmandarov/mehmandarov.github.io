@@ -5,24 +5,27 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 71 events in 17 countries._
-🇧🇾   🇧🇬   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇸🇪   🇹🇷   🇺🇸   🇺🇦
+#### _Spoken or otherwise involved in 74 events in 18 countries._
+🇧🇾   🇧🇬   🇩🇰   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇸🇪   🇹🇷   🇺🇸   🇺🇦
 
 ### 2019
 
-|-------------------------------+-------------------+----------------+-----------------------|
-|Conference                     |Country, City      |Date            |Spoke / Inolved        |
-|:------------------------------+:------------------+:---------------+:----------------------|
-|Riga Dev Days                  |Latvia, Riga       |29-31 May 2019  |SPOKE                  |
-|JPrime                         |Bulgaria, Sofia    |28-29 May 2019  |SPOKE                  |
-|JBCNConf                       |Spain, Barcelona   |27-29 May 2019  |SPOKE                  |
-|DevSum                         |Sweden, Stockholm  |22-24 May 2019  |SPOKE                  |
-|GDG and GDG Cloud Oslo, Meetup |Norway, Oslo       |28 Mar 2019     |SPOKE                  |
-|JavaZone Kids                  |Norway, Oslo       |24 Mar 2019     |SPOKE                  |
-|JavaLand                       |Germany, Brühl     |17-19 Mar 2019  |SPOKE                  |
-|[Arctic IoT Challenge][2] 2019 |Norway, Oslo       |7–10 Mar 2019   |INVOLVED               |
-|GDG Cloud Oslo, Meetup         |Norway, Oslo       |20 Feb 2019     |SPOKE                  |
-|-------------------------------+-------------------+----------------+-----------------------|
+|------------------------------------+--------------------+----------------+-----------------------|
+|Conference                          |Country, City       |Date            |Spoke / Inolved        |
+|:-----------------------------------+:-------------------+:---------------+:----------------------|
+|GDG Cloud Copenhagen                |Denmark, Copenhagen |17 Jun 2019     |SPOKE                  |
+|Javagruppen Århus, JUG meeting      |Denmark, Århus      |13 Jun 2019     |SPOKE                  |
+|Javagruppen Copenhagen, JUG meeting |Denmark, Copenhagen |12 Jun 2019     |SPOKE                  |
+|Riga Dev Days                       |Latvia, Riga        |29-31 May 2019  |SPOKE                  |
+|JPrime                              |Bulgaria, Sofia     |28-29 May 2019  |SPOKE                  |
+|JBCNConf                            |Spain, Barcelona    |27-29 May 2019  |SPOKE                  |
+|DevSum                              |Sweden, Stockholm   |22-24 May 2019  |SPOKE                  |
+|GDG and GDG Cloud Oslo,             |Norway, Oslo        |28 Mar 2019     |SPOKE                  |
+|JavaZone Kids                       |Norway, Oslo        |24 Mar 2019     |SPOKE                  |
+|JavaLand                            |Germany, Brühl      |17-19 Mar 2019  |SPOKE                  |
+|[Arctic IoT Challenge][2] 2019      |Norway, Oslo        |7–10 Mar 2019   |INVOLVED               |
+|GDG Cloud Oslo, Meetup              |Norway, Oslo        |20 Feb 2019     |SPOKE                  |
+|------------------------------------+--------------------+----------------+-----------------------|
 {:.talkstablestyle}
 
 ### 2018
