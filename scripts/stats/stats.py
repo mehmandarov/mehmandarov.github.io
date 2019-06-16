@@ -118,7 +118,7 @@ def get_total_stats(data, show_flags=True, unique_only=True):
 
 
 if __name__ == "__main__":
-    latest_year = 2017
+    latest_year = 2019
     stats_pr_year = defaultdict(list)
     stats_total = defaultdict(list)
     current_year = latest_year
