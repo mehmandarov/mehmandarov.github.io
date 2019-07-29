@@ -1,7 +1,7 @@
 ---
 title: "MicroProfile – Part 1: Defining End-Points"
 layout: post
-date: 2019-07-28 07:25
+date: 2019-07-29 07:25
 image: '/assets/images/posts-images/lego-record-shop.jpg'
 description:
 tag:
@@ -14,14 +14,14 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_Part 1: End-points in MicroProfile. This is a part of a series of posts to help you getting started with microservices in MicroProfile and showing off some of the features it brings to the table._
+_Part 1: End-points in MicroProfile. This is a part of a series of posts to help you get started with microservices in MicroProfile and showing off some of the features it brings to the table._
 
 - [Intro](#intro)
 - [Getting started](#getting-started)
 - [Defining End-Points](#defining-end-points)
-	- [A (Regular) JSON End-Point](#a-regular-json-end-point)
-	- [An End-Point Returning an Image](#an-end-point-returning-an-image)
-	- [An End-Point Returning a PDF](#an-end-point-returning-a-pdf)
+    - [A (Regular) JSON End-Point](#a-regular-json-end-point)
+    - [An End-Point Returning an Image](#an-end-point-returning-an-image)
+    - [An End-Point Returning a PDF](#an-end-point-returning-a-pdf)
 - [What's Next?](#whats-next)
 
 ---
@@ -30,7 +30,7 @@ _Part 1: End-points in MicroProfile. This is a part of a series of posts to help
 
 In my previous two posts, I have been describing parts of a system for "checking-in" to a location using QR codes in Java. We started with [generating QR codes][1], followed by [generating PDF files][2].
 
-Now, I would like to focus on building microservices around that functionality. We will be creating a few HTTP end-points built with [MicroProfile][4]. I will be using next few posts as an opportunity to show off some of the features that you will be getting out of the box or with minimal effort using MicroProfile.
+Now, I would like to focus on building microservices around that functionality. We will be creating a few HTTP end-points built with [MicroProfile][4]. I will be using the next few posts as an opportunity to show off some of the features that you will be getting out of the box or with minimal effort using MicroProfile.
  
 ## Getting started
 
@@ -89,7 +89,7 @@ We will also define a type of a request (in this case it is a `GET` request) and
 @Path("{id}/json")
 @Produces("application/json")
 public Response createIdKeyTuple(@PathParam("id") String id) {
-	...
+    ...
 }
 {% endhighlight %}
 
@@ -100,18 +100,18 @@ Now, that we are done with annotations for the method, let's have a look at the 
 @Path("{id}/json")
 @Produces("application/json")
 public Response createIdKeyTuple(@PathParam("id") String id) {
-	String nameKeyTuple = null;
-	try {
-    	nameKeyTuple = qrCodeContentsSupplier.getQRCodeContents(id);
-    	return Response.ok(nameKeyTuple).build();
-	} catch (InvalidKeySpecException e) {
+    String nameKeyTuple = null;
+    try {
+        nameKeyTuple = qrCodeContentsSupplier.getQRCodeContents(id);
+        return Response.ok(nameKeyTuple).build();
+    } catch (InvalidKeySpecException e) {
         e.printStackTrace();
-	} catch (NoSuchAlgorithmException e) {
-    	e.printStackTrace();
-	} catch (Exception e) {
-    	e.printStackTrace();
-	}
-	return Response.serverError().build();
+    } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return Response.serverError().build();
 }
 {% endhighlight %}
 
@@ -132,23 +132,23 @@ Let's have a look at the whole method:
 @Path("{id}")
 @Produces("image/png")
 public Response createQR(@PathParam("id") String id) {
-	try {
-    	byte[] imageData = qrCodeSupplier.qrCodeGenerator(id);
-    	return Response.ok(imageData)
+    try {
+        byte[] imageData = qrCodeSupplier.qrCodeGenerator(id);
+        return Response.ok(imageData)
             .header("Content-Disposition", "inline; filename=\"" + id + ".png\"")
-        	.build();
-	} catch (WriterException e) {
-    	e.printStackTrace();
-	} catch (IOException e) {
-    	e.printStackTrace();
-	} catch (NoSuchAlgorithmException e) {
-    	e.printStackTrace();
-	} catch (InvalidKeySpecException e) {
-    	e.printStackTrace();
-	} catch (Exception e) {
-    	e.printStackTrace();
-	}
-	return Response.serverError().build();
+            .build();
+    } catch (WriterException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+    } catch (InvalidKeySpecException e) {
+        e.printStackTrace();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return Response.serverError().build();
 }
 {% endhighlight %}
 
@@ -166,23 +166,23 @@ The last method for today – defining an end-point for returning PDF files – 
 @Path("{id}/pdf")
 @Produces("application/pdf; charset=utf-8")
 public Response createQRPDF(@PathParam("id") String id) {
-	try {
-    	byte[] pdfDocument = pdfDocumentSupplier.pdfDocumentGenerator(id);
-    	return Response.ok(pdfDocument)
+    try {
+        byte[] pdfDocument = pdfDocumentSupplier.pdfDocumentGenerator(id);
+        return Response.ok(pdfDocument)
             .header("Content-Disposition", "inline; filename=\"" + id + ".pdf\"")
-       	 .build();
-	} catch (WriterException e) {
-    	e.printStackTrace();
-	} catch (IOException e) {
-    	e.printStackTrace();
-	} catch (NoSuchAlgorithmException e) {
-    	e.printStackTrace();
-	} catch (InvalidKeySpecException e) {
-    	e.printStackTrace();
-	} catch (Exception e) {
-    	e.printStackTrace();
-	}
-	return Response.serverError().build();
+            .build();
+    } catch (WriterException e) {
+        e.printStackTrace();
+    } catch (IOException e) {
+        e.printStackTrace();
+    } catch (NoSuchAlgorithmException e) {
+        e.printStackTrace();
+    } catch (InvalidKeySpecException e) {
+        e.printStackTrace();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return Response.serverError().build();
 }
 {% endhighlight %}
 
