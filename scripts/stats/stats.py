@@ -93,6 +93,11 @@ def get_country_flag_emoji(country_name):
     else:
         country_code = 'unknown'
 
+    # handle on-line talks
+    if country_name == 'WWW':
+        return flag_codes.letter_codes['www']
+
+    # handle countries not in the list
     if country_code == 'unknown':
         return flag_codes.letter_codes['unknown']
 
@@ -124,7 +129,7 @@ if __name__ == "__main__":
     current_year = latest_year
 
     loader = ptr.TableUrlLoader(
-        "http://mehmandarov.com/talks/",
+        "http://localhost:4000/talks/",
         "html")
 
     writer = ptw.TableWriterFactory.create_from_format_name("md")

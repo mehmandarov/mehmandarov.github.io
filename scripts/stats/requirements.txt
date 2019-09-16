@@ -1,2 +1,4 @@
 pytablereader
 pytablewriter
+requests
+retryrequests

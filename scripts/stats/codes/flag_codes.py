@@ -28,6 +28,7 @@ letter_codes = {
     'X': u'\U0001F1FD',
     'Y': u'\U0001F1FE',
     'Z': u'\U0001F1FF',
+    'www': u'\U0001F310',
     'unknown': u'\U0001F3F3'  # white flag for countries without flags in the list
 }
 
