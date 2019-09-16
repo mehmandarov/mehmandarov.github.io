@@ -5,15 +5,17 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 74 events in 18 countries._
-🇧🇾   🇧🇬   🇩🇰   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇸🇪   🇹🇷   🇺🇸   🇺🇦
+#### _Spoken or otherwise involved in 76 events in 19 countries._
+🇧🇾   🇧🇬   🇩🇰   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇸🇪   🇹🇷   🇺🇸   🇺🇦   🌐
 
 ### 2019
 
 |------------------------------------+--------------------+----------------+-----------------------|
 |Conference                          |Country, City       |Date            |Spoke / Inolved        |
 |:-----------------------------------+:-------------------+:---------------+:----------------------|
-|GDG Cloud Copenhagen                |Denmark, Copenhagen |17 Jun 2019     |SPOKE                  |
+|JavaZone                            |Norway, Oslo        |11 Sept 2019    |INVOLVED LEADING SPOKE |
+|Jakarta Tech Talks                  |WWW, Online talk    |28 Aug 2019     |SPOKE                  |
+|GDG Cloud Oslo                      |Norway, Oslo        |22 Aug 2019     |SPOKE                  |
 |Javagruppen Århus, JUG meeting      |Denmark, Århus      |13 Jun 2019     |SPOKE                  |
 |Javagruppen Copenhagen, JUG meeting |Denmark, Copenhagen |12 Jun 2019     |SPOKE                  |
 |Riga Dev Days                       |Latvia, Riga        |29-31 May 2019  |SPOKE                  |
