@@ -5,7 +5,7 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 76 events in 19 countries._
+#### _Spoken or otherwise involved in 79 events in 21 countries._
 🇧🇾   🇧🇬   🇩🇰   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇪🇸   🇸🇪   🇹🇷   🇺🇸   🇺🇦   🌐
 
 ### 2019
@@ -13,6 +13,9 @@ layout: page
 |------------------------------------+--------------------+----------------+-----------------------|
 |Conference                          |Country, City       |Date            |Spoke / Inolved        |
 |:-----------------------------------+:-------------------+:---------------+:----------------------|
+|GeeCON Prague                       |Prague, Czechia     |17-18 Oct 2019  |SPOKE                  |
+|MakeIT                              |Portorož, Slovenia  |14-15 Oct 2019  |SPOKE                  |
+|Heapcon                             |Serbia, Belgrade    |26-27 Sept 2019 |PROGRAM COMMITTEE      |
 |JavaZone                            |Norway, Oslo        |11 Sept 2019    |INVOLVED LEADING SPOKE |
 |Jakarta Tech Talks                  |WWW, Online talk    |28 Aug 2019     |SPOKE                  |
 |GDG Cloud Oslo                      |Norway, Oslo        |22 Aug 2019     |SPOKE                  |
