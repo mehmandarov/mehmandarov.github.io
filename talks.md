@@ -13,8 +13,8 @@ layout: page
 |------------------------------------+--------------------+----------------+-----------------------|
 |Conference                          |Country, City       |Date            |Spoke / Inolved        |
 |:-----------------------------------+:-------------------+:---------------+:----------------------|
-|GeeCON Prague                       |Prague, Czechia     |17-18 Oct 2019  |SPOKE                  |
-|MakeIT                              |Portorož, Slovenia  |14-15 Oct 2019  |SPOKE                  |
+|GeeCON Prague                       |Czechia, Prague     |17-18 Oct 2019  |SPOKE                  |
+|MakeIT                              |Slovenia, Portorož  |14-15 Oct 2019  |SPOKE                  |
 |Heapcon                             |Serbia, Belgrade    |26-27 Sept 2019 |PROGRAM COMMITTEE      |
 |JavaZone                            |Norway, Oslo        |11 Sept 2019    |INVOLVED LEADING SPOKE |
 |Jakarta Tech Talks                  |WWW, Online talk    |28 Aug 2019     |SPOKE                  |
