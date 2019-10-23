@@ -108,7 +108,7 @@ En video vi har laget av mine tegninger og en kort forklaring på hvordan dette 
 [7]: https://en.wikipedia.org/wiki/List_of_birds_of_Norway
 [8]: https://snl.no/Fugler_i_Norge
 [9]: https://www.youtube.com/watch?v=S-W9tMZu8PU
-[10]: http://www.fyens.dk/article/3141726?fbrefresh=true
+[10]: https://web.archive.org/web/20170925210229/http://www.fyens.dk/article/3141726
 [11]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_1.png
 [12]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_2.png
 [13]: https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
