@@ -5,7 +5,7 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-#### _Spoken or otherwise involved in 79 events in 21 countries._
+#### _Spoken or otherwise involved in 81 events in 23 countries._
 🇧🇾   🇧🇬   🇨🇿   🇩🇰   🇪🇪   🇩🇪   🇽🇰   🇱🇻   🇱🇹   🇳🇴   🇵🇱   🇷🇴   🇷🇺   🇷🇸   🇸🇮   🇪🇸   🇸🇪   🇹🇷   🇺🇸   🇺🇦   🌐
 
 ### 2019
@@ -13,6 +13,8 @@ layout: page
 |------------------------------------+--------------------+----------------+-----------------------|
 |Conference                          |Country, City       |Date            |Spoke / Inolved        |
 |:-----------------------------------+:-------------------+:---------------+:----------------------|
+|Devoxx Morocco                      |Morocco, Agadir     |12-14 Nov 2019  |SPOKE                  |
+|Devoxx Belgium                      |Belgium, Antwerp    |6-8 Nov 2019    |SPOKE                  |
 |GeeCON Prague                       |Czechia, Prague     |17-18 Oct 2019  |SPOKE                  |
 |MakeIT                              |Slovenia, Portorož  |14-15 Oct 2019  |SPOKE                  |
 |Heapcon                             |Serbia, Belgrade    |26-27 Sept 2019 |PROGRAM COMMITTEE      |
