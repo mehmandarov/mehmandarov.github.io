@@ -90,8 +90,8 @@ That's it. To see the code in action, run it from the command line:
 
 {% highlight bash %}
 $ mvn compile exec:java \
- -Dexec.mainClass=org.apache.beam.examples.MinimalWordCount \
- -Pdirect-runner
+        -Dexec.mainClass=org.apache.beam.examples.MinimalWordCount \
+        -Pdirect-runner
 {% endhighlight %}
 
 This code will produce a DOT representation of the pipeline and log it to the console.
