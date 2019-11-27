@@ -51,12 +51,12 @@ First, we need to add a dependency to the Maven file under `<dependencies>` sect
 
 {% highlight xml %}
 <dependencies>
- <!-- ... all the other dependencies you may have -->
- <dependency>
- <groupId>org.apache.beam</groupId>
- <artifactId>beam-runners-core-construction-java</artifactId>
- <version>${beam.version}</version>
- </dependency>
+    <!-- ... all the other dependencies you may have -->
+    <dependency>
+        <groupId>org.apache.beam</groupId>
+        <artifactId>beam-runners-core-construction-java</artifactId>
+        <version>${beam.version}</version>
+    </dependency>
 </dependencies>
 {% endhighlight %}
 
