@@ -106,6 +106,8 @@ In the next section, we will have a brief look at what can be done with the DOT 
 ## What Now?
 Now that we have a DOT representation of the pipeline graph, we can use it to get a better understanding of the pipeline. For instance, you can generate an SVG or a PNG image from the data. Note that the generated graph might be a bit verbose, but gives a good overview of the pipeline graph.
 
+Here, I have also included examples of the [DOT graph][10] and the [PNG file][11] generated for that particular pipeline.
+
 Assuming that you have Graphviz [tools][9] installed, you can convert a DOT file to a PNG image using this command:
 
 {% highlight bash %}
@@ -114,6 +116,8 @@ $ dot -Tpng -o pipeline_graph.png pipeline_graph.dot
 
 In addition to [Grapgviz][4] (Wikipedia [link][5]), there are also online services for converting DOT graphs to graphical representations, like [this][6] one.
 
+![Training your own model][12]{: class="bigger-image" }
+<figcaption class = "caption">A part of a graphical representation for the pipeline in the MinimalWordCount example. </figcaption>
 
 ---
 
@@ -126,3 +130,6 @@ In addition to [Grapgviz][4] (Wikipedia [link][5]), there are also online servic
 [7]: https://en.wikipedia.org/wiki/DOT_(graph_description_language)
 [8]: https://github.com/mehmandarov/word-count-mini-beam
 [9]: https://www.graphviz.org/download/
+[10]: https://github.com/mehmandarov/word-count-mini-beam/blob/master/pipeline_graph.dot
+[11]: https://github.com/mehmandarov/word-count-mini-beam/blob/master/pipeline_graph.png
+[12]: https://raw.githubusercontent.com/mehmandarov/word-count-mini-beam/master/pipeline_graph_partial.png
