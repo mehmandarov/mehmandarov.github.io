@@ -1,5 +1,5 @@
 ---
-title: "Getting Graph Representation of a Pipeline in Apache Beam"
+title: "Getting a Graph Representation of a Pipeline in Apache Beam"
 layout: post
 date: 2019-11-27 08:15
 image: '/assets/images/posts-images/golden-gate.jpg'
