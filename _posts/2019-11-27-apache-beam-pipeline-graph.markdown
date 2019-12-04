@@ -30,7 +30,7 @@ Constructing advanced pipelines, or trying to wrap your head around the existing
 
 ## TL;DR: Getting Graph Representation
 
-If you just want to see a few lines of that let you generate the [DOT][7] representation of the graph, here it is:
+If you just want to see a few lines that let you generate the [DOT][7] representation of the graph, here it is:
 
 {% highlight java %}
 import org.apache.beam.runners.core.construction.renderer.PipelineDotRenderer;
