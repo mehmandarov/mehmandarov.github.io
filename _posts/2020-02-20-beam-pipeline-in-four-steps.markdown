@@ -1,8 +1,8 @@
 ---
 title: "Building a Basic Apache Beam Pipeline in 4 Steps"
 layout: post
-date: 2020-02-20 07:35
-image: '/assets/images/posts-images/golden-gate.jpg'
+date: 2020-02-21 07:35
+image: '/assets/images/posts-images/pipes.jpg'
 description: "Getting started with building data pipelines using Apache Beam"
 tag:
 - java
