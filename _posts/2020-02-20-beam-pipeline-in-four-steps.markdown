@@ -101,7 +101,7 @@ public static class StationMetadata extends PTransform<PCollection<String>, PCol
 
 ## Step 4: Run it!
 
-After defining the pipeline, it's options, and how they are connected, we can finally run the pipeline. The great thing about running the pipelines in Apache Beam is that it is very easy to switch between various runners. Beam provides a portable API layer for building sophisticated pipelines that may be executed across various execution engines or _runners_. In our example, we can switch from running the pipeline locally (with [`direct-runner`][4]), to running the same pipeline in the Cloud as a managed service (with [`dataflow-runner`][5]) by simply adjusting the values we provide when running the code.
+After defining the pipeline, its options, and how they are connected, we can finally run the pipeline. The great thing about running the pipelines in Apache Beam is that it is very easy to switch between various runners. Beam provides a portable API layer for building sophisticated pipelines that may be executed across various execution engines or _runners_. In our example, we can switch from running the pipeline locally (with [`direct-runner`][4]), to running the same pipeline in the Cloud as a managed service (with [`dataflow-runner`][5]) by simply adjusting the values we provide when running the code.
 
 ### Local runner
 
