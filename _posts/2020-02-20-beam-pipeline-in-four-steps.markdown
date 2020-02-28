@@ -71,31 +71,17 @@ After defining the pipeline and providing the options class, we can start by app
 {% highlight java %}
 PCollection <KV<Integer, LinkedHashMap>> stationMetadata = pipeline
                 .apply("ReadLines: StationMetadataInputFiles", TextIO.read().from(options.getStationMetadataInputFile()))
-                .apply(new StationMetadata());
-                .apply(MapElements.via(new FormatAnythingAsTextFn()))
+                .apply("Station Metadata", ParDo.of(fnExtractStationMetaDataFromJSON()));
+                .apply(MapElements.into(TypeDescriptor.of(String.class)).via(o -> o.toString()))
                 .apply("WriteStationMetaData", TextIO.write().to(options.getMetadataOutput()));
 {% endhighlight %}
 
 Note that a [`PCollection<T>`][9] is an immutable collection of values of type `T` and that you can provide names for the transformations as the first string argument in the `apply()`, like in the first and the last `apply` methods.
 
-Here we can also specify custom transformations that can be done in parallel. In Beam, they are being referred to as [`ParDo`][3] methods. They are similar to the `Mapper` or `Reducer` class of a MapReduce-style algorithm. In this post, we will not be focusing on the contents of such pipeline (i.e. what it is doing), but a simple example of a `ParDo` can be looking like this (look for the link in the [conclusion](#conclusion) for the entire running example):
+Here we can also specify custom transformations that can be done in parallel. In Beam, they are being referred to as [`ParDo`][3] methods. They are similar to the `Mapper` or `Reducer` class of a MapReduce-style algorithm. In this post, we will not be focusing on the contents of such pipeline (i.e. what it is doing), but a simple example of a `ParDo` can be looking like the second `apply` in the code above (look for the link in the [conclusion](#conclusion) for the entire running example).
 
 {% highlight java %}
-/**
-  * A PTransform that converts a PCollection containing lines of text into a PCollection of
-  * LinkedHashMap with station availability data.
-  */
-public static class StationMetadata extends PTransform<PCollection<String>, PCollection<KV<Integer, LinkedHashMap>>> {
-    @Override
-    public PCollection<KV<Integer, LinkedHashMap>> expand(PCollection<String> elements) {
-
-        // Convert lines of text into LinkedHashMap.
-        PCollection<KV<Integer, LinkedHashMap>> stations = elements.apply(
-                ParDo.of(new ExtractStationMetaDataFromJSON()));
-
-        return stations;
-    }
-}
+pipeline.apply("Station Metadata", ParDo.of(fnExtractStationMetaDataFromJSON()));
 {% endhighlight %}
 
 
