@@ -76,7 +76,7 @@ PCollection <KV<Integer, LinkedHashMap>> stationMetadata = pipeline
                 .apply("WriteStationMetaData", TextIO.write().to(options.getMetadataOutput()));
 {% endhighlight %}
 
-Note that a [`PCollection<T>`][9] is an immutable collection of values of type `T` and that you can provide names for the transformations as the first string argument in the `apply()`, like in the first and the last `apply` methods.
+Note that a [`PCollection<T>`][9] is an immutable collection of values of type `T` and that you can provide names for the transformations as the first string argument in the `apply()`, like in the first two and the last `apply` methods.
 
 Here we can also specify custom transformations that can be done in parallel. In Beam, they are being referred to as [`ParDo`][3] methods. They are similar to the `Mapper` or `Reducer` class of a MapReduce-style algorithm. In this post, we will not be focusing on the contents of such pipeline (i.e. what it is doing), but a simple example of a `ParDo` can be looking like the second `apply` in the code above (look for the link in the [conclusion](#conclusion) for the entire running example).
 
