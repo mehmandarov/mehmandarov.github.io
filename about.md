@@ -10,7 +10,7 @@ layout: page
 
 _**Passionate computer scientist. Chief engineer, and a competency network coordinator for IT architecture and integration at work. Community builder. Course instructor. Speaker. Java Champion. Google Developer Expert (GDE) for Cloud.**_
 
-**_I am involved in several developer communities – both as an organiser, co-organiser, mentor, and as a program committee member for various national and international IT conferences and other events and meetups. **_
+_**I am involved in several developer communities – both as an organiser, co-organiser, mentor, and as a program committee member for various national and international IT conferences and other events and meetups. **_
 
 ---
 
