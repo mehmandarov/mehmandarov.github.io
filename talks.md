@@ -12,7 +12,7 @@ layout: page
 * **Events: 160**
 * **Countries: 28**
 * **Cities: 50**
-* **Speaking since: 2013-1**
+* **Speaking since: 2013**
 
 #### Countries:
 
