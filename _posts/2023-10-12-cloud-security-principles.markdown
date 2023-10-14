@@ -32,18 +32,6 @@ Whether you are running on the Cloud or not it is all about the [CIA triad model
 
 When thinking about Cloud Security Architecture we need to be able to think about the whole stack. Of course, we don’t need to think about all the moving parts alone – it is a shared responsibility between the Cloud service provider and you, the user of the platform.
 
-<div class="side-by-side">
-    <div class="toleft">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-
-    <div class="toright">
-        <img class="image" src="https://sergiokopplin.github.io/indigo/assets/images/profile.jpg" alt="Alt Text">
-        <figcaption class="caption">Photo by John Doe</figcaption>
-    </div>
-</div>
-
-
 ## Key Elements of a Cloud Security Architecture
 Let's first start by defining the key elements of a Cloud Security Architecture, divided across the layers of the stack, based on the Cloud Security Alliance (CSA) stack model.
 
