@@ -35,7 +35,7 @@ When thinking about Cloud Security Architecture we need to be able to think abou
 ## Key Elements of a Cloud Security Architecture
 Let's first start by defining the key elements of a Cloud Security Architecture, divided across the layers of the stack, based on the Cloud Security Alliance (CSA) stack model.
 
-![Fig.1: Cloud Security Alliance (CSA) stack model] [1]{height=200px}                                          
+![Fig.1: Cloud Security Alliance (CSA) stack model] [1]                                     
 <figcaption class = "caption">Fig.1: Cloud Security Alliance (CSA) stack model</figcaption>
 
 Now, we can also mention some of the main challenges related to security, divided into separate groups and try to map them to the CIA triad model that we have mentioned earlier. 
