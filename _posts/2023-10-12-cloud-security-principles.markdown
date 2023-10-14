@@ -2,6 +2,7 @@
 title: "Cloud Security Principles"
 layout: post
 date: 2023-10-12 09:50
+image: '/assets/images/posts-images/containers.jpg'
 tag:
 - english
 - architecture
