@@ -4,16 +4,16 @@ layout: post
 date: 2023-10-12 09:50
 image: '/assets/images/posts-images/containers.jpg'
 tag:
-- english
-- architecture
-- security
-- cloud
+    - english
+    - architecture
+    - security
+    - cloud
 category: blog
 star: false
 author: rustam.mehmandarov
 ---
 
-_This post was inspired by a talk I have recently done with [Neha Sardana][4] at JAX New York and is meant to serve as a stepping stone to categorise and catalog the things you need to consider working with the Cloud and Cloud-native applications. Some prior knowledge to various concepts within IT architecture and security may be expected for this post._
+_This post was inspired by a talk I have recently done with [Neha Sardana][4] at JAX New York and is meant to serve as a stepping stone to categorize and catalog the things you need to consider working with the Cloud and Cloud-native applications. Some prior knowledge of various concepts within IT architecture and security may be expected for this post._
 
 - [Introduction](#introduction)
 - [Key Elements of a Cloud Security Architecture](#key-elements-of-a-cloud-security-architecture)
@@ -26,8 +26,6 @@ _This post was inspired by a talk I have recently done with [Neha Sardana][4] at
 ---
 
 ## Introduction
-
-
 Whether you are running on the Cloud or not it is all about the [CIA triad model][5] – Confidentiality, Integrity, and Availability.
 
 When thinking about Cloud Security Architecture we need to be able to think about the whole stack. Of course, we don’t need to think about all the moving parts alone – it is a shared responsibility between the Cloud service provider and you, the user of the platform.
@@ -35,10 +33,10 @@ When thinking about Cloud Security Architecture we need to be able to think abou
 ## Key Elements of a Cloud Security Architecture
 Let's first start by defining the key elements of a Cloud Security Architecture, divided across the layers of the stack, based on the Cloud Security Alliance (CSA) stack model.
 
-![Fig.1: Cloud Security Alliance (CSA) stack model] [1]                                     
+![Fig.1: Cloud Security Alliance (CSA) stack model] [1]
 <figcaption class = "caption">Fig.1: Cloud Security Alliance (CSA) stack model</figcaption>
 
-Now, we can also mention some of the main challenges related to security, divided into separate groups and try to map them to the CIA triad model that we have mentioned earlier. 
+Now, we can also mention some of the main challenges related to security, divided into separate groups, and try to map them to the CIA triad model that we have mentioned earlier.
 
 ### Network and Storage:
 * Data Encryption
@@ -53,7 +51,7 @@ Now, we can also mention some of the main challenges related to security, divide
 * Incident Response and Recovery
 * Vendor and Third-Party Risk Management
 
-### Devops
+### DevOps
 * Automation and Orchestration
 * Resilience and High Availability
 
@@ -71,7 +69,7 @@ Addressing all these challenges is a shared responsibility between the Cloud ser
 
 Typically, Cloud service providers will take care of the lower parts of the stack, like physical, infrastructure, and platform security, while customers will be responsible for creating secure applications, securing their data, creating proper Identity and Access Management (IAM), and configuration management.
 
-An effective overlap and a clear understanding of the responsibilities ensure comprehensive security coverage across all layers. 
+An effective overlap and a clear understanding of the responsibilities ensure comprehensive security coverage across all layers.
 
 ![Fig.3: Shared security responsibility between the Cloud Service providers and the Customers] [3]
 <figcaption class = "caption">Fig.3: Shared security responsibility between the Cloud Service providers and the Customers</figcaption>
@@ -85,7 +83,7 @@ These factors will lead to changes in the model and the responsibility division.
 Therefore, regular communication between the parties involved and staying updated on their security practices is essential to ensure secure Cloud applications.
 
 ## Types of the Cloud Security Architecture
-The Cloud Security Architecture is _twofold_ – you will need to choose a _platform_ for running your application and think about the security of the _application_ you will be deploying on that platform. 
+The Cloud Security Architecture is _twofold_ – you will need to choose a _platform_ for running your application and think about the security of the _application_ you will be deploying on that platform.
 
 ### Platform Security Architecture
 Let’s start with defining the types of platforms and list some of the key elements to consider when choosing a platform type.
@@ -122,7 +120,7 @@ Here are some things you will need to think about when developing modern applica
 * Making sure the code you have written is secure: OWASP Top 10, static code analysis, coding best practices.
 
 #### 2. Your Container (and Serverless) Security Architecture
-* Specifically addresses security for containerized applications (e.g., Containers, Kubernetes) and serverless computing (e.g., AWS Lambda, Azure Functions, Cloud Functions or Cloud Run on Google Cloud)
+* Specifically addresses security for containerized applications (e.g., Containers, Kubernetes) and serverless computing (e.g., AWS Lambda, Azure Functions, Cloud Functions, or Cloud Run on Google Cloud)
 * Focus on securing microservices, communication between them, their orchestrators, and function-as-a-service (FaaS) platforms
 * Involves isolating containers, securing images, and managing runtime security
 
@@ -146,7 +144,7 @@ Here are some things you will need to think about when developing modern applica
 * Focus on implementing controls and safeguards to adhere to relevant standards
 
 ## Conclusion
-We have seen the key elements of the cloud security architecture and the building blocks of the whole stack. Furthermore, we have looked at the various types and elements to consider when it comes to the security of the platforms and application development. This is a stepping stone to categorize and group some of the main things you will need to consider working with the Cloud and cloud-native applications.
+We have seen the key elements of the cloud security architecture and the building blocks of the whole stack. Furthermore, we have looked at the various types and elements to consider when it comes to the security of the platforms and application development. This is a stepping stone to categorize and group some of the main things you will need to consider when working with the Cloud and cloud-native applications.
 
 ---
 _** Illustrations in this post: Rustam Mehmandarov._
