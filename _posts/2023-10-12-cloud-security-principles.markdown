@@ -38,11 +38,11 @@ Let's first start by defining the key elements of a Cloud Security Architecture,
 
 Now, we can also mention some of the main challenges related to security, divided into separate groups, and try to map them to the CIA triad model that we have mentioned earlier.
 
-### Network and Storage:
+### Network and Storage
 * Data Encryption
 * Network Security
 
-### Application layer:
+### Application layer
 * Application Security
 * Logging and Monitoring
 * Identity and Access Management (IAM)
@@ -115,7 +115,7 @@ Let’s start with defining the types of platforms and list some of the key elem
 ### Application Security Architecture
 Here are some things you will need to think about when developing modern applications for the Cloud and the cloud-native world.
 
-#### 1. Secure Your Code:
+#### 1. Secure Your Code
 * Software Supply Chain Security: Securing and monitoring your artifacts and third-party libraries.
 * Making sure the code you have written is secure: OWASP Top 10, static code analysis, coding best practices.
 
