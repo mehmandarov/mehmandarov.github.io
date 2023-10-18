@@ -97,8 +97,8 @@ _**Keywords**_: `software`, `environment`
 * For example, use cloud-native monitoring tools your Cloud or platform provider provides.
 * Have good logging, but remember that more is not always better – log relevant information.
 
-### Human Factor (including Social Engineering, Misconfigurations, Human Errors)
-_**Keywords**_: `people`, `human factor`
+### Human Factors (including Social Engineering, Misconfigurations, and Human Errors)
+_**Keywords**_: `people`, `human factors`
 
 * 82% of incidents are caused by human factors ([2022 Data Breach Investigations Report][4])
 * Creating secure applications also implies providing security training for the system users.
