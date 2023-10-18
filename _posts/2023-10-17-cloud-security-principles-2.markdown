@@ -46,8 +46,8 @@ You need to control access and permissions meticulously and over time.
 Things to consider:
 * Implementing role-based access control (RBAC)
 * Principle of least privilege
-* Routines for updating and removing permissions when they are no longer needed.
-
+* Routines for updating and removing permissions when they are no longer needed. 
+* Explore possibilities for using time-based conditions for IAM policies.
 
 ### API Security
 _**Keywords**_: `endpoints`, `permissions`
@@ -71,7 +71,6 @@ _**Keywords**_: `network`, `permissions`
 * Adopting this approach, every request, user, and device is thoroughly verified before gaining access.
 * Again: Implement the principle of least privilege, where users are only granted the minimum level of access required to perform their tasks.
 
-
 ### Software Supply Chain Security
 _**Keywords**_: `software`, `environment`
 
@@ -90,7 +89,6 @@ _**Keywords**_: `software`, `environment`
 * For example, use container scanning tools to identify vulnerabilities within container images before deploying them.
 * Additionally, enforce strict security policies and segregate workloads using Kubernetes namespaces.
 
-
 ### Continuous Monitoring and Incident Response
 _**Keywords**_: `software`, `environment`
 
@@ -99,15 +97,14 @@ _**Keywords**_: `software`, `environment`
 * For example, use cloud-native monitoring tools your Cloud or platform provider provides.
 * Have good logging, but remember that more is not always better – log relevant information.
 
-
-### Social Engineering
+### Human Factor (including Social Engineering, Misconfigurations, Human Errors)
 _**Keywords**_: `people`, `human factor`
 
 * 82% of incidents are caused by human factors ([2022 Data Breach Investigations Report][4])
 * Creating secure applications also implies providing security training for the system users.
 * Social engineering and human factor has proven to be essential to creating secure applications.
 * Consider running security awareness campaigns and employee training from user and developer perspectives.
-
+* Automate routine and mundane tasks – humans often don't enjoy carrying out tasks like this and are prone to errors; computers, on the other hand, excel at tasks like this!
 
 ## Conclusion
 You have probably heard that nothing is stronger than its weakest link. Therefore, it is important to look at various sides of the security. Especially in the Cloud, one size does not fit all when it comes to security. Cloud platforms, software, and threats constantly evolve and add to the complexity of creating secure applications.
