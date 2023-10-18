@@ -75,6 +75,8 @@ _**Keywords**_: `network`, `permissions`
 ### Software Supply Chain Security
 _**Keywords**_: `software`, `environment`
 
+* Create [Software Bill of Materials (SBOM)][3] for your software
+* Governance: Know where all the building blocks (artifacts) of your software are coming from.
 * Automate security checks within your CI/CD pipeline to catch vulnerabilities early and often.
 * Use static code analysis with tools like SonarQube to scan your code for potential security flaws and integrate those checks into your CI/CD pipeline to ensure continuous security monitoring.
 * Use tools to monitor not only the code you develop yourself but also all the third-party libraries you utilize in your code.
@@ -95,11 +97,13 @@ _**Keywords**_: `software`, `environment`
 * The cloud landscape is constantly changing, and threats evolve rapidly. This means that we need to monitor not only for known threats but also for anomalies.
 * Continuous monitoring and proactive incident response are essential to detect anomalies and respond swiftly to security incidents.
 * For example, use cloud-native monitoring tools your Cloud or platform provider provides.
+* Have good logging, but remember that more is not always better – log relevant information.
 
 
 ### Social Engineering
 _**Keywords**_: `people`, `human factor`
 
+* 82% of incidents are caused by human factors ([2022 Data Breach Investigations Report][4])
 * Creating secure applications also implies providing security training for the system users.
 * Social engineering and human factor has proven to be essential to creating secure applications.
 * Consider running security awareness campaigns and employee training from user and developer perspectives.
@@ -116,3 +120,5 @@ Finally, note that this is not an exhaustive list but is instead meant to serve 
 ---
 [1]: {{ site.url }}/cloud-security-principles/
 [2]: https://linktr.ee/nehasardana
+[3]: https://www.cisa.gov/sbom
+[4]: https://www.verizon.com/business/resources/T39a/reports/dbir/2022-data-breach-investigations-report-dbir.pdf
