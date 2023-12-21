@@ -5,6 +5,10 @@ layout: compress
 <html lang="en">
 <head>
 
+    {% if site.analytics-piwik %}
+        {% include analytics-piwik.html %}
+    {% endif %}
+
     {% if site.analytics-google %}
         {% include analytics-google.html %}
     {% endif %}

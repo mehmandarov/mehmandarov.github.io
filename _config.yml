@@ -28,8 +28,11 @@ url: https://mehmandarov.com
 
 permalink: /:title/
 
-# To enable google analytics, supply your token below
-analytics-google: 'UA-65607286-1'
+# To enable Google Analytics, supply your token below
+#analytics-google:
+
+# To enable Piwik Pro Analytics, supply your token below
+analytics-piwik: '4bcc981d-0ca9-416f-858a-cafe2283a244'
 
 # if you don't want comments in your posts, leave categories empty
 disqus:
