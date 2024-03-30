@@ -34,20 +34,20 @@ However, running several containers mapped through the same domain simultaneousl
 Imagine a setup where you are running a set of containers, for example, using `docker-compose` and mapping them all to `my.cluster.host.com` through several ports (or even `localhost`):
 
 ```text
-        Containers                Mapped To             
-                             ┌──────────────────┐       
-    ┌─────────────────┐      │                  │       
-    │  service1:8080  ├──────►  localhost:8080  │       
-    └─────────────────┘      │                  │       
-                             │                  │       
-    ┌─────────────────┐      │                  │       
-    │  service2:8080  ├──────►  localhost:8081  │       
-    └─────────────────┘      │                  │       
-                             │                  │       
-    ┌─────────────────┐      │                  │       
-    │  service3:8080  ├──────►  localhost:8082  │       
-    └─────────────────┘      │                  │       
-                             └──────────────────┘          
+        Containers                Mapped To       
+                             ┌──────────────────┐ 
+    ┌─────────────────┐      │                  │ 
+    │  service1:8080  ├──────►  localhost:8080  │ 
+    └─────────────────┘      │                  │ 
+                             │                  │ 
+    ┌─────────────────┐      │                  │ 
+    │  service2:8080  ├──────►  localhost:8081  │ 
+    └─────────────────┘      │                  │ 
+                             │                  │ 
+    ┌─────────────────┐      │                  │ 
+    │  service3:8080  ├──────►  localhost:8082  │ 
+    └─────────────────┘      │                  │ 
+                             └──────────────────┘ 
 ```
 
 First, you will need to update `quarkus.live-reload.url` in the properties for all the apps (see [docs][2] on where and how to do this) to the correct port (in our case, it is `8080`, `8081`, or `8082`):
