@@ -306,7 +306,7 @@ a {
 }
 p {
   line-height: 1.7;
-  color: #666;
+  color: #242424;
   font-weight: 300;
   margin-bottom: 20px;
   letter-spacing: 0.4px;
@@ -324,7 +324,7 @@ ul li,
 ol li {
   line-height: 2.4rem;
   font-weight: 300;
-  color: #666;
+  color: #242424;
 }
 img,
 pre,
@@ -532,7 +532,7 @@ pre {
 .home > .list .item:hover .url aside,
 .blog > .list .item:hover .url aside,
 .projects > .list .item:hover .url aside {
-  color: #666;
+  color: #242424;
 }
 .projects > .list > .item > .url > .title {
   display: inline;
@@ -583,7 +583,7 @@ pre {
   border-radius: 3px;
   font-size: 1.1rem;
   background: #ededed;
-  color: #666;
+  color: #242424;
   letter-spacing: 1px;
   margin: 3px 1px;
   text-decoration: none;
@@ -638,7 +638,7 @@ pre {
   border-radius: 3px;
   font-size: 1.3rem;
   background: #ededed;
-  color: #666;
+  color: #242424;
   letter-spacing: 1px;
   margin: 0 0.5rem 1rem;
   text-decoration: none;
@@ -684,7 +684,7 @@ pre {
   font-size: 1.6rem;
 }
 .tag-list > .list .item:hover .url aside {
-  color: #666;
+  color: #242424;
 }
 .author {
   padding: 3rem 0;
@@ -916,7 +916,7 @@ pre {
   width: 100px;
 }
 .nav-home > .list > .item > .link:hover {
-  color: #666;
+  color: #242424;
 }
 .evidence {
   background-image: -webkit-linear-gradient(top, rgba(39,243,106,0.15), rgba(39,243,106,0.15));
