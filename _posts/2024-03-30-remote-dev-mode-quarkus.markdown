@@ -25,7 +25,7 @@ _Running several simultaneous Quarkus app containers on your machine with the Qu
 
 The built-in [development mode][1] for Quarkus is a great functionality that lets you update the application code, resources, and configurations. Setting it up is a great way to develop your applications _locally_, as you can immediately see the changes reflected in your application.
 
-Furthermore, we have a [remote development mode][2], which lets you deploy changes to local files immediately available in a containerized environment. Remote development mode works excellently if the container runs in a local Docker or remote containerized environment.
+Furthermore, we have a [remote development mode][2], which lets you make changes to local files immediately available in a containerized environment. Remote development mode works excellently if the container runs in a local Docker or remote containerized environment.
 
 However, running several simultaneous containers with the remote development mode on, mapped to the same domain, may result in warnings and erratic behavior from the client side.
 
