@@ -33,7 +33,7 @@ However, running several simultaneous containers with the remote development mod
 
 Imagine a setup where you are running a set of containers, for example, using `docker-compose` and mapping them all to `my.cluster.host.com` (or even `localhost`)through several ports:
 
-![Microservice Setup] [1]
+![Microservice Setup] [3]
 <figcaption class = "caption">Microservice Setup Example</figcaption>
 
 First, you will need to update `quarkus.live-reload.url` in the properties for all the apps (see [docs][2] on where and how to do this). Update the settings to the correct domain and port (in our case, it is `8080`, `8081`, or `8082`):
