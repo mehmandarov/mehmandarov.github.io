@@ -14,7 +14,7 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_Sometimes, you might need to have several Quarkus app containers running on your machine in parallel with the Quarkus' remote development mode activated. It **almost** works out of the box. Keep reading if you want to know how to make it work 100%._
+_Running several simultaneous Quarkus app containers on your machine with the Quarkus' remote development mode activated presents some challenges. Let's have a look at how we can fix this._
 
 - [Introduction](#introduction)
 - [Setup](#setup)
@@ -23,15 +23,15 @@ _Sometimes, you might need to have several Quarkus app containers running on you
 
 ## Introduction
 
-You might have already used the built-in [development mode][1] for Quarkus, which is a great functionality that lets you update the application code, resources, and configurations. Setting it up is a great way to develop your applications _locally_, as you can immediately see the changes reflected in your application.
+The built-in [development mode][1] for Quarkus is a great functionality that lets you update the application code, resources, and configurations. Setting it up is a great way to develop your applications _locally_, as you can immediately see the changes reflected in your application.
 
-Additionally, you might have used the [remote development mode][2], which lets you deploy changes to local files immediately available in a containerized environment. Remote development mode works excellently if the container runs in a local Docker or remote containerized environment.
+Furthermore, we have a [remote development mode][2], which lets you deploy changes to local files immediately available in a containerized environment. Remote development mode works excellently if the container runs in a local Docker or remote containerized environment.
 
-However, running several containers mapped through the same domain simultaneously may result in warnings and erratic behavior.
+However, running several simultaneous containers with the remote development mode on, mapped to the same domain, may result in warnings and erratic behavior from the client side.
 
 ## Setup
 
-Imagine a setup where you are running a set of containers, for example, using `docker-compose` and mapping them all to `my.cluster.host.com` through several ports (or even `localhost`):
+Imagine a setup where you are running a set of containers, for example, using `docker-compose` and mapping them all to `my.cluster.host.com` (or even `localhost`)through several ports:
 
 ```text
         Containers                Mapped To       
@@ -50,13 +50,13 @@ Imagine a setup where you are running a set of containers, for example, using `d
                              └──────────────────┘ 
 ```
 
-First, you will need to update `quarkus.live-reload.url` in the properties for all the apps (see [docs][2] on where and how to do this) to the correct port (in our case, it is `8080`, `8081`, or `8082`):
+First, you will need to update `quarkus.live-reload.url` in the properties for all the apps (see [docs][2] on where and how to do this). Update the settings to the correct domain and port (in our case, it is `8080`, `8081`, or `8082`):
 
 ```properties
 quarkus.live-reload.url=http://localhost:8081
 ```
 
-After updating the `properties` files, try starting your containers with the remote development mode enabled and connect to the application from a terminal or an IDE. For the second and consecutive applications, the attempts to establish a connection you will see the following message in the logs:
+Next, try starting your containers with the remote development mode enabled and connect to the application from a terminal or an IDE. For the second and the consecutive applications, the attempts to establish a connection you will see the following message in the logs:
 
 ```commandline
 $> ./mvnw quarkus:remote-dev -Dquarkus.profile=dev
@@ -69,11 +69,11 @@ Listening for transport dt_socket at address: 57409
 < ... >
 ```
 
-_**Note:** Ports will be random and may/will vary from the one above._
+_**Note:** Fallback ports will be random and may vary from the one above._
 
-This setup will break the remote reloading from the terminal. Two or more of your applications now see that the default port `50005` for a remote debug is in use and start with a new, random port. The problem is that the "clients" connecting to the containers to upload your updated code do not know what that new port is.
+This setup will break the remote reloading from the terminal on the client side (i.e., your IDE). Two or more of your client applications now see that the default port `50005` for a remote debug is in use and start with a new, random port.
 
-The simple fix is to update the debug ports for all other applications to something other than `5005`, such as `6006` and `6007`. Custom debug ports can be set in the `pom.xml` files, under `quarkus-maven-plugin`, for each of the applications that requires this update:
+The simple fix is to update the debug ports for all other applications to something other than `5005`, such as `6006` and `6007`. Custom debug ports can be set in the `pom.xml` files, under `quarkus-maven-plugin`, for each of the applications that require this update:
 
 ```xml
 <build>
@@ -91,14 +91,15 @@ The simple fix is to update the debug ports for all other applications to someth
 
 You can choose whether to update the debug ports for all applications in the cluster or for all applications except one, which will get the default port.
 
-Now, you will need to rebuild your Docker images, restart them, and re-initiate the remote development mode for each container. And, voilà, everything works!
+Now, you will need to rebuild your apps and re-initiate the remote development mode for each container. And, voilà, everything works!
 
 **_One last note_**: Please ensure you do not use the remote development functionality in the production environment.
 
 ## Conclusion
-A tiny config update brings back the development joy of using remote development mode for more than one container simultaneously. **_Happy coding!_**
+A tiny config update brings back the development joy of using remote development mode for more than one container simultaneously.
+
+**_Happy coding!_**
 
 
 [1]: https://quarkus.io/guides/maven-tooling#dev-mode/
 [2]: https://quarkus.io/guides/maven-tooling#remote-development-mode
-
