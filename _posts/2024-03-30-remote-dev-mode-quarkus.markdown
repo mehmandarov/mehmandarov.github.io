@@ -33,22 +33,8 @@ However, running several simultaneous containers with the remote development mod
 
 Imagine a setup where you are running a set of containers, for example, using `docker-compose` and mapping them all to `my.cluster.host.com` (or even `localhost`)through several ports:
 
-```text
-        Containers                Mapped To       
-                             ┌──────────────────┐ 
-    ┌─────────────────┐      │                  │ 
-    │  service1:8080  ├──────►  localhost:8080  │ 
-    └─────────────────┘      │                  │ 
-                             │                  │ 
-    ┌─────────────────┐      │                  │ 
-    │  service2:8080  ├──────►  localhost:8081  │ 
-    └─────────────────┘      │                  │ 
-                             │                  │ 
-    ┌─────────────────┐      │                  │ 
-    │  service3:8080  ├──────►  localhost:8082  │ 
-    └─────────────────┘      │                  │ 
-                             └──────────────────┘ 
-```
+![Microservice Setup] [1]
+<figcaption class = "caption">Microservice Setup Example</figcaption>
 
 First, you will need to update `quarkus.live-reload.url` in the properties for all the apps (see [docs][2] on where and how to do this). Update the settings to the correct domain and port (in our case, it is `8080`, `8081`, or `8082`):
 
@@ -103,3 +89,4 @@ A tiny config update brings back the development joy of using remote development
 
 [1]: https://quarkus.io/guides/maven-tooling#dev-mode/
 [2]: https://quarkus.io/guides/maven-tooling#remote-development-mode
+[3]: {{ site.url }}/assets/images/posts-images/2024-03-30-microservices.png
