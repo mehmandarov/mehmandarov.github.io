@@ -7,13 +7,13 @@ layout: page
 
 🇧🇾   🇧🇪   🇧🇦   🇧🇷   🇧🇬   🇨🇦   🇨🇿   🇩🇰   🇪🇪   🇩🇪   🇬🇷   🇮🇪   🇮🇹   🇽🇰   🇱🇻   🇱🇹   🇲🇦   🇳🇱   🇳🇴   🇵🇪   🇵🇱   🇵🇹   🇷🇴   🇷🇺   🇷🇸   🇸🇮   🇪🇸   🇸🇪   🇨🇭   🇹🇷   🇺🇦   🇬🇧   🇺🇸
 
-#### _Spoken or otherwise involved in 192 events in 30 countries. Public speaker since 2013._
+#### _Spoken or otherwise involved in over 230 events in 33 countries. Public speaker since 2013._
 
 * **Events: 230+**
 * **Countries: 33**
 * **Cities: ~60**
 * **Speaking since: 2013**
-* **Talk types: keynotes, workshops, talks, lightning  talks**
+* **Involved: keynotes, workshops, talks, lightning  talks, and as a program committee member**
 
 #### Countries:
 
