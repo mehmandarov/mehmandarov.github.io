@@ -5,19 +5,19 @@ layout: page
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-🇧🇾   🇧🇪   🇧🇷   🇧🇬  🇨🇦  🇨🇿   🇩🇰   🇪🇪   🇩🇪   🇬🇷   🇮🇪   🇽🇰   🇱🇻   🇱🇹   🇲🇦   🇳🇴   🇵🇪   🇵🇱   🇵🇹   🇷🇴   🇷🇺   🇷🇸   🇸🇮   🇪🇸   🇸🇪   🇨🇭   🇳🇱   🇹🇷   🇬🇧   🇺🇸   🇺🇦
+🇧🇾   🇧🇪   🇧🇦   🇧🇷   🇧🇬   🇨🇦   🇨🇿   🇩🇰   🇪🇪   🇩🇪   🇬🇷   🇮🇪   🇮🇹   🇽🇰   🇱🇻   🇱🇹   🇲🇦   🇳🇱   🇳🇴   🇵🇪   🇵🇱   🇵🇹   🇷🇴   🇷🇺   🇷🇸   🇸🇮   🇪🇸   🇸🇪   🇨🇭   🇹🇷   🇺🇦   🇬🇧   🇺🇸
 
 #### _Spoken or otherwise involved in 192 events in 30 countries. Public speaker since 2013._
 
-* **Events: 200+**
-* **Countries: 31**
+* **Events: 230+**
+* **Countries: 33**
 * **Cities: ~60**
 * **Speaking since: 2013**
 * **Talk types: keynotes, workshops, talks, lightning  talks**
 
 #### Countries:
 
-Belarus, Belgium, Brazil, Bulgaria, Canada, Czechia, Denmark, Estonia, Germany, Greece, Ireland, Kosovo, Latvia, Lithuania, Morocco, Norway, Peru, Poland, Portugal, Romania, Russia, Serbia, Slovenia, Spain, Sweden, Switzerland, The Netherlands, Türkiye, UK, USA, Ukraine.
+Belarus, Belgium, Bosnia and Herzegovina, Brazil, Bulgaria, Canada, Czechia, Denmark, Estonia, Germany, Greece, Ireland, Italy, Kosovo, Latvia, Lithuania, Morocco, The Netherlands, Norway, Peru, Poland, Portugal, Romania, Russia, Serbia, Slovenia, Spain, Sweden, Switzerland, Türkiye, Ukraine, UK, USA.
 
 #### Cities:
 
