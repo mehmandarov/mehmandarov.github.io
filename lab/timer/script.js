@@ -236,11 +236,13 @@ function createBlockDOM(item) {
             <div class="loop-header">
                 <div class="loop-controls">
                     <span>Loop</span>
-                    <input type="number" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)" style="width:60px;">
-                    <span>times</span>
+                    <input type="number" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)" style="width:50px;">
+                    <span>x</span>
                 </div>
                 <div class="loop-controls">
-                     <button class="btn-ghost btn-sm" onclick="addChild('${item.id}')">+ Loop Interval</button>
+                     <!-- Added specific buttons for nested logic -->
+                     <button class="btn-ghost btn-sm" onclick="addIntervalToBlock('${item.id}')" title="Add Interval">+ Interval</button>
+                     <button class="btn-ghost btn-sm" onclick="addLoopToBlock('${item.id}')" title="Add Nested Loop">+ Loop</button>
                      <button class="btn-danger btn-sm" onclick="removeItem('${item.id}')">✕</button>
                 </div>
             </div>
@@ -294,7 +296,15 @@ function addLoop() {
     currentRoutine.blocks.push({ id: generateId(), type: 'loop', iterations: 3, children: [] });
     renderEditor();
 }
-function addChild(parentId) {
+function addLoopToBlock(parentId) {
+    const res = findItem(currentRoutine.blocks, parentId);
+    if(res) {
+        // Add a nested loop with 8 iterations by default
+        res.item.children.push({ id: generateId(), type: 'loop', iterations: 8, children: [] });
+        renderEditor();
+    }
+}
+function addIntervalToBlock(parentId) {
     const res = findItem(currentRoutine.blocks, parentId);
     if(res) {
         res.item.children.push({ id: generateId(), type: 'interval', name: 'Action', duration: 20, unit: 's', color: 'red' });
