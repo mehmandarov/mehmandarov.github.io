@@ -182,3 +182,42 @@ input, select {
     .toolbar-controls { width: 100%; }
 }
 @media (min-width: 769px) { .toolbar { flex-direction: row; justify-content: space-between; align-items: center; } }
+
+/* --- HELP MODAL VISUALS --- */
+.help-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px; /* More space between topics */
+}
+
+.help-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 20px;
+}
+
+.help-item:last-child { border-bottom: none; }
+
+.help-text h4 { margin: 0 0 5px 0; color: var(--primary); font-size: 1.1rem; }
+.help-text p { margin: 0 0 10px 0; font-size: 0.95rem; color: #ccc; line-height: 1.5; }
+
+/* "Demo" Container - scales down the UI elements slightly */
+.demo-ui {
+    pointer-events: none; /* Prevents clicking on help examples */
+    opacity: 1;
+    transform: scale(0.95);
+    transform-origin: left top;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Adjustments for Demo Blocks to fit in modal */
+.demo-ui .block, .demo-ui .loop-block { margin-bottom: 5px; }
+.demo-ui input { color: #aaa; border-color: #444; } /* Dimmed inputs */
+.demo-ui .btn-danger { display: none; } /* Hide delete buttons in help */
+
+/* Specific layout for the Color example */
+.color-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.color-row .block { flex: 1; min-width: 120px; }
