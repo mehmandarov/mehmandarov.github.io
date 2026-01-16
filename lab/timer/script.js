@@ -240,7 +240,7 @@ function createBlockDOM(item) {
                     <span>times</span>
                 </div>
                 <div class="loop-controls">
-                     <button class="btn-ghost btn-sm" onclick="addChild('${item.id}')">+ Child</button>
+                     <button class="btn-ghost btn-sm" onclick="addChild('${item.id}')">+ Loop Interval</button>
                      <button class="btn-danger btn-sm" onclick="removeItem('${item.id}')">✕</button>
                 </div>
             </div>
@@ -450,10 +450,20 @@ function finish() {
     clearInterval(timer);
 }
 
+// --- HELP MODAL LOGIC ---
+function openHelp() {
+    document.getElementById('help-modal').classList.remove('hidden');
+}
+
+function closeHelp() {
+    document.getElementById('help-modal').classList.add('hidden');
+}
+
 // --- KEYBOARD SHORTCUTS ---
 document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
         closeLibrary();
+        closeHelp();
     }
 });
 

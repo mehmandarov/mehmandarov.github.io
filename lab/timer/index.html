@@ -20,6 +20,8 @@
                 </div>
                 
                 <div class="toolbar-controls">
+                    <!-- Add this button -->
+                    <button class="btn-ghost" onclick="openHelp()">ℹ️ Help</button>
                     <button class="btn-ghost" onclick="openLibrary()">📚 Library</button>
                     
                     <div class="save-group">
@@ -67,6 +69,129 @@
                     
                     <h3 style="margin-top: 20px;">🌐 Presets (JSON File)</h3>
                     <div id="lib-list-static" class="lib-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- HELP MODAL -->
+        <div id="help-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Quick Start Guide</h2>
+                    <button class="btn-ghost" onclick="closeHelp()">✕</button>
+                </div>
+                <div class="modal-body">
+                    <div class="help-grid">
+
+                        <!-- 1. INTERVALS & UNITS -->
+                        <div class="help-item">
+                            <div class="help-text">
+                                <h4>1. Intervals & Units</h4>
+                                <p>
+                                    Set a Name and Duration. <br>
+                                    <b>Click the unit button</b> to switch between
+                                    <span class="unit-toggle unit-s" style="display:inline-block; padding:2px 6px; border-radius:3px; cursor:default;">SEC</span> and
+                                    <span class="unit-toggle unit-m" style="display:inline-block; padding:2px 6px; border-radius:3px; cursor:default;">MIN</span>.
+                                </p>
+                            </div>
+                            <!-- ACTUAL UI GRAPHIC -->
+                            <div class="demo-ui">
+                                <div class="block" style="border-left-color: #ef4444;">
+                                    <div class="block-content">
+                                        <div class="color-dot dot-red"></div>
+                                        <label>
+                                            <input type="text" value="Sprint" readonly>
+                                        </label>
+                                        <label>
+                                            <input type="number" value="45" readonly>
+                                        </label>
+                                        <button class="unit-toggle unit-s">SEC</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. COLORS -->
+                        <div class="help-item">
+                            <div class="help-text">
+                                <h4>2. Color Coding</h4>
+                                <p>Click the <b>colored circle</b> to change the type. The player background will fill with this color during the workout.</p>
+                            </div>
+                            <!-- ACTUAL UI GRAPHIC -->
+                            <div class="demo-ui color-row">
+                                <!-- Red Example -->
+                                <div class="block" style="border-left-color: #ef4444; padding: 8px;">
+                                    <div class="block-content" style="gap:5px;">
+                                        <div class="color-dot dot-red"></div>
+                                        <span style="font-size:0.8rem; font-weight:bold;">Work</span>
+                                    </div>
+                                </div>
+                                <!-- Green Example -->
+                                <div class="block" style="border-left-color: #22c55e; padding: 8px;">
+                                    <div class="block-content" style="gap:5px;">
+                                        <div class="color-dot dot-green"></div>
+                                        <span style="font-size:0.8rem; font-weight:bold;">Rest</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. LOOPS -->
+                        <div class="help-item">
+                            <div class="help-text">
+                                <h4>3. Loops</h4>
+                                <p>Use loops to repeat a set of intervals (Tabata style). Add intervals <i>inside</i> the dashed box.</p>
+                            </div>
+                            <div class="demo-ui">
+                                <div class="loop-block" style="padding:10px;">
+                                    <div class="loop-header" style="margin-bottom:5px;">
+                                        <div class="loop-controls">
+                                            <span>Loop</span>
+                                            <label>
+                                                <input type="number" value="4" readonly style="width:40px;">
+                                            </label>
+                                            <span>times</span>
+                                        </div>
+                                    </div>
+                                    <div class="loop-children">
+                                        <div class="block" style="border-left-color: #ef4444; padding: 8px;">
+                                            <div class="block-content"><div class="color-dot dot-red"></div>
+                                                <label>
+                                                    <input type="text" value="Action" readonly>
+                                                </label></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. TOTAL TIME -->
+                        <div class="help-item">
+                            <div class="help-text">
+                                <h4>4. Total Time</h4>
+                                <p>The total duration is calculated automatically and displayed in the top header as you edit.</p>
+                            </div>
+                            <div class="demo-ui">
+                                <div style="background:var(--surface); padding:10px 15px; border-radius:8px; border:1px solid #333; display:flex; justify-content:space-between; align-items:center;">
+                                    <span style="color:var(--primary); font-weight:bold;">HIIT Studio</span>
+                                    <span style="font-size:1.2rem; font-weight:bold;">12:45</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. SAVING -->
+                        <div class="help-item">
+                            <div class="help-text">
+                                <h4>5. Saving & Loading</h4>
+                                <p>
+                                    <b>💾 Save:</b> Saves to your browser (Local Storage).<br>
+                                    <b>📚 Library:</b> Loads saved workouts or built-in presets.<br>
+                                    <b>⬇️ JSON:</b> Download a backup file.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </div>
