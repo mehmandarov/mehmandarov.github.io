@@ -362,26 +362,70 @@ function compileTimeline(blocks, loopContext = []) {
 
 function startWorkout() {
     if(audioCtx.state === 'suspended') audioCtx.resume();
+
+    // Compile timeline with loop context
     timeline = compileTimeline(currentRoutine.blocks);
     if(timeline.length === 0) return alert("Empty routine");
 
     totalTimeInitial = calculateTotalRecursive(currentRoutine.blocks);
-    
-    // Render timeline
+
     const list = document.getElementById('timeline-list');
     list.innerHTML = '';
+
+    // --- UPDATED LIST RENDERING ---
+    let prevLoops = []; // Track previous step's loop context
+
     timeline.forEach((step, idx) => {
+        const currentLoops = step.loops || [];
+
+        // 1. Check if we need to insert a Loop Header
+        // Logic: If we are in a loop, and the "deepest" loop state has changed from the previous step
+        if (currentLoops.length > 0) {
+            const activeLoop = currentLoops[currentLoops.length - 1]; // Get deepest loop
+            const prevLoop = prevLoops.length > 0 ? prevLoops[prevLoops.length - 1] : null;
+
+            // If we just entered a loop OR the round number changed
+            if (!prevLoop || activeLoop.current !== prevLoop.current || currentLoops.length !== prevLoops.length) {
+
+                // Create the Header Div
+                const header = document.createElement('div');
+                header.className = 'timeline-loop-header';
+
+                // Calculate indentation for the header itself
+                const headerIndent = (currentLoops.length - 1) * 15;
+                header.style.marginLeft = `${headerIndent}px`;
+
+                header.innerHTML = `↻ Loop Round ${activeLoop.current} / ${activeLoop.total}`;
+                list.appendChild(header);
+            }
+        }
+
+        // 2. Create the Item Row
         const row = document.createElement('div');
         row.className = 'timeline-item';
+        if (currentLoops.length > 0) row.classList.add('indented');
         row.id = `step-${idx}`;
         row.onclick = () => jumpTo(idx);
-        row.innerHTML = `<span>${idx+1}. ${step.name}</span><span class="timeline-time">${fmtTime(step.duration)}</span>`;
+
+        // 3. Apply Indentation based on nesting depth
+        // Base padding is 15px. Add 15px for every loop level.
+        const indent = (currentLoops.length * 15) + 15;
+        row.style.paddingLeft = `${indent}px`;
+
+        row.innerHTML = `
+            <span>${idx+1}. ${step.name}</span>
+            <span class="timeline-time">${fmtTime(step.duration)}</span>
+        `;
         list.appendChild(row);
+
+        // Update tracker
+        prevLoops = currentLoops;
     });
+    // -----------------------------
 
     document.getElementById('editor').classList.add('hidden');
     document.getElementById('player').classList.remove('hidden');
-    
+
     currentIndex = 0;
     isPaused = false;
     startStep(currentIndex);

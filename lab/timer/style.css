@@ -224,6 +224,38 @@ input, select {
 .timeline-item.active { background: rgba(255, 255, 255, 0.2); border-left: 4px solid white; color: white; }
 .timeline-time { font-family: monospace; }
 
+/* --- TIMELINE LOOP VISUALS --- */
+
+/* The separator row showing "Round X / Y" */
+.timeline-loop-header {
+    background: #1a1a1a;
+    border-left: 2px solid var(--loop-color);
+    color: var(--loop-color);
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 5px;
+    margin-bottom: 2px;
+
+    /* Sticky header effect (optional, keeps it visible while scrolling) */
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+/* Ensure items respect left padding (indentation) */
+.timeline-item {
+    transition: all 0.2s;
+    /* We will set padding-left dynamically in JS */
+}
+
+/* Add a subtle connection line for indented items */
+.timeline-item.indented {
+    border-left: 1px solid #333;
+}
+
 @media (max-width: 768px) {
     #player { flex-direction: column; }
     .player-main { flex: 1; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
