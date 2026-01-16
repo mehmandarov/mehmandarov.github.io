@@ -236,12 +236,12 @@ function createBlockDOM(item) {
             <div class="loop-header">
                 <div class="loop-controls">
                     <span>Loop</span>
-                    <input type="number" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)" style="width:50px;">
-                    <span>x</span>
+                    <!-- Removed inline width, handled by CSS now -->
+                    <input type="number" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)">
+                    <span>times</span>
                 </div>
                 <div class="loop-controls">
-                     <!-- Added specific buttons for nested logic -->
-                     <button class="btn-ghost btn-sm" onclick="addIntervalToBlock('${item.id}')" title="Add Interval">+ Interval</button>
+                     <button class="btn-ghost btn-sm" onclick="addIntervalToBlock('${item.id}')" title="Add Interval">+ Int</button>
                      <button class="btn-ghost btn-sm" onclick="addLoopToBlock('${item.id}')" title="Add Nested Loop">+ Loop</button>
                      <button class="btn-danger btn-sm" onclick="removeItem('${item.id}')">✕</button>
                 </div>

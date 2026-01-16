@@ -118,6 +118,21 @@ input, select {
 .loop-controls { display: flex; align-items: center; gap: 8px; }
 .loop-children { padding-left: 10px; display: flex; flex-direction: column; gap: 10px; border-left: 2px solid #333; }
 
+/* specific styling for the loop iteration number */
+.loop-header input[type="number"] {
+    width: 80px !important; /* Force it wider */
+    font-size: 1.1rem;      /* Larger text */
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    margin: 0 5px;         /* Space around it */
+}
+
+.loop-controls span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
 /* Action Bar */
 .action-bar { padding: 15px; background: var(--surface); border-top: 1px solid var(--border); display: flex; justify-content: center; }
 .start-btn { width: 100%; max-width: 400px; padding: 18px; font-size: 1.2rem; }
