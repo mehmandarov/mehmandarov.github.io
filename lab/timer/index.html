@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>HIIT Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        
+        <!-- EDITOR -->
+        <div id="editor">
+            <!-- Top Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-row">
+                    <div class="text-xl branding">HIIT Studio</div>
+                    <div class="total-display" id="total-time">00:00</div>
+                </div>
+                
+                <div class="toolbar-controls">
+                    <button class="btn-ghost" onclick="openLibrary()">📚 Library</button>
+                    
+                    <div class="save-group">
+                        <label for="routine-category"></label><select id="routine-category">
+                            <option value="cardio">🏃 Cardio</option>
+                            <option value="strength">💪 Strength</option>
+                            <option value="yoga">🧘 Yoga</option>
+                            <option value="boxing">🥊 Boxing</option>
+                        </select>
+                        <label for="routine-name"></label><input type="text" id="routine-name" placeholder="Routine Name" />
+                        <button class="btn-ghost" onclick="saveToLocal()" title="Save to Browser DB">💾</button>
+                        <button class="btn-ghost" onclick="exportJSON()" title="Download JSON file">⬇️ JSON</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workspace -->
+            <div class="scroll-area">
+                <div id="routine-container" class="block-list"></div>
+                
+                <div class="block-list add-buttons-area">
+                    <div class="flex gap-2">
+                        <button class="btn-ghost" onclick="addInterval()">+ Interval</button>
+                        <button class="btn-ghost" onclick="addLoop()">+ Loop</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Action Bar -->
+            <div class="action-bar">
+                <button class="btn-primary start-btn" onclick="startWorkout()">START WORKOUT ▶</button>
+            </div>
+        </div>
+
+        <!-- LIBRARY MODAL -->
+        <div id="library-modal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Workout Library</h2>
+                    <button class="btn-ghost" onclick="closeLibrary()">✕</button>
+                </div>
+                <div class="modal-body">
+                    <h3>📂 Local Storage (Browser)</h3>
+                    <div id="lib-list-local" class="lib-grid"></div>
+                    
+                    <h3 style="margin-top: 20px;">🌐 Presets (JSON File)</h3>
+                    <div id="lib-list-static" class="lib-grid"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PLAYER -->
+        <div id="player" class="hidden">
+            <div class="player-main">
+                <div class="action-name" id="play-name">READY</div>
+                <div class="timer-big" id="play-timer">00</div>
+                <div class="muted" id="play-total-progress">Total: 00:00 / 00:00</div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="play-bar"></div>
+                </div>
+                <div class="player-controls">
+                    <button class="btn-glass btn-lg" onclick="togglePause()" id="btn-pause">⏸ Pause</button>
+                    <button class="btn-glass btn-lg" onclick="stopWorkout()">■ Stop</button>
+                </div>
+            </div>
+            <div class="player-sidebar">
+                <div class="timeline-header">SCHEDULE (Tap to Jump)</div>
+                <div class="timeline-scroll" id="timeline-list"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

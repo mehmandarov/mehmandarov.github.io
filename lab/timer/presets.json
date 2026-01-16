@@ -1,0 +1,112 @@
+[
+  {
+    "id": "iwnddy5dv",
+    "name": "Cage Challenge 40/20",
+    "category": "cardio",
+    "blocks": [
+      {
+        "id": "7xyemp54d",
+        "type": "loop",
+        "iterations": 2,
+        "children": [
+          {
+            "id": "0r0c9ci55",
+            "type": "interval",
+            "name": "Warmup",
+            "duration": 2,
+            "unit": "m",
+            "color": "blue"
+          },
+          {
+            "id": "mtbvlyjh0",
+            "type": "interval",
+            "name": "Break",
+            "duration": 30,
+            "unit": "s",
+            "color": "green"
+          }
+        ],
+        "color": "red"
+      },
+      {
+        "id": "gig5ipn23",
+        "type": "loop",
+        "iterations": 10,
+        "children": [
+          {
+            "id": "kp6cqg3w7",
+            "type": "interval",
+            "name": "Workout",
+            "duration": 40,
+            "unit": "s",
+            "color": "red"
+          },
+          {
+            "id": "1dqmw2yqw",
+            "type": "interval",
+            "name": "Rest",
+            "duration": 20,
+            "unit": "s",
+            "color": "green"
+          }
+        ],
+        "color": "red"
+      }
+    ]
+  },
+  {
+    "id": "iwnddy5dv",
+    "name": "Cage Challenge 45/15",
+    "category": "cardio",
+    "blocks": [
+      {
+        "id": "7xyemp54d",
+        "type": "loop",
+        "iterations": 2,
+        "children": [
+          {
+            "id": "0r0c9ci55",
+            "type": "interval",
+            "name": "Warmup",
+            "duration": 2,
+            "unit": "m",
+            "color": "blue"
+          },
+          {
+            "id": "mtbvlyjh0",
+            "type": "interval",
+            "name": "Break",
+            "duration": 30,
+            "unit": "s",
+            "color": "green"
+          }
+        ],
+        "color": "red"
+      },
+      {
+        "id": "gig5ipn23",
+        "type": "loop",
+        "iterations": 10,
+        "children": [
+          {
+            "id": "kp6cqg3w7",
+            "type": "interval",
+            "name": "Workout",
+            "duration": 45,
+            "unit": "s",
+            "color": "red"
+          },
+          {
+            "id": "1dqmw2yqw",
+            "type": "interval",
+            "name": "Rest",
+            "duration": 15,
+            "unit": "s",
+            "color": "green"
+          }
+        ],
+        "color": "red"
+      }
+    ]
+  }
+]
