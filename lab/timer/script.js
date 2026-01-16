@@ -345,14 +345,19 @@ function compileTimeline(blocks, loopContext = []) {
                 duration: getDurationSeconds(i),
                 unit: i.unit,
                 color: i.color || 'red',
-                // Attach the current loop status (copy the array)
+                // We pass ID and Name now
                 loops: JSON.parse(JSON.stringify(loopContext))
             });
         }
         if(i.type === 'loop') {
             for(let k=0; k<i.iterations; k++) {
-                // Add current loop info to context: "Round 1 of 4"
-                const newContext = [...loopContext, { current: k+1, total: i.iterations }];
+                // Add full identification to the context
+                const newContext = [...loopContext, {
+                    id: i.id,             // CRITICAL: Unique ID to distinguish loops
+                    name: "Loop",         // You could add a name field to loops later if you wanted
+                    current: k+1,
+                    total: i.iterations
+                }];
                 q = q.concat(compileTimeline(i.children, newContext));
             }
         }
@@ -363,7 +368,6 @@ function compileTimeline(blocks, loopContext = []) {
 function startWorkout() {
     if(audioCtx.state === 'suspended') audioCtx.resume();
 
-    // Compile timeline with loop context
     timeline = compileTimeline(currentRoutine.blocks);
     if(timeline.length === 0) return alert("Empty routine");
 
@@ -372,56 +376,79 @@ function startWorkout() {
     const list = document.getElementById('timeline-list');
     list.innerHTML = '';
 
-    // --- UPDATED LIST RENDERING ---
-    let prevLoops = []; // Track previous step's loop context
+    let prevLoops = [];
+
+    // CONSTANTS representing the CSS heights
+    const H_LOOP = 40;
+    const H_ROUND = 30;
 
     timeline.forEach((step, idx) => {
         const currentLoops = step.loops || [];
 
-        // 1. Check if we need to insert a Loop Header
-        // Logic: If we are in a loop, and the "deepest" loop state has changed from the previous step
-        if (currentLoops.length > 0) {
-            const activeLoop = currentLoops[currentLoops.length - 1]; // Get deepest loop
-            const prevLoop = prevLoops.length > 0 ? prevLoops[prevLoops.length - 1] : null;
+        for(let i = 0; i < currentLoops.length; i++) {
+            const activeLoop = currentLoops[i];
+            const prevLoop = prevLoops[i];
 
-            // If we just entered a loop OR the round number changed
-            if (!prevLoop || activeLoop.current !== prevLoop.current || currentLoops.length !== prevLoops.length) {
+            // Calculate "Stack Offset" based on depth
+            // If depth 0: Top = 0
+            // If depth 1: Top = 40 + 30 = 70px
+            const stackOffset = i * (H_LOOP + H_ROUND);
 
-                // Create the Header Div
+            // 1. NEW LOOP HEADER
+            if (!prevLoop || activeLoop.id !== prevLoop.id) {
                 const header = document.createElement('div');
-                header.className = 'timeline-loop-header';
+                header.className = 'timeline-loop-start';
+                header.style.marginLeft = `${(i * 15)}px`;
 
-                // Calculate indentation for the header itself
-                const headerIndent = (currentLoops.length - 1) * 15;
-                header.style.marginLeft = `${headerIndent}px`;
+                // STICKY CALCULATION:
+                header.style.top = `${stackOffset}px`;
+                header.style.zIndex = 100 + i; // Higher depth = higher z-index
 
-                header.innerHTML = `↻ Loop Round ${activeLoop.current} / ${activeLoop.total}`;
+                // Visuals for nested
+                if(i > 0) header.style.borderLeftColor = '#3b82f6';
+
+                header.innerHTML = `<span>⚡ Loop ${i === 0 ? '' : '(Nested)'} • ${activeLoop.total} Rounds</span>`;
                 list.appendChild(header);
+
+                // Immediate Round Marker
+                const sub = document.createElement('div');
+                sub.className = 'timeline-round-marker';
+                sub.style.marginLeft = `${(i * 15)}px`;
+
+                // STICKY CALCULATION (Below the header):
+                sub.style.top = `${stackOffset + H_LOOP}px`;
+                sub.style.zIndex = 90 + i;
+
+                sub.innerText = `Round ${activeLoop.current} / ${activeLoop.total}`;
+                list.appendChild(sub);
+            }
+            // 2. NEW ROUND MARKER
+            else if (activeLoop.current !== prevLoop.current) {
+                const sub = document.createElement('div');
+                sub.className = 'timeline-round-marker';
+                sub.style.marginLeft = `${(i * 15)}px`;
+
+                // STICKY CALCULATION:
+                sub.style.top = `${stackOffset + H_LOOP}px`;
+                sub.style.zIndex = 90 + i;
+
+                sub.innerText = `Round ${activeLoop.current} / ${activeLoop.total}`;
+                list.appendChild(sub);
             }
         }
 
-        // 2. Create the Item Row
+        // ITEM ROW
         const row = document.createElement('div');
         row.className = 'timeline-item';
-        if (currentLoops.length > 0) row.classList.add('indented');
         row.id = `step-${idx}`;
         row.onclick = () => jumpTo(idx);
-
-        // 3. Apply Indentation based on nesting depth
-        // Base padding is 15px. Add 15px for every loop level.
-        const indent = (currentLoops.length * 15) + 15;
+        const indent = 10 + (currentLoops.length * 15);
         row.style.paddingLeft = `${indent}px`;
-
-        row.innerHTML = `
-            <span>${idx+1}. ${step.name}</span>
-            <span class="timeline-time">${fmtTime(step.duration)}</span>
-        `;
+        row.innerHTML = `<span>${idx+1}. ${step.name}</span><span class="timeline-time">${fmtTime(step.duration)}</span>`;
         list.appendChild(row);
 
-        // Update tracker
         prevLoops = currentLoops;
     });
-    // -----------------------------
 
     document.getElementById('editor').classList.add('hidden');
     document.getElementById('player').classList.remove('hidden');

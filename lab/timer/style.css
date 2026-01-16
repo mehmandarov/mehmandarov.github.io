@@ -226,6 +226,62 @@ input, select {
 
 /* --- TIMELINE LOOP VISUALS --- */
 
+/* CONSTANTS for the reference:
+   Loop Header Height: 40px
+   Round Marker Height: 30px
+*/
+
+/* 1. Major Header (Loop Name) */
+.timeline-loop-start {
+    background: #222;
+    color: var(--loop-color);
+
+    height: 40px;           /* Fixed height */
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    border-left: 4px solid var(--loop-color);
+    margin-top: 0;
+
+    position: sticky;       /* STICKY */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 2. Minor Header (Round Number) */
+.timeline-round-marker {
+    background: #333;       /* Needs opaque background to hide scrolling items */
+    color: #ccc;
+
+    height: 30px;           /* Fixed height */
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-left: 1px dotted #666;
+    border-bottom: 1px solid #444;
+    text-transform: uppercase;
+
+    position: sticky;       /* STICKY */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.timeline-item {
+    background: var(--surface);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
 /* The separator row showing "Round X / Y" */
 .timeline-loop-header {
     background: #1a1a1a;
