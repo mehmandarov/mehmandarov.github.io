@@ -336,20 +336,24 @@ let timeLeft = 0;
 let isPaused = false;
 let totalTimeInitial = 0;
 
-function compileTimeline(blocks) {
+function compileTimeline(blocks, loopContext = []) {
     let q = [];
     blocks.forEach(i => {
         if(i.type === 'interval') {
-            q.push({ 
-                name: i.name, 
+            q.push({
+                name: i.name,
                 duration: getDurationSeconds(i),
                 unit: i.unit,
-                color: i.color || 'red'
+                color: i.color || 'red',
+                // Attach the current loop status (copy the array)
+                loops: JSON.parse(JSON.stringify(loopContext))
             });
         }
         if(i.type === 'loop') {
             for(let k=0; k<i.iterations; k++) {
-                q = q.concat(compileTimeline(i.children));
+                // Add current loop info to context: "Round 1 of 4"
+                const newContext = [...loopContext, { current: k+1, total: i.iterations }];
+                q = q.concat(compileTimeline(i.children, newContext));
             }
         }
     });
@@ -423,22 +427,41 @@ function startStep(idx) {
         }
     }, 1000);
 }
-
 function updateDisplay() {
     const step = timeline[currentIndex];
+
+    // 1. UPDATE TEXT & TIMER
     document.getElementById('play-name').innerText = step ? step.name : "DONE";
     document.getElementById('play-timer').innerText = step ? fmtTime(timeLeft) : "00:00";
+
+    // 2. UPDATE LOOP STATUS BADGES
+    const statusContainer = document.getElementById('play-loop-status');
+    statusContainer.innerHTML = ''; // Clear previous
+
+    if(step && step.loops && step.loops.length > 0) {
+        step.loops.forEach(loop => {
+            // Create a badge for each loop level (supports nested loops)
+            const badge = document.createElement('div');
+            badge.className = 'loop-badge';
+            // Example Output: 🔁 Round 2 / 4
+            badge.innerHTML = `🔁 Round <span>${loop.current}</span> / ${loop.total}`;
+            statusContainer.appendChild(badge);
+        });
+    }
+
+    // 3. PROGRESS BAR
     if(step) {
         const pct = (timeLeft / step.duration) * 100;
         document.getElementById('play-bar').style.width = pct + "%";
     }
-    
+
+    // 4. TOTAL PROGRESS
     let elapsed = 0;
     for(let i=0; i<currentIndex; i++) elapsed += timeline[i].duration;
     if(step) elapsed += (step.duration - timeLeft);
-    document.getElementById('play-total-progress').innerText = `${fmtTime(elapsed)} / ${fmtTime(totalTimeInitial)}`;
+    document.getElementById('play-total-progress').innerText =
+        `${fmtTime(elapsed)} / ${fmtTime(totalTimeInitial)}`;
 }
-
 function togglePause() {
     isPaused = !isPaused;
     document.getElementById('btn-pause').innerText = isPaused ? "▶ Resume" : "⏸ Pause";

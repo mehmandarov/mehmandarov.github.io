@@ -133,6 +133,41 @@ input, select {
     font-weight: 600;
 }
 
+.loop-status-container {
+    display: flex;
+    flex-direction: column; /* Stack if nested loops */
+    gap: 8px;
+    margin-bottom: 15px;
+    align-items: center;
+    min-height: 30px; /* Prevent layout jump */
+}
+
+.loop-badge {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+}
+
+.loop-badge span {
+    color: var(--loop-color); /* The Yellow/Orange color */
+    font-weight: 800;
+}
+
+/* On mobile, make sure it doesn't get too huge */
+@media (max-width: 600px) {
+    .loop-badge { font-size: 1rem; padding: 4px 12px; }
+}
+
 /* Action Bar */
 .action-bar { padding: 15px; background: var(--surface); border-top: 1px solid var(--border); display: flex; justify-content: center; }
 .start-btn { width: 100%; max-width: 400px; padding: 18px; font-size: 1.2rem; }
