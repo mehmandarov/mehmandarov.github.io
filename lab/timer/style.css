@@ -24,10 +24,14 @@ body {
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
-    height: 100vh;
+
+    /* Use Dynamic Viewport Height so address bars don't cover content */
+    height: 100vh;        /* Fallback */
+    height: 100dvh;       /* Modern Mobile Fix */
+
     display: flex;
     flex-direction: column;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 /* --- UTILS --- */
@@ -169,8 +173,23 @@ input, select {
 }
 
 /* Action Bar */
-.action-bar { padding: 15px; background: var(--surface); border-top: 1px solid var(--border); display: flex; justify-content: center; }
-.start-btn { width: 100%; max-width: 400px; padding: 18px; font-size: 1.2rem; }
+.action-bar {
+    padding: 15px;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: center;
+
+    /* Add extra padding for the mobile home indicator/nav bar */
+    padding-bottom: calc(15px + env(safe-area-inset-bottom));
+}
+
+.start-btn {
+    width: 100%;
+    max-width: 400px;
+    padding: 18px;
+    font-size: 1.2rem;
+}
 
 /* --- MODAL & LIBRARY --- */
 .modal {
@@ -312,15 +331,66 @@ input, select {
     border-left: 1px solid #333;
 }
 
-@media (max-width: 768px) {
-    #player { flex-direction: column; }
-    .player-main { flex: 1; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .player-sidebar { flex: 1; min-width: 100%; max-height: 40vh; }
-    .timer-big { font-size: 20vw; margin: 10px 0; }
-    .toolbar-controls { width: 100%; }
-}
-@media (min-width: 769px) { .toolbar { flex-direction: row; justify-content: space-between; align-items: center; } }
+/* --- MOBILE FIXES --- */
+@media (max-width: 600px) {
 
+    /* 1. Toolbar Controls: Allow wrapping */
+    .toolbar-controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* 2. Top Buttons (Help/Library): Share first row */
+    .toolbar-controls > button {
+        flex: 1;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* 3. Save Group: Grid Layout for strict positioning */
+    .save-group {
+        width: 100%;
+        margin-top: 5px;
+        display: grid;
+        /* Col 1: Fits content (Category), Col 2: Fills rest (Name) */
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto; /* Two rows */
+        gap: 8px;
+        align-items: center;
+    }
+
+    /* --- ROW 1 --- */
+    #routine-category {
+        grid-row: 1;
+        grid-column: 1;
+        width: 100%;
+    }
+
+    #routine-name {
+        grid-row: 1;
+        grid-column: 2;
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* --- ROW 2 --- */
+    /* Target the Save button (1st button in the group) */
+    .save-group > button:nth-of-type(1) {
+        grid-row: 2;
+        grid-column: 1;
+        width: 100%; /* Fill the small column under category */
+    }
+
+    /* Target the JSON button (2nd button in the group) */
+    .save-group > button:nth-of-type(2) {
+        grid-row: 2;
+        grid-column: 2;
+        justify-self: start; /* Don't stretch, align left */
+        min-width: 100px;    /* But keep it clickable */
+    }
+}
 /* --- HELP MODAL VISUALS --- */
 .help-grid {
     display: grid;
@@ -359,3 +429,31 @@ input, select {
 /* Specific layout for the Color example */
 .color-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .color-row .block { flex: 1; min-width: 120px; }
+
+/* --- RESPONSIVE PLAYER --- */
+@media (max-width: 800px) {
+    #player {
+        flex-direction: column;
+    }
+    .player-main {
+        flex: 0 0 60%; /* Fixed 60% height */
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        width: 100%;
+        padding: 10px;
+    }
+    .player-sidebar {
+        flex: 1; /* Takes remaining space */
+        width: 100%;
+        min-width: 0; /* Override the desktop min-width */
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .timer-big {
+        font-size: 14vh; /* Slightly smaller to ensure fit */
+        margin: 10px 0;
+    }
+    .player-controls {
+        margin-top: 20px;
+    }
+}

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HIIT Studio</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,19 +21,19 @@
                 
                 <div class="toolbar-controls">
                     <!-- Add this button -->
-                    <button class="btn-ghost" onclick="openHelp()">ℹ️ Help</button>
-                    <button class="btn-ghost" onclick="openLibrary()">📚 Library</button>
+                    <button class="btn-ghost" onclick="openHelp()" aria-label="Open Help">ℹ️ Help</button>
+                    <button class="btn-ghost" onclick="openLibrary()" aria-label="Open Workout Library">📚 Library</button>
                     
                     <div class="save-group">
-                        <label for="routine-category"></label><select id="routine-category">
+                        <label for="routine-category"></label><select id="routine-category" aria-label="Workout Category">
                             <option value="cardio">🏃 Cardio</option>
                             <option value="strength">💪 Strength</option>
                             <option value="yoga">🧘 Yoga</option>
                             <option value="boxing">🥊 Boxing</option>
                         </select>
-                        <label for="routine-name"></label><input type="text" id="routine-name" placeholder="Routine Name" />
-                        <button class="btn-ghost" onclick="saveToLocal()" title="Save to Browser DB">💾</button>
-                        <button class="btn-ghost" onclick="exportJSON()" title="Download JSON file">⬇️ JSON</button>
+                        <label for="routine-name"></label><input type="text" id="routine-name" placeholder="Routine Name" aria-label="Workout Name" />
+                        <button class="btn-ghost" onclick="saveToLocal()" title="Save to Browser DB" aria-label="Save Workout to Browser">💾</button>
+                        <button class="btn-ghost" onclick="exportJSON()" title="Download JSON file" aria-label="Download Workout as JSON">⬇️ JSON</button>
                     </div>
                 </div>
             </div>

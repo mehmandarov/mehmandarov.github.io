@@ -17,6 +17,8 @@ let currentRoutine = {
     ]
 };
 
+let isDirty = false; // Track unsaved changes
+
 let rawData;
 try {
     rawData = JSON.parse(localStorage.getItem('hiit_saved_routines'));
@@ -32,6 +34,21 @@ let staticRoutines = [];
 
 // --- AUDIO ENGINE ---
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+// Early resume on any interaction
+const resumeAudio = () => {
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+    }
+    // Remove listener once resumed successfully
+    if (audioCtx.state === 'running') {
+        document.removeEventListener('click', resumeAudio);
+        document.removeEventListener('keydown', resumeAudio);
+    }
+};
+document.addEventListener('click', resumeAudio);
+document.addEventListener('keydown', resumeAudio);
+
 function playTone(freq, type, dur, vol = 0.5) {
     if(audioCtx.state === 'suspended') audioCtx.resume();
     const osc = audioCtx.createOscillator();
@@ -49,6 +66,11 @@ const Sounds = {
     start: () => playTone(800, 'sine', 0.6, 0.5),
     beep: () => playTone(440, 'square', 0.2, 0.1),
     end: () => { playTone(150, 'sawtooth', 0.8, 0.5); setTimeout(() => playTone(150, 'sawtooth', 0.8, 0.5), 400); }
+};
+
+// Warn on close if dirty
+window.onbeforeunload = function() {
+    if(isDirty) return "You have unsaved changes.";
 };
 
 // --- INIT & LOADING ---
@@ -79,17 +101,21 @@ function saveToLocal() {
     currentRoutine.name = name;
     currentRoutine.category = cat;
 
-    // Check if exists in local, if so update, else push
-    const existingIdx = localRoutines.findIndex(r => r.name === name); // Simple name match
+    // Check if exists in local by ID (more robust than name)
+    const existingIdx = localRoutines.findIndex(r => r.id === currentRoutine.id);
+    
     if(existingIdx >= 0) {
-        if(!confirm(`Overwrite "${name}"?`)) return;
+        // Update existing
         localRoutines[existingIdx] = JSON.parse(JSON.stringify(currentRoutine));
     } else {
+        // Create new
         localRoutines.push(JSON.parse(JSON.stringify(currentRoutine)));
     }
 
     localStorage.setItem('hiit_saved_routines', JSON.stringify(localRoutines));
+    isDirty = false;
     alert("Saved to Browser Storage!");
+    renderEditor(); // Refresh to potentially show new state
 }
 
 function deleteLocal(idx) {
@@ -101,14 +127,19 @@ function deleteLocal(idx) {
 }
 
 function loadRoutine(source, idx) {
+    if(isDirty) {
+        if(!confirm("You have unsaved changes. Discard them?")) return;
+    }
+
     if(source === 'local') {
         currentRoutine = JSON.parse(JSON.stringify(localRoutines[idx]));
     } else {
         currentRoutine = JSON.parse(JSON.stringify(staticRoutines[idx]));
-        // Regenerate IDs so it doesn't conflict if we save it as a new local copy
+        // Regenerate IDs for static templates so they become new instances
         currentRoutine.id = generateId(); 
     }
     
+    isDirty = false;
     // Update inputs
     document.getElementById('routine-name').value = currentRoutine.name;
     document.getElementById('routine-category').value = currentRoutine.category || 'cardio';
@@ -221,12 +252,20 @@ function createBlockDOM(item) {
         div.style.borderLeftColor = borderStyle;
         div.innerHTML = `
             <div class="block-content">
-                <div class="color-dot ${colorClass}" onclick="cycleColor('${item.id}')"></div>
-                <input type="text" value="${item.name}" onchange="updateProp('${item.id}', 'name', this.value)" placeholder="Name">
-                <input type="number" value="${item.duration}" onchange="updateProp('${item.id}', 'duration', this.value)" placeholder="0">
-                <button class="unit-toggle ${unitClass}" onclick="toggleUnit('${item.id}')">${unitLabel}</button>
+                <div 
+                    class="color-dot ${colorClass}" 
+                    role="button" 
+                    tabindex="0" 
+                    aria-label="Change color: currently ${item.color}" 
+                    title="Change Color"
+                    onclick="cycleColor('${item.id}')"
+                    onkeydown="if(event.key==='Enter'||event.key===' ')cycleColor('${item.id}')"
+                ></div>
+                <input type="text" aria-label="Interval Name" value="${item.name}" onchange="updateProp('${item.id}', 'name', this.value)" placeholder="Name">
+                <input type="number" min="1" aria-label="Duration" value="${item.duration}" onchange="updateProp('${item.id}', 'duration', this.value)" placeholder="0">
+                <button class="unit-toggle ${unitClass}" aria-label="Toggle unit: currently ${unitLabel}" onclick="toggleUnit('${item.id}')">${unitLabel}</button>
             </div>
-            <button class="btn-danger btn-sm" onclick="removeItem('${item.id}')">✕</button>
+            <button class="btn-danger btn-sm" aria-label="Remove Interval" onclick="removeItem('${item.id}')">✕</button>
         `;
         return div;
     } else {
@@ -237,13 +276,13 @@ function createBlockDOM(item) {
                 <div class="loop-controls">
                     <span>Loop</span>
                     <!-- Removed inline width, handled by CSS now -->
-                    <input type="number" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)">
+                    <input type="number" min="1" aria-label="Loop Iterations" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)">
                     <span>times</span>
                 </div>
                 <div class="loop-controls">
                      <button class="btn-ghost btn-sm" onclick="addIntervalToBlock('${item.id}')" title="Add Interval">+ Int</button>
                      <button class="btn-ghost btn-sm" onclick="addLoopToBlock('${item.id}')" title="Add Nested Loop">+ Loop</button>
-                     <button class="btn-danger btn-sm" onclick="removeItem('${item.id}')">✕</button>
+                     <button class="btn-danger btn-sm" aria-label="Remove Loop" onclick="removeItem('${item.id}')">✕</button>
                 </div>
             </div>
             <div class="loop-children" id="children-${item.id}"></div>
@@ -271,29 +310,40 @@ function findItem(blocks, id) {
 function updateProp(id, key, val) {
     const res = findItem(currentRoutine.blocks, id);
     if(res) {
-        if(key === 'duration' || key === 'iterations') val = parseInt(val) || 0;
+        if(key === 'duration' || key === 'iterations') {
+            val = parseInt(val);
+            if(isNaN(val) || val < 1) val = 1; // Validation: Minimum 1
+        }
         res.item[key] = val;
+        isDirty = true;
         renderEditor();
     }
 }
 function toggleUnit(id) {
     const res = findItem(currentRoutine.blocks, id);
-    if(res) { res.item.unit = res.item.unit === 'm' ? 's' : 'm'; renderEditor(); }
+    if(res) { 
+        res.item.unit = res.item.unit === 'm' ? 's' : 'm'; 
+        isDirty = true;
+        renderEditor(); 
+    }
 }
 function cycleColor(id) {
     const res = findItem(currentRoutine.blocks, id);
     if(res) {
         const map = { 'red': 'green', 'green': 'blue', 'blue': 'red' };
         res.item.color = map[res.item.color] || 'red';
+        isDirty = true;
         renderEditor();
     }
 }
 function addInterval() {
     currentRoutine.blocks.push({ id: generateId(), type: 'interval', name: 'Work', duration: 30, unit: 's', color: 'red' });
+    isDirty = true;
     renderEditor();
 }
 function addLoop() {
     currentRoutine.blocks.push({ id: generateId(), type: 'loop', iterations: 3, children: [] });
+    isDirty = true;
     renderEditor();
 }
 function addLoopToBlock(parentId) {
@@ -301,6 +351,7 @@ function addLoopToBlock(parentId) {
     if(res) {
         // Add a nested loop with 8 iterations by default
         res.item.children.push({ id: generateId(), type: 'loop', iterations: 8, children: [] });
+        isDirty = true;
         renderEditor();
     }
 }
@@ -308,6 +359,7 @@ function addIntervalToBlock(parentId) {
     const res = findItem(currentRoutine.blocks, parentId);
     if(res) {
         res.item.children.push({ id: generateId(), type: 'interval', name: 'Action', duration: 20, unit: 's', color: 'red' });
+        isDirty = true;
         renderEditor();
     }
 }
@@ -315,9 +367,13 @@ function removeItem(id) {
     const res = findItem(currentRoutine.blocks, id);
     if(res) {
         res.parent.splice(res.idx, 1);
+        isDirty = true;
         renderEditor();
     }
 }
+// Listen for name/category changes
+document.getElementById('routine-name').addEventListener('input', () => isDirty = true);
+document.getElementById('routine-category').addEventListener('change', () => isDirty = true);
 function getDurationSeconds(item) {
     if(item.type !== 'interval') return 0;
     return item.unit === 'm' ? item.duration * 60 : item.duration;
