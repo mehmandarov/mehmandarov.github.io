@@ -70,23 +70,53 @@ button:hover { opacity: 0.9; }
 .unit-s { background-color: #444; }
 .unit-m { background-color: var(--min-color); }
 
-.color-dot {
-    width: 30px; height: 30px; border-radius: 50%; border: 2px solid #555;
-    cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
 .dot-red { background-color: #ef4444; }
 .dot-green { background-color: #22c55e; }
 .dot-blue { background-color: #3b82f6; }
 
 input, select {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: transparent;
+    border: 1px solid transparent;
     color: white;
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: inherit;
-    font-size: 1rem; 
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
+
+input:hover, select:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+input:focus, select:focus {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+/* Ensure inputs in the toolbar are slightly more visible */
+.toolbar input, .toolbar select {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.1);
+}
+.toolbar input:focus, .toolbar select:focus {
+    background: var(--surface-hover);
+    border-color: var(--primary);
+}
+
+.color-dot {
+    width: 42px; height: 42px; /* Larger touch target */
+    border-radius: 50%; 
+    border: 2px solid rgba(255,255,255,0.1);
+    cursor: pointer; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    flex-shrink: 0;
+}
+.color-dot:active { transform: scale(0.9); }
+.color-dot:hover { border-color: white; transform: scale(1.05); }
 
 /* --- MAIN LAYOUT --- */
 #app-container { display: flex; height: 100%; width: 100%; overflow: hidden; position: relative; }
@@ -111,13 +141,44 @@ input, select {
 .block-list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; margin: 0 auto; width: 100%; }
 .add-buttons-area { margin-top: 20px; border-top: 1px solid #333; padding-top: 20px; padding-bottom: 40px; }
 
-/* Blocks */
-.block { background: var(--surface); padding: 12px; border-radius: 8px; display: flex; align-items: center; gap: 10px; border-left: 4px solid #555; flex-wrap: wrap; }
-.block-content { display: flex; align-items: center; gap: 8px; flex-grow: 1; flex-wrap: wrap; }
-.block input[type="text"] { font-weight: bold; flex: 1; min-width: 100px; }
-.block input[type="number"] { width: 70px; }
+/* Animation Keyframes */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
 
-.loop-block { background: #151515; border: 1px dashed var(--loop-color); padding: 12px; border-radius: 8px; }
+/* Blocks */
+.block { 
+    background: var(--surface); 
+    padding: 12px; 
+    border-radius: 12px; /* Softer corners */
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    border-left: 4px solid #555; 
+    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    animation: slideIn 0.25s ease-out backwards; /* Smooth entry */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Lift effect on hover for desktop */
+.block:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.block-content { display: flex; align-items: center; gap: 8px; flex-grow: 1; flex-wrap: wrap; }
+.block input[type="text"] { font-weight: 600; flex: 1; min-width: 100px; font-size: 1.05rem; }
+.block input[type="number"] { width: 70px; text-align: center; font-variant-numeric: tabular-nums; }
+
+.loop-block { 
+    background: #181818; 
+    border: 1px dashed var(--loop-color); 
+    padding: 16px; /* More breathing room */
+    border-radius: 12px; 
+    animation: slideIn 0.25s ease-out backwards;
+}
 .loop-header { color: var(--loop-color); font-weight: bold; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
 .loop-controls { display: flex; align-items: center; gap: 8px; }
 .loop-children { padding-left: 10px; display: flex; flex-direction: column; gap: 10px; border-left: 2px solid #333; }
