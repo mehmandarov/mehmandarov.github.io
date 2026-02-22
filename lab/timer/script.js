@@ -237,7 +237,7 @@ function calculateTotalRecursive(blocks) {
     return seconds;
 }
 
-// --- DOM CREATION (Simplified from previous version) ---
+// --- DOM CREATION ---
 function createBlockDOM(item) {
     const isMin = item.unit === 'm';
     const unitLabel = isMin ? 'MIN' : 'SEC';
@@ -249,21 +249,23 @@ function createBlockDOM(item) {
     if (item.type === 'interval') {
         const div = document.createElement('div');
         div.className = 'block';
+        div.id = `block-${item.id}`; // Add ID for surgical updates
         div.style.borderLeftColor = borderStyle;
         div.innerHTML = `
             <div class="block-content">
                 <div 
+                    id="dot-${item.id}"
                     class="color-dot ${colorClass}" 
                     role="button" 
                     tabindex="0" 
-                    aria-label="Change color: currently ${item.color}" 
+                    aria-label="Change color" 
                     title="Change Color"
                     onclick="cycleColor('${item.id}')"
                     onkeydown="if(event.key==='Enter'||event.key===' ')cycleColor('${item.id}')"
                 ></div>
                 <input type="text" aria-label="Interval Name" value="${item.name}" onchange="updateProp('${item.id}', 'name', this.value)" placeholder="Name">
                 <input type="number" min="1" aria-label="Duration" value="${item.duration}" onchange="updateProp('${item.id}', 'duration', this.value)" placeholder="0">
-                <button class="unit-toggle ${unitClass}" aria-label="Toggle unit: currently ${unitLabel}" onclick="toggleUnit('${item.id}')">${unitLabel}</button>
+                <button id="unit-${item.id}" class="unit-toggle ${unitClass}" aria-label="Toggle unit" onclick="toggleUnit('${item.id}')">${unitLabel}</button>
             </div>
             <button class="btn-danger btn-sm" aria-label="Remove Interval" onclick="removeItem('${item.id}')">✕</button>
         `;
@@ -271,11 +273,11 @@ function createBlockDOM(item) {
     } else {
         const div = document.createElement('div');
         div.className = 'loop-block';
+        div.id = `block-${item.id}`; // Add ID
         div.innerHTML = `
             <div class="loop-header">
                 <div class="loop-controls">
                     <span>Loop</span>
-                    <!-- Removed inline width, handled by CSS now -->
                     <input type="number" min="1" aria-label="Loop Iterations" value="${item.iterations}" onchange="updateProp('${item.id}', 'iterations', this.value)">
                     <span>times</span>
                 </div>
@@ -293,7 +295,7 @@ function createBlockDOM(item) {
     }
 }
 
-// --- HELPERS (CRUD) ---
+// --- HELPERS (CRUD) & SURGICAL UPDATES ---
 function generateId() { return Math.random().toString(36).substr(2, 9); }
 
 function findItem(blocks, id) {
@@ -312,63 +314,118 @@ function updateProp(id, key, val) {
     if(res) {
         if(key === 'duration' || key === 'iterations') {
             val = parseInt(val);
-            if(isNaN(val) || val < 1) val = 1; // Validation: Minimum 1
+            if(isNaN(val) || val < 1) val = 1; 
         }
         res.item[key] = val;
         isDirty = true;
-        renderEditor();
+        updateTotalDisplay(); // Only update time, don't redraw UI
     }
 }
+
 function toggleUnit(id) {
     const res = findItem(currentRoutine.blocks, id);
     if(res) { 
+        // Update Data
         res.item.unit = res.item.unit === 'm' ? 's' : 'm'; 
         isDirty = true;
-        renderEditor(); 
+        
+        // Update DOM Direct
+        const btn = document.getElementById(`unit-${id}`);
+        if(btn) {
+            const isMin = res.item.unit === 'm';
+            btn.innerText = isMin ? 'MIN' : 'SEC';
+            btn.className = `unit-toggle ${isMin ? 'unit-m' : 'unit-s'}`;
+        }
+        updateTotalDisplay();
     }
 }
+
 function cycleColor(id) {
     const res = findItem(currentRoutine.blocks, id);
     if(res) {
+        // Update Data
         const map = { 'red': 'green', 'green': 'blue', 'blue': 'red' };
-        res.item.color = map[res.item.color] || 'red';
+        const newColor = map[res.item.color] || 'red';
+        res.item.color = newColor;
         isDirty = true;
-        renderEditor();
+
+        // Update DOM Direct
+        const dot = document.getElementById(`dot-${id}`);
+        const block = document.getElementById(`block-${id}`);
+        
+        if(dot) {
+            dot.className = `color-dot dot-${newColor}`;
+        }
+        if(block) {
+            const borderMap = { 'red': '#ef4444', 'green': '#22c55e', 'blue': '#3b82f6' };
+            block.style.borderLeftColor = borderMap[newColor];
+        }
+        // No total time update needed for color
     }
 }
+
 function addInterval() {
-    currentRoutine.blocks.push({ id: generateId(), type: 'interval', name: 'Work', duration: 30, unit: 's', color: 'red' });
+    const newItem = { id: generateId(), type: 'interval', name: 'Work', duration: 30, unit: 's', color: 'red' };
+    currentRoutine.blocks.push(newItem);
     isDirty = true;
-    renderEditor();
+    
+    // Append to Main Container
+    document.getElementById('routine-container').appendChild(createBlockDOM(newItem));
+    updateTotalDisplay();
 }
+
 function addLoop() {
-    currentRoutine.blocks.push({ id: generateId(), type: 'loop', iterations: 3, children: [] });
+    const newItem = { id: generateId(), type: 'loop', iterations: 3, children: [] };
+    currentRoutine.blocks.push(newItem);
     isDirty = true;
-    renderEditor();
+
+    // Append to Main Container
+    document.getElementById('routine-container').appendChild(createBlockDOM(newItem));
+    updateTotalDisplay();
 }
+
 function addLoopToBlock(parentId) {
     const res = findItem(currentRoutine.blocks, parentId);
     if(res) {
-        // Add a nested loop with 8 iterations by default
-        res.item.children.push({ id: generateId(), type: 'loop', iterations: 8, children: [] });
+        const newItem = { id: generateId(), type: 'loop', iterations: 8, children: [] };
+        res.item.children.push(newItem);
         isDirty = true;
-        renderEditor();
+
+        // Append to specific Loop Children Container
+        const container = document.getElementById(`children-${parentId}`);
+        if(container) container.appendChild(createBlockDOM(newItem));
+        updateTotalDisplay();
     }
 }
+
 function addIntervalToBlock(parentId) {
     const res = findItem(currentRoutine.blocks, parentId);
     if(res) {
-        res.item.children.push({ id: generateId(), type: 'interval', name: 'Action', duration: 20, unit: 's', color: 'red' });
+        const newItem = { id: generateId(), type: 'interval', name: 'Action', duration: 20, unit: 's', color: 'red' };
+        res.item.children.push(newItem);
         isDirty = true;
-        renderEditor();
+
+        // Append to specific Loop Children Container
+        const container = document.getElementById(`children-${parentId}`);
+        if(container) container.appendChild(createBlockDOM(newItem));
+        updateTotalDisplay();
     }
 }
+
 function removeItem(id) {
     const res = findItem(currentRoutine.blocks, id);
     if(res) {
+        // Remove from Data
         res.parent.splice(res.idx, 1);
         isDirty = true;
-        renderEditor();
+
+        // Remove from DOM
+        const el = document.getElementById(`block-${id}`);
+        if(el) {
+            // Optional: Add exit animation here if desired, then remove
+            el.remove();
+        }
+        updateTotalDisplay();
     }
 }
 // Listen for name/category changes
