@@ -5,8 +5,8 @@ layout: compress
 <html lang="en">
 <head>
 
-    {% if site.analytics-piwik %}
-        {% include analytics-piwik.html %}
+    {% if site.analytics-posthog %}
+        {% include analytics-posthog.html %}
     {% endif %}
 
     {% if site.analytics-google %}
@@ -24,7 +24,7 @@ layout: compress
     {% include favicon.html %}
 
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
 
     <script src="https://kit.fontawesome.com/d9b09040a7.js" crossorigin="anonymous"></script>
 
@@ -45,6 +45,7 @@ layout: compress
 
     {{ scss_sheet | scssify }}
     </style>
+    <title></title>
 
 </head>
 <body>
@@ -60,7 +61,6 @@ layout: compress
         {% endif %}
 
             {{ content }}
-            </div>
                 </div>
             </div>
     </div>
