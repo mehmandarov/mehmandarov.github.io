@@ -5,10 +5,10 @@
         api_host: 'https://eu.i.posthog.com',
         defaults: '2026-01-30',
         person_profiles: 'identified_only',
-        opt_out_capturing_by_default: true  // No tracking until user consents
+        opt_out_capturing_by_default: true /* no tracking until user consents */
     });
 
-    // Show consent banner if user hasn't decided yet
+    /* Show consent banner if user hasn't decided yet */
     (function() {
         var CONSENT_KEY = 'analytics_consent';
 
@@ -26,7 +26,7 @@
                 posthog.opt_in_capturing();
                 return;
             }
-            if (stored === 'no') return; // user declined, stay opted out
+            if (stored === 'no') { return; } /* user declined, stay opted out */
 
             // No decision yet — show the banner
             var banner = document.createElement('div');
