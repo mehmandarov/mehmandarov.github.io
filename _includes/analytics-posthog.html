@@ -1,9 +1,58 @@
-<!-- Posthog Analytics -->
+<!-- PostHog Analytics (GDPR-compliant: opt-out by default, no tracking until consent) -->
 <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="Ii init Di qi Sr Bi Zi Pi capture calculateEventProperties Yi register register_once register_for_session unregister unregister_for_session Xi getFeatureFlag getFeatureFlagPayload getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey cancelPendingSurvey canRenderSurvey canRenderSurveyAsync Ji identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset setIdentity clearIdentity get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException startExceptionAutocapture stopExceptionAutocapture loadToolbar get_property getSessionProperty Wi Vi createPersonProfile setInternalOrTestUser Gi Fi tn opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing $i debug Tr Ui getPageViewId captureTraceFeedback captureTraceMetric Ri".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('{{ site.analytics-posthog }}', {
         api_host: 'https://eu.i.posthog.com',
         defaults: '2026-01-30',
-        person_profiles: 'always'
-    })
+        person_profiles: 'identified_only',
+        opt_out_capturing_by_default: true  // No tracking until user consents
+    });
+
+    // Show consent banner if user hasn't decided yet
+    (function() {
+        var CONSENT_KEY = 'analytics_consent';
+
+        function setConsent(value) {
+            localStorage.setItem(CONSENT_KEY, value);
+            document.getElementById('ph-consent-banner').style.display = 'none';
+            if (value === 'yes') {
+                posthog.opt_in_capturing();
+            }
+        }
+
+        function initBanner() {
+            var stored = localStorage.getItem(CONSENT_KEY);
+            if (stored === 'yes') {
+                posthog.opt_in_capturing();
+                return;
+            }
+            if (stored === 'no') return; // user declined, stay opted out
+
+            // No decision yet — show the banner
+            var banner = document.createElement('div');
+            banner.id = 'ph-consent-banner';
+            banner.innerHTML = [
+                '<div style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#f0f0f0;',
+                'padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;',
+                'gap:1rem;z-index:9999;font-family:sans-serif;font-size:0.875rem;flex-wrap:wrap;">',
+                '<span>This site uses analytics to understand how content is used. No personal data is stored.</span>',
+                '<div style="display:flex;gap:0.5rem;flex-shrink:0;">',
+                '<button onclick="window.__phConsent(\'yes\')" style="background:#4e7fff;color:#fff;border:none;',
+                'padding:0.4rem 1rem;border-radius:4px;cursor:pointer;font-size:0.875rem;">Accept</button>',
+                '<button onclick="window.__phConsent(\'no\')" style="background:transparent;color:#aaa;border:1px solid #555;',
+                'padding:0.4rem 1rem;border-radius:4px;cursor:pointer;font-size:0.875rem;">Decline</button>',
+                '</div></div>'
+            ].join('');
+            document.body.appendChild(banner);
+        }
+
+        window.__phConsent = setConsent;
+
+        // Run after DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initBanner);
+        } else {
+            initBanner();
+        }
+    })();
 </script>
