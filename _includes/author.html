@@ -11,6 +11,18 @@
         <h4 class="name"><a href="{{ site.mylinks | default: site.url }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">{{ site.authors[page.author].name }}</a></h4>
         <p class="bio">{{ site.authors[page.author].bio }}</p>
 
+        {% if site.mylinks %}
+        <a
+            class="follow-link"
+            href="{{ site.mylinks }}"
+            target="_blank"
+            rel="noopener"
+        >
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Follow Me</span>
+        </a>
+        {% endif %}
+
         <div class="share">
             <a
                 class="xtwitter"
@@ -41,18 +53,6 @@
                 <i class="fa-brands fa-bluesky"></i>
                 <span>Post</span>
             </a>
-
-            {% if site.mylinks %}
-            <a
-                class="follow-link"
-                href="{{ site.mylinks }}"
-                target="_blank"
-                rel="noopener"
-            >
-                <i class="fa-solid fa-user-plus"></i>
-                <span>Follow</span>
-            </a>
-            {% endif %}
         </div>
     </div>
 </section>
