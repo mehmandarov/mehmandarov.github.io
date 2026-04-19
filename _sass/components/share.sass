@@ -1,9 +1,10 @@
-.share
-    float: right
-    width: 40%
-    display: inline
+.author-share
+    clear: both
+    width: 100%
     text-align: right
-    position: relative
+    padding-top: 12px
+    margin-top: 12px
+    border-top: 1px solid #ededed
 
     .share-cta
         display: block
@@ -11,22 +12,6 @@
         font-weight: 300
         color: #aaa
         margin-bottom: 6px
-
-    @media #{$mobile}
-        width: 100%
-        display: block
-        top: 0
-        text-align: left
-        float: none
-        margin-top: 5px
-
-    @media #{$tablet}
-        width: 100%
-        display: block
-        top: 0
-        text-align: left
-        float: none
-        margin-top: 5px
 
     > .xtwitter,
     > .linkedin,
@@ -41,11 +26,6 @@
         margin-left: 4px
         text-decoration: none
 
-        @media #{$mobile}
-            margin: 0 4px 10px 0
-
-        @media #{$tablet}
-            margin: 0 4px 10px 0
 
     > .xtwitter
         background: #000
