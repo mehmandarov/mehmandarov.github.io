@@ -15,15 +15,12 @@ layout: compress
 
     <meta charset="utf-8">
     <meta name=viewport content="width=device-width, initial-scale=1">
-
-    <meta name=description content="{{ site.bio }}">
-    <meta name=author content="{{ site.name }}">
+    <meta name="author" content="{{ site.author.name }}">
 
     {% seo %}
 
     {% include favicon.html %}
 
-    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -45,7 +42,6 @@ layout: compress
 
     {{ scss_sheet | scssify }}
     </style>
-    <title></title>
 
 </head>
 <body>

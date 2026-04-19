@@ -55,6 +55,7 @@ mylinks: https://rustam.no
 mytalks: true
 # email: myemail@gmail.com
 
+# Author profiles for blog post footer (used by the theme)
 authors:
     rustam.mehmandarov:
         name: Rustam Mehmandarov
@@ -62,6 +63,10 @@ authors:
         external-image: false
         picture: assets/images/profile.jpg
         twitter: rmehmandarov
+
+# Site-wide author for SEO (twitter:creator comes from per-post author in 'authors' above)
+author:
+  name: Rustam Mehmandarov
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal

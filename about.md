@@ -1,6 +1,7 @@
 ---
 title: About
 layout: page
+description: "Rustam Mehmandarov – senior technologist, architect, speaker, and community builder with over 20 years of experience in architecture, cloud, AI, and security."
 ---
 ![Profile Image]({{ site.url }}/{{ site.picture }})
 

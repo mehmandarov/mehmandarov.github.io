@@ -1,6 +1,7 @@
 ---
 title: My Talks
 layout: page
+description: "Talks and conference appearances by Rustam Mehmandarov on cloud, architecture, AI, security, and Java."
 ---
 
 ## Rustam Mehmandarov's Talks and Conferences
