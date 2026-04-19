@@ -12,29 +12,35 @@
         <p class="bio">{{ site.authors[page.author].bio }}</p>
 
         <div class="share">
-            <!-- Note: Only use three share links if your site width is set to large -->
-            <!-- If site width is set to normal, you may choose any two share links -->
             <a
-                class="twitter"
-                href="https://twitter.com/intent/tweet?text={{ site.url }}{{ page.url }} - {{ page.title }} by @{{ site.authors[page.author].twitter }}"
+                class="xtwitter"
+                href="https://x.com/intent/post?text={{ page.title }}&url={{ site.url }}{{ page.url }}&via={{ site.authors[page.author].twitter }}"
+                target="_blank"
+                rel="noopener"
             >
-                <i class="fa-brands fa-twitter"></i>
-                <span class="icon-twitter">Tweet</span>
+                <i class="fa-brands fa-x-twitter"></i>
+                <span>Post</span>
             </a>
 
             <a
-                class="facebook"
-                href="javascript:void(0)"
-                onclick="window.open('https://facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"
+                class="linkedin"
+                href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{ page.title }}&amp;summary={{ page.description }}&amp;source={{ site.url }}"
+                target="_blank"
+                rel="noopener"
             >
-                <i class="fa-brands fa-facebook"></i>
-                <span class="icon-facebook-rect">Share</span>
-            </a>
-
-            <!-- <a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ site.url }}{{ page.url }}&amp;title={{ page.title }}&amp;summary={{ page.description }}&amp;source={{ site.url }}" target="_blank">
                 <i class="fa-brands fa-linkedin"></i>
-                <span class="icon-linkedin">Share</span>
-            </a> -->
+                <span>Share</span>
+            </a>
+
+            <a
+                class="bluesky"
+                href="https://bsky.app/intent/compose?text={{ page.title }}+{{ site.url }}{{ page.url }}"
+                target="_blank"
+                rel="noopener"
+            >
+                <i class="fa-brands fa-bluesky"></i>
+                <span>Post</span>
+            </a>
         </div>
     </div>
 </section>
