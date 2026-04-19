@@ -1,4 +1,4 @@
-# mehmandarov.com [![Build status](https://github.com/mehmandarov/mehmandarov.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/mehmandarov/mehmandarov.github.io/actions/workflows/pages/pages-build-deployment)
+# mehmandarov.com [![Deploy Jekyll site to Pages](https://github.com/mehmandarov/mehmandarov.github.io/actions/workflows/jekyll.yml/badge.svg)](https://github.com/mehmandarov/mehmandarov.github.io/actions/workflows/jekyll.yml)
 
 Source code for mehmandarov.com. Based on [Indigo](https://github.com/sergiokopplin/indigo) theme.
 
