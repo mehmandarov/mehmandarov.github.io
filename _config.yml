@@ -119,7 +119,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-gist
   - jekyll-feed
-  - jemoji
   - jekyll-paginate-v2
 
 compress_html:
