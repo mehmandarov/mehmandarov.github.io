@@ -8,8 +8,8 @@
     {% endif %}
 
     {% if site.twitter %}
-        <a class="link" data-title="twitter.com/{{ site.twitter }}" href="https://twitter.com/{{ site.twitter }}" target="_blank" rel="noopener">
-            <i class="fa-brands fa-twitter"></i>
+        <a class="link" data-title="x.com/{{ site.twitter }}" href="https://x.com/{{ site.twitter }}" target="_blank" rel="noopener">
+            <i class="fa-brands fa-x-twitter"></i>
         </a>
     {% endif %}
 
@@ -31,9 +31,21 @@
         </a>
     {% endif %}
 
+    {% if site.bluesky %}
+        <a class="link" data-title="{{ site.bluesky }}" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener">
+            <i class="fa-brands fa-bluesky"></i>
+        </a>
+    {% endif %}
+
     {% if site.mytalks %}
         <a class="link" data-title="{{ site.baseurl }}/talks" href="{{ site.url }}/talks" target="_blank" rel="noopener">
             <i class="fa-solid fa-microphone"></i>
+        </a>
+    {% endif %}
+
+    {% if site.mylinks %}
+        <a class="link" data-title="All online presence links: rustam.no" href="{{ site.mylinks }}" target="_blank" rel="noopener">
+            <i class="fa-solid fa-link"></i>
         </a>
     {% endif %}
 
