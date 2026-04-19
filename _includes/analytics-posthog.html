@@ -17,18 +17,14 @@
             document.getElementById('ph-consent-banner').style.display = 'none';
             if (value === 'yes') {
                 posthog.opt_in_capturing();
+            } else {
+                posthog.opt_out_capturing();
             }
         }
 
-        function initBanner() {
-            var stored = localStorage.getItem(CONSENT_KEY);
-            if (stored === 'yes') {
-                posthog.opt_in_capturing();
-                return;
-            }
-            if (stored === 'no') { return; } /* user declined, stay opted out */
-
-            /* No decision yet — show the banner */
+        function showBanner() {
+            var existing = document.getElementById('ph-consent-banner');
+            if (existing) { existing.remove(); }
             var banner = document.createElement('div');
             banner.id = 'ph-consent-banner';
             banner.innerHTML = [
@@ -46,7 +42,18 @@
             document.body.appendChild(banner);
         }
 
+        function initBanner() {
+            var stored = localStorage.getItem(CONSENT_KEY);
+            if (stored === 'yes') {
+                posthog.opt_in_capturing();
+                return;
+            }
+            if (stored === 'no') { return; }
+            showBanner();
+        }
+
         window.__phConsent = setConsent;
+        window.__phShowConsent = showBanner;
 
         /* Run after DOM is ready */
         if (document.readyState === 'loading') {
