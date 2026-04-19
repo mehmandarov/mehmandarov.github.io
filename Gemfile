@@ -6,6 +6,7 @@ group :jekyll_plugins do
     gem 'jekyll-seo-tag'
     gem 'jekyll-gist'
     gem 'jekyll-feed'
+    gem 'jekyll-sitemap'
     gem "jekyll-paginate-v2", "~> 3.0"
     gem "html-proofer"
 end
