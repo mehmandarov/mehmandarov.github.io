@@ -28,16 +28,16 @@
             var banner = document.createElement('div');
             banner.id = 'ph-consent-banner';
             banner.innerHTML = [
-                '<div style="position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#f0f0f0;',
-                'padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;',
-                'gap:1rem;z-index:9999;font-family:sans-serif;font-size:0.875rem;flex-wrap:wrap;">',
-                '<span>This site uses analytics to understand how content is used. No personal data is stored.</span>',
-                '<div style="display:flex;gap:0.5rem;flex-shrink:0;">',
-                '<button onclick="window.__phConsent(\'yes\')" style="background:#4e7fff;color:#fff;border:none;',
-                'padding:0.4rem 1rem;border-radius:4px;cursor:pointer;font-size:0.875rem;">Accept</button>',
-                '<button onclick="window.__phConsent(\'no\')" style="background:transparent;color:#aaa;border:1px solid #555;',
-                'padding:0.4rem 1rem;border-radius:4px;cursor:pointer;font-size:0.875rem;">Decline</button>',
-                '</div></div>'
+                '<div class="consent-overlay">',
+                '<div class="consent-card">',
+                '<div class="consent-title">&#127850; Cookie Settings</div>',
+                '<p class="consent-text">',
+                'This site uses privacy-friendly analytics (PostHog) to understand how content is used. ',
+                'No personal data is stored. You can change your choice anytime in the footer.</p>',
+                '<div class="consent-buttons">',
+                '<button onclick="window.__phConsent(\'yes\')" class="consent-btn consent-btn-accept">Accept</button>',
+                '<button onclick="window.__phConsent(\'no\')" class="consent-btn consent-btn-decline">Decline</button>',
+                '</div></div></div>'
             ].join('');
             document.body.appendChild(banner);
         }
