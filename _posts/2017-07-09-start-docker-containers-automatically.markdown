@@ -3,7 +3,7 @@ title: "Start Docker Containers Automatically"
 layout: post
 date: 2017-07-09 10:50 +0200
 image: '/assets/images/posts-images/whale_small.jpeg'
-description:
+description: "Starting your Docker containers automatically using systemd."
 tag:
 - java
 - docker

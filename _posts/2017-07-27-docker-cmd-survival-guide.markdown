@@ -3,7 +3,7 @@ title: "Docker Command Line Survival Guide: The Absolute Basics"
 layout: post
 date: 2017-07-27 08:23 +0200
 image: '/assets/images/posts-images/street-art-container_small.jpeg'
-description:
+description: "Ten essential Docker commands to get you started with the command-line interface."
 tag:
 - docker
 - command line

@@ -3,7 +3,7 @@ title: "MicroProfile – Part 1: Defining End-Points"
 layout: post
 date: 2019-07-29 07:25
 image: '/assets/images/posts-images/lego-record-shop.jpg'
-description:
+description: "Getting started with MicroProfile – defining end-points for JSON, images, and PDF responses."
 tag:
 - java
 - microservices

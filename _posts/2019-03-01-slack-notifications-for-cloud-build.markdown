@@ -3,7 +3,7 @@ title: "Configuring Slack Notifications for Google Cloud Build"
 layout: post
 date: 2019-03-01 07:01
 image: '/assets/images/posts-images/lego-bots.jpg'
-description:
+description: "Setting up Slack notifications for Google Cloud Build jobs with code examples and screenshots."
 tag:
 - field notes
 - automation

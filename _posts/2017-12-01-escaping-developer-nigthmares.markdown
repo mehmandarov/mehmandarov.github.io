@@ -3,7 +3,7 @@ title: "Escaping Developer Nightmares"
 layout: post
 date: 2017-12-01 08:23 +0200
 image: '/assets/images/posts-images/mindthegap.png'
-description:
+description: "Common pitfalls in software development and practical suggestions on how to fix them."
 tag:
 - java
 - field notes

@@ -3,7 +3,7 @@ title: "Getting a Graph Representation of a Pipeline in Apache Beam"
 layout: post
 date: 2019-11-27 08:15
 image: '/assets/images/posts-images/golden-gate.jpg'
-description:
+description: "How to get a graph representation of your data pipeline in Apache Beam, step by step."
 tag:
 - java
 - apachebeam

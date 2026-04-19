@@ -3,7 +3,7 @@ title: "Generating PDF Files Using Java"
 layout: post
 date: 2019-06-21 07:01
 image: '/assets/images/posts-images/pages.jpg'
-description:
+description: "A step-by-step tutorial on generating PDF files in Java with text, images, and metadata."
 tag:
 - java
 - pdf

@@ -3,7 +3,7 @@ title: "Disposable Docker Containers"
 layout: post
 date: 2019-01-01 11:01
 image: '/assets/images/posts-images/containers.jpg'
-description:
+description: "Using single-use, ephemeral Docker containers for building and testing applications locally."
 tag:
 - containers
 - docker

@@ -3,7 +3,7 @@ title: "Generating QR Codes With Secure Hashes Using Java"
 layout: post
 date: 2019-06-10 07:01
 image: '/assets/images/posts-images/black-and-white-java.jpg'
-description:
+description: "A step-by-step tutorial on generating QR codes and secure hashed strings with salt in Java."
 tag:
 - java
 - english

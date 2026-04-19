@@ -3,7 +3,7 @@ title: "Computers as Movie Superstars"
 layout: post
 date: 2019-02-19 09:01
 image: '/assets/images/posts-images/old-camera.jpg'
-description:
+description: "The untold story behind the vintage computers used in the JavaZone 2018 short film Stranger Strings."
 tag:
 - javazone
 - english

@@ -3,7 +3,7 @@ title: "Navigating and Editing the Command Line – Bash Edition"
 layout: post
 date: 2018-12-30 21:01
 image: '/assets/images/posts-images/laptop.jpg'
-description:
+description: "A cheat sheet for navigating and editing the command line in Bash."
 tag:
 - command line
 - bash

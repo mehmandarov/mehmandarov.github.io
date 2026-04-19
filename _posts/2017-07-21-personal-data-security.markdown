@@ -3,7 +3,7 @@ title: "Personal Data Security"
 layout: post
 date: 2017-07-21 10:23 +0200
 image: '/assets/images/posts-images/caution_keyboard_small.jpeg'
-description:
+description: "How one of Norway's biggest Apple service centers was leaking personal data to anyone who would click a button."
 tag:
 - security
 - data privacy
