@@ -5,12 +5,6 @@
             src="{% if site.authors[page.author].external-image == true %}{{ site.authors[page.author].picture }}{% else %}{{ site.url }}/{{ site.authors[page.author].picture }}{% endif %}"
             alt="{{ site.authors[page.author].name }}"
         />
-    </div>
-
-    <div class="toright">
-        <h4 class="name"><a href="{{ site.mylinks | default: site.url }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">{{ site.authors[page.author].name }}</a></h4>
-        <p class="bio">{{ site.authors[page.author].bio }}</p>
-
         {% if site.mylinks %}
         <a
             class="follow-link"
@@ -22,6 +16,11 @@
             <span>Follow Me</span>
         </a>
         {% endif %}
+    </div>
+
+    <div class="toright">
+        <h4 class="name"><a href="{{ site.mylinks | default: site.url }}" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">{{ site.authors[page.author].name }}</a></h4>
+        <p class="bio">{{ site.authors[page.author].bio }}</p>
 
         <div class="share">
             <a
