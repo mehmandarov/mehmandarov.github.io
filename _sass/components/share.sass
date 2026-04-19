@@ -4,7 +4,7 @@
     text-align: right
     padding-top: 12px
     margin-top: 12px
-    border-top: 1px solid #ededed
+    border-top: 1px solid $epsilon
 
     .share-cta
         display: block
@@ -25,7 +25,26 @@
         border-radius: 3px
         margin-left: 4px
         text-decoration: none
+        transition: opacity 0.2s ease
 
+        &:hover
+            opacity: 0.8
+
+    @media #{$mobile}
+        text-align: left
+
+        > .xtwitter,
+        > .linkedin,
+        > .bluesky
+            margin: 0 4px 10px 0
+
+    @media #{$tablet}
+        text-align: left
+
+        > .xtwitter,
+        > .linkedin,
+        > .bluesky
+            margin: 0 4px 10px 0
 
     > .xtwitter
         background: #000
@@ -46,11 +65,7 @@
     text-decoration: none
     background: #6c3baa
     margin-bottom: 8px
+    transition: opacity 0.2s ease
 
-    svg
-        fill: $omega
-        position: relative
-        top: 0
-        margin: 0
-        margin-right: 4px
-        display: inherit
+    &:hover
+        opacity: 0.8
