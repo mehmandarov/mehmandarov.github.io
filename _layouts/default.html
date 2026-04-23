@@ -28,23 +28,16 @@ layout: compress
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <style>
-
+    {% comment %} Light + dark are compiled separately so each Sass pass loads `base/variables` once. {% endcomment %}
     {% if site.dark-theme == "auto" %}
-        {% capture scss_sheet %}
-            {% include style.scss %}
-            @media (prefers-color-scheme: dark) {
-                {% include style-dark.scss %}
-            }
-        {% endcapture %}
+        <style>{% capture light_css %}{% include style.scss %}{% endcapture %}{{ light_css | scssify }}</style>
+        <style media="(prefers-color-scheme: dark)">{% capture dark_css %}{% include style-dark.scss %}{% endcapture %}{{ dark_css | scssify }}</style>
     {% elsif site.dark-theme %}
-        {% capture scss_sheet %}{% include style-dark.scss %}{% endcapture %}
+        <style>{% capture dark_css %}{% include style-dark.scss %}{% endcapture %}{{ dark_css | scssify }}</style>
     {% else %}
-        {% capture scss_sheet %}{% include style.scss %}{% endcapture %}
+        <style>{% capture light_css %}{% include style.scss %}{% endcapture %}{{ light_css | scssify }}</style>
     {% endif %}
 
-    {{ scss_sheet | scssify }}
-    </style>
 
 </head>
 <body>
