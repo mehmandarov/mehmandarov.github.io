@@ -140,4 +140,6 @@ exclude:
     "Gemfile.lock",
     "FAQ.md",
     "vendor",
+    "Dockerfile",
+    ".dockerignore",
   ]
