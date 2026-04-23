@@ -7,7 +7,7 @@ description: "How one of Norway's biggest Apple service centers was leaking pers
 tag:
 - security
 - data privacy
-- GDPR
+- gdpr
 - english
 category: blog
 star: false

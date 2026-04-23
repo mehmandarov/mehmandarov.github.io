@@ -7,7 +7,7 @@ tag:
     - english
     - architecture
     - security
-    - Cloud
+    - cloud
 category: blog
 star: false
 author: rustam.mehmandarov

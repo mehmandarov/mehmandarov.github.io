@@ -9,7 +9,7 @@ tag:
     - java
     - architecture
     - api
-    - jakartaee
+    - jakarta ee
     - microprofile
     - jax-rs
     - openapi

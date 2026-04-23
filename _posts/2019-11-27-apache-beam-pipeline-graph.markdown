@@ -6,7 +6,7 @@ image: '/assets/images/posts-images/golden-gate.jpg'
 description: "How to get a graph representation of your data pipeline in Apache Beam, step by step."
 tag:
 - java
-- apachebeam
+- apache beam
 - data
 - pipelines
 - english
