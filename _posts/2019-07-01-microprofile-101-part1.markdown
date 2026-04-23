@@ -8,6 +8,7 @@ tag:
 - java
 - microservices
 - microprofile
+- jakarta ee
 - english
 category: blog
 star: false
@@ -15,6 +16,8 @@ author: rustam.mehmandarov
 ---
 
 _Part 1: End-points in MicroProfile. This is a part of a series of posts to help you get started with microservices in MicroProfile and showing off some of the features it brings to the table._
+
+> **Update (April 2026):** This post has been refreshed to use the modern `jakarta.*` namespace introduced in Jakarta EE 9+. If you are working with an older codebase that still uses the legacy `javax.*` namespace, the concepts described here apply identically — only the package prefix differs.
 
 - [Intro](#intro)
 - [Getting started](#getting-started)
@@ -56,13 +59,13 @@ In a few seconds it takes for the app server to start-up, you should be able to 
 
 ## Defining End-Points
 
-One of the most obvious features any microservice needs is an end-point to receive requests and respond with some kind of data back. Let's have a closer look into how this is done in MicroProfile. First of all, we will need to define the application path that serves as the base URI for all resource URIs (think of it as a "root" URL) and make sure that the class where it is defined extends `javax.ws.rs.core.Application`, like in [`ApplicationEntryPoint`][19] class here:
+One of the most obvious features any microservice needs is an end-point to receive requests and respond with some kind of data back. Let's have a closer look into how this is done in MicroProfile. First of all, we will need to define the application path that serves as the base URI for all resource URIs (think of it as a "root" URL) and make sure that the class where it is defined extends `jakarta.ws.rs.core.Application`, like in [`ApplicationEntryPoint`][19] class here:
 
 {% highlight java %}
 package com.mehmandarov.qrcreator;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 
 /**
  * Sets the application path that serves as the base URI for
