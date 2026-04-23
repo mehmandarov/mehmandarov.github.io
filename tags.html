@@ -1,47 +1,49 @@
 ---
 layout: page
 title: Tags
+description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its own page and RSS feed."
 ---
 <section class="list">
     <h1 class="title">Tags</h1>
 
-    {% assign tags_list = site.tags %}
+    <p>Each tag has its own page and RSS feed. Subscribe to just what you care about.</p>
 
-    {% if tags_list.first[0] == null %}
-        {% for tag in tags_list %}
-            <a class="item" href="#{{ tag | slugify }}">{{ tag }}</a>
+    {% assign tag_list = site.tag_list %}
+    {% if tag_list and tag_list.size > 0 %}
+        {% for entry in tag_list %}
+            <a class="item" href="{{ site.url }}/tag/{{ entry[0] | slugify }}/">#{{ entry[0] }} <small>({{ entry[1].size }})</small></a>
         {% endfor %}
     {% else %}
-        {% for tag in tags_list %}
-            <a class="item" href="#{{ tag[0] | slugify }}">{{ tag[0] }}</a>
-        {% endfor %}
+        <p><em>No tags yet.</em></p>
     {% endif %}
-
-    {% assign tags_list = nil %}
 </section>
 
 <hr>
 
 <section class="tag-list">
-    {% for tag in site.tags  %}
-    <h2 class="title" id="{{ tag[0] | slugify }}">#{{ tag[0] }}</h2>
+    {% for entry in tag_list %}
+    {% assign tag_name = entry[0] %}
+    {% assign tag_posts = entry[1] %}
+    {% assign tag_slug = tag_name | slugify %}
+
+    <h2 class="title" id="{{ tag_slug }}">
+        <a href="{{ site.url }}/tag/{{ tag_slug }}/" style="text-decoration:none;color:inherit;">#{{ tag_name }}</a>
+        <a href="{{ site.url }}/tag/{{ tag_slug }}/feed.xml" title="RSS feed for tag: {{ tag_name }}" style="font-size:0.7em;margin-left:6px;">
+            <i class="fa-solid fa-rss"></i>
+        </a>
+    </h2>
 
     <ul class="list">
-        {% assign pages_list = tag[1] %}
-        {% for post in pages_list reversed %}
+        {% for post in tag_posts %}
             {% if post.title != null %}
-                {% if group == null or group == post.group %}
-                    <li class="item">
-                        <a class="url" href="{{ site.url }}{{ post.url }}">
-                            <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
-                            <h3 class="title">{{ post.title }}</h3>
-                        </a>
-                    </li>
-                {% endif %}
+                <li class="item">
+                    <a class="url" href="{{ site.url }}{{ post.url }}">
+                        <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                        <h3 class="title">{{ post.title }}</h3>
+                    </a>
+                </li>
             {% endif %}
         {% endfor %}
-        {% assign pages_list = nil %}
-        {% assign group = nil %}
     </ul>
 
     <div class="breaker"></div>

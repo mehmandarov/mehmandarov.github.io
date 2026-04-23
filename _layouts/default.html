@@ -22,6 +22,9 @@ layout: compress
     {% include favicon.html %}
 
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml" />
+    {% if page.tag and page.slug %}
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} – tag: {{ page.tag }}" href="{{ site.url }}/tag/{{ page.slug }}/feed.xml" />
+    {% endif %}
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
