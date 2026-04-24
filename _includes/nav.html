@@ -44,7 +44,7 @@
     and so it can be pinned independently of the nav's positioning.
 {% endcomment %}
 <div class="search-widget" data-pagefind-ignore>
-    <button type="button" class="search-widget__toggle" aria-label="Open search" aria-expanded="false">
+    <button type="button" class="search-widget__toggle" aria-label="Open search" aria-expanded="false" title="Search (Cmd/Ctrl + K)">
         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
     </button>
 
@@ -79,6 +79,13 @@
         function closePanel() {
             panel.hidden = true;
             toggle.setAttribute('aria-expanded', 'false');
+        }
+
+        function isTypingContext(el) {
+            if (!el) return false;
+            if (el.isContentEditable) return true;
+            var tag = (el.tagName || '').toUpperCase();
+            return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
         }
 
         function loadPagefindComponents() {
@@ -119,6 +126,21 @@
         toggle.addEventListener('click', openPanel);
         closeBtn.addEventListener('click', closePanel);
         document.addEventListener('keydown', function (e) {
+            var key = (e.key || '').toLowerCase();
+            var isShortcut = (e.metaKey || e.ctrlKey) && key === 'k';
+
+            // Global open/focus shortcut for search.
+            if (isShortcut && !e.altKey && !e.shiftKey && !isTypingContext(e.target)) {
+                e.preventDefault();
+                if (panel.hidden) {
+                    openPanel();
+                } else {
+                    var input = mount.querySelector('input');
+                    if (input) input.focus();
+                }
+                return;
+            }
+
             if (e.key === 'Escape' && !panel.hidden) closePanel();
         });
     })();
