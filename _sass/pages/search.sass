@@ -98,6 +98,11 @@
 // top bar so taps always reveal usable content. We use a slightly wider
 // breakpoint than $below (780px) so tablets/narrow laptops get the sheet
 // treatment too — the anchored 420px dropdown is awkward at those widths.
+//
+// IMPORTANT: do NOT set overflow/max-height on the panel itself — Pagefind's
+// results dropdown is absolutely positioned relative to its nearest
+// positioned ancestor (this panel) and would get clipped. Pagefind already
+// scrolls the dropdown internally via --pf-searchbox-dropdown-max-height.
 @media only screen and (max-width: 1050px)
     .search-widget
         top: 10px
@@ -110,13 +115,8 @@
             left: 10px
             width: auto
             margin-top: 0
-            max-height: calc(100dvh - 66px)
-            overflow-y: auto
-
-@supports not (height: 1dvh)
-    @media only screen and (max-width: 1050px)
-        .search-widget__panel
-            max-height: calc(100vh - 66px)
+            max-height: none
+            overflow: visible
 
 // ---------------------------------------------------------------------------
 // Pagefind Component UI theming
@@ -152,6 +152,19 @@
     --pf-result-title-font-size: 14px
     --pf-result-excerpt-font-size: 12px
     --pf-searchbox-dropdown-max-height: min(50dvh, 320px)
+
+// On small viewports the panel takes the full width of the screen, so let
+// Pagefind's results dropdown use more of the available height too.
+@media only screen and (max-width: 1050px)
+    .search-widget #search-widget-mount pagefind-searchbox
+        --pf-searchbox-dropdown-max-height: calc(100dvh - 160px)
+        --pf-dropdown-max-height: calc(100dvh - 160px)
+
+@supports not (height: 1dvh)
+    @media only screen and (max-width: 1050px)
+        .search-widget #search-widget-mount pagefind-searchbox
+            --pf-searchbox-dropdown-max-height: calc(100vh - 160px)
+            --pf-dropdown-max-height: calc(100vh - 160px)
 
 .search-page pagefind-searchbox
     --pf-searchbox-dropdown-max-height: min(70dvh, 560px)
