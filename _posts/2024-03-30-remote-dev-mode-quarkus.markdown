@@ -89,4 +89,4 @@ A tiny config update brings back the development joy of using remote development
 
 [1]: https://quarkus.io/guides/maven-tooling#dev-mode/
 [2]: https://quarkus.io/guides/maven-tooling#remote-development-mode
-[3]: {{ site.url }}/assets/images/posts-images/2024-03-30-microservices.png
+[3]: {{ '/assets/images/posts-images/2024-03-30-microservices.png' | relative_url }}

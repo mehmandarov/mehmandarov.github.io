@@ -100,9 +100,9 @@ Now, try putting it all together, and let me know how it goes!
 [8]: https://snl.no/Fugler_i_Norge
 [9]: https://www.youtube.com/watch?v=S-W9tMZu8PU
 [10]: https://web.archive.org/web/20170925210229/http://www.fyens.dk/article/3141726
-[11]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_1.png
-[12]: {{ site.url }}/assets/images/posts-images/2017-04-29-cartoon_image_processing_2.png
+[11]: {{ '/assets/images/posts-images/2017-04-29-cartoon_image_processing_1.png' | relative_url }}
+[12]: {{ '/assets/images/posts-images/2017-04-29-cartoon_image_processing_2.png' | relative_url }}
 [13]: https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
 [14]: https://web.archive.org/web/20161205073600/http://www.bitfusion.io:80/2016/08/31/training-a-bird-classifier-with-tensorflow-and-tflearn/
 [15]: https://www.oreilly.com/learning/dive-into-tensorflow-with-linux
-[16]: {{ site.url }}/hvordan-laere-opp-ditt-eget-kamera/
+[16]: {{ '/hvordan-laere-opp-ditt-eget-kamera/' | relative_url }}

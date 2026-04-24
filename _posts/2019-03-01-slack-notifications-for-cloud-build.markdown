@@ -183,7 +183,7 @@ Also, feel free to customize your app, like adding a custom icon, as I did with 
 
 ---
 
-[1]: {{ site.url }}/assets/images/posts-images/2019-03-01-architecture.png
+[1]: {{ '/assets/images/posts-images/2019-03-01-architecture.png' | relative_url }}
 [2]: https://cloud.google.com/pubsub/pricing
 [3]: https://cloud.google.com/functions/pricing
 [4]: https://console.cloud.google.com/cloud-resource-manager
@@ -192,4 +192,4 @@ Also, feel free to customize your app, like adding a custom icon, as I did with 
 [7]: https://cloud.google.com/sdk/docs/
 [8]: https://cloud.google.com/shell/docs/quickstart
 [9]: https://api.slack.com/apps?new_app=1
-[10]: {{ site.url }}/assets/images/posts-images/2019-03-01-slack-app.png
+[10]: {{ '/assets/images/posts-images/2019-03-01-slack-app.png' | relative_url }}

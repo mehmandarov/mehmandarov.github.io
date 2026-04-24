@@ -105,7 +105,7 @@ Have a look at the [simple implementation of the game][6]{:target="_blank"}. You
 [4]: http://python.microbit.org/help.html
 [5]: https://microbit-micropython.readthedocs.io/en/latest/index.html
 [6]: https://www.microbit.co.uk/blocks/lessons/rock-paper-scissors/challenges
-[7]: {{ site.url }}/assets/images/posts-images/2017-03-11-microbit-bluetooth-challenge-1.jpg
+[7]: {{ '/assets/images/posts-images/2017-03-11-microbit-bluetooth-challenge-1.jpg' | relative_url }}
 [8]: https://github.com/mehmandarov/scissor-paper-rock-microbit
 [9]: https://en.wikipedia.org/wiki/Micro_Bit
 

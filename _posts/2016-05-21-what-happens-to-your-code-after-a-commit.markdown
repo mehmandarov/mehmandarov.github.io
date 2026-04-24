@@ -94,7 +94,7 @@ These points may seem tedious, but they will often have an immediate effect on y
 
 ---
 
-[1]: {{ site.url }}/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_article-2016-04-27_full.png
-[2]: {{ site.url }}/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din etter-at-du-har-skrevet-den-ferdig_ci-superhero.png
-[3]: {{ site.url }}/hva-skjer-med-koden-din-etter-at-du-har-skrevet-den-ferdig/
+[1]: {{ '/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din' | relative_url }} etter-at-du-har-skrevet-den-ferdig_article-2016-04-27_full.png
+[2]: {{ '/assets/images/posts-images/2016-05-16-hva-skjer-med-koden-din' | relative_url }} etter-at-du-har-skrevet-den-ferdig_ci-superhero.png
+[3]: {{ '/hva-skjer-med-koden-din-etter-at-du-har-skrevet-den-ferdig/' | relative_url }}
 [4]: https://en.wikipedia.org/wiki/Version_control

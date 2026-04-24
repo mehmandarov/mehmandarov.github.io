@@ -1,15 +1,15 @@
-<nav class="{% if page.title == "Home" %}nav-home{% else %}nav{% endif %}">
+<nav class="{% if page.title == "Home" %}nav-home{% else %}nav{% endif %}" data-pagefind-ignore>
     <ul class="list">
         {% if page.title != "Home" %}
             <li class="item">
-                <a class="link" href="{{ site.url }}/">Home</a>
+                <a class="link" href="{{ '/' | relative_url }}">Home</a>
             </li>
         {% endif %}
 
         {% if site.blog == true %}
             {% if page.title != "Blog" %}
                 <li class="item">
-                    <a class="link" href="{{ site.url }}/blog">Blog [Labs]</a>
+                    <a class="link" href="{{ '/blog' | relative_url }}">Blog [Labs]</a>
                 </li>
             {% endif %}
         {% endif %}
@@ -17,7 +17,7 @@
         {% if site.projects == true %}
             {% if page.title != "Family" %}
                 <li class="item">
-                    <a class="link" href="{{ site.url }}/family">Family</a>
+                    <a class="link" href="{{ '/family' | relative_url }}">Family</a>
                 </li>
             {% endif %}
         {% endif %}
@@ -25,15 +25,87 @@
         {% if site.about == true %}
             {% if page.title != "About" %}
                 <li class="item">
-                    <a class="link" href="{{ site.url }}/about">About</a>
+                    <a class="link" href="{{ '/about' | relative_url }}">About</a>
                 </li>
             {% endif %}
         {% endif %}
 
         {% if site.resume == true %}
             <li class="item">
-                <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.url }}/{{ site.resume-url }}{% endif %}">Résumé</a>
+                <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.resume-url | relative_url }}{% endif %}">Résumé</a>
             </li>
         {% endif %}
+
+        <li class="item search-widget">
+            <button type="button" class="link search-widget__toggle" aria-label="Open search" aria-expanded="false">
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </button>
+
+            <div class="search-widget__panel" hidden>
+                <button type="button" class="search-widget__close" aria-label="Close search">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <div id="search-widget-mount"></div>
+            </div>
+        </li>
     </ul>
 </nav>
+
+<script>
+    (function () {
+        var widget = document.querySelector('.search-widget');
+        if (!widget) return;
+        var toggle   = widget.querySelector('.search-widget__toggle');
+        var panel    = widget.querySelector('.search-widget__panel');
+        var closeBtn = widget.querySelector('.search-widget__close');
+        var mount    = widget.querySelector('#search-widget-mount');
+        var loaded   = false;
+
+        function openPanel() {
+            panel.hidden = false;
+            toggle.setAttribute('aria-expanded', 'true');
+            if (!loaded) { loadPagefind(); loaded = true; }
+            setTimeout(function () {
+                var input = mount.querySelector('input');
+                if (input) input.focus();
+            }, 150);
+        }
+        function closePanel() {
+            panel.hidden = true;
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+        function loadPagefind() {
+            var css = document.createElement('link');
+            css.rel  = 'stylesheet';
+            css.href = '{{ "/pagefind/pagefind-ui.css" | relative_url }}';
+            document.head.appendChild(css);
+
+            var js = document.createElement('script');
+            js.src = '{{ "/pagefind/pagefind-ui.js" | relative_url }}';
+            js.onload = function () {
+                if (typeof PagefindUI === 'undefined') { showOffline(); return; }
+                new PagefindUI({
+                    element: '#search-widget-mount',
+                    showImages: false,
+                    resetStyles: false,
+                    showSubResults: true,
+                    sort: { date: 'desc' }
+                });
+            };
+            js.onerror = showOffline;
+            document.head.appendChild(js);
+        }
+        function showOffline() {
+            mount.innerHTML =
+                '<p class="search-widget__offline"><em>Search index not available in this build. ' +
+                'Run <code>npx pagefind --site _site</code> after <code>jekyll build</code>.</em></p>';
+        }
+
+        toggle.addEventListener('click', openPanel);
+        closeBtn.addEventListener('click', closePanel);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && !panel.hidden) closePanel();
+        });
+    })();
+</script>
+

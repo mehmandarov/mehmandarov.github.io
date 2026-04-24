@@ -97,7 +97,7 @@ Now that you have connected a bunch of sensors and started collecting some senso
 [4]: https://github.com/mehmandarov/razberry-gettingstarted
 [5]: https://firebase.google.com/
 [6]: https://market.mashape.com/explore
-[7]: {{ site.url }}/microbit-bluetooth-challenge/
+[7]: {{ '/microbit-bluetooth-challenge/' | relative_url }}
 [8]: https://razberry.z-wave.me/
 [9]: https://github.com/mehmandarov/myZumo
 [10]: https://github.com/voodootikigod/node-rolling-spider

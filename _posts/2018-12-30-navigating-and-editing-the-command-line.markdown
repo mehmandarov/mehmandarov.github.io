@@ -127,5 +127,5 @@ _Good luck! Try them out and let me know how that goes!_
 
 ---
 
-[1]: {{ site.url }}/assets/images/posts-images/2018-12-30-bash_navigation.png
+[1]: {{ '/assets/images/posts-images/2018-12-30-bash_navigation.png' | relative_url }}
 [2]: https://linux.die.net/man/1/bash

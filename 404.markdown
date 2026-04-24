@@ -13,4 +13,4 @@ If you've followed a link expecting something to be here, you can [contact us][1
 
 
 [1]: https://github.com/mehmandarov/mehmandarov.github.io/issues
-[2]: {{ site.url }}/assets/images/robohound-rover.jpg
+[2]: {{ '/assets/images/robohound-rover.jpg' | relative_url }}

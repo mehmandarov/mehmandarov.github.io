@@ -115,7 +115,7 @@ Finally, note that this is not an exhaustive list but is instead meant to serve 
 
 
 ---
-[1]: {{ site.url }}/cloud-security-principles/
+[1]: {{ '/cloud-security-principles/' | relative_url }}
 [2]: https://linktr.ee/nehasardana
 [3]: https://www.cisa.gov/sbom
 [4]: https://www.verizon.com/business/resources/T39a/reports/dbir/2022-data-breach-investigations-report-dbir.pdf

@@ -77,8 +77,8 @@ Least but not last, I would like to thank the company, and especially the compan
 
 ---
 
-[1]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_1.png
-[2]:{{ site.url }}/assets/images/posts-images/2017-07-21_reset_password_2.png
+[1]:{{ '/assets/images/posts-images/2017-07-21_reset_password_1.png' | relative_url }}
+[2]:{{ '/assets/images/posts-images/2017-07-21_reset_password_2.png' | relative_url }}
 [3]:https://www.datatilsynet.no/om-personvern/personopplysninger/
 [5]:http://app.uio.no/ub/ujur/oversatte-lover/data/lov-20000414-031-eng.pdf
 [6]:http://www.eugdpr.org/

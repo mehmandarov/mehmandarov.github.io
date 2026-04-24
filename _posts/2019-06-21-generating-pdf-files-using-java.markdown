@@ -170,7 +170,7 @@ In the last two posts, we have seen how to generate QR codes with a hashed strin
 
 ---
 
-[1]: {{ site.url }}/generating-qr-codes-with-secure-hashes-using-java/
+[1]: {{ '/generating-qr-codes-with-secure-hashes-using-java/' | relative_url }}
 [2]: https://microprofile.io/
 [3]: https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)
 [4]: https://tldrlegal.com/license/gnu-affero-general-public-license-v3-(agpl-3.0)

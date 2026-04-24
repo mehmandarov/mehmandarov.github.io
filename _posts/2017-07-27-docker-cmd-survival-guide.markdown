@@ -160,7 +160,7 @@ _Have fun!_
 ---
 
 [1]:https://docs.docker.com/engine/installation/linux/linux-postinstall/
-[2]:{{ site.url }}/assets/images/posts-images/2017-07-27_helloworld-rpi.png
+[2]:{{ '/assets/images/posts-images/2017-07-27_helloworld-rpi.png' | relative_url }}
 [3]:https://docs.docker.com/engine/reference/commandline/ps/
 [4]:https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/
 [5]:https://docs.docker.com/engine/reference/commandline/start/

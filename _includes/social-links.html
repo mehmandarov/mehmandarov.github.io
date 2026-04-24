@@ -38,7 +38,7 @@
     {% endif %}
 
     {% if site.mytalks %}
-        <a class="link" data-title="{{ site.baseurl }}/talks" href="{{ site.url }}/talks" target="_blank" rel="noopener">
+        <a class="link" data-title="{{ '/talks' | relative_url }}" href="{{ '/talks' | relative_url }}" target="_blank" rel="noopener">
             <i class="fa-solid fa-microphone"></i>
         </a>
     {% endif %}

@@ -148,16 +148,16 @@ Now, that you have read the stories behind some of the machines in the movie, it
 [4]: https://en.wikipedia.org/wiki/Kristen_Nygaard
 [5]: https://no.wikipedia.org/wiki/Norsk_Data
 [6]: https://en.wikipedia.org/wiki/Nord-10
-[7]: {{ site.url }}/assets/images/posts-images/2019-02-03-tweet.png
-[8]: {{ site.url }}/assets/images/posts-images/2019-02-03-mainframe1.png
-[9]: {{ site.url }}/assets/images/posts-images/2019-02-03-mainframe2.jpg
-[10]: {{ site.url }}/assets/images/posts-images/2019-02-03-atari.png
-[11]: {{ site.url }}/assets/images/posts-images/2019-02-03-ibm-portable1.jpg
-[12]: {{ site.url }}/assets/images/posts-images/2019-02-03-ibm-portable2.png
-[13]: {{ site.url }}/assets/images/posts-images/2019-02-03-ibm-xt1.jpg
-[14]: {{ site.url }}/assets/images/posts-images/2019-02-03-ibm-xt2.jpg
-[15]: {{ site.url }}/assets/images/posts-images/2019-02-03-stranger-strings1.png
-[16]: {{ site.url }}/assets/images/posts-images/2019-02-03-stranger-strings2.jpg
+[7]: {{ '/assets/images/posts-images/2019-02-03-tweet.png' | relative_url }}
+[8]: {{ '/assets/images/posts-images/2019-02-03-mainframe1.png' | relative_url }}
+[9]: {{ '/assets/images/posts-images/2019-02-03-mainframe2.jpg' | relative_url }}
+[10]: {{ '/assets/images/posts-images/2019-02-03-atari.png' | relative_url }}
+[11]: {{ '/assets/images/posts-images/2019-02-03-ibm-portable1.jpg' | relative_url }}
+[12]: {{ '/assets/images/posts-images/2019-02-03-ibm-portable2.png' | relative_url }}
+[13]: {{ '/assets/images/posts-images/2019-02-03-ibm-xt1.jpg' | relative_url }}
+[14]: {{ '/assets/images/posts-images/2019-02-03-ibm-xt2.jpg' | relative_url }}
+[15]: {{ '/assets/images/posts-images/2019-02-03-stranger-strings1.png' | relative_url }}
+[16]: {{ '/assets/images/posts-images/2019-02-03-stranger-strings2.jpg' | relative_url }}
 [17]: https://en.wikipedia.org/wiki/IBM_Personal_Computer_XT
 [18]: https://javazone.no
 [19]: https://en.wikipedia.org/wiki/Ole-Johan_Dahl

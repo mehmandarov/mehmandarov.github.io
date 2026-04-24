@@ -197,8 +197,8 @@ Here we have seen how easy it is to define an end-point that can return document
 
 ---
  
-[1]: {{ site.url }}/generating-qr-codes-with-secure-hashes-using-java/
-[2]: {{ site.url }}/generating-pdf-files-using-java/
+[1]: {{ '/generating-qr-codes-with-secure-hashes-using-java/' | relative_url }}
+[2]: {{ '/generating-pdf-files-using-java/' | relative_url }}
 [3]: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition
 [4]: https://microprofile.io/
 [5]: https://start.microprofile.io/

@@ -171,12 +171,12 @@ So, what can you do as a developer on a project that might need some help, you m
 ---
 
 [1]:https://docs.docker.com/engine/installation/linux/linux-postinstall/
-[2]:{{ site.url }}/cmd-tools-for-developers/
+[2]:{{ '/cmd-tools-for-developers/' | relative_url }}
 [3]:https://en.wikipedia.org/wiki/Spaghetti_code
 [4]:https://testing.googleblog.com/2017/05/oss-fuzz-five-months-later-and.html
 [5]:https://github.com/google/oss-fuzz
 [6]:https://pmd.github.io/
 [7]:http://findbugs.sourceforge.net/
 [8]:https://www.sonarqube.org/
-[9]:{{ site.url }}/five-pillars-of-a-good-maven-project/
+[9]:{{ '/five-pillars-of-a-good-maven-project/' | relative_url }}
 [10]:https://twitter.com/brianwisti/status/503987766032494592?lang=en

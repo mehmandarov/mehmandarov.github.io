@@ -188,9 +188,9 @@ Now you (and I) have a function that is scheduled to run weekly and does not req
 [3]:  https://xkcd.com/1319/
 [4]:  http://docs.aws.amazon.com/lambda/latest/dg/welcome.html
 [5]:  http://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html
-[6]:  {{ site.url }}/assets/images/posts-images/2017-01-29-confluence-and-aws_screen1.png
-[7]:  {{ site.url }}/assets/images/posts-images/2017-01-29-confluence-and-aws_screen2.png
-[8]:  {{ site.url }}/assets/images/posts-images/2017-01-29-confluence-and-aws_screen3.png
+[6]:  {{ '/assets/images/posts-images/2017-01-29-confluence-and-aws_screen1.png' | relative_url }}
+[7]:  {{ '/assets/images/posts-images/2017-01-29-confluence-and-aws_screen2.png' | relative_url }}
+[8]:  {{ '/assets/images/posts-images/2017-01-29-confluence-and-aws_screen3.png' | relative_url }}
 [9]:  http://docs.aws.amazon.com/lambda/latest/dg/with-scheduled-events.html
 [10]: http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/RunLambdaSchedule.html
 

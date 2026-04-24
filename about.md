@@ -3,7 +3,7 @@ title: About
 layout: page
 description: "Rustam Mehmandarov – senior technologist, architect, speaker, and community builder with over 20 years of experience in architecture, cloud, AI, and security."
 ---
-![Profile Image]({{ site.url }}/{{ site.picture }})
+![Profile Image]({{ site.picture | relative_url }})
 
 ---
 
@@ -60,7 +60,7 @@ I also help with the localization of open-source projects, for instance, [Tunnel
 You can find all relevant links and social media profiles through [https://rustam.no][4]. Ping me, follow me, let's connect!
 
 
-[1]: {{ site.url }}/talks
+[1]: {{ '/talks' | relative_url }}
 [2]: https://github.com/mehmandarov
 [3]: https://tunnelblick.net/cThanks.html
 [4]: https://rustam.no

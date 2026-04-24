@@ -150,8 +150,8 @@ We have seen the key elements of the cloud security architecture and the buildin
 _** Illustrations in this post: Rustam Mehmandarov._
 
 ---
-[1]: {{ site.url }}/assets/images/posts-images/2023-10-12-fig1.png
-[2]: {{ site.url }}/assets/images/posts-images/2023-10-12-fig2.png
-[3]: {{ site.url }}/assets/images/posts-images/2023-10-12-fig3.png
+[1]: {{ '/assets/images/posts-images/2023-10-12-fig1.png' | relative_url }}
+[2]: {{ '/assets/images/posts-images/2023-10-12-fig2.png' | relative_url }}
+[3]: {{ '/assets/images/posts-images/2023-10-12-fig3.png' | relative_url }}
 [4]: https://linktr.ee/nehasardana
 [5]: https://www.techtarget.com/whatis/definition/Confidentiality-integrity-and-availability-CIA
