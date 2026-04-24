@@ -52,7 +52,7 @@ layout: compress
 
 </head>
 <body>
-    <div class="wrapper-{% if site.width == "normal" %}normal{% elsif site.width == "large" %}large{% endif %}">
+    <div class="wrapper-{% if site.width == 'normal' %}normal{% elsif site.width == 'large' %}large{% endif %}">
         {% if page.layout == "post" %}
             <div class="post" {% if page.searchable == false %}data-pagefind-ignore{% else %}data-pagefind-body{% endif %}>
         {% else %}
