@@ -93,6 +93,29 @@
     .search-widget__panel
         max-height: calc(100vh - 80px)
 
+// On smaller screens the desktop anchored dropdown can render partially
+// outside the visual viewport. Pin it as a near-full-width sheet below the
+// top bar so taps always reveal usable content.
+@media #{$below}
+    .search-widget
+        top: 10px
+        right: 10px
+
+        &__panel
+            position: fixed
+            top: 56px
+            right: 10px
+            left: 10px
+            width: auto
+            margin-top: 0
+            max-height: calc(100dvh - 66px)
+            overflow-y: auto
+
+@supports not (height: 1dvh)
+    @media #{$below}
+        .search-widget__panel
+            max-height: calc(100vh - 66px)
+
 // ---------------------------------------------------------------------------
 // Pagefind Component UI theming
 // ---------------------------------------------------------------------------
