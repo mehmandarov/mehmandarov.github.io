@@ -19,7 +19,9 @@
 
 .nav
     position: absolute
-    right: 0
+    // Shifted left to leave room for the fixed top-right .search-widget icon
+    // (~38px wide + 14px right offset → keep ~60px clearance).
+    right: 60px
     top: 0
 
     > .list

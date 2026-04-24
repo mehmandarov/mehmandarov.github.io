@@ -5,7 +5,7 @@ title: Projects
 ---
 {% include header.html %}
 
-<section class="list">
+<section class="list" data-pagefind-ignore>
     {% for post in site.posts %}
         {% if post.category == 'project' %}
             <div class="item {% if post.star == true %}star{% endif %}">

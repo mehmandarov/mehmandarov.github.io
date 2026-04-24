@@ -1,0 +1,187 @@
+@use "base/variables" as *
+
+// ---------------------------------------------------------------------------
+// /search/ standalone page
+// ---------------------------------------------------------------------------
+.search-page
+    margin-top: 125px
+
+    > .title
+        text-align: center
+        margin-bottom: 1.5rem
+
+    > p
+        text-align: center
+        color: $gama
+        margin-bottom: 3rem
+
+// ---------------------------------------------------------------------------
+// Floating top-right search widget. Pinned to the viewport so it's available
+// from every page in the same spot. The nav is shifted left (see nav.sass)
+// so the icon doesn't overlap any nav links on subpages.
+// ---------------------------------------------------------------------------
+.search-widget
+    position: fixed
+    top: 14px
+    right: 14px
+    z-index: 1000
+
+    &__toggle
+        background: $omega
+        border: 1px solid $epsilon
+        color: $alpha
+        width: 38px
+        height: 38px
+        border-radius: 50%
+        cursor: pointer
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        font-size: 1.4rem
+        transition: background 0.15s ease, color 0.15s ease
+
+        &:hover
+            background: $delta
+            color: $omega
+
+    &__panel
+        position: absolute
+        top: 100%
+        right: 0
+        margin-top: 8px
+        width: min(420px, calc(100vw - 28px))
+        max-height: min(80dvh, 720px)
+        overflow: visible
+        background: $omega
+        border: 1px solid $epsilon
+        border-radius: 8px
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12)
+        padding: 14px 16px 18px
+        text-align: left
+
+        &[hidden]
+            display: none
+
+    &__close
+        position: absolute
+        top: 8px
+        right: 8px
+        width: 32px
+        height: 32px
+        font-size: 1.2rem
+        background: transparent
+        border: 1px solid $epsilon
+        color: $alpha
+        border-radius: 50%
+        cursor: pointer
+        display: inline-flex
+        align-items: center
+        justify-content: center
+
+        &:hover
+            background: $delta
+            color: $omega
+
+    &__offline
+        font-size: 1.3rem
+        color: $gama
+
+    #search-widget-mount
+        margin-top: 30px
+
+@supports not (height: 1dvh)
+    .search-widget__panel
+        max-height: calc(100vh - 80px)
+
+// ---------------------------------------------------------------------------
+// Pagefind Component UI theming
+// ---------------------------------------------------------------------------
+.search-page pagefind-searchbox,
+.search-widget #search-widget-mount pagefind-searchbox
+    // Core palette mapped to site variables (light/dark handled by Sass theme)
+    --pf-text: #{$alpha}
+    --pf-text-secondary: #{$gama}
+    --pf-text-muted: #{$gama}
+    --pf-background: #{$omega}
+    --pf-border: #{$epsilon}
+    --pf-border-focus: #{$delta}
+    --pf-hover: #{$epsilon}
+    --pf-mark: #{$alpha}
+    --pf-font: #{$fontSans}
+
+    // Sizing & rhythm
+    --pf-input-height: 40px
+    --pf-input-font-size: 15px
+    --pf-summary-font-size: 12px
+    --pf-result-title-font-size: 16px
+    --pf-result-excerpt-font-size: 13px
+    --pf-border-radius: 6px
+    --pf-results-gap: 0
+
+    // Ensure results/dropdowns are viewport-aware and visibly scrollable.
+    --pf-searchbox-dropdown-max-height: min(60dvh, 420px)
+    --pf-dropdown-max-height: min(55dvh, 360px)
+
+// Keep panel search compact vs full /search page
+.search-widget #search-widget-mount pagefind-searchbox
+    --pf-result-title-font-size: 14px
+    --pf-result-excerpt-font-size: 12px
+    --pf-searchbox-dropdown-max-height: min(50dvh, 320px)
+
+.search-page pagefind-searchbox
+    --pf-searchbox-dropdown-max-height: min(70dvh, 560px)
+    --pf-dropdown-max-height: min(60dvh, 420px)
+
+// ---------------------------------------------------------------------------
+// Component UI structural overrides (scoped to search containers)
+// ---------------------------------------------------------------------------
+.search-page,
+.search-widget #search-widget-mount
+    .pf-result
+        border-bottom: 1px solid $epsilon
+        padding: 18px 0
+
+        &:last-child
+            border-bottom: none
+
+    .pf-result-title,
+    .pf-searchbox-result-title
+        font-weight: 600
+
+        a,
+        .pf-result-link
+            text-decoration: underline
+            color: $alpha
+
+            &:hover
+                color: $delta
+
+    .pf-result-excerpt,
+    .pf-searchbox-result-excerpt,
+    .pf-heading-excerpt
+        color: $gama
+        line-height: 1.55
+
+        mark
+            background: transparent
+            color: $alpha
+            font-weight: 600
+
+    // "clear" button inside input (the × icon)
+    .pf-input-clear,
+    .pf-dropdown-clear
+        border: none
+        background: transparent
+        color: $gama
+        border-radius: 4px
+        cursor: pointer
+
+        &:hover
+            color: $alpha
+            background: $epsilon
+
+    .pf-summary,
+    .pf-searchbox-footer,
+    .pf-searchbox-result-meta
+        color: $gama
+        font-size: 1.2rem

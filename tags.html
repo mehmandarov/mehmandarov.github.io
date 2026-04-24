@@ -3,7 +3,7 @@ layout: page
 title: Tags
 description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its own page and RSS feed."
 ---
-<section class="list">
+<section class="list" data-pagefind-ignore>
     <h1 class="title">Tags</h1>
 
     <p>Each tag has its own page and RSS feed. Subscribe to just what you care about.</p>
@@ -20,7 +20,7 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
 
 <hr>
 
-<section class="tag-list">
+<section class="tag-list" data-pagefind-ignore>
     {% for entry in tag_list %}
     {% assign tag_name = entry[0] %}
     {% assign tag_posts = entry[1] %}

@@ -1,0 +1,32 @@
+---
+layout: page
+permalink: /search/
+title: Search
+description: "Search posts on Rustam Mehmandarov's blog."
+---
+<section class="search-page" data-pagefind-ignore>
+    <h1 class="title">Search</h1>
+    <p>Search across all blog posts. Results are generated locally — no third-party service involved.</p>
+
+    <link rel="stylesheet" href="{{ '/pagefind/pagefind-component-ui.css' | relative_url }}">
+    <pagefind-searchbox id="search">
+        <pagefind-config show-images="false" show-sub-results="true" max-sub-results="10" sort="date:desc"></pagefind-config>
+        <pagefind-input placeholder="Search posts"></pagefind-input>
+        <pagefind-summary></pagefind-summary>
+        <pagefind-results></pagefind-results>
+    </pagefind-searchbox>
+
+    <script src="{{ '/pagefind/pagefind-component-ui.js' | relative_url }}"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                if (window.customElements && window.customElements.get('pagefind-searchbox')) return;
+                var mount = document.getElementById('search');
+                if (!mount) return;
+                mount.innerHTML =
+                    '<p><em>The search index is not available in this build. ' +
+                    'It is generated automatically on every deploy.</em></p>';
+            }, 250);
+        });
+    </script>
+</section>

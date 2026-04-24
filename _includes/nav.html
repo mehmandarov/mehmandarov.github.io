@@ -35,21 +35,26 @@
                 <a class="link" href="{% if site.resume-external %}{{ site.resume-url }}{% else %}{{ site.resume-url | relative_url }}{% endif %}">Résumé</a>
             </li>
         {% endif %}
-
-        <li class="item search-widget">
-            <button type="button" class="link search-widget__toggle" aria-label="Open search" aria-expanded="false">
-                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            </button>
-
-            <div class="search-widget__panel" hidden>
-                <button type="button" class="search-widget__close" aria-label="Close search">
-                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                </button>
-                <div id="search-widget-mount"></div>
-            </div>
-        </li>
     </ul>
 </nav>
+
+{% comment %}
+    Search widget — fixed top-right of the viewport on every page.
+    Kept outside <nav> so it's not affected by .nav-home centering on Home,
+    and so it can be pinned independently of the nav's positioning.
+{% endcomment %}
+<div class="search-widget" data-pagefind-ignore>
+    <button type="button" class="search-widget__toggle" aria-label="Open search" aria-expanded="false">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+    </button>
+
+    <div class="search-widget__panel" hidden>
+        <button type="button" class="search-widget__close" aria-label="Close search">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <div id="search-widget-mount"></div>
+    </div>
+</div>
 
 <script>
     (function () {
@@ -64,37 +69,44 @@
         function openPanel() {
             panel.hidden = false;
             toggle.setAttribute('aria-expanded', 'true');
-            if (!loaded) { loadPagefind(); loaded = true; }
+            if (!loaded) { loadPagefindComponents(); loaded = true; }
             setTimeout(function () {
                 var input = mount.querySelector('input');
                 if (input) input.focus();
-            }, 150);
+            }, 180);
         }
+
         function closePanel() {
             panel.hidden = true;
             toggle.setAttribute('aria-expanded', 'false');
         }
-        function loadPagefind() {
+
+        function loadPagefindComponents() {
             var css = document.createElement('link');
             css.rel  = 'stylesheet';
-            css.href = '{{ "/pagefind/pagefind-ui.css" | relative_url }}';
+            css.href = '{{ "/pagefind/pagefind-component-ui.css" | relative_url }}';
             document.head.appendChild(css);
 
             var js = document.createElement('script');
-            js.src = '{{ "/pagefind/pagefind-ui.js" | relative_url }}';
+            js.src = '{{ "/pagefind/pagefind-component-ui.js" | relative_url }}';
             js.onload = function () {
-                if (typeof PagefindUI === 'undefined') { showOffline(); return; }
-                new PagefindUI({
-                    element: '#search-widget-mount',
-                    showImages: false,
-                    resetStyles: false,
-                    showSubResults: true,
-                    sort: { date: 'desc' }
-                });
+                if (!window.customElements || !window.customElements.get('pagefind-searchbox')) {
+                    showOffline();
+                    return;
+                }
+                mount.innerHTML = [
+                    '<pagefind-searchbox>',
+                    '  <pagefind-config show-images="false" show-sub-results="true" max-sub-results="10" sort="date:desc"></pagefind-config>',
+                    '  <pagefind-input placeholder="Search posts"></pagefind-input>',
+                    '  <pagefind-summary></pagefind-summary>',
+                    '  <pagefind-results></pagefind-results>',
+                    '</pagefind-searchbox>'
+                ].join('');
             };
             js.onerror = showOffline;
             document.head.appendChild(js);
         }
+
         function showOffline() {
             mount.innerHTML =
                 '<p class="search-widget__offline"><em>Search index not available in this build. ' +
@@ -108,4 +120,3 @@
         });
     })();
 </script>
-

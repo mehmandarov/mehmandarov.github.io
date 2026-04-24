@@ -36,6 +36,21 @@ docker run --rm -v "$PWD":/site mehmandarov-site \
     bundle exec jekyll build
 ```
 
+## Search (Pagefind)
+
+The site uses [Pagefind](https://pagefind.app/) for fully client-side, multilingual full-text search — no third-party service, no API key. The search index is built **automatically on every deploy** by the `Build search index (Pagefind)` step in `.github/workflows/jekyll.yml`.
+
+The page lives at `/search/` and is linked from the main nav. Posts are detected as English by default; posts tagged `norwegian` are indexed with the Norwegian stemmer (override per page with `lang: <code>` in the front matter).
+
+To enable search **locally**, build the index after Jekyll finishes:
+
+```bash
+docker run --rm -v "$PWD":/site mehmandarov-site sh -c \
+    "bundle exec jekyll build && npx -y pagefind --site _site"
+```
+
+Then either re-serve `_site/` statically or restart the dev container. Pagefind output (`_site/pagefind/`) is regenerated on every build, so it never needs to be committed.
+
 ## Bugs and Issues
 
 Have a bug or an issue with this site? [Open a new issue](https://github.com/mehmandarov/mehmandarov.github.io/issues) here on GitHub.

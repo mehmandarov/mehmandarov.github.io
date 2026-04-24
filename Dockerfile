@@ -15,7 +15,8 @@ RUN apk add --no-cache \
         gcc \
         git \
         tzdata \
-        nodejs
+        nodejs \
+        npm
 
 WORKDIR /site
 
