@@ -96,12 +96,15 @@
                 }
                 mount.innerHTML = [
                     '<pagefind-searchbox>',
-                    '  <pagefind-config show-images="false" show-sub-results="true" max-sub-results="10" sort="date:desc"></pagefind-config>',
-                    '  <pagefind-input placeholder="Search posts"></pagefind-input>',
+                    '  <pagefind-config show-images="false"></pagefind-config>',
+                    '  <pagefind-input placeholder="Search posts" show-sub-results="true"></pagefind-input>',
                     '  <pagefind-summary></pagefind-summary>',
-                    '  <pagefind-results></pagefind-results>',
+                    '  <pagefind-results max-sub-results="10"></pagefind-results>',
                     '</pagefind-searchbox>'
                 ].join('');
+                if (typeof window.ensurePagefindDateSorting === 'function') {
+                    window.ensurePagefindDateSorting();
+                }
             };
             js.onerror = showOffline;
             document.head.appendChild(js);

@@ -10,15 +10,18 @@ description: "Search posts on Rustam Mehmandarov's blog."
 
     <link rel="stylesheet" href="{{ '/pagefind/pagefind-component-ui.css' | relative_url }}">
     <pagefind-searchbox id="search">
-        <pagefind-config show-images="false" show-sub-results="true" max-sub-results="10" sort="date:desc"></pagefind-config>
-        <pagefind-input placeholder="Search posts"></pagefind-input>
+        <pagefind-config show-images="false"></pagefind-config>
+        <pagefind-input placeholder="Search posts" show-sub-results="true"></pagefind-input>
         <pagefind-summary></pagefind-summary>
-        <pagefind-results></pagefind-results>
+        <pagefind-results max-sub-results="10"></pagefind-results>
     </pagefind-searchbox>
 
     <script src="{{ '/pagefind/pagefind-component-ui.js' | relative_url }}"></script>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
+            if (typeof window.ensurePagefindDateSorting === 'function') {
+                window.ensurePagefindDateSorting();
+            }
             setTimeout(function () {
                 if (window.customElements && window.customElements.get('pagefind-searchbox')) return;
                 var mount = document.getElementById('search');
