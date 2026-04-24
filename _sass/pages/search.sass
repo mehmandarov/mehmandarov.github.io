@@ -95,8 +95,10 @@
 
 // On smaller screens the desktop anchored dropdown can render partially
 // outside the visual viewport. Pin it as a near-full-width sheet below the
-// top bar so taps always reveal usable content.
-@media #{$below}
+// top bar so taps always reveal usable content. We use a slightly wider
+// breakpoint than $below (780px) so tablets/narrow laptops get the sheet
+// treatment too — the anchored 420px dropdown is awkward at those widths.
+@media only screen and (max-width: 1050px)
     .search-widget
         top: 10px
         right: 10px
@@ -112,7 +114,7 @@
             overflow-y: auto
 
 @supports not (height: 1dvh)
-    @media #{$below}
+    @media only screen and (max-width: 1050px)
         .search-widget__panel
             max-height: calc(100vh - 66px)
 
