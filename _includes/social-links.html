@@ -2,55 +2,55 @@
 
 <div class="social-links">
     {% if site.facebook %}
-        <a class="link" data-title="facebook.com/{{ site.facebook }}" href="https://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener">
+        <a class="link" data-title="facebook.com/{{ site.facebook }}" title="facebook.com/{{ site.facebook }}" href="https://facebook.com/{{ site.facebook }}" target="_blank" rel="noopener">
             <i class="fa-brands fa-facebook"></i>
         </a>
     {% endif %}
 
     {% if site.twitter %}
-        <a class="link" data-title="x.com/{{ site.twitter }}" href="https://x.com/{{ site.twitter }}" target="_blank" rel="noopener">
+        <a class="link" data-title="x.com/{{ site.twitter }}" title="x.com/{{ site.twitter }}" href="https://x.com/{{ site.twitter }}" target="_blank" rel="noopener">
             <i class="fa-brands fa-x-twitter"></i>
         </a>
     {% endif %}
 
     {% if site.instagram %}
-        <a class="link" data-title="instagram.com/{{ site.instagram }}" href="https://instagram.com/{{ site.instagram }}" target="_blank"  rel="noopener">
+        <a class="link" data-title="instagram.com/{{ site.instagram }}" title="instagram.com/{{ site.instagram }}" href="https://instagram.com/{{ site.instagram }}" target="_blank"  rel="noopener">
             <i class="fa-brands fa-instagram"></i>
         </a>
     {% endif %}
 
     {% if site.linkedin %}
-        <a class="link" data-title="linkedin.com/in/{{ site.linkedin }}" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"  rel="noopener">
+        <a class="link" data-title="linkedin.com/in/{{ site.linkedin }}" title="linkedin.com/in/{{ site.linkedin }}" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank"  rel="noopener">
             <i class="fa-brands fa-linkedin"></i>
         </a>
     {% endif %}
 
     {% if site.github %}
-        <a class="link" data-title="github.com/{{ site.github }}" href="https://github.com/{{ site.github }}" target="_blank"  rel="noopener">
+        <a class="link" data-title="github.com/{{ site.github }}" title="github.com/{{ site.github }}" href="https://github.com/{{ site.github }}" target="_blank"  rel="noopener">
             <i class="fa-brands fa-github"></i>
         </a>
     {% endif %}
 
     {% if site.bluesky %}
-        <a class="link" data-title="{{ site.bluesky }}" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener">
+        <a class="link" data-title="{{ site.bluesky }}" title="bsky.app/profile/{{ site.bluesky }}" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener">
             <i class="fa-brands fa-bluesky"></i>
         </a>
     {% endif %}
 
     {% if site.mytalks %}
-        <a class="link" data-title="{{ '/talks' | relative_url }}" href="{{ '/talks' | relative_url }}" target="_blank" rel="noopener">
+        <a class="link" data-title="{{ '/talks' | relative_url }}" title="Talks page" href="{{ '/talks' | relative_url }}" target="_blank" rel="noopener">
             <i class="fa-solid fa-microphone"></i>
         </a>
     {% endif %}
 
     {% if site.mylinks %}
-        <a class="link" data-title="All online presence links: rustam.no" href="{{ site.mylinks }}" target="_blank" rel="noopener">
+        <a class="link" data-title="All online presence links: rustam.no" title="All online presence links: rustam.no" href="{{ site.mylinks }}" target="_blank" rel="noopener">
             <i class="fa-solid fa-link"></i>
         </a>
     {% endif %}
 
     {% if site.email %}
-        <a class="link" data-title="{{ site.email }}" href="mailto:{{ site.email }}"  rel="noopener">
+        <a class="link" data-title="{{ site.email }}" title="{{ site.email }}" href="mailto:{{ site.email }}"  rel="noopener">
             <i class="fa-regular fa-envelope"></i>
         </a>
     {% endif %}
