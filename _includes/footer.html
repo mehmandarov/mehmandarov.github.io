@@ -5,15 +5,9 @@
         <i class="fa-solid fa-rss"></i>
     </a>
 
-    {% if site.analytics-posthog %}
-    <span class="extra">
-        | <a class="link" href="javascript:void(0)" onclick="window.__phShowConsent()" title="Change analytics consent">Cookie Settings</a>
-    </span>
-    {% endif %}
-
     <p class="extra">
-        <a class="link" href="https://github.com/sergiokopplin/indigo">Indigo theme</a>
-        by
-        <a class="link" href="https://github.com/sergiokopplin/indigo">Kopplin</a>
+        {% if site.analytics-posthog %}
+        <a class="link" href="javascript:void(0)" onclick="window.__phShowConsent()" title="Change analytics consent">Cookie Settings</a>
+        {% endif %}
     </p>
 </footer>
