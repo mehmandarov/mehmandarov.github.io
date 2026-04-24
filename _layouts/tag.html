@@ -5,19 +5,19 @@ layout: page
     <h1 class="title">#{{ page.tag }}</h1>
 
     <p>
-        <a href="{{ site.url }}/tag/{{ page.slug }}/feed.xml" title="RSS feed for tag: {{ page.tag }}">
+        <a href="{{ '/tag/' | relative_url }}{{ page.slug }}/feed.xml" title="RSS feed for tag: {{ page.tag }}">
             <i class="fa-solid fa-rss"></i> RSS feed for this tag
         </a>
         &nbsp;·&nbsp;
-        <a href="{{ site.url }}/tags">All tags</a>
+        <a href="{{ '/tags/' | relative_url }}">All tags</a>
     </p>
 
     <ul class="list">
         {% for post in page.posts %}
             {% if post.title != null %}
                 <li class="item">
-                    <a class="url" href="{{ site.url }}{{ post.url }}">
-                        <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                    <a class="url" href="{{ post.url | relative_url }}">
+                        <aside class="date"><time datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d %Y' }}</time></aside>
                         <h3 class="title">{{ post.title }}</h3>
                     </a>
                 </li>

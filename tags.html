@@ -11,7 +11,7 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
     {% assign tag_list = site.tag_list %}
     {% if tag_list and tag_list.size > 0 %}
         {% for entry in tag_list %}
-            <a class="item" href="{{ site.url }}/tag/{{ entry[0] | slugify }}/">#{{ entry[0] }} <small>({{ entry[1].size }})</small></a>
+            <a class="item" href="{{ '/tag/' | relative_url }}{{ entry[0] | slugify }}/">#{{ entry[0] }} <small>({{ entry[1].size }})</small></a>
         {% endfor %}
     {% else %}
         <p><em>No tags yet.</em></p>
@@ -26,9 +26,9 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
     {% assign tag_posts = entry[1] %}
     {% assign tag_slug = tag_name | slugify %}
 
-    <h2 class="title" id="{{ tag_slug }}">
-        <a href="{{ site.url }}/tag/{{ tag_slug }}/" style="text-decoration:none;color:inherit;">#{{ tag_name }}</a>
-        <a href="{{ site.url }}/tag/{{ tag_slug }}/feed.xml" title="RSS feed for tag: {{ tag_name }}" style="font-size:0.7em;margin-left:6px;">
+    <h2 class="title tag-heading" id="{{ tag_slug }}">
+        <a class="tag-link" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/">#{{ tag_name }}</a>
+        <a class="tag-feed" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/feed.xml" title="RSS feed for tag: {{ tag_name }}">
             <i class="fa-solid fa-rss"></i>
         </a>
     </h2>
@@ -37,8 +37,8 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
         {% for post in tag_posts %}
             {% if post.title != null %}
                 <li class="item">
-                    <a class="url" href="{{ site.url }}{{ post.url }}">
-                        <aside class="date"><time datetime="{{ post.date | date:"%d-%m-%Y" }}">{{ post.date | date: "%b %d %Y" }}</time></aside>
+                    <a class="url" href="{{ post.url | relative_url }}">
+                        <aside class="date"><time datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d %Y' }}</time></aside>
                         <h3 class="title">{{ post.title }}</h3>
                     </a>
                 </li>
