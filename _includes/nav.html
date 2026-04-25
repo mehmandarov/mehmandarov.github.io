@@ -124,8 +124,27 @@
                 'Run <code>npx pagefind --site _site</code> after <code>jekyll build</code>.</em></p>';
         }
 
-        toggle.addEventListener('click', openPanel);
+        function togglePanel() {
+            if (panel.hidden) {
+                openPanel();
+            } else {
+                closePanel();
+            }
+        }
+
+        toggle.addEventListener('click', togglePanel);
         closeBtn.addEventListener('click', closePanel);
+
+        /* Reset panel state when the page is restored from bfcache (Back/Forward
+           navigation in Safari/Firefox/Chrome can replay the previous DOM with
+           panel.hidden = false still applied). */
+        window.addEventListener('pageshow', function (e) {
+            if (e.persisted || (window.performance && performance.getEntriesByType &&
+                (performance.getEntriesByType('navigation')[0] || {}).type === 'back_forward')) {
+                closePanel();
+            }
+        });
+
         document.addEventListener('keydown', function (e) {
             var key = (e.key || '').toLowerCase();
             var isShortcut = (e.metaKey || e.ctrlKey) && key === 'k';

@@ -2,6 +2,11 @@
 
 body, html
 	font-size: 62.5%
+	// Prevent accidental horizontal overflow (long titles, wide code blocks,
+	// etc.) from expanding the layout viewport on mobile. When the layout
+	// viewport grows wider than the visual viewport, `position: fixed` items
+	// such as the .search-widget icon end up outside the visible area.
+	overflow-x: clip
 
 body
 	font: 16px $fontSans
