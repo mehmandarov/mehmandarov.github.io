@@ -44,7 +44,7 @@ module Jekyll
       data['tag']   = tag
       data['slug']  = slug
       data['posts'] = posts
-      data['title'] = "#{site.config['title']} – tag: #{tag}"
+      data['title'] = "#{site.config['title']} - tag: #{tag}"
     end
   end
 

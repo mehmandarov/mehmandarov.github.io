@@ -5,7 +5,7 @@ gem 'jekyll', '~> 4.3'
 group :jekyll_plugins do
     gem 'jekyll-seo-tag'
     gem 'jekyll-gist'
-    gem 'jekyll-feed'
+    #gem 'jekyll-feed' # removed for now to have more control over the generated feed.
     gem 'jekyll-sitemap'
     gem "jekyll-paginate-v2", "~> 3.0"
     gem "html-proofer"
