@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /test/
+Disallow: /lab/
 
 Sitemap: https://mehmandarov.com/sitemap.xml
 
