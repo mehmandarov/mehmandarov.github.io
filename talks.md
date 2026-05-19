@@ -6,15 +6,18 @@ description: "Talks and conference appearances by Rustam Mehmandarov on cloud, a
 
 ## Rustam Mehmandarov's Talks and Conferences
 
-🇧🇾   🇧🇪   🇧🇦   🇧🇷   🇧🇬   🇨🇦   🇨🇿   🇩🇰   🇪🇪   🇩🇪   🇬🇷   🇮🇪   🇮🇹   🇽🇰   🇱🇻   🇱🇹   🇲🇦   🇳🇱   🇳🇴   🇵🇪   🇵🇱   🇵🇹   🇷🇴   🇷🇺   🇷🇸   🇸🇮   🇪🇸   🇸🇪   🇨🇭   🇹🇷   🇺🇦   🇬🇧   🇺🇸
+{% assign v = site.data.visited %}
+{{ v.country_flags | join: "   " }}
 
-#### _Spoken or otherwise involved in over 230 events in 33 countries. Public speaker since 2013._
+#### _Spoken or otherwise involved in over {{ v.stats.total_events }} events in {{ v.stats.total_countries }} countries. Public speaker since 2013._
 
-* **Events: 230+**
-* **Countries: 33**
-* **Cities: ~60**
+* **Events: {{ v.stats.total_events }}+**
+* **Countries: {{ v.stats.total_countries }}**
+* **Cities: ~{{ v.stats.total_cities }}**
 * **Speaking since: 2013**
 * **Involved: keynotes, workshops, talks, lightning  talks, and as a program committee member**
+
+{% include visited-map.html %}
 
 #### Countries:
 

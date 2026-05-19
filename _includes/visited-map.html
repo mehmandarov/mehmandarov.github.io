@@ -1,0 +1,28 @@
+{% comment %}
+    Leaflet map of visited countries / cities.
+    Data source: _data/visited.json (schema: docs/visited-data-spec.md).
+
+    Compress layout safety: this include is rendered inside the compress
+    layout which strips linefeeds, so the inline <script> below uses ONLY
+    block /* */ comments and ends every statement with a semicolon. The
+    main logic lives in /assets/js/visited-map.js (separate file → not
+    subject to compress).
+{% endcomment %}
+<div class="visited-map-wrap">
+    <link rel="stylesheet" href="{{ '/assets/vendor/leaflet/leaflet.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/styles/visited-map.css' | relative_url }}">
+    <div id="visited-map" class="visited-map" data-base="{{ site.baseurl | default: '' }}" role="img" aria-label="Map of countries and cities Rustam has visited or spoken at."></div>
+    <p class="visited-map-caption">
+        Click a country to zoom in. Click a pin for conference details. Scroll-zoom activates after a click on the map.
+    </p>
+    {% comment %}
+        H2 hardening: jsonify does not escape `</`, so a string containing
+        `</script>` would break out of the inline script block. Replacing
+        `</` with `<\/` is JSON-equivalent (the backslash is ignored in
+        string parsing) and HTML-safe (no longer matches `</script>`).
+    {% endcomment %}
+    <script>window.__VISITED_DATA__ = {{ site.data.visited | jsonify | replace: '</', '<\/' }};</script>
+    <script src="{{ '/assets/vendor/leaflet/leaflet.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/visited-map.js' | relative_url }}"></script>
+</div>
+

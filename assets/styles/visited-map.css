@@ -1,0 +1,120 @@
+/* visited-map.css
+ * Styles for the Leaflet "places I've been" map on /talks/.
+ * Theme colours via CSS custom properties so light/dark works without JS.
+ */
+
+.visited-map-wrap {
+    margin: 1.5rem 0 2rem;
+}
+
+.visited-map {
+    --vm-visited-fill: #4a7fc4;
+    --vm-visited-edge: #2c5fa3;
+    --vm-marker-fill:  #e53935;
+    --vm-neutral-fill: #e8e8ed;
+    --vm-neutral-edge: #b8b8c0;
+    --vm-ocean:        #f4f4f7;
+
+    width: 100%;
+    height: 480px;
+    border-radius: 6px;
+    border: 1px solid #d8d8de;
+    background: var(--vm-ocean);
+    overflow: hidden;
+    position: relative;
+}
+
+@media (max-width: 640px) {
+    .visited-map { height: 360px; }
+}
+
+.visited-map-caption {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.4rem;
+    line-height: 1.4;
+}
+
+.visited-map-wrap .leaflet-popup-content {
+    margin: 10px 14px;
+    line-height: 1.4;
+}
+
+.visited-map .leaflet-tooltip {
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.visited-map-wrap .leaflet-popup-content strong { font-size: 1.05rem; }
+.visited-map-wrap .leaflet-popup-content .vm-country {
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: 400;
+}
+.visited-map-wrap .leaflet-popup-content .vm-since {
+    font-size: 0.85rem;
+    color: #888;
+    margin-top: 2px;
+}
+.visited-map-wrap .leaflet-popup-content .vm-conf-heading {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #555;
+}
+.visited-map-wrap .leaflet-popup-content ul.vm-conf-list {
+    margin: 0.2rem 0 0 0;
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+}
+.visited-map-wrap .leaflet-popup-content ul.vm-conf-list li { margin: 0.1rem 0; }
+
+/* Dark mode — matches _includes/style-dark.scss colour palette */
+@media (prefers-color-scheme: dark) {
+    .visited-map {
+        --vm-visited-fill: #6ea8e8;
+        --vm-visited-edge: #3e7dc4;
+        --vm-marker-fill:  #ff6b6b;
+        --vm-neutral-fill: #1f1f24;
+        --vm-neutral-edge: #3a3a44;
+        --vm-ocean:        #111114;
+        border-color: #2a2a30;
+    }
+    .visited-map-caption { color: #aaa; }
+
+    /* Leaflet popups + controls — invert chrome */
+.visited-map-wrap .leaflet-popup-content-wrapper,
+.visited-map-wrap .leaflet-popup-tip,
+    .visited-map .leaflet-tooltip {
+        background: #1f1f24;
+        color: #ededed;
+        border-color: #3a3a44;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    }
+    .visited-map .leaflet-tooltip-top::before  { border-top-color:    #1f1f24; }
+    .visited-map .leaflet-tooltip-bottom::before { border-bottom-color: #1f1f24; }
+    .visited-map .leaflet-tooltip-left::before { border-left-color:   #1f1f24; }
+    .visited-map .leaflet-tooltip-right::before { border-right-color: #1f1f24; }
+.visited-map-wrap .leaflet-popup-content .vm-country,
+.visited-map-wrap .leaflet-popup-content .vm-since,
+.visited-map-wrap .leaflet-popup-content .vm-conf-heading {
+        color: #aaa;
+    }
+.visited-map-wrap .leaflet-popup-content a { color: #6ea8e8; }
+.visited-map-wrap .leaflet-container a.leaflet-popup-close-button { color: #aaa; }
+
+.visited-map-wrap .leaflet-bar a,
+.visited-map-wrap .leaflet-bar a:hover {
+        background: #1f1f24;
+        color: #ededed;
+        border-color: #3a3a44;
+    }
+.visited-map-wrap .leaflet-control-attribution {
+        background: rgba(31,31,36,0.85) !important;
+        color: #aaa !important;
+    }
+.visited-map-wrap .leaflet-control-attribution a { color: #6ea8e8 !important; }
+}
+

@@ -62,6 +62,18 @@ docker run --rm -v "$PWD":/site mehmandarov-site sh -c \
 
 Then restart the dev container (or serve `_site/` statically). Pagefind output (`_site/pagefind/`) is regenerated on every build and should not be committed.
 
+## Visited-places map (`/talks/`)
+
+The interactive map on **`/talks/`** is rendered client-side by Leaflet
+against three resolution tiers of geoBoundaries CGAZ ADM0 borders
+(vendored in `assets/data/`) and your `_data/visited.json`. No tiles,
+no API keys.
+
+- **Update the data** (new city/country): edit `_data/visited.json`.
+- **Refresh the borders**: run `./scripts/refresh-world-borders.sh`.
+- Renderer / refresh / caveats: [`docs/visited-map.md`](docs/visited-map.md).
+- Full data schema: [`docs/visited-data-spec.md`](docs/visited-data-spec.md).
+
 ## Bugs and Issues
 
 Have a bug or an issue with this site? [Open a new issue][2] here on GitHub.
