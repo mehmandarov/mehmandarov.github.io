@@ -28,6 +28,19 @@
     .visited-map { height: 360px; }
 }
 
+/* Chromium/Brave draws a default focus rectangle on the SVG <path>
+ * (Leaflet adds .leaflet-interactive to clickable polygons/markers)
+ * after a mouse click. Firefox doesn't, hence the cross-browser
+ * inconsistency. Suppress the mouse-click outline but keep a visible
+ * ring for keyboard users via :focus-visible (a11y). */
+.visited-map .leaflet-interactive:focus {
+    outline: none;
+}
+.visited-map .leaflet-interactive:focus-visible {
+    outline: 2px solid var(--vm-visited-edge);
+    outline-offset: 1px;
+}
+
 .visited-map-caption {
     font-size: 0.85rem;
     color: #666;
