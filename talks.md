@@ -15,7 +15,12 @@ description: "Talks and conference appearances by Rustam Mehmandarov on cloud, a
 * **Countries: {{ v.stats.total_countries }}**
 * **Cities: ~{{ v.stats.total_cities }}**
 * **Speaking since: 2013**
-* **Involved: keynotes, workshops, talks, lightning  talks, and as a program committee member**
+* **Involved:**
+  * keynotes
+  * workshops
+  * talks
+  * lightning talks
+  * program committee member
 
 {% include visited-map.html %}
 
