@@ -1,0 +1,22 @@
+// Internal-only borders (horizontal + vertical) for markdown tables that
+// opt in with the kramdown IAL  {:.bordered-table}  attached right after
+// the table. Use case: comparison/spec tables in posts that need a bit of
+// structure without looking like a spreadsheet grid (no outer border).
+
+table.bordered-table
+    border-collapse: collapse
+    font-size: 0.8em
+
+    th, td
+        padding: 0.4em 0.7em
+
+    // Internal vertical lines between columns
+    th + th, td + td
+        border-left: 1px solid #d0d0d0
+
+    thead th
+        border-bottom: 2px solid #d0d0d0
+
+    tbody tr + tr td
+        border-top: 1px solid #eee
+
