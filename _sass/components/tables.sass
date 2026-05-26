@@ -6,6 +6,13 @@
 table.bordered-table
     border-collapse: collapse
     font-size: 0.8em
+    // Allow horizontal scrolling on narrow viewports without affecting
+    // surrounding text. `display: block` turns the table into a scrollable
+    // container; the inner thead/tbody still render as table rows.
+    display: block
+    max-width: 100%
+    overflow-x: auto
+    -webkit-overflow-scrolling: touch
 
     th, td
         padding: 0.4em 0.7em
