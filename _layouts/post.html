@@ -21,7 +21,25 @@ layout: page
     </div>
 {% endif %}
 
-{{content}}
+<article class="post-content">
+    {{content}}
+</article>
+
+<script>
+    document.querySelectorAll('.post-content a[href]').forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (!href || href.charAt(0) === '#') return;
+
+        var url = new URL(href, window.location.href);
+        var isSamePageAnchor = url.origin === window.location.origin
+            && url.pathname === window.location.pathname
+            && url.hash;
+        if (isSamePageAnchor) return;
+
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+    });
+</script>
 
 {% if site.post-advance-links contains page.category %}
     <div class="blog-navigation" data-pagefind-ignore>
