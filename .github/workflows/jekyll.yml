@@ -37,7 +37,12 @@ jobs:
           node-version-file: .nvmrc
 
       - name: Install Node tools
-        run: npm ci
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
 
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
