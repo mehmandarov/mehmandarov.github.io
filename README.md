@@ -56,8 +56,10 @@ Language indexing:
 To enable search **locally**, build the index after Jekyll finishes:
 
 ```bash
+npm ci
 docker run --rm -v "$PWD":/site mehmandarov-site sh -c \
-    "bundle exec jekyll build && npx -y pagefind --site _site"
+    "bundle exec jekyll build"
+npm run build:search
 ```
 
 Then restart the dev container (or serve `_site/` statically). Pagefind output (`_site/pagefind/`) is regenerated on every build and should not be committed.
