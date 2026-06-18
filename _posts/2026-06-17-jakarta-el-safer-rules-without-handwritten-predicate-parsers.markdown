@@ -15,7 +15,7 @@ star: false
 author: rustam.mehmandarov
 ---
 
-_[Jakarta Expression Language][1] (EL) is already part of the platform, but we usually meet it indirectly through Faces, CDI, or Bean Validation. In this post, we will use it directly: as a small in-process predicate engine for authorization policies. We will replace the handwritten parser from gem #2, keep the same policy file format, and then look at what it takes to make evaluation safe._
+_[Jakarta Expression Language][1] (EL) is already part of the platform, but we usually meet it indirectly through Faces, CDI, or Bean Validation. In this post, we will use it directly: as a small in-process predicate engine for authorization policies. We will replace the handwritten parser, keep the same policy file format, and then look at what it takes to make evaluation safe._
 
 - [Introduction](#introduction)
 - [1. Why Jakarta EL?](#1-why-jakarta-el)
