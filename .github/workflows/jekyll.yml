@@ -52,12 +52,36 @@ jobs:
       - name: Build search index (Pagefind)
         run: npm run build:search
 
-      - name: Inspect built site
+      # - name: Inspect built site
+      #   run: |
+      #     pwd
+      #     ls -la
+      #     echo "--- _site ---"
+      #     find ./_site -maxdepth 3 | sort | head -200
+
+      - name: Check deployed artifact
         run: |
-          pwd
-          ls -la
-          echo "--- _site ---"
-          find ./_site -maxdepth 3 | sort | head -200
+          forbidden=(
+            "_site/README.md"
+            "_site/LICENSE"
+            "_site/Rakefile"
+            "_site/Gemfile"
+            "_site/Gemfile.lock"
+            "_site/package.json"
+            "_site/package-lock.json"
+            "_site/initpost.sh"
+            "_site/Dockerfile"
+          )
+
+          found=0
+          for file in "${forbidden[@]}"; do
+            if [ -e "$file" ]; then
+              echo "::error::$file should not be deployed"
+              found=1
+            fi
+          done
+
+          exit "$found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
