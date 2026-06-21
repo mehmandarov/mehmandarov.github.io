@@ -52,8 +52,17 @@ jobs:
       - name: Build search index (Pagefind)
         run: npm run build:search
 
+      - name: Inspect built site
+        run: |
+          pwd
+          ls -la
+          echo "--- _site ---"
+          find ./_site -maxdepth 3 | sort | head -200
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./_site
 
   deploy:
     environment:
