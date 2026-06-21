@@ -136,12 +136,18 @@ compress_html:
 exclude:
   [
     "README.md",
+    "LICENSE",
+    "Rakefile",
     "Gemfile",
     "Gemfile.lock",
     "FAQ.md",
+    "initpost.sh",
+    "package.json",
+    "package-lock.json",
     "vendor",
     "Dockerfile",
     ".dockerignore",
     "docs",
     "scripts",
+    "tasks",
   ]
