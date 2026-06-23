@@ -119,10 +119,10 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       image:
-        path: /assets/images/profile_large.jpg
-        width: 1328
-        height: 1352
-        alt: Rustam Mehmandarov
+        path: /assets/images/social-preview.png
+        width: 1200
+        height: 630
+        alt: mehmandarov.com
   -
     scope:
       path: "" # an empty string here means all files in the project
