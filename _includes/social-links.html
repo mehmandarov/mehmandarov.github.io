@@ -7,8 +7,9 @@
         </a>
     {% endif %}
 
-    {% if site.twitter %}
-        <a class="link" data-title="x.com/{{ site.twitter }}" title="x.com/{{ site.twitter }}" href="https://x.com/{{ site.twitter }}" target="_blank" rel="noopener">
+    {% assign twitter_username = site.twitter.username | default: site.twitter | remove: '@' %}
+    {% if twitter_username %}
+        <a class="link" data-title="x.com/{{ twitter_username }}" title="x.com/{{ twitter_username }}" href="https://x.com/{{ twitter_username }}" target="_blank" rel="noopener">
             <i class="fa-brands fa-x-twitter"></i>
         </a>
     {% endif %}

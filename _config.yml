@@ -8,9 +8,6 @@ title: *id001
 # twitter summary info
 description: A blog about technology and related stuff
 
-seo:
-  title_template: "mehmandarov.com | %s"
-
 # if it's an external image, update below for true
 # better with square images
 external-image: false
@@ -44,7 +41,9 @@ disqus:
 
 # if you don't have any of social below, comment the line
 # facebook: mehmandarov
-twitter: rmehmandarov
+twitter:
+  username: rmehmandarov
+  card: summary_large_image
 # instagram: myinstagram
 # linkedin: mylinkedin
 # youtube: myyoutube
@@ -70,6 +69,7 @@ authors:
 # Site-wide author for SEO (twitter:creator comes from per-post author in 'authors' above)
 author:
   name: Rustam Mehmandarov
+  url: https://mehmandarov.com/about/
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
@@ -114,6 +114,15 @@ timezone: Europe/Oslo
 
 # add default values to specific pages or layouts
 defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      image:
+        path: /assets/images/profile_large.jpg
+        width: 1328
+        height: 1352
+        alt: Rustam Mehmandarov
   -
     scope:
       path: "" # an empty string here means all files in the project

@@ -28,7 +28,10 @@ layout: compress
     <meta name=viewport content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ site.author.name }}">
 
-    {% seo %}
+    {% assign browser_title_prefix = site.url | replace: 'https://', '' | replace: 'http://', '' | replace: '/', '' %}
+    {% assign browser_page_title = page.title | default: site.title | markdownify | strip_html | normalize_whitespace | escape_once %}
+    <title>{% if paginator and paginator.page and paginator.page > 1 %}{{ browser_title_prefix }} | {{ browser_page_title }} - Page {{ paginator.page }}{% elsif page.url == '/' %}{{ browser_title_prefix }}{% elsif page.title %}{{ browser_title_prefix }} | {{ browser_page_title }}{% else %}{{ browser_title_prefix }}{% endif %}</title>
+    {% seo title=false %}
 
     {% include favicon.html %}
 
