@@ -663,13 +663,21 @@ h2.section__title {
   margin-bottom: 2.5rem;
 }
 .tags-index .tag-heading {
-  display: flex;
-  align-items: baseline;
-  gap: 0.6rem;
+  display: block;
   margin: 0 0 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--border-color);
   font-size: 1.5rem;
+  text-align: center;
+}
+.tags-index .tag-heading::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0 auto 0.75rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #7c3aed 0%, var(--primary-color) 100%);
 }
 .tags-index .tag-heading__link {
   color: var(--heading-font-color);
@@ -677,6 +685,7 @@ h2.section__title {
 }
 .tags-index .tag-heading__link:hover { color: var(--primary-color); }
 .tags-index .tag-heading__feed {
+  margin-left: 0.5rem;
   font-size: 0.85rem;
   color: var(--text-alt-color);
   text-decoration: none;
@@ -1397,4 +1406,39 @@ h2.section__title {
     z-index: 50;
     margin-bottom: 28px;
   }
+}
+
+/* "Post language" section on the tags page — visually separated from topics */
+.tags-index .tag-list--language {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--border-color);
+}
+.tags-index .tag-language-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-alt-color);
+  text-align: left;
+}
+.tags-index .tag-language-title::before,
+.tags-index .tag-cloud__language-title::before { content: none; }
+
+/* "Post language" pills in the top cloud — separated from the topic cloud */
+.tags-index .tag-cloud--language {
+  margin-top: -1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.tags-index .tag-cloud__language-title {
+  width: 100%;
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-alt-color);
+  text-align: left;
 }

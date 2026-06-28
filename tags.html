@@ -1,8 +1,9 @@
 ---
 layout: page
 title: Tags
-description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its own page and RSS feed."
+description: "Browse all topics for all blog posts. Each tag has its own page and RSS feed."
 ---
+{% assign language_tags = "english,norwegian" | split: "," %}
 <div class="tags-index" data-pagefind-ignore>
 <section class="tag-cloud">
 
@@ -10,12 +11,29 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
     {% assign tag_cloud = site.tag_list_by_count %}
     {% if tag_cloud and tag_cloud.size > 0 %}
         {% for entry in tag_cloud %}
+            {% unless language_tags contains entry[0] %}
             <a class="tag-cloud__item" href="{{ '/tag/' | relative_url }}{{ entry[0] | slugify }}/">#{{ entry[0] }} <small>({{ entry[1].size }})</small></a>
+            {% endunless %}
         {% endfor %}
     {% else %}
         <p><em>No tags yet.</em></p>
     {% endif %}
 </section>
+
+{% assign has_language_cloud = false %}
+{% if tag_cloud and tag_cloud.size > 0 %}
+    {% for entry in tag_cloud %}{% if language_tags contains entry[0] %}{% assign has_language_cloud = true %}{% endif %}{% endfor %}
+{% endif %}
+{% if has_language_cloud %}
+<section class="tag-cloud tag-cloud--language">
+    <h2 class="tag-cloud__language-title">Post language</h2>
+    {% for entry in tag_cloud %}
+        {% if language_tags contains entry[0] %}
+        <a class="tag-cloud__item" href="{{ '/tag/' | relative_url }}{{ entry[0] | slugify }}/">#{{ entry[0] }} <small>({{ entry[1].size }})</small></a>
+        {% endif %}
+    {% endfor %}
+</section>
+{% endif %}
 
 <section class="tag-list">
     {% for entry in tag_list %}
@@ -23,6 +41,7 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
     {% assign tag_posts = entry[1] %}
     {% assign tag_slug = tag_name | slugify %}
 
+    {% unless language_tags contains tag_name %}
     <div class="tag-group">
     <h2 class="tag-heading" id="{{ tag_slug }}">
         <a class="tag-heading__link" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/">#{{ tag_name }}</a>
@@ -44,6 +63,45 @@ description: "Browse all topics on Rustam Mehmandarov's blog. Each tag has its o
         {% endfor %}
     </ul>
     </div>
+    {% endunless %}
     {% endfor %}
 </section>
+
+{% comment %} Language tags, separated from the main topic list {% endcomment %}
+{% assign has_language = false %}
+{% for entry in tag_list %}{% if language_tags contains entry[0] %}{% assign has_language = true %}{% endif %}{% endfor %}
+{% if has_language %}
+<section class="tag-list tag-list--language">
+    <h2 class="tag-language-title">Post language</h2>
+    {% for entry in tag_list %}
+    {% assign tag_name = entry[0] %}
+    {% assign tag_posts = entry[1] %}
+    {% assign tag_slug = tag_name | slugify %}
+
+    {% if language_tags contains tag_name %}
+    <div class="tag-group">
+    <h2 class="tag-heading" id="{{ tag_slug }}">
+        <a class="tag-heading__link" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/">#{{ tag_name }}</a>
+        <a class="tag-heading__feed" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/feed.xml" title="RSS feed for tag: {{ tag_name }}">
+            <i class="fa-solid fa-rss"></i>
+        </a>
+    </h2>
+
+    <ul class="tag-posts">
+        {% for post in tag_posts %}
+            {% if post.title != null %}
+                <li class="tag-posts__item">
+                    <a class="tag-posts__link" href="{{ post.url | relative_url }}">
+                        <time class="tag-posts__date" datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d, %Y' }}</time>
+                        <span class="tag-posts__title">{{ post.title }}</span>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+    {% endfor %}
+</section>
+{% endif %}
 </div>
