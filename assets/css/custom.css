@@ -491,17 +491,18 @@ html.view-list .post-card .article__excerpt {
 /* =====================================================================
    Section titles & call-to-action rows (home)
    ===================================================================== */
-.section__title--center { margin-bottom: 2rem; text-align: center; }
+.section__title--center {
+  margin-bottom: 2rem;
+  text-align: center;
+  flex: 1 1 100%;
+  width: 100%;
+}
 h2.section__title {
   font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.15;
 }
-h2.section__title--center {
-  flex: 1 1 100%;
-  width: 100%;
-}
-h2.section__title--center::before {
+.section__title--center::before {
   content: "";
   display: block;
   width: 48px;
@@ -1384,4 +1385,16 @@ h2.section__title--center::before {
   color: #c4b5fd;
   border-bottom-color: #a78bfa;
   background: rgba(167, 139, 250, 0.12);
+}
+
+/* Mobile/tablet: don't keep the floating nav sticky — let it scroll away
+   to free up vertical space (it stays sticky on desktop). Use relative (not
+   static) so z-index still applies and the menu/dropdown stay above images. */
+@media (max-width: 1024px) {
+  .header {
+    position: relative;
+    top: 0;
+    z-index: 50;
+    margin-bottom: 28px;
+  }
 }
