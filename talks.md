@@ -7,7 +7,7 @@ hero_aside: talks-flags.html
 pre_content: talks-stats.html
 cta:
   - label: "Invite me to speak"
-    url: "https://rustam.no"
+    url: "https://rustam.no/contact"
     icon: "fa-solid fa-arrow-right"
     style: primary
     external: true

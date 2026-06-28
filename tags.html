@@ -43,7 +43,7 @@ description: "Browse all topics for all blog posts. Each tag has its own page an
 
     {% unless language_tags contains tag_name %}
     <div class="tag-group">
-    <h2 class="tag-heading" id="{{ tag_slug }}">
+    <h2 class="tag-heading link-title" id="{{ tag_slug }}">
         <a class="tag-heading__link" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/">#{{ tag_name }}</a>
         <a class="tag-heading__feed" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/feed.xml" title="RSS feed for tag: {{ tag_name }}">
             <i class="fa-solid fa-rss"></i>
@@ -80,7 +80,7 @@ description: "Browse all topics for all blog posts. Each tag has its own page an
 
     {% if language_tags contains tag_name %}
     <div class="tag-group">
-    <h2 class="tag-heading" id="{{ tag_slug }}">
+    <h2 class="tag-heading link-title" id="{{ tag_slug }}">
         <a class="tag-heading__link" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/">#{{ tag_name }}</a>
         <a class="tag-heading__feed" href="{{ '/tag/' | relative_url }}{{ tag_slug }}/feed.xml" title="RSS feed for tag: {{ tag_name }}">
             <i class="fa-solid fa-rss"></i>

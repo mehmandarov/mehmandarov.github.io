@@ -3,6 +3,39 @@
    Kept separate so theme regeneration never clobbers custom styles.
    ===================================================================== */
 
+:root {
+  --accent: #7c3aed;
+  --accent-dark: #a78bfa;
+  --accent-line: linear-gradient(90deg, var(--accent) 0%, var(--primary-color) 100%);
+  --accent-text-fill: linear-gradient(100deg, var(--heading-font-color) 0%, var(--accent) 60%, var(--primary-color) 100%);
+}
+
+/* Shared accent underline used beneath centered headings */
+.section__title--center::before,
+.tags-index .tag-heading::before,
+.subpage__section-title::before,
+.subpage__content h2::before,
+.subpage__connect-title::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  margin: 0 auto 1rem;
+  border-radius: 2px;
+  background: var(--accent-line);
+}
+
+/* Shared gradient text fill */
+.hero__title--gradient,
+.subpage__stat-v,
+.talks__statnum {
+  background: var(--accent-text-fill);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
 /* --- Article tags (post hero + listings) --- */
 .article__tag {
   background-color: var(--primary-color) !important;
@@ -135,7 +168,7 @@
   gap: 0.4rem;
   padding: 0.3rem 0.75rem;
   border-radius: 7px;
-  background-color: #7c3aed;
+  background-color: var(--accent);
   color: #fff;
   font-weight: 600;
   font-size: 0.75rem;
@@ -502,15 +535,6 @@ h2.section__title {
   font-weight: 700;
   line-height: 1.15;
 }
-.section__title--center::before {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 0 auto 1rem;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #7c3aed 0%, var(--primary-color) 100%);
-}
 .section__title--sub {
   font-size: 1.5rem;
   font-weight: 600;
@@ -671,19 +695,21 @@ h2.section__title {
   text-align: center;
 }
 .tags-index .tag-heading::before {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 0 auto 0.75rem;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #7c3aed 0%, var(--primary-color) 100%);
+  margin-bottom: 0.75rem;
 }
-.tags-index .tag-heading__link {
+/* Generic title-link: heading color, underline reveals on hover. Reusable
+   anywhere a heading-styled link needs the theme's article-title behaviour. */
+.link-title a {
   color: var(--heading-font-color);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0);
+  text-decoration-thickness: 1.6px;
+  text-underline-offset: 2px;
 }
-.tags-index .tag-heading__link:hover { color: var(--primary-color); }
+.link-title a:hover {
+  color: var(--heading-font-color);
+  text-decoration-color: var(--heading-font-color);
+}
 .tags-index .tag-heading__feed {
   margin-left: 0.5rem;
   font-size: 0.85rem;
@@ -714,11 +740,8 @@ h2.section__title {
   font-variant-numeric: tabular-nums;
 }
 .tags-index .tag-posts__title {
-  color: var(--text-color);
   font-weight: 500;
-  transition: color 0.2s ease;
 }
-.tags-index .tag-posts__link:hover .tag-posts__title { color: var(--primary-color); }
 
 @media (max-width: 600px) {
   .tags-index .tag-posts__link { flex-direction: column; gap: 0.15rem; }
@@ -826,10 +849,6 @@ h2.section__title {
 .hero__title--gradient {
   font-size: 3rem;
   line-height: 1.05;
-  background: linear-gradient(100deg, var(--heading-font-color) 0%, #7c3aed 55%, var(--primary-color) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
   margin-bottom: 0;
 }
 .hero__creds {
@@ -851,11 +870,11 @@ h2.section__title {
   border: 1px solid var(--border-color);
   background: var(--background-alt-color);
 }
-.hero__cred i { color: #7c3aed; }
+.hero__cred i { color: var(--accent); }
 .hero__cred__logo {
   width: 1.5em;
   height: 1.5em;
-  color: #7c3aed;
+  color: var(--accent);
   flex-shrink: 0;
 }
 .hero__lead {
@@ -946,7 +965,7 @@ h2.section__title {
   transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 .subpage__btn--primary {
-  background-color: #7c3aed;
+  background-color: var(--accent);
   color: #fff;
 }
 .subpage__btn--primary:hover {
@@ -960,8 +979,8 @@ h2.section__title {
   color: var(--heading-font-color);
 }
 .subpage__btn--ghost:hover {
-  border-color: #7c3aed;
-  color: #7c3aed;
+  border-color: var(--accent);
+  color: var(--accent);
   transform: translateY(-2px);
   text-decoration: none;
 }
@@ -999,10 +1018,6 @@ h2.section__title {
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.25;
-  background: linear-gradient(100deg, var(--heading-font-color) 0%, #7c3aed 60%, var(--primary-color) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 
 .subpage__creds {
@@ -1026,16 +1041,6 @@ h2.section__title {
   line-height: 1.15;
   text-align: center;
   color: var(--heading-font-color);
-}
-.subpage__section-title::before,
-.subpage__content h2::before {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 0 auto 1rem;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #7c3aed 0%, var(--primary-color) 100%);
 }
 .subpage__content h3 {
   margin: 2.25rem 0 1rem;
@@ -1071,7 +1076,7 @@ h2.section__title {
 }
 .subpage__card-icon {
   font-size: 1.4rem;
-  color: #7c3aed;
+  color: var(--accent);
   margin-bottom: 0.6rem;
 }
 .subpage__card-title { margin: 0 0 0.5rem; font-size: 1.15rem; }
@@ -1095,15 +1100,6 @@ h2.section__title {
   font-size: 1.9rem;
   font-weight: 700;
   line-height: 1.15;
-}
-.subpage__connect-title::before {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 3px;
-  margin: 0 auto 1rem;
-  border-radius: 2px;
-  background: linear-gradient(90deg, #7c3aed 0%, var(--primary-color) 100%);
 }
 .subpage__connect-text { margin: 0 auto; max-width: 60ch; color: var(--text-color); }
 .subpage__connect-text p { margin: 0 0 0.75rem; }
@@ -1158,10 +1154,6 @@ h2.section__title {
   font-size: 2.6rem;
   font-weight: 800;
   line-height: 1;
-  background: linear-gradient(100deg, var(--heading-font-color) 0%, #7c3aed 60%, var(--primary-color) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
 }
 .talks__statlabel { font-size: 0.95rem; color: var(--text-alt-color); font-weight: 600; }
 
@@ -1187,7 +1179,7 @@ h2.section__title {
   font-size: 1.1rem;
   font-weight: 600;
 }
-.talks__format i { color: #7c3aed; }
+.talks__format i { color: var(--accent); }
 
 @media (max-width: 760px) {
   .talks__flags { font-size: 1.5rem; }
@@ -1202,7 +1194,7 @@ h2.section__title {
    ===================================================================== */
 .main-nav .nav__list .nav__item .nav__link.active-link,
 .main-nav .nav__list:hover .nav__item .nav__link.active-link {
-  color: #7c3aed;
+  color: var(--accent);
   font-weight: 700;
   background: rgba(124, 58, 237, 0.08);
   padding: 7px 14px;
@@ -1217,7 +1209,7 @@ h2.section__title {
   bottom: 4px;
   height: 3px;
   border-radius: 3px;
-  background: #7c3aed;
+  background: var(--accent);
 }
 .main-nav .nav__list .nav__item .nav__link.active-link:hover,
 .main-nav .nav__list:hover .nav__item .nav__link.active-link:hover {
@@ -1226,12 +1218,12 @@ h2.section__title {
 }
 .dark-mode .main-nav .nav__list .nav__item .nav__link.active-link,
 .dark-mode .main-nav .nav__list:hover .nav__item .nav__link.active-link {
-  color: #a78bfa;
+  color: var(--accent-dark);
   background: rgba(124, 58, 237, 0.22);
 }
 .dark-mode .main-nav .nav__list .nav__item .nav__link.active-link::after,
 .dark-mode .main-nav .nav__list:hover .nav__item .nav__link.active-link::after {
-  background: #a78bfa;
+  background: var(--accent-dark);
 }
 
 /* =====================================================================
@@ -1271,7 +1263,7 @@ h2.section__title {
 /* Keyboard-highlighted search result */
 .search-results-list .search-results__link.is-selected {
   background: rgba(124, 58, 237, 0.10);
-  outline: 2px solid #7c3aed;
+  outline: 2px solid var(--accent);
   outline-offset: -2px;
   border-radius: 8px;
 }
@@ -1305,13 +1297,13 @@ h2.section__title {
   padding: 12px 28px;
   color: #fff;
   font-weight: 600;
-  background: linear-gradient(100deg, #7c3aed 0%, #6d28d9 45%, var(--primary-color) 100%);
+  background: linear-gradient(100deg, var(--accent) 0%, #6d28d9 45%, var(--primary-color) 100%);
   box-shadow: 0 6px 18px rgba(124, 58, 237, 0.28);
 }
 .subscribe__button:hover {
   color: #fff;
   opacity: 1;
-  background: linear-gradient(100deg, #6d28d9 0%, #7c3aed 45%, var(--primary-color) 100%);
+  background: linear-gradient(100deg, #6d28d9 0%, var(--accent) 45%, var(--primary-color) 100%);
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(124, 58, 237, 0.35);
 }
@@ -1327,7 +1319,7 @@ h2.section__title {
   margin: 1.25rem 0 1.5rem;
   font-size: 1.15rem;
   font-weight: 700;
-  background: linear-gradient(100deg, #7c3aed 0%, #6d28d9 50%, var(--primary-color) 100%);
+  background: linear-gradient(100deg, var(--accent) 0%, #6d28d9 50%, var(--primary-color) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1350,27 +1342,29 @@ h2.section__title {
   height: 46px;
   font-size: 1.15rem;
   border-radius: 50%;
-  color: #7c3aed;
+  color: var(--accent);
   background: rgba(124, 58, 237, 0.10);
   transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
 }
 .subscribe__social-link:hover {
   transform: translateY(-3px);
   color: #fff;
-  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 60%, var(--primary-color) 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #6d28d9 60%, var(--primary-color) 100%);
 }
 .dark-mode .subscribe__social-link {
-  color: #a78bfa;
+  color: var(--accent-dark);
   background: rgba(167, 139, 250, 0.16);
 }
 .dark-mode .subscribe__social-link:hover {
   color: #fff;
 }
 
-/* Inline prose link styling (Option 10: accent color + offset bottom border + hover tint) */
+/* Inline prose link styling (Option 10: accent color + offset bottom border + hover tint).
+   Shared site-wide: prose links + tag-page post titles. */
 .post a:not([class]),
-.page a:not([class]) {
-  color: #7c3aed;
+.page a:not([class]),
+.tags-index .tag-posts__title {
+  color: var(--accent);
   font-weight: 500;
   text-decoration: none;
   border-bottom: 1.5px solid rgba(124, 58, 237, 0.35);
@@ -1378,21 +1372,24 @@ h2.section__title {
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 .post a:not([class]):hover,
-.page a:not([class]):hover {
+.page a:not([class]):hover,
+.tags-index .tag-posts__link:hover .tag-posts__title {
   color: #6d28d9;
   text-decoration: none;
-  border-bottom-color: #7c3aed;
+  border-bottom-color: var(--accent);
   background: rgba(124, 58, 237, 0.07);
 }
 .dark-mode .post a:not([class]),
-.dark-mode .page a:not([class]) {
-  color: #a78bfa;
+.dark-mode .page a:not([class]),
+.dark-mode .tags-index .tag-posts__title {
+  color: var(--accent-dark);
   border-bottom-color: rgba(167, 139, 250, 0.45);
 }
 .dark-mode .post a:not([class]):hover,
-.dark-mode .page a:not([class]):hover {
+.dark-mode .page a:not([class]):hover,
+.dark-mode .tags-index .tag-posts__link:hover .tag-posts__title {
   color: #c4b5fd;
-  border-bottom-color: #a78bfa;
+  border-bottom-color: var(--accent-dark);
   background: rgba(167, 139, 250, 0.12);
 }
 
