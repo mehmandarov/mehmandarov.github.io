@@ -1,8 +1,85 @@
 ---
 layout: default
 ---
-{% include header.html %}
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <article class="page subpage">
 
-{{content}}
+        <header class="subpage__hero{% unless page.hero_image or page.hero_aside %} subpage__hero--solo{% endunless %}">
+          <div class="subpage__intro">
+            {% if page.eyebrow %}
+            <span class="subpage__eyebrow"><span class="subpage__dot"></span> {{ page.eyebrow }}</span>
+            {% endif %}
+            <h1 class="subpage__title hero__title--gradient">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="subpage__lead">{{ page.description }}</p>
+            {% endif %}
+            {% if page.badges %}
+            {% include credential-badges.html class="subpage__creds" %}
+            {% endif %}
+            {% if page.cta %}
+            <div class="subpage__btns">
+              {% for b in page.cta %}
+              <a class="subpage__btn subpage__btn--{{ b.style | default: 'primary' }}" href="{{ b.url }}"{% if b.external %} target="_blank" rel="noopener"{% endif %}>{{ b.label }}{% if b.icon %} <i class="{{ b.icon }}"></i>{% endif %}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% if page.hero_image %}
+          <div class="subpage__photo">
+            <img src="{% if page.hero_image == true %}{{ site.picture | relative_url }}{% else %}{{ page.hero_image | relative_url }}{% endif %}" alt="{{ page.title }}" loading="lazy">
+          </div>
+          {% elsif page.hero_aside %}
+          {% include {{ page.hero_aside }} %}
+          {% endif %}
+        </header>
 
-{% include footer.html %}
+        {% if page.pre_content %}
+        {% include {{ page.pre_content }} %}
+        {% endif %}
+
+        {% if page.stats %}
+        <div class="subpage__stats">
+          {% for s in page.stats %}
+          <div class="subpage__stat"><span class="subpage__stat-k">{{ s.label }}</span><span class="subpage__stat-v">{{ s.value }}</span></div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if page.cards %}
+        {% if page.cards_title %}
+        <h2 class="subpage__section-title">{{ page.cards_title }}</h2>
+        {% endif %}
+        <div class="subpage__grid">
+          {% for c in page.cards %}
+          <div class="subpage__card">
+            {% if c.icon %}<i class="{{ c.icon }} subpage__card-icon"></i>{% endif %}
+            <h3 class="subpage__card-title">{{ c.title }}</h3>
+            <p class="subpage__card-text">{{ c.text }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% assign page_body = content | strip %}
+        {% if page_body != '' %}
+        <div class="page__content subpage__content">
+          {{ content }}
+        </div>
+        {% endif %}
+
+        {% if page.connect %}
+        <div class="subpage__connect">
+          <h2 class="subpage__connect-title">{{ page.connect.title }}</h2>
+          <div class="subpage__connect-text">{{ page.connect.text | markdownify }}</div>
+          {% if page.connect.button %}
+          <a class="subpage__btn subpage__btn--primary subpage__connect-btn" href="{{ page.connect.button.url }}"{% if page.connect.button.external %} target="_blank" rel="noopener"{% endif %}>{{ page.connect.button.label }}{% if page.connect.button.icon %} <i class="{{ page.connect.button.icon }}"></i>{% endif %}</a>
+          {% endif %}
+        </div>
+        {% endif %}
+
+      </article>
+    </div>
+  </div>
+</div>

@@ -17,7 +17,7 @@ author: rustam.mehmandarov
 
 _Part 1: End-points in MicroProfile. This is a part of a series of posts to help you get started with microservices in MicroProfile and showing off some of the features it brings to the table._
 
-> **Update (April 2026):** This post has been refreshed to use the modern `jakarta.*` namespace introduced in Jakarta EE 9+. If you are working with an older codebase that still uses the legacy `javax.*` namespace, the concepts described here apply identically — only the package prefix differs.
+> **Update (April 2026):** This post has been refreshed to use the modern `jakarta.*` namespace introduced in Jakarta EE 9+. If you are working with an older codebase that still uses the legacy `javax.*` namespace, the concepts described here apply identically – only the package prefix differs.
 
 - [Intro](#intro)
 - [Getting started](#getting-started)

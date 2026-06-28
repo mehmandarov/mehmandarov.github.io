@@ -46,7 +46,7 @@ However, versioning the API endpoint introduces a question of how this should be
 ## Why Versioning?
 
 Why not just change the API?  
-Because breaking contracts is dangerous — clients may not update in sync, and you’ll break production consumers.
+Because breaking contracts is dangerous – clients may not update in sync, and you’ll break production consumers.
 
 Versioning allows you to:
 - Support legacy clients
@@ -89,7 +89,7 @@ curl -X GET http://localhost:8080/api/rnd/v2/ \
 ```
 
 **HTTP Request (`.http` file):**
-```http
+```text
 GET http://localhost:8080/api/rnd/v2/
 Accept: application/json
 ```
@@ -139,7 +139,7 @@ curl -X GET http://localhost:8080/api/rnd/versioned/ \
 ```
 
 **HTTP Request (`.http` file):**
-```http
+```text
 GET http://localhost:8080/api/rnd/versioned/
 Accept: application/json
 Accept-Version: 2
@@ -151,7 +151,7 @@ Accept-Version: 2
 - Allows centralized versioning logic in filters/interceptors.
 
 **❌ Cons:**
-- Not self-descriptive — clients must “know the secret handshake”.
+- Not self-descriptive – clients must “know the secret handshake”.
 - Poor discoverability (not visible in browser without tools).
 - Breaks caching in some proxies/CDNs unless explicitly configured.
 - Adds complexity to tooling and testing.
@@ -190,7 +190,7 @@ curl -X GET http://localhost:8080/api/rnd/ \
 ```
 
 **HTTP Request (`.http` file):**
-```http
+```text
 GET http://localhost:8080/api/rnd/
 Accept: application/rnd.v3+json
 ```
@@ -226,7 +226,7 @@ curl -X GET http://localhost:8080/api/rnd?version=2 \
 ```
 
 **HTTP Request (`.http` file):**
-```http
+```text
 GET http://localhost:8080/api/rnd?version=2
 Accept: application/json
 ```
@@ -244,7 +244,7 @@ Accept: application/json
 
 ## 5. Bonus: Combining Strategies - Transparent URI Rewriting (Enterprise Pattern)
 
-In large enterprises, you might find that different clients have different needs. Some prefer the explicitness of URL versioning, while others require the clean URIs of Header versioning. You don't have to choose just one—you can support both without duplicating your backend routing logic.
+In large enterprises, you might find that different clients have different needs. Some prefer the explicitness of URL versioning, while others require the clean URIs of Header versioning. You don't have to choose just one–you can support both without duplicating your backend routing logic.
 
 The common practice is to structure all your resource classes using **URL versioning** (e.g., `@Path("/v1/resource")`), but use a **`@PreMatching` Filter** to intercept requests and transparently rewrite the URI if a client uses a header instead.
 
@@ -289,7 +289,7 @@ public class HeaderVersionFilter implements ContainerRequestFilter {
 
 ## 6. End-Point Deprecation
 
-Eventually, you will need to retire old API versions. Remember: every old version you keep around is _technical debt_ — it increases long-term maintenance cost. When deprecating an endpoint, consider the following best practices:
+Eventually, you will need to retire old API versions. Remember: every old version you keep around is _technical debt_ – it increases long-term maintenance cost. When deprecating an endpoint, consider the following best practices:
 
 1. **Update the Docs:** Use OpenAPI's `@Operation` annotation to clearly mark it as deprecated.
 2. **Add `@Deprecated`:** Use the Java `@Deprecated` annotation where necessary.
@@ -329,7 +329,7 @@ curl -X GET http://localhost:8080/api/rnd/v0.1/ \
 ```
 
 **HTTP Request (`.http` file):**
-```http
+```text
 GET http://localhost:8080/api/rnd/v0.1/
 Accept: application/json
 ```
@@ -346,13 +346,13 @@ The following table summarizes all the different routing strategies implemented 
 | `GET`       | `/rnd/v2/`       | *Any*                             | `getRndStringV2path()`        | Demo for **path-based** versioning                |
 | `GET`       | `/rnd/versioned` | *None*                            | `getRndStringV2Header()`      | Fallback to `getRndString()` if header is missing |
 | `GET`       | `/rnd/versioned` | `Accept-Version: 2`               | `getRndStringV2Header()`      | **Header-based** versioning                       |
-| `GET`       | `/rnd`           | `Accept: application/rnd.v3+json` | `getRndStringV3V4MediaType()` | **Media type versioning** — v3                    |
-| `GET`       | `/rnd`           | `Accept: application/rnd.v4+json` | `getRndStringV3V4MediaType()` | **Media type versioning** — v4                    |
-| `GET`       | `/rnd`           | `Accept: application/rnd.v5+json` | `getRndStringV5MediaType()`   | **Media type versioning** — v5                    |
+| `GET`       | `/rnd`           | `Accept: application/rnd.v3+json` | `getRndStringV3V4MediaType()` | **Media type versioning** – v3                    |
+| `GET`       | `/rnd`           | `Accept: application/rnd.v4+json` | `getRndStringV3V4MediaType()` | **Media type versioning** – v4                    |
+| `GET`       | `/rnd`           | `Accept: application/rnd.v5+json` | `getRndStringV5MediaType()`   | **Media type versioning** – v5                    |
 
 ## Conclusion
 
-There is no single correct approach to API versioning. For most teams and public APIs, **URL versioning** is good enough—it’s visible, easy to test, and plays well with existing tooling. However, you might want to use **header versioning** if your APIs are primarily consumed by internal services or SDKs that can abstract away the complexity. Reserve **media type versioning** for hypermedia-rich or REST-purist APIs, and only if your tooling supports it end-to-end.
+There is no single correct approach to API versioning. For most teams and public APIs, **URL versioning** is good enough–it’s visible, easy to test, and plays well with existing tooling. However, you might want to use **header versioning** if your APIs are primarily consumed by internal services or SDKs that can abstract away the complexity. Reserve **media type versioning** for hypermedia-rich or REST-purist APIs, and only if your tooling supports it end-to-end.
 
 Consider who your consumers are, whether your API is public or internal, your infrastructure maturity, and your team’s ability to support multiple versions.
 

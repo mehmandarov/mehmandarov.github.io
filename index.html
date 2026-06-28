@@ -1,5 +1,275 @@
 ---
-layout: page
+layout: default
 title: Home
 description: "Rustam Mehmandarov – senior technologist, architect, speaker, and community builder. Blog, talks, and projects on cloud, architecture, AI, and security."
 ---
+
+<!-- begin hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__inner">
+      {% if site.picture %}
+      <div class="hero__avatar">
+        <img src="{{ site.picture | relative_url }}" fetchpriority="high" alt="{{ site.author.name }}" width="60" height="60">
+      </div>
+      {% endif %}
+
+      <h1 class="hero__title hero__title--gradient">{{ site.author.name }}</h1>
+      {% include credential-badges.html %}
+      <div class="hero__description">
+        <p class="hero__lead">Senior Technologist &amp; Architect.<br>Community Builder. Speaker.</p>
+        <p class="hero__sub">I build complex, business-critical solutions that work in practice, and speak globally about cloud, architecture, AI, and security.</p>
+      </div>
+
+      <div class="hero__social">
+        <ul class="hero__social__list list-reset">
+          {% if site.github %}
+          <li class="hero__social__item">
+            <a class="hero__social__link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener" aria-label="Github link"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+          </li>
+          {% endif %}
+          {% if site.bluesky %}
+          <li class="hero__social__item">
+            <a class="hero__social__link" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky link"><i class="fa-brands fa-bluesky"></i><span>Bluesky</span></a>
+          </li>
+          {% endif %}
+          {% if site.mastodon %}
+          <li class="hero__social__item">
+            <a class="hero__social__link" href="{{ site.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon link"><i class="fa-brands fa-mastodon"></i><span>Mastodon</span></a>
+          </li>
+          {% endif %}
+          {% if site.twitter.username %}
+          <li class="hero__social__item">
+            <a class="hero__social__link" href="https://twitter.com/{{ site.twitter.username }}" target="_blank" rel="noopener" aria-label="Twitter link"><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a>
+          </li>
+          {% endif %}
+          {% if site.linkedin %}
+          <li class="hero__social__item">
+            <a class="hero__social__link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn link"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
+          </li>
+          {% endif %}
+          {% if site.myLinks %}
+          <li class="hero__social__item">
+            <a class="hero__social__link" href="{{ site.myLinks }}" target="_blank" rel="noopener" aria-label="Links"><i class="fa-solid fa-link"></i><span>Links</span></a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end hero -->
+
+<!-- begin featured blog posts -->
+{% assign blog_posts = site.posts | where: "category", "blog" | where_exp: "item", "item.hidden != true" %}
+<section class="section featured-project">
+  <div class="container">
+    <div class="col col-12">
+      <div class="section__inner">
+        <h2 class="section__title section__title--center">Latest Blog Posts</h2>
+        <div class="row">
+          {% for post in blog_posts limit: 3 %}
+          <div class="article article--flexible col col-3 col-d-6 col-t-12 grid__post post-card">
+            <div class="article__inner">
+              <div class="article__head">
+                <a class="article__image" href="{{ post.url | relative_url }}">
+                  <img src="{% if post.image %}{% if post.image.path %}{{ post.image.path | relative_url }}{% else %}{{ post.image | relative_url }}{% endif %}{% elsif post.img %}{{ post.img | relative_url }}{% else %}{{ '/assets/images/profile.jpg' | relative_url }}{% endif %}" alt="{{ post.title }}" width="640" height="360">
+                </a>
+              </div>
+              <div class="article__content">
+                <div class="article__info">
+                  <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+                </div>
+                <h3 class="article__title">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="article col col-3 col-d-6 col-t-12 grid__post post-card post-card--cta">
+            <a class="post-card__cta-link" href="{{ '/blog/' | relative_url }}">
+              <span class="post-card__cta-icon"><i class="fa-solid fa-newspaper"></i></span>
+              <span class="post-card__cta-text">All blog posts</span>
+              <span class="post-card__cta-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end featured blog posts -->
+
+<!-- begin section resources (Explore) -->
+<section class="section section-resources">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="section__head">
+          <h3 class="section__title section__title--sub section__title--center">Explore Topics</h3>
+        </div>
+        <div class="row explore-grid">
+          {% for tag_name in site.explore_tags %}
+            {% assign tag_count = 0 %}
+            {% for entry in site.tag_list %}
+              {% if entry[0] == tag_name %}
+                {% assign tag_count = entry[1].size %}
+              {% endif %}
+            {% endfor %}
+            {% assign tag_meta = site.data.tags[tag_name] %}
+            {% assign tag_image = tag_meta.image | default: tag_meta['image'] %}
+            {% assign tag_icon = tag_meta.icon | default: tag_meta['icon'] %}
+            {% assign tag_color = tag_meta.color | default: tag_meta['color'] | default: '#64748b' %}
+            <div class="resource col col-3 col-d-6 col-m-12">
+              <a href="{{ '/tag/' | relative_url }}{{ tag_name | slugify }}/" class="resource__image" style="--tag-color: {{ tag_color }}; --tag-color-bg: {{ tag_color }}0f; --tag-color-border: {{ tag_color }}33; --tag-color-hover: {{ tag_color }}22;">
+                <div class="resource__icon-wrap">
+                  {% if tag_icon %}
+                    <i class="{{ tag_icon }}"></i>
+                  {% elsif tag_image %}
+                    <img src="{{ tag_image | relative_url }}" alt="{{ tag_name }}" loading="lazy">
+                  {% else %}
+                    <i class="fa-solid fa-tag"></i>
+                  {% endif %}
+                </div>
+                <span class="resource__name"><span class="resource__hash">#</span>{{ tag_name }}</span>
+                <span class="resource__count">({{ tag_count }})</span>
+              </a>
+            </div>
+          {% endfor %}
+          
+          {% assign all_tags_color = '#f9c345' %}
+          <div class="resource col col-3 col-d-6 col-m-12">
+            <a href="{{ '/tags/' | relative_url }}" class="resource__image" style="--tag-color: {{ all_tags_color }}; --tag-color-bg: {{ all_tags_color }}0f; --tag-color-border: {{ all_tags_color }}33; --tag-color-hover: {{ all_tags_color }}22;">
+              <div class="resource__icon-wrap">
+                <i class="fa-solid fa-tags"></i>
+              </div>
+              <span class="resource__name">All Tags &rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section resources -->
+
+<!-- begin services/contributions -->
+<section class="section services">
+  <div class="container">
+    <div class="section__inner">
+      <div class="row">
+        <div class="col col-12">
+          <div class="section__head">
+            <h2 class="section__title section__title--center">What I Do</h2>
+          </div>
+          <div class="row">
+            <div class="services__item col col-4 col-t-12">
+              <div class="service">
+                <div class="service__content">
+                  <div class="service__head">
+                    <div class="service__icon"><i class="fa-solid fa-laptop-code"></i></div>
+                  </div>
+                  <h3 class="service__title">Software Development &amp; Architecture Advisory</h3>
+                  <p class="service__description">Helping teams design and build business-critical systems – cloud architecture, modernization, secure platforms, and delivery pipelines that scale and last.</p>
+                  <div class="service__info">
+                    <a href="https://rustam.no" target="_blank" rel="noopener" class="service__info__link">Get in Touch &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="services__item col col-4 col-t-12">
+              <div class="service">
+                <div class="service__content">
+                  <div class="service__head">
+                    <div class="service__icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                  </div>
+                  <h3 class="service__title">Speaking, Keynotes,<br>Workshops &amp; Training</h3>
+                  <p class="service__description">Engaging talks and keynotes worldwide on cloud, architecture, AI, and security. Additionally, I do hands-on workshops and deep-dive training on various topics related to Java, Architecture, containers, AI, security, and many more.</p>
+                  <div class="service__info">
+                    <a href="{{ '/talks/' | relative_url }}" class="service__info__link">View Talks &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="services__item col col-4 col-t-12">
+              <div class="service">
+                <div class="service__content">
+                  <div class="service__head">
+                    <div class="service__icon"><i class="fa-solid fa-people-group"></i></div>
+                  </div>
+                  <h3 class="service__title">Developer Community Work</h3>
+                  <p class="service__description">Lead organiser of GDG Cloud Oslo. Working with GDGs and JUGs worldwide to grow and connect developer communities.</p>
+                  <div class="service__info">
+                    <a href="{{ '/about/' | relative_url }}" class="service__info__link">Learn More &rarr;</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end services -->
+
+<!-- begin recent blog posts -->
+<section id="blog-posts" class="section section-blog">
+  <div class="container">
+    <div class="row">
+      <div class="col col-12">
+        <div class="section__head">
+          <h2 class="section__title section__title--center">Blog posts</h2>
+          <div class="blog__view">
+            <div class="blog__toggle">
+              <div class="icon">
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+                <div class="icon-bar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row grid">
+          {% for post in blog_posts limit: 4 %}
+          <div class="article article--flexible col col-6 col-t-12 grid__post">
+            <div class="article__inner">
+              <div class="article__head">
+
+                <a class="article__image" href="{{ post.url | relative_url }}">
+                  <img src="{% if post.image %}{% if post.image.path %}{{ post.image.path | relative_url }}{% else %}{{ post.image | relative_url }}{% endif %}{% elsif post.img %}{{ post.img | relative_url }}{% else %}{{ '/assets/images/profile.jpg' | relative_url }}{% endif %}" alt="{{ post.title }}" loading="lazy" width="640" height="360">
+                </a>
+              </div>
+              <div class="article__content">
+                <div class="article__info">
+                  <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+                </div>
+                <h3 class="article__title">
+                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                {% if post.tag %}
+                <div class="article__tags">
+                  {% for t in post.tag %}
+                  <a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}" class="article__tag">{{ t }}</a>
+                  {% endfor %}
+                </div>
+                {% endif %}
+                <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 24 }}</p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="section__cta section__cta--lg">
+          <a href="{{ '/blog/' | relative_url }}" class="button button--medium">View All Blog Posts</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end writings -->

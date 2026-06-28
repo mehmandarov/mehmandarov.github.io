@@ -1,0 +1,60 @@
+{% comment %}
+  Automatic Table of Contents.
+  Builds a themed `.page__toc` (<details>) from the rendered `##` (h2) and
+  `### `(h3) headings in the post content. Heading ids come from kramdown's
+  default auto_ids. Renders only when at least two headings are present.
+  Opt out per post with `toc: false` in the front matter, or globally with
+  `toc.enabled: false` in _config.yml. The expanded/collapsed default per
+  screen size is configured under `toc:` in _config.yml.
+{% endcomment %}
+
+{% assign toc_bp = site.toc.breakpoint | default: 768 %}
+{% assign toc_desktop = site.toc.expanded-on-desktop %}
+{% if toc_desktop == nil %}{% assign toc_desktop = true %}{% endif %}
+{% assign toc_mobile = site.toc.expanded-on-mobile | default: false %}
+
+{% assign toc_html = "" %}
+{% assign prev_level = 0 %}
+{% assign heading_count = 0 %}
+{% assign nodes = include.html | split: "<h" %}
+
+{% for node in nodes %}
+  {% assign level = node | slice: 0, 1 %}
+  {% if level != "2" and level != "3" %}{% continue %}{% endif %}
+
+  {% assign segment = node | split: "</h" | first %}
+  {% unless segment contains 'id="' %}{% continue %}{% endunless %}
+
+  {% assign hid = segment | split: 'id="' | last | split: '"' | first %}
+  {% assign open_tag = segment | split: ">" | first %}
+  {% assign htext = segment | remove_first: open_tag | remove_first: ">" | strip_html | strip %}
+  {% if hid == "" or htext == "" %}{% continue %}{% endif %}
+
+  {% assign heading_count = heading_count | plus: 1 %}
+  {% capture link %}<a href="#{{ hid }}">{{ htext }}</a>{% endcapture %}
+
+  {% if level == "2" %}
+    {% if prev_level == 3 %}{% assign toc_html = toc_html | append: "</li></ol></li>" %}
+    {% elsif prev_level == 2 %}{% assign toc_html = toc_html | append: "</li>" %}
+    {% endif %}
+    {% assign toc_html = toc_html | append: "<li>" | append: link %}
+  {% else %}
+    {% if prev_level == 2 %}{% assign toc_html = toc_html | append: "<ol>" %}
+    {% elsif prev_level == 3 %}{% assign toc_html = toc_html | append: "</li>" %}
+    {% endif %}
+    {% assign toc_html = toc_html | append: "<li>" | append: link %}
+  {% endif %}
+
+  {% assign prev_level = level | plus: 0 %}
+{% endfor %}
+
+{% if prev_level == 3 %}{% assign toc_html = toc_html | append: "</li></ol></li>" %}
+{% elsif prev_level == 2 %}{% assign toc_html = toc_html | append: "</li>" %}
+{% endif %}
+
+{% if heading_count >= 2 %}
+<details class="page__toc" data-toc-breakpoint="{{ toc_bp }}" data-toc-desktop="{{ toc_desktop }}" data-toc-mobile="{{ toc_mobile }}"{% if toc_desktop %} open{% endif %}>
+  <summary>Table of Contents</summary>
+  <ol class="page__toc__list">{{ toc_html }}</ol>
+</details>
+{% endif %}

@@ -1,0 +1,30 @@
+{%- comment -%}Talks stat cards (data: _data/visited.json) + speaking formats.{%- endcomment -%}
+{% assign v = site.data.visited %}
+<div class="talks__stats">
+  <div class="subpage__card talks__statcard">
+    <span class="talks__statnum">{{ v.stats.total_events }}+</span>
+    <span class="talks__statlabel">Events &amp; appearances</span>
+  </div>
+  <div class="subpage__card talks__statcard">
+    <span class="talks__statnum">{{ v.stats.total_countries }}</span>
+    <span class="talks__statlabel">Countries</span>
+  </div>
+  <div class="subpage__card talks__statcard">
+    <span class="talks__statnum">~{{ v.stats.total_cities }}</span>
+    <span class="talks__statlabel">Cities</span>
+  </div>
+  <div class="subpage__card talks__statcard">
+    <span class="talks__statnum">2013</span>
+    <span class="talks__statlabel">Speaking since</span>
+  </div>
+</div>
+<div class="subpage__card talks__formats-card">
+  <span class="talks__statlabel">Involved as</span>
+  <div class="talks__formats">
+    <span class="talks__format"><i class="fa-solid fa-microphone-lines"></i> Keynotes</span>
+    <span class="talks__format"><i class="fa-solid fa-laptop-code"></i> Workshops</span>
+    <span class="talks__format"><i class="fa-solid fa-person-chalkboard"></i> Talks</span>
+    <span class="talks__format"><i class="fa-solid fa-bolt"></i> Lightning talks</span>
+    <span class="talks__format"><i class="fa-solid fa-book-open"></i> Program committee</span>
+  </div>
+</div>

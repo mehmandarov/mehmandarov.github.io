@@ -76,6 +76,11 @@ module Jekyll
       site.config['tag_list'] = tag_map
         .map { |t, ps| [t, ps.sort_by { |p| p.date }.reverse] }
         .sort_by { |t, _| t.downcase }
+
+      # Same data, ordered by popularity (most posts first, then alphabetical).
+      site.config['tag_list_by_count'] = tag_map
+        .map { |t, ps| [t, ps.sort_by { |p| p.date }.reverse] }
+        .sort_by { |t, ps| [-ps.size, t.downcase] }
     end
   end
 end

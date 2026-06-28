@@ -34,28 +34,26 @@ permalink: /:title/
 # To enable Posthog Analytics, supply your token below
 analytics-posthog: 'phc_qSyjLbfiEHqvWcEMtGwH2Mn3BSaaAbFMyqdysYiMgYi5'
 
-# if you don't want comments in your posts, leave categories empty
-disqus:
-  shortname: mydisqus # enter this from your disqus account
-  categories: [] # only show disqus for posts that have these categories, example: [blog, project]
-
 # if you don't have any of social below, comment the line
 # facebook: mehmandarov
-twitter:
-  username: rmehmandarov
-  card: summary_large_image
 # instagram: myinstagram
-# linkedin: mylinkedin
+linkedin: mehmandarov
 # youtube: myyoutube
+mastodon: https://mastodon.social/@mehmandarov
 github: mehmandarov
 bluesky: rustam.no
-mylinks: https://rustam.no
+twitter:
+    username: rmehmandarov
+    card: summary_large_image
+myLinks: https://rustam.no
 # gitlab: mygitlab
 # stackoverflow: 7044681/mystackoverflow
 # medium: medium
 # vimeo: myvimeo
-mytalks: true
 # email: myemail@gmail.com
+
+# Show my talks page
+mytalks: true
 
 # Author profiles for blog post footer (used by the theme)
 authors:
@@ -106,11 +104,27 @@ post-advance-links: [blog, project]
 # show author block at the end of a post ?
 show-author: true
 
+# show related posts (by shared tags) at the end of a post ?
+show-related: true
+
+# Table of contents (auto-generated from a post's ## and ### headings)
+toc:
+  enabled: true              # set to false to disable the TOC on all posts
+  breakpoint: 768            # viewport width (px) at/above which counts as "large screen"
+  expanded-on-desktop: true  # start expanded on large screens
+  expanded-on-mobile: false  # start collapsed on small screens
+
 # do you want some animations?
 animation: true
 
 # set timezone
 timezone: Europe/Oslo
+
+# The tags to show in the "Explore Topics" section on the homepage
+explore_tags:
+  - java
+  - cloud
+  - security
 
 # add default values to specific pages or layouts
 defaults:

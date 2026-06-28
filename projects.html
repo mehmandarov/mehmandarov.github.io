@@ -1,16 +1,48 @@
 ---
-layout: page
+layout: default
 title: Projects
+description: "Projects and software playgrounds by Rustam Mehmandarov."
 ---
-<section class="list" data-pagefind-ignore>
-    {% for post in site.posts %}
-        {% if post.projects %}
-            <div class="item {% if post.star %}star{% endif %}">
-                <a class="url" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ post.url | relative_url }}{% endif %}">
-                    <aside><time datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d %Y' }}</time></aside>
-                    <h3 class="title">{{ post.title }}</h3>
-                </a>
+
+<div class="container">
+  <div class="row">
+    <div class="col col-8 col-w-10 col-d-12 push-2 push-w-1 push-d-0">
+      <div class="page__head">
+        <h1 class="page__title">Projects</h1>
+        <p class="page__description">A showcase of software playgrounds, sandboxes, and open-source contributions.</p>
+      </div>
+
+      <div class="row grid" data-pagefind-ignore>
+        {% assign project_count = 0 %}
+        {% for post in site.posts %}
+          {% if post.projects %}
+            {% assign project_count = project_count | plus: 1 %}
+            <div class="article article--flexible col col-6 col-t-12 grid__post post-card">
+              <div class="article__inner">
+                <div class="article__head">
+
+                  <a class="article__image" href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ post.url | relative_url }}{% endif %}">
+                    <img src="{% if post.image %}{% if post.image.path %}{{ post.image.path | relative_url }}{% else %}{{ post.image | relative_url }}{% endif %}{% elsif post.img %}{{ post.img | relative_url }}{% else %}{{ '/assets/images/profile.jpg' | relative_url }}{% endif %}" alt="{{ post.title }}" loading="lazy" width="640" height="360">
+                  </a>
+                </div>
+                <div class="article__content">
+                  <div class="article__info">
+                    <span class="article__tag">PROJECT</span>
+                    <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                  </div>
+                  <h2 class="article__title">
+                    <a href="{% if post.externalLink %}{{ post.externalLink }}{% else %}{{ post.url | relative_url }}{% endif %}">{{ post.title }}</a>
+                  </h2>
+                  <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 24 }}</p>
+                </div>
+              </div>
             </div>
+          {% endif %}
+        {% endfor %}
+        {% if project_count == 0 %}
+          <p class="text-center">No projects published yet!</p>
         {% endif %}
-    {% endfor %}
-</section>
+      </div>
+    </div>
+  </div>
+</div>

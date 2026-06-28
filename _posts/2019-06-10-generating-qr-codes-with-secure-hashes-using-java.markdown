@@ -14,14 +14,6 @@ author: rustam.mehmandarov
 
 _A step by step tutorial on how to generate QR codes and secure hashed strings with salt in Java._
 
-- [Intro](#intro)
-- [Generaring QR Codes](#generating-qr-codes)
-- [Hashing Strings](#hashing-strings)
-- [What Now?](#what-now)
-
-
----
-
 ## Intro
 
 I have been testing out new functionality for "checking-in" to a location using QR codes. To make sure the user is at the specified location and is scanning my QR code (and not a "fake" code created by someone else), I needed to add a way of "signing" each code with a value that only I – the provider of the QR code – could know. This would also make it simple enough to be able to implement the same mechanism in the app used to scan the codes to verify the validity on the client side.

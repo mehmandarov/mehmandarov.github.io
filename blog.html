@@ -1,32 +1,102 @@
 ---
 # blog page must be named index.html and in its own folder to support pagination
 # https://jekyllrb.com/docs/pagination/
-layout: page
+layout: default
 title: Blog
 description: "Blog posts on cloud, architecture, AI, security, Java, Docker, and developer tools by Rustam Mehmandarov."
 pagination:
   enabled: true
 ---
-<section class="list" data-pagefind-ignore>
-	{% if site.posts.size == 0 %}
-		<p class="text-center">Nothing published yet!</p>
-	{% elsif site.pagination.enabled %}
-		{% for post in paginator.posts %}
-			{% if post.category == 'blog' %}
-				{% if post.hidden != true %}
-					{% include blog-post.html %}
-				{% endif %}
-			{% endif %}
-		{% endfor %}
 
-		{% include pagination.html%}
-	{% else %}
-		{% for post in site.posts %}
-			{% if post.category == 'blog' %}
-				{% if post.hidden != true %}
-					{% include blog-post.html %}
-				{% endif %}
-			{% endif %}
-		{% endfor %}
-	{% endif %}
-</section>
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="page__head page__head--row">
+        <h1 class="page__title">Blog posts</h1>
+        <div class="blog__view">
+          <div class="blog__toggle blog__toggle--lines" title="Toggle view mode">
+            <div class="icon">
+              <div class="icon-bar"></div>
+              <div class="icon-bar"></div>
+              <div class="icon-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row grid">
+        {% if site.posts.size == 0 %}
+          <p class="text-center">Nothing published yet!</p>
+        {% elsif site.pagination.enabled %}
+          {% for post in paginator.posts %}
+            {% if post.category == 'blog' %}
+              {% if post.hidden != true %}
+                <div class="article article--flexible col col-6 col-t-12 grid__post post-card">
+                  <div class="article__inner">
+                    <div class="article__head">
+                      <a class="article__image" href="{{ post.url | relative_url }}">
+                        <img src="{% if post.image %}{% if post.image.path %}{{ post.image.path | relative_url }}{% else %}{{ post.image | relative_url }}{% endif %}{% elsif post.img %}{{ post.img | relative_url }}{% else %}{{ '/assets/images/profile.jpg' | relative_url }}{% endif %}" alt="{{ post.title }}" loading="lazy" width="640" height="360">
+                      </a>
+                    </div>
+                    <div class="article__content">
+                      <div class="article__info">
+                        <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+                      </div>
+                      <h2 class="article__title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                      </h2>
+                      {% if post.tag %}
+                      <div class="article__tags">
+                        {% for t in post.tag %}
+                        <a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}" class="article__tag">{{ t | upcase }}</a>
+                        {% endfor %}
+                      </div>
+                      {% endif %}
+                      <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 45 }}</p>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          {% for post in site.posts %}
+            {% if post.category == 'blog' %}
+              {% if post.hidden != true %}
+                <div class="article article--flexible col col-6 col-t-12 grid__post post-card">
+                  <div class="article__inner">
+                    <div class="article__head">
+                      <a class="article__image" href="{{ post.url | relative_url }}">
+                        <img src="{% if post.image %}{% if post.image.path %}{{ post.image.path | relative_url }}{% else %}{{ post.image | relative_url }}{% endif %}{% elsif post.img %}{{ post.img | relative_url }}{% else %}{{ '/assets/images/profile.jpg' | relative_url }}{% endif %}" alt="{{ post.title }}" loading="lazy" width="640" height="360">
+                      </a>
+                    </div>
+                    <div class="article__content">
+                      <div class="article__info">
+                        <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+                      </div>
+                      <h2 class="article__title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                      </h2>
+                      {% if post.tag %}
+                      <div class="article__tags">
+                        {% for t in post.tag %}
+                        <a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}" class="article__tag">{{ t | upcase }}</a>
+                        {% endfor %}
+                      </div>
+                      {% endif %}
+                      <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 45 }}</p>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      {% if site.pagination.enabled %}
+        {% include pagination.html %}
+      {% endif %}
+    </div>
+  </div>
+</div>

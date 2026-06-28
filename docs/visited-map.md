@@ -2,12 +2,12 @@
 
 The map on **`/talks/`** is rendered by [Leaflet] from three layers:
 
-1. **Visited countries** — your `_data/visited.json` (`countries` array) →
+1. **Visited countries** – your `_data/visited.json` (`countries` array) →
    filled in the accent colour on top of a public-domain world borders
    layer.
-2. **City pins** — your `_data/visited.json` (`cities` array) → Leaflet
+2. **City pins** – your `_data/visited.json` (`cities` array) → Leaflet
    markers with optional popup content (year, conferences).
-3. **World borders** — three resolutions derived from [geoBoundaries]
+3. **World borders** – three resolutions derived from [geoBoundaries]
    CGAZ ADM0 (CC-BY 4.0, attribution shown in the map control), vendored
    under `assets/data/`.
 
@@ -23,9 +23,9 @@ All assets are self-hosted. No tiles, no API keys, no third-party CDN.
 | `assets/js/visited-map.js` | Renderer: tier swap, colours, popups, click-to-zoom | You want different behaviour (zoom thresholds, popup contents, etc.) |
 | `assets/styles/visited-map.css` | Map container + popup styles, light + dark | Theme tweaks |
 | `assets/vendor/leaflet/` | Vendored Leaflet 1.9.4 + marker images | You upgrade Leaflet (see below) |
-| `assets/data/world-110m.geo.json` | Country borders, low detail (~100 KB) — initial paint | Refresh borders (see below) |
-| `assets/data/world-50m.geo.json` | Country borders, medium detail (~1.8 MB) — loads at zoom ≥ 4 | Refresh borders |
-| `assets/data/world-10m.geo.json` | Country borders, high detail (~8.6 MB) — loads at zoom ≥ 7 | Refresh borders |
+| `assets/data/world-110m.geo.json` | Country borders, low detail (~100 KB) – initial paint | Refresh borders (see below) |
+| `assets/data/world-50m.geo.json` | Country borders, medium detail (~1.8 MB) – loads at zoom ≥ 4 | Refresh borders |
+| `assets/data/world-10m.geo.json` | Country borders, high detail (~8.6 MB) – loads at zoom ≥ 7 | Refresh borders |
 | `scripts/refresh-world-borders.sh` | Downloads geoBoundaries CGAZ + simplifies into the three tiers | Used by the refresh procedure |
 | `scripts/_rewrite-geoboundaries-props.py` | Post-processor: rewrites `shapeGroup`/`shapeName` → `ISO_A2`/`ISO_A3`/`NAME` so `visited-map.js` keeps working unchanged | Edit only if geoBoundaries renames properties or you find a country missing from the ISO3→ISO2 map |
 
@@ -34,14 +34,14 @@ Currently used on **`talks.md`** only.
 
 ## Updating the visited data
 
-This is the common case — you visited a new city or country.
+This is the common case – you visited a new city or country.
 
 1. Open `_data/visited.json`.
 2. Add the ISO-3166 alpha-2 code (uppercase) to the `countries` array.
    JSON strings are always quoted, so the YAML 1.1 "Norway bug"
    (`NO` → `false`) doesn't apply here.
 3. Add a `cities` entry with `name`, `country`, `lat`, `lng`. Optionally
-   add `first_visited` (year) and a `conferences` array — if `conferences`
+   add `first_visited` (year) and a `conferences` array – if `conferences`
    is absent or empty, the popup just shows the city name.
 4. Commit + push. No build-step changes; Jekyll picks the file up from
    `site.data.visited` and the renderer injects it into the page.
@@ -74,7 +74,7 @@ The script:
    on simplification params doesn't re-download). Delete the cache to
    force a refresh.
 2. Runs [mapshaper] three times with weighted Visvalingam simplification
-   and grid-snapped coordinate precision — topology-preserving, so
+   and grid-snapped coordinate precision – topology-preserving, so
    neighbouring countries never develop gaps along shared borders. Tiers:
 
    | Tier  | Retain | Precision (°) | Approx. resolution |
@@ -157,7 +157,7 @@ Then load `/talks/`, click around, check the browser console.
 ## Caveats
 
 - The `compress` layout strips linefeeds, so any inline JavaScript on
-  the page must use `/* ... */` block comments — never `//`. The renderer
+  the page must use `/* ... */` block comments – never `//`. The renderer
   itself lives in a separate `.js` file (not subject to compression),
   but the include's inline `<script>window.__VISITED_DATA__ = ...</script>`
   is one line by design.
@@ -178,7 +178,7 @@ Then load `/talks/`, click around, check the browser console.
   at low zoom can look "inland" after the swap. A centred dot makes it
   obvious that the marker is precise and the coast is the approximation.
   If you ever want pins back, the marker images are still vendored under
-  `assets/vendor/leaflet/images/` — restore the `L.icon` block that the
+  `assets/vendor/leaflet/images/` – restore the `L.icon` block that the
   git history shows around the late-May-2026 changes.
 
 [Leaflet]: https://leafletjs.com/

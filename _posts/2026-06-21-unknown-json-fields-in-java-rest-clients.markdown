@@ -21,20 +21,6 @@ author: rustam.mehmandarov
 
 _You call an API with the MicroProfile REST Client, map the response onto a small DTO, and one day the API starts returning a few extra fields you never asked for. Does your client shrug and carry on, or does it blow up with a deserialization error? The honest answer is "it depends on your JSON provider" – and the defaults are not the same across the board. Let's pin down what actually happens, and point to the spec or docs for each case._
 
-- [Introduction](#introduction)
-- [Why this bites people](#why-this-bites-people)
-- [Show me the code](#show-me-the-code)
-- [1. The default: JSON-B (Yasson)](#1-the-default-json-b-yasson)
-- [2. Jackson: strict by default](#2-jackson-strict-by-default)
-- [3. Quarkus: Jackson, but lenient](#3-quarkus-jackson-but-lenient)
-- [4. Spring Boot: also lenient](#4-spring-boot-also-lenient)
-- [A note on the other direction (server receiving extra fields)](#a-note-on-the-other-direction-server-receiving-extra-fields)
-- [Summary Comparison](#summary-comparison)
-- [Conclusion](#conclusion)
-- [What's Next?](#whats-next)
-
----
-
 ## Introduction
 
 Imagine a small REST client. You are consuming a "room" resource from some conference API, and you only care about three fields – `id`, `name`, and `capacity`:
@@ -109,7 +95,7 @@ curl -X GET http://localhost:8080/api/unknown-fields/room-7 \
   -H "Accept: application/json"
 ```
 
-```http
+```text
 GET http://localhost:8080/api/unknown-fields/room-7
 Accept: application/json
 ```
@@ -214,7 +200,7 @@ quarkus.jackson.fail-on-unknown-properties=true
 
 ### How to call it
 
-```http
+```text
 GET http://localhost:8080/api/unknown-fields/room-7
 Accept: application/json
 ```
