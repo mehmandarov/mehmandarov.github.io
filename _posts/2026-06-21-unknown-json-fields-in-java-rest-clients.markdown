@@ -21,6 +21,8 @@ author: rustam.mehmandarov
 
 _You call an API with the MicroProfile REST Client, map the response onto a small DTO, and one day the API starts returning a few extra fields you never asked for. Does your client shrug and carry on, or does it blow up with a deserialization error? The honest answer is "it depends on your JSON provider" – and the defaults are not the same across the board. Let's pin down what actually happens, and point to the spec or docs for each case._
 
+---
+
 ## Introduction
 
 Imagine a small REST client. You are consuming a "room" resource from some conference API, and you only care about three fields – `id`, `name`, and `capacity`:

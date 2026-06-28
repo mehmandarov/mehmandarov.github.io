@@ -22,16 +22,6 @@ author: rustam.mehmandarov
 
 _When APIs end up with their own error format, it quickly gets annoying for anyone who has to consume more than one API. [RFC 9457][1] defines a standard envelope for HTTP API errors. Let's have a look at how to do it in Jakarta EE: a small hand-made `ProblemDetail` plus one `ExceptionMapper` per error category; with the [Zalando Problem][2] library; followed by quick notes on Quarkus and Spring as alternatives._
 
-- [Introduction](#introduction)
-- [TL;DR: Why RFC 9457?](#tldr-why-rfc-9457)
-- [Let's write some code!](#lets-write-some-code)
-  - [1. Hand-made `ProblemDetail` + `ExceptionMapper`](#1-hand-made-problemdetail--exceptionmapper)
-  - [2. Zalando Problem](#2-zalando-problem)
-  - [3. Quarkus: `quarkus-http-problem`](#3-quarkus-quarkus-http-problem)
-  - [4. Spring Boot – a short note](#4-spring-boot--a-short-note)
-- [Conclusion](#conclusion)
-- [What's Next?](#whats-next)
-
 ---
 
 ## Introduction

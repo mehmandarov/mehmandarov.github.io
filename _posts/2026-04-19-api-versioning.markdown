@@ -20,19 +20,6 @@ author: rustam.mehmandarov
 
 _Creating APIs and maintaining them over time means often that we need to version them. We will be looking into several ways of doing so in Java using JAX-RS, while building our API end-points using Jakarta EE and MicroProfile. This post was inspired by my talk "API = Some REST and HTTP, right? RIGHT?!"_
 
-- [Introduction](#introduction)
-- [Why Versioning?](#why-versioning)
-- [Show Me The CODE!](#show-me-the-code)
-- [1. URL Versioning](#1-url-versioning)
-- [2. Header Versioning](#2-header-versioning)
-- [3. Media Type Versioning](#3-media-type-versioning-content-negotiation)
-- [4. Request Parameter Versioning](#4-request-parameter-versioning)
-- [5. Bonus: Combining Strategies](#5-bonus-combining-strategies---transparent-uri-rewriting-enterprise-pattern)
-- [6. End-Point Deprecation](#6-end-point-deprecation)
-- [Summary Comparison](#summary-comparison)
-- [Conclusion](#conclusion)
-- [What's Next?](#whats-next)
-
 ---
 
 ## Introduction

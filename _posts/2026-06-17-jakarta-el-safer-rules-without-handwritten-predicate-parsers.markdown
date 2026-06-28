@@ -17,20 +17,6 @@ author: rustam.mehmandarov
 
 _[Jakarta Expression Language][1] (EL) is already part of the platform, but we usually meet it indirectly through Faces, CDI, or Bean Validation. In this post, we will use it directly: as a small in-process predicate engine for authorization policies. We will replace the handwritten parser, keep the same policy file format, and then look at what it takes to make evaluation safe._
 
-- [Introduction](#introduction)
-- [1. Why Jakarta EL?](#1-why-jakarta-el)
-    - [1.1 From handwritten predicate parser to EL](#11-from-handwritten-predicate-parser-to-el)
-- [2. We need to talk about the security](#2-we-need-to-talk-about-the-security)
-    - [2.1 How dangerous can it be? Why bother validating the input?](#21-how-dangerous-can-it-be-why-bother-validating-the-input)
-    - [2.2 Adding security to the expressiveness](#22-adding-security-to-the-expressiveness)
-    - [2.3 Replacing the parser/evaluator with Jakarta EL](#23-replacing-the-parserevaluator-with-jakarta-el)
-- [3. Trade-offs and when to use what](#3-trade-offs-and-when-to-use-what)
-    - [3.1 What ships today vs. where we're headed](#31-what-ships-today-vs-where-were-headed)
-    - [3.2 Is the swap worth it?](#32-is-the-swap-worth-it)
-    - [3.3 Summary comparison](#33-summary-comparison)
-- [Conclusion](#conclusion)
-- [What's Next?](#whats-next)
-
 ---
 
 ## Introduction
