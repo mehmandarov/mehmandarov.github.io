@@ -1,0 +1,20 @@
+---
+layout: null
+---
+[
+  {% assign first = true %}
+  {% for post in site.posts %}
+    {% if post.hidden != true %}
+      {% unless first %},{% endunless %}
+      {% assign first = false %}
+      {
+        "title"    : {{ post.title | jsonify }},
+        "category" : {{ post.category | default: "blog" | jsonify }},
+        "tags"     : {{ post.tag | default: post.tags | join: ", " | jsonify }},
+        "url"      : {{ post.url | relative_url | jsonify }},
+        "date"     : {{ post.date | date: "%B %d, %Y" | jsonify }},
+        "content"  : {{ post.content | strip_html | strip_newlines | truncatewords: 40 | jsonify }}
+      }
+    {% endif %}
+  {% endfor %}
+]

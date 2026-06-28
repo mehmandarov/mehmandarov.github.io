@@ -1,67 +1,53 @@
 ---
-layout: page
+layout: default
 ---
+<div class="container">
+  <div class="row">
+    <div class="col col-8 col-w-10 col-d-12 push-2 push-w-1 push-d-0">
+      <div class="page-hero post-hero">
+        <div class="page-hero__inner">
+          <h1 class="page-hero__title">{{ page.title }}</h1>
+          {% if page.tag %}
+          <div class="article__tags post-hero__tags">
+            {% for tag in page.tag %}
+            <a href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}" class="article__tag">{{ tag | upcase }}</a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
 
-{% if page.image and page.headerImage %}
-    <img class="title-image" src="{{ page.image }}" alt="{{ page.title }}">
-{% endif %}
+        {% include post-social.html %}
 
-<h1 class="title">{{ page.title }}</h1>
+      </div>
 
-<span class="date">
-    <time datetime="{{ page.date | date: '%Y-%m-%d' }}" data-pagefind-sort="date[datetime]" data-pagefind-meta="date[datetime]">{{ page.date | date: '%A. %B %d, %Y' }}</time>
-    {% if site.read-time %} - {% include read-time.html %}{% endif %}
-</span>
-
-{% if site.show-tags %}
-    <div class="post-tags">
-        {% for tag in page.tags %}
-            <a class="item" href="{{ '/tags/' | relative_url }}#{{ tag | slugify }}">{{ tag }}</a>
-        {% endfor %}
+      {% if page.image and page.show_image != false %}
+      <div class="page-head">
+        <div class="page-image">
+          <img src="{% if page.image.path %}{{ page.image.path | relative_url }}{% else %}{{ page.image | relative_url }}{% endif %}" fetchpriority="high" alt="{{ page.title }}" width="1200" height="675">
+        </div>
+      </div>
+      {% endif %}
     </div>
-{% endif %}
+  </div>
 
-<article class="post-content">
-    {{content}}
-</article>
-
-<script>
-    document.querySelectorAll('.post-content a[href]').forEach(function (link) {
-        var href = link.getAttribute('href');
-        if (!href || href.charAt(0) === '#') return;
-
-        var url = new URL(href, window.location.href);
-        var isSamePageAnchor = url.origin === window.location.origin
-            && url.pathname === window.location.pathname
-            && url.hash;
-        if (isSamePageAnchor) return;
-
-        link.setAttribute('target', '_blank');
-        link.setAttribute('rel', 'noopener noreferrer');
-    });
-</script>
-
-{% if site.post-advance-links contains page.category %}
-    <div class="blog-navigation" data-pagefind-ignore>
-        {% if page.previous.hidden == false and page.previous.url %}
-            <a class="prev" href="{{ page.previous.url | relative_url }}">&laquo; {{ page.previous.title }}</a>
-        {% else %}
-            <a class="prev"></a>
-        {% endif %}
-        {% if page.next.hidden == false and page.next.url %}
-            <a class="next" href="{{ page.next.url | relative_url }}">{{ page.next.title }} &raquo;</a>
-        {% endif %}
+  <article class="post">
+    <div class="post__content">
+      {% if site.toc.enabled != false %}{% unless page.toc == false %}{% include toc.html html=content %}{% endunless %}{% endif %}
+      {{ content }}
     </div>
-{% endif %}
+  </article>
 
-{% if site.related %}
-    {% include related.html %}
-{% endif %}
+  <div class="row">
+    <div class="col col-8 col-w-10 col-d-12 push-2 push-w-1 push-d-0">
+      {% include post-social.html %}
+    </div>
+  </div>
 
-{% if site.show-author %}
-    {% include author.html %}
-{% endif %}
-
-{% if site.disqus.categories contains page.category %}
-    {% include disqus.html %}
-{% endif %}
+  {% if site.show-related %}
+  <div class="row">
+    <div class="col col-8 col-w-10 col-d-12 push-2 push-w-1 push-d-0">
+      {% include related.html %}
+    </div>
+  </div>
+  {% endif %}
+</div>

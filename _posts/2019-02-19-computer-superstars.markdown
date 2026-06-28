@@ -14,17 +14,6 @@ author: rustam.mehmandarov
 
 _The untold story of a short movie for a big conference. You might have seen all the Easter eggs, but I am sure you didn't know this! These are some the lesser-known facts about some of the computers used in Stranger Strings made for JavaZone 2018._
 
-- [The Beginning](#the-beginning)
-- [The New Level](#the-new-level)
-- [Story 1: An Icon of Norwegian IT History](#story-1-an-icon-of-norwegian-it-history)
-- [Story 2: A Machine for 4.300 USD](#story-2-a-machine-for-4300-usd)
-- [Story 3: Two "Portable" Computers](#story-3-two-portable-computers)
-- [Story 4: A Very Special Machine](#story-4-a-very-special-machine)
-- [Stranger Strings: The Movie](#stranger-strings-the-movie)
-
-
----
-
 You may already have seen _Stranger Strings_, a tribute to the _[Stranger Things][1]_ series, that was created for JavaZone 2018. This was our latest addition to the long list of short films we have created throughout the years.
 
 Here, I would like to share the untold story of the computers and hardware from the movie that might have been seen merely as the props in the movie to the untrained eye, but when you look a bit deeper have quite interesting stories to tell. [JavaZone][18] has a tradition of creating short videos before the conference and most of the videos – with a very few exceptions – are in the format of trailers or short movies. These are usually geeky parodies to well-known (and usually well-loved) movies or series. This time we decided to do something a bit different. We created a slightly longer film showing us a parallel, and geekier, _Stranger Things_ universe, and called it _Stranger Strings_.

@@ -9,6 +9,6 @@ _site/
 
 Gemfile.lock
 .bundle
-# Ruby bundler install dir only — leading slash anchors to repo root so
+# Ruby bundler install dir only – leading slash anchors to repo root so
 # vendored front-end libs under assets/vendor/ are NOT ignored.
 /vendor/

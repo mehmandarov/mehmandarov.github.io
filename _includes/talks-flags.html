@@ -1,0 +1,6 @@
+{%- comment -%}Talks hero aside: country flags + summary caption (data: _data/visited.json).{%- endcomment -%}
+{% assign v = site.data.visited %}
+<div class="talks__panel">
+  <div class="talks__flags">{{ v.country_flags | join: " " }}</div>
+  <p class="talks__panel-caption">Spoken or otherwise involved in over {{ v.stats.total_events }} events in {{ v.stats.total_countries }} countries. Public speaker since 2013.</p>
+</div>

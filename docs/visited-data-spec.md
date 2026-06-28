@@ -1,4 +1,4 @@
-# `_data/visited.json` — schema spec
+# `_data/visited.json` – schema spec
 
 > **Purpose.** This file is consumed by `assets/js/visited-map.js` on the
 > `/talks/` page of `mehmandarov.com` to render a Leaflet map of all
@@ -102,9 +102,9 @@ An array of objects. Each object describes one city visited at least once.
 
 | Field | Type | Required | Notes |
 |---|---|---|---|
-| `name` | string | **yes** | Conference name. Don't include the year in the name — use the `year` field. |
+| `name` | string | **yes** | Conference name. Don't include the year in the name – use the `year` field. |
 | `year`  | int    | no | 4-digit year. Omit if the talk is recurring / undated. |
-| `url`   | string | no | Permalink. Prefer the event page over the conference homepage. **Must be `http://` or `https://`** — other schemes (`javascript:`, `data:`, etc.) are rejected by the renderer's `safeUrl()` filter and the entry is rendered without a link. |
+| `url`   | string | no | Permalink. Prefer the event page over the conference homepage. **Must be `http://` or `https://`** – other schemes (`javascript:`, `data:`, etc.) are rejected by the renderer's `safeUrl()` filter and the entry is rendered without a link. |
 
 If `conferences` is **omitted** or set to `[]`, the popup shows only
 city, country, and (if present) `first_visited`. No "Conferences:"

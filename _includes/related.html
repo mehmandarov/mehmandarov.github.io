@@ -1,28 +1,32 @@
-<div class="related" data-pagefind-ignore>
-    {% assign hasSimilar = '' %}
-    {% for post in site.posts  %}
-        {% assign postHasSimilar = false %}
-        {% for tag in post.tags %}
-            {% for thisTag in page.tags %}
-                {% if postHasSimilar == false and hasSimilar.size < 5 and post != page and tag == thisTag and tag != 'norwegian' and tag != 'english' %}
-                    {% if hasSimilar.size == 0 %}
-                    <h4>Related Posts</h4>
-                    <ul>
-                    {% endif %}
-                    <li class="relatedPost">
-                        <a href="{{ post.url | relative_url }}">{{ post.title }}
-                        {% if post.series %}
-                            (Series: {{ post.series }})
-                        {% endif %}
-                        </a>
-                    </li>
-                    {% capture hasSimilar %}{{ hasSimilar }}*{% endcapture %}
-                    {% assign postHasSimilar = true %}
-                {% endif %}
-            {% endfor %}
-        {% endfor %}
-    {% endfor %}
-    {% if hasSimilar.size > 0 %}
-        </ul>
-    {% endif %}
-</div>
+{% comment %} Related posts by shared tags (language tags excluded). Uses `tag` front-matter key. {% endcomment %}
+{% assign max_related = 4 %}
+{% assign page_tags = page.tag | default: page.tags %}
+{% assign related_items = '' %}
+{% assign related_count = 0 %}
+{% for post in site.posts %}
+  {% if related_count >= max_related %}{% break %}{% endif %}
+  {% if post.url == page.url %}{% continue %}{% endif %}
+  {% assign post_tags = post.tag | default: post.tags %}
+  {% assign is_related = false %}
+  {% for tag in post_tags %}
+    {% if tag == 'english' or tag == 'norwegian' %}{% continue %}{% endif %}
+    {% if page_tags contains tag %}{% assign is_related = true %}{% break %}{% endif %}
+  {% endfor %}
+  {% if is_related %}
+    {% capture related_items %}{{ related_items }}
+        <li class="related-posts__item">
+          <a class="related-posts__link" href="{{ post.url | relative_url }}">
+            <span class="related-posts__post-title">{{ post.title }}{% if post.series %} <span class="related-posts__series">(Series: {{ post.series }})</span>{% endif %}</span>
+            <time class="related-posts__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+          </a>
+        </li>{% endcapture %}
+    {% assign related_count = related_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% if related_count > 0 %}
+<aside class="related-posts is-related" data-pagefind-ignore>
+  <h2 class="related-posts__title">Related posts</h2>
+  <ul class="related-posts__list list-reset">{{ related_items }}
+  </ul>
+</aside>
+{% endif %}

@@ -1,30 +1,43 @@
 ---
-layout: page
+layout: default
 ---
-<section class="tag-list" data-pagefind-ignore>
-    <h1 class="title">#{{ page.tag }}</h1>
-
-    <p>
-        <a href="{{ '/tag/' | relative_url }}{{ page.slug }}/feed.xml" title="RSS feed for tag: {{ page.tag }}">
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <div class="page__head">
+        <h1 class="page__title">#{{ page.tag }}</h1>
+        <p class="page__description">
+          <a href="{{ '/tag/' | relative_url }}{{ page.slug }}/feed.xml" title="RSS feed for tag: {{ page.tag }}">
             <i class="fa-solid fa-rss"></i> RSS feed for this tag
-        </a>
-        &nbsp;·&nbsp;
-        <a href="{{ '/tags/' | relative_url }}">All tags</a>
-    </p>
+          </a>
+          &nbsp;·&nbsp;
+          <a href="{{ '/tags/' | relative_url }}">All tags</a>
+        </p>
+      </div>
 
-    <ul class="list">
+      <div class="row grid">
         {% for post in page.posts %}
-            {% if post.title != null %}
-                <li class="item">
-                    <a class="url" href="{{ post.url | relative_url }}">
-                        <aside class="date"><time datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d %Y' }}</time></aside>
-                        <h3 class="title">{{ post.title }}</h3>
-                    </a>
-                </li>
-            {% endif %}
+        {% if post.title != null %}
+        <div class="article article--flexible col col-12 grid__post tag-entry">
+          <div class="article__inner">
+            <div class="article__content">
+              <div class="article__info">
+                <time class="article__date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d %b, %Y" }}</time>
+              </div>
+              <h2 class="article__title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h2>
+              {% if post.description %}
+              <p class="article__excerpt">{{ post.description }}</p>
+              {% else %}
+              <p class="article__excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endif %}
         {% endfor %}
-    </ul>
-
-    <div class="breaker"></div>
-</section>
-
+      </div>
+    </div>
+  </div>
+</div>

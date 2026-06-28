@@ -46,17 +46,17 @@
      * Previously we used the classic teardrop pin icon. That had two
      * problems:
      *   (1) The icon's anchor is its bottom tip, but the eye reads the
-     *       bulb as the "position" — so when the map zooms, the bulb
+     *       bulb as the "position" – so when the map zooms, the bulb
      *       appears to shift while the tip stays put (it doesn't move,
      *       but it looks like it does).
      *   (2) When the country-border tier swaps (110m -> 50m -> 10m), the
-     *       coastline sharpens dramatically — NYC's coast at 110m is
+     *       coastline sharpens dramatically – NYC's coast at 110m is
      *       generalised onto the NJ mainland; at 10m Manhattan becomes
      *       its own island. The marker stays at -74.006, 40.7128 the
      *       whole time, but the *coast around it* moves, so the marker
      *       appears to "drift inland".
      * Switching to a circle marker fixes (1) entirely (no anchor offset)
-     * and makes (2) visually obvious — the dot is precise, the border
+     * and makes (2) visually obvious – the dot is precise, the border
      * is the approximation. */
     var markerStyle = {
         pane: 'vm-pins',
@@ -72,16 +72,16 @@
     var markerHoverStyle = { radius: 10, weight: 2 };
 
     var map = L.map(el, {
-        /* fix #4: start wider than a fixed zoom — fitBounds below frames
+        /* fix #4: start wider than a fixed zoom – fitBounds below frames
          * the "interesting" part of the globe (skips polar extremes).
-         * worldCopyJump intentionally off — for a "visited" map it adds
+         * worldCopyJump intentionally off – for a "visited" map it adds
          * no value and can cause overlay layers to render in an
          * unexpected world copy. */
         minZoom: 1,
         maxZoom: 8,
         zoomControl: true,
         attributionControl: true,
-        scrollWheelZoom: false  /* user enables via click — see toggle below */
+        scrollWheelZoom: false  /* user enables via click – see toggle below */
     });
     map.fitBounds([[-58, -170], [78, 178]], { animate: false });
 
@@ -190,7 +190,7 @@
 
     function onEachFeature(feature, layer) {
         var name = feature.properties.ADMIN || feature.properties.NAME || 'Unknown';
-        /* L15: Leaflet writes tooltip strings via innerHTML — escape even though
+        /* L15: Leaflet writes tooltip strings via innerHTML – escape even though
          * Natural Earth names are trusted-by-source, as defence-in-depth in case
          * the dataset is ever swapped for a community-edited one. */
         layer.bindTooltip(escHtml(name), { sticky: true, direction: 'top', opacity: 0.9 });

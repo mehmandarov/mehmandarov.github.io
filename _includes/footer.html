@@ -1,13 +1,72 @@
-<footer class="footer-main">
-    {{ site.title }} © {{ site.time | date: '%Y' }}
+<footer class="footer" data-pagefind-ignore>
 
-    <a class="link" href="{{ '/feed.xml' | relative_url }}" target="_blank">
-        <i class="fa-solid fa-rss"></i>
-    </a>
+  <!-- begin connect -->
+  <div class="subscribe subscribe-with-image">
+    <div class="container">
+      <div class="row">
+        <div class="col col-8 col-w-10 col-d-12 push-2 push-w-1 push-d-0">
+          <div class="subscribe__inner">
+            <div class="subscribe__content">
+              {% if site.picture %}
+              <img class="subscribe__image" src="{{ site.picture | relative_url }}" alt="{{ site.title }}" loading="lazy" width="68" height="68">
+              {% endif %}
+              <h2 class="subscribe__title">Follow me for more!</h2>
+              <p class="subscribe__description">Find all my links and social profiles through <a href="https://rustam.no" target="_blank" rel="noopener">rustam.no</a>. Browse <a href="{{ '/talks/' | relative_url }}">my talks</a> or explore projects and experiments on <a href="https://github.com/{{ site.github }}" target="_blank" rel="noopener">GitHub</a>.</p>
+              <p class="subscribe__cta-line">Follow me, ping me, let&rsquo;s connect!</p>
+            </div>
+            <ul class="subscribe__social list-reset">
+              {% if site.github %}
+              <li class="subscribe__social-item">
+                <a class="subscribe__social-link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              </li>
+              {% endif %}
+              {% if site.bluesky %}
+              <li class="subscribe__social-item">
+                <a class="subscribe__social-link" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+              </li>
+              {% endif %}
+              {% if site.mastodon %}
+              <li class="subscribe__social-item">
+                <a class="subscribe__social-link" href="{{ site.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
+              </li>
+              {% endif %}
+              {% if site.twitter.username %}
+              <li class="subscribe__social-item">
+                <a class="subscribe__social-link" href="https://twitter.com/{{ site.twitter.username }}" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              {% endif %}
+              {% if site.linkedin %}
+              <li class="subscribe__social-item">
+                <a class="subscribe__social-link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              </li>
+              {% endif %}
+              {% if site.myLinks %}
+              <li class="subscribe__social-item">
+                <a class="subscribe__social-link" href="{{ site.myLinks }}" target="_blank" rel="noopener" aria-label="All my links"><i class="fa-solid fa-link"></i></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end connect -->
 
-    <p class="extra">
-        {% if site.analytics-posthog %}
-        <a class="link" href="javascript:void(0)" onclick="window.__phShowConsent()" title="Change analytics consent">Cookie Settings</a>
-        {% endif %}
-    </p>
+  <div class="container">
+    <div class="row">
+      <div class="col col-8 col-w-10 col-d-12 push-2 push-w-1 push-d-0">
+        <div class="footer__inner">
+          
+          <div class="copyright">
+            <span class="copyright__line">{{ site.title }} &copy; {{ 'now' | date: "%Y" }} <a class="copyright__rss" href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener" aria-label="RSS feed"><i class="fa-solid fa-rss"></i></a></span>
+            {% if site.analytics-posthog %}
+            <a class="copyright__cookies" href="javascript:void(0)" onclick="window.__phShowConsent()" title="Change analytics consent">Cookie Settings</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </footer>

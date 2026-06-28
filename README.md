@@ -4,7 +4,7 @@ Source code for mehmandarov.com. Based on [Indigo][3] theme (forked and modified
 
 ## Local development with Docker
 
-You don't need Ruby, Bundler or Jekyll installed locally — just Docker. The
+You don't need Ruby, Bundler or Jekyll installed locally – just Docker. The
 provided `Dockerfile` builds an image with all the right gems and runs
 `jekyll serve` with live reload, watching the mounted source so the site
 rebuilds automatically whenever you edit a file.
@@ -38,7 +38,7 @@ docker run --rm -v "$PWD":/site mehmandarov-site \
 
 ## Search (Pagefind)
 
-The site uses [Pagefind](https://pagefind.app/) for fully client-side, multilingual full-text search — no third-party service, no API key. The search index is built **automatically on every deploy** by the `Build search index (Pagefind)` step in `.github/workflows/jekyll.yml`.
+The site uses [Pagefind](https://pagefind.app/) for fully client-side, multilingual full-text search – no third-party service, no API key. The search index is built **automatically on every deploy** by the `Build search index (Pagefind)` step in `.github/workflows/jekyll.yml`.
 
 Current UI/behavior:
 

@@ -1,0 +1,51 @@
+{% assign post_author = site.authors[page.author] %}
+{% assign share_url = page.url | absolute_url %}
+{% assign share_twitter = post_author.twitter | default: site.twitter.username | default: site.twitter | remove: '@' %}
+<div class="post-social" data-pagefind-ignore>
+  <div class="post-social__main">
+    {% if post_author %}
+    <div class="post-author">
+      {% if post_author.picture %}
+      <a href="{{ '/about/' | relative_url }}" class="post-author__image">
+        <img src="{% if post_author.external-image %}{{ post_author.picture }}{% else %}{{ post_author.picture | relative_url }}{% endif %}" alt="{{ post_author.name }}" width="48" height="48">
+      </a>
+      {% endif %}
+      <div class="post-author__content">
+        <a class="post-author__name" href="{{ '/about/' | relative_url }}">{{ post_author.name }}</a>
+        {% if post_author.bio %}
+        <span class="post-author__bio">{{ post_author.bio }}</span>
+        {% endif %}
+        <span class="post-author__meta">
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b, %Y" }}</time>
+          {% if site.read-time %}– {% include read-time.html %}{% endif %}
+        </span>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if site.mylinks %}
+    <a class="follow-me" href="{{ site.mylinks }}" target="_blank" rel="noopener" title="Follow me. All links @ {{ site.mylinks | remove: 'https://' }}">
+      <i class="fa-solid fa-user-plus"></i>
+      <span>Follow Me</span>
+    </a>
+    {% endif %}
+  </div>
+
+  <div class="post-social__share">
+    <span class="post-share__cta">Share this post:</span>
+    <ul class="post-share__list">
+      <li>
+        <a class="post-share__link post-share__link--x" href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ share_url | uri_escape }}{% if share_twitter %}&via={{ share_twitter }}{% endif %}" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=550,height=500,toolbar=1,resizable=0'); return false;" title="Share on X" rel="nofollow"><i class="fa-brands fa-x-twitter"></i></a>
+      </li>
+      <li>
+        <a class="post-share__link post-share__link--linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url={{ share_url | uri_escape }}" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=550,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn" rel="nofollow"><i class="fa-brands fa-linkedin-in"></i></a>
+      </li>
+      <li>
+        <a class="post-share__link post-share__link--bluesky" href="https://bsky.app/intent/compose?text={{ page.title | append: ' ' | append: share_url | uri_escape }}" onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=550,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky" rel="nofollow"><i class="fa-brands fa-bluesky"></i></a>
+      </li>
+      <li>
+        <a class="post-share__link post-share__link--email" href="mailto:?subject={{ page.title | uri_escape }}&body={{ share_url | uri_escape }}" title="Share via email" rel="nofollow"><i class="fa-regular fa-envelope"></i></a>
+      </li>
+    </ul>
+  </div>
+</div>
