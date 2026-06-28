@@ -3,6 +3,7 @@ layout: page
 title: "404 - Page Not Found"
 permalink: /404
 searchable: false
+sitemap: false
 ---
 
 ![Robo-hound][2]

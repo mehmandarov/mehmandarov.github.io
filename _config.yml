@@ -145,6 +145,11 @@ defaults:
       # setting all post to not hidden by default,
       # can be overridden in the front matter for a specific post
       hidden: false
+  -
+    scope:
+      path: "lab" # experiments — keep out of the sitemap (also disallowed in robots.txt)
+    values:
+      sitemap: false
 
 plugins:
   - jekyll-seo-tag

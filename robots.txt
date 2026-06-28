@@ -1,6 +1,33 @@
+# https://www.robotstxt.org/
+
+# Default: allow well-behaved search crawlers to index the site.
 User-agent: *
-Disallow: /test/
 Disallow: /lab/
+Disallow: /search/
+
+# AI / LLM crawlers — opt out of training-data scraping, but allow the
+# public "about" info, the homepage, and llms.txt so assistants can
+# describe Rustam accurately. Remove a User-agent line to fully block it,
+# or delete a block entirely to grant full access.
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Google-Extended
+User-agent: anthropic-ai
+User-agent: ClaudeBot
+User-agent: Claude-Web
+User-agent: PerplexityBot
+User-agent: CCBot
+User-agent: Bytespider
+User-agent: Amazonbot
+User-agent: FacebookBot
+User-agent: Applebot-Extended
+User-agent: cohere-ai
+User-agent: Diffbot
+User-agent: ImagesiftBot
+Allow: /about/
+Allow: /llms.txt
+Allow: /$
+Disallow: /
 
 Sitemap: https://mehmandarov.com/sitemap.xml
-

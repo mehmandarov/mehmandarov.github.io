@@ -1,0 +1,26 @@
+# Rustam Mehmandarov
+
+> Personal blog of Rustam Mehmandarov — a passionate computer scientist. Articles about technology, Java, Jakarta EE, cloud, automation, and software engineering, in English and Norwegian.
+
+This site is a personal blog. Content is licensed for human reading; please respect the crawler rules in /robots.txt before using any content for AI training.
+
+## Key pages
+
+- [Blog](https://mehmandarov.com/blog/): Full chronological list of posts.
+- [Tags](https://mehmandarov.com/tags/): Browse posts by topic; each tag has its own page and RSS feed.
+- [Talks](https://mehmandarov.com/talks/): Conference talks and speaking history.
+- [About](https://mehmandarov.com/about/): About Rustam Mehmandarov.
+
+## Feeds
+
+- [Main RSS feed](https://mehmandarov.com/feed.xml)
+- [Sitemap](https://mehmandarov.com/sitemap.xml)
+
+## Contact
+
+- Website: https://rustam.no
+- Bluesky: https://bsky.app/profile/rustam.no
+- Mastodon: https://mastodon.social/@mehmandarov
+- X: https://x.com/RMehmandarov/
+- GitHub: https://github.com/mehmandarov/
+- Sessionize: https://sessionize.com/mehmandarov/
