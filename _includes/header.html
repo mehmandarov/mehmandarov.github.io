@@ -22,7 +22,7 @@
             
             {% if site.blog %}
             <li class="nav__item">
-              <a href="{{ '/blog/' | relative_url }}" class="nav__link {% if page.url contains '/blog/' or page.url == '/blog.html' %}active-link{% endif %}">Blog</a>
+              <a href="{{ '/blog/' | relative_url }}" class="nav__link {% if page.url contains '/blog/' or page.url == '/blog.html' or page.layout == 'post' %}active-link{% endif %}">Blog</a>
             </li>
             {% endif %}
 
