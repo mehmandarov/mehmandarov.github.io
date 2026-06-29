@@ -76,6 +76,36 @@ no API keys.
 - Renderer / refresh / caveats: [`docs/visited-map.md`](docs/visited-map.md).
 - Full data schema: [`docs/visited-data-spec.md`](docs/visited-data-spec.md).
 
+## Writing posts
+
+### Description / lead
+
+Add a `description:` to a post's front matter. It is shown as the lead
+paragraph under the title (and used for SEO / social cards and listing
+cards), so write it to spark interest:
+
+```yaml
+---
+title: "My post"
+description: A one-sentence hook that makes readers want to click.
+---
+```
+
+### Callouts
+
+Write a normal Markdown blockquote, then add a kramdown class on the next
+line to turn it into a coloured callout (icon + tint added automatically):
+
+```markdown
+> **Tip:** Keep DTOs lean and let your JSON provider ignore extra fields.
+{:.tip}
+```
+
+Available types: `note` (blue), `tip` (green), `important` (purple),
+`warning` (amber), `caution` (red). A plain blockquote without a class
+keeps the centred pull-quote style. Styling lives in
+`assets/css/custom.css`.
+
 ## Bugs and Issues
 
 Have a bug or an issue with this site? [Open a new issue][2] here on GitHub.

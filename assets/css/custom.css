@@ -465,8 +465,16 @@ html.view-list .post-card .article__excerpt {
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 .post-card--cta .post-card__cta-link:hover {
-  border-color: var(--primary-color);
-  color: var(--primary-color);
+  border-color: var(--accent);
+  background: rgba(124, 58, 237, 0.04);
+}
+.post-card--cta .post-card__cta-link:hover .post-card__cta-icon,
+.post-card--cta .post-card__cta-link:hover .post-card__cta-text,
+.post-card--cta .post-card__cta-link:hover .post-card__cta-arrow {
+  background: var(--accent-text-fill);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 .post-card--cta .post-card__cta-icon { font-size: 2rem; }
 .post-card--cta .post-card__cta-text { font-size: 1.2rem; font-weight: 600; }
@@ -481,8 +489,9 @@ html.view-list .post-card .article__excerpt {
 .featured-project .post-card--cta .post-card__cta-link:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
-  border-color: var(--primary-color);
+  border-color: var(--accent);
 }
+.featured-project .post-card--cta .post-card__cta-link:hover { border-color: var(--accent); }
 .featured-project .post-card .article__content {
   padding: 0.9rem 1.1rem 1.2rem;
 }
@@ -1198,6 +1207,7 @@ h2.section__title {
   font-weight: 700;
   background: rgba(124, 58, 237, 0.08);
   padding: 7px 14px;
+  border-radius: 10px;
   position: relative;
 }
 .main-nav .nav__list .nav__item .nav__link.active-link::after,
@@ -1438,4 +1448,86 @@ h2.section__title {
   letter-spacing: 0.06em;
   color: var(--text-alt-color);
   text-align: left;
+}
+
+/* =====================================================================
+   Post description lead (dek under the title)
+   ===================================================================== */
+.post-hero__lead {
+  margin: 0.75rem 0 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--text-alt-color);
+  max-width: 60ch;
+}
+
+/* =====================================================================
+   Callouts — write a blockquote, then add {:.note|tip|important|warning|caution}
+   ===================================================================== */
+.post__content blockquote.note,
+.post__content blockquote.tip,
+.post__content blockquote.important,
+.post__content blockquote.warning,
+.post__content blockquote.caution {
+  position: static;
+  margin: 2rem 0;
+  padding: 1rem 1.25rem 1rem 3.4rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  text-align: left;
+  color: var(--text-color);
+  border-left: 4px solid var(--co-accent);
+  border-radius: 8px;
+  background: var(--co-bg);
+}
+.post__content blockquote.note > :first-child,
+.post__content blockquote.tip > :first-child,
+.post__content blockquote.important > :first-child,
+.post__content blockquote.warning > :first-child,
+.post__content blockquote.caution > :first-child { margin-top: 0; }
+.post__content blockquote.note > :last-child,
+.post__content blockquote.tip > :last-child,
+.post__content blockquote.important > :last-child,
+.post__content blockquote.warning > :last-child,
+.post__content blockquote.caution > :last-child { margin-bottom: 0; }
+.post__content blockquote.note::before,
+.post__content blockquote.tip::before,
+.post__content blockquote.important::before,
+.post__content blockquote.warning::before,
+.post__content blockquote.caution::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  margin-left: -2.2rem;
+  top: 0.1rem;
+  color: var(--co-accent);
+}
+.post__content blockquote.note,
+.post__content blockquote.tip,
+.post__content blockquote.important,
+.post__content blockquote.warning,
+.post__content blockquote.caution { position: relative; }
+
+.post__content blockquote.note     { --co-accent: #2b6cb0; --co-bg: rgba(43,108,176,0.08); }
+.post__content blockquote.note::before     { content: "\f05a"; }   /* info */
+.post__content blockquote.tip      { --co-accent: #0d9488; --co-bg: rgba(13,148,136,0.08); }
+.post__content blockquote.tip::before      { content: "\f0eb"; }   /* lightbulb */
+.post__content blockquote.important{ --co-accent: var(--accent); --co-bg: rgba(124,58,237,0.08); }
+.post__content blockquote.important::before{ content: "\f005"; }   /* star */
+.post__content blockquote.warning  { --co-accent: #b45309; --co-bg: rgba(249,195,69,0.14); }
+.post__content blockquote.warning::before  { content: "\f071"; }   /* triangle-exclamation */
+.post__content blockquote.caution  { --co-accent: #dc2626; --co-bg: rgba(220,38,38,0.08); }
+.post__content blockquote.caution::before  { content: "\f06d"; }   /* fire */
+
+.dark-mode .post__content blockquote.note     { --co-bg: rgba(43,108,176,0.16); }
+.dark-mode .post__content blockquote.tip      { --co-bg: rgba(13,148,136,0.16); }
+.dark-mode .post__content blockquote.important{ --co-accent: var(--accent-dark); --co-bg: rgba(167,139,250,0.16); }
+.dark-mode .post__content blockquote.warning  { --co-bg: rgba(249,195,69,0.18); }
+.dark-mode .post__content blockquote.caution  { --co-bg: rgba(220,38,38,0.16); }
+
+/* Homepage hero CTA buttons */
+.hero__btns {
+  justify-content: center;
+  margin: 1.5rem 0 0.5rem;
 }
