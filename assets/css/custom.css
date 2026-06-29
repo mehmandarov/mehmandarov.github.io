@@ -1546,12 +1546,4 @@ h2.section__title {
 }
 .services .service__info { margin-top: auto; }
 /* Reserve two title lines so descriptions start at the same height */
-.services .service__title { min-height: 2.4em; line-height: 1.2; }
-
-/* Alternating section bands for vertical rhythm */
-.section--alt {
-  background: var(--background-alt-color);
-  padding-top: 60px;
-  padding-bottom: 60px;
-  margin-bottom: 0;
-}
+.services .service__title { min-height: 3.6em; line-height: 1.2; }
