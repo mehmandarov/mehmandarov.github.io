@@ -1225,29 +1225,6 @@ button:hover .cta-arrow {
   .talks__format { flex-basis: auto; }
 }
 
-/* Reserve each nav item's *selected* footprint at all times, so a link
-   never changes width when it becomes active (bold + larger padding).
-   Every link gets the active padding, and a hidden bold "ghost" reserves
-   the bold text width even while the visible text is normal weight. */
-.main-nav .nav__list .nav__item .nav__link {
-  padding: 7px 14px;
-}
-.main-nav .nav__list .nav__item .nav__link:hover {
-  padding-left: 14px;
-}
-.main-nav .nav__link__label {
-  display: inline-flex;
-  flex-direction: column;
-}
-.main-nav .nav__link__label::after {
-  content: attr(data-text);
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-  font-weight: 700;
-  pointer-events: none;
-}
-
 /* =====================================================================
    Active nav item: clear accent highlight for the current page
    (overrides the theme's faint default; high specificity to win)
@@ -1316,6 +1293,20 @@ button:hover .cta-arrow {
   background: var(--background-alt-color);
   border: 1px solid var(--border-color);
   white-space: nowrap;
+}
+/* Lock the shortcut badge width to the widest label ("Ctrl K"). JS swaps
+   the text to the narrower "⌘ K" on macOS after load; without this the
+   badge would shrink and reflow the header, shifting the nav (jitter). */
+.search-icon-btn__kbd {
+  flex-direction: column;
+  justify-content: center;
+}
+.search-icon-btn__kbd::before {
+  content: "Ctrl K";
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  pointer-events: none;
 }
 @media (max-width: 768px) {
   .search-icon-btn__kbd { display: none; }

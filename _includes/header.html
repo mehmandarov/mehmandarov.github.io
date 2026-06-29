@@ -17,30 +17,30 @@
         <div class="main-nav__box">
           <ul class="nav__list list-reset">
             <li class="nav__item">
-              <a href="{{ '/' | relative_url }}" class="nav__link {% if page.url == '/' or page.url == '/index.html' %}active-link{% endif %}"><span class="nav__link__label" data-text="Home">Home</span></a>
+              <a href="{{ '/' | relative_url }}" class="nav__link {% if page.url == '/' or page.url == '/index.html' %}active-link{% endif %}">Home</a>
             </li>
             
             {% if site.blog %}
             <li class="nav__item">
-              <a href="{{ '/blog/' | relative_url }}" class="nav__link {% if page.url contains '/blog/' or page.url == '/blog.html' or page.layout == 'post' %}active-link{% endif %}"><span class="nav__link__label" data-text="Blog">Blog</span></a>
+              <a href="{{ '/blog/' | relative_url }}" class="nav__link {% if page.url contains '/blog/' or page.url == '/blog.html' or page.layout == 'post' %}active-link{% endif %}">Blog</a>
             </li>
             {% endif %}
 
             {% if site.projects %}
             <li class="nav__item">
-              <a href="{{ '/projects/' | relative_url }}" class="nav__link {% if page.url contains '/projects/' or page.url == '/projects.html' %}active-link{% endif %}"><span class="nav__link__label" data-text="Projects">Projects</span></a>
+              <a href="{{ '/projects/' | relative_url }}" class="nav__link {% if page.url contains '/projects/' or page.url == '/projects.html' %}active-link{% endif %}">Projects</a>
             </li>
             {% endif %}
 
             {% if site.mytalks %}
             <li class="nav__item">
-              <a href="{{ '/talks/' | relative_url }}" class="nav__link {% if page.url contains '/talks/' or page.url == '/talks.html' %}active-link{% endif %}"><span class="nav__link__label" data-text="Talks">Talks</span></a>
+              <a href="{{ '/talks/' | relative_url }}" class="nav__link {% if page.url contains '/talks/' or page.url == '/talks.html' %}active-link{% endif %}">Talks</a>
             </li>
             {% endif %}
 
             {% if site.about %}
             <li class="nav__item">
-              <a href="{{ '/about/' | relative_url }}" class="nav__link {% if page.url contains '/about/' or page.url == '/about.html' %}active-link{% endif %}"><span class="nav__link__label" data-text="About">About</span></a>
+              <a href="{{ '/about/' | relative_url }}" class="nav__link {% if page.url contains '/about/' or page.url == '/about.html' %}active-link{% endif %}">About</a>
             </li>
             {% endif %}
           </ul>
