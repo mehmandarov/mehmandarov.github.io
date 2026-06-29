@@ -980,7 +980,6 @@ h2.section__title {
 .subpage__btn--primary:hover {
   background-color: #6d28d9;
   color: #fff;
-  transform: translateY(-2px);
   text-decoration: none;
 }
 .subpage__btn--ghost {
@@ -990,9 +989,38 @@ h2.section__title {
 .subpage__btn--ghost:hover {
   border-color: var(--accent);
   color: var(--accent);
-  transform: translateY(-2px);
   text-decoration: none;
 }
+
+/* === Unified CTA interactions ====================================== */
+/* Single source of truth for every button/CTA across the site:
+   a consistent hover lift, and a reusable arrow that slides. */
+.subpage__btn,
+.service__info__link,
+.cta-button {
+  transition: transform 0.2s ease, background-color 0.2s ease,
+              background 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.subpage__btn:hover,
+.service__info__link:hover,
+.cta-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Reusable arrow: add class="cta-arrow" to any glyph/icon inside a
+   button or link to make it slide on hover. */
+.cta-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  will-change: transform;
+}
+a:hover .cta-arrow,
+button:hover .cta-arrow {
+  transform: translateX(4px);
+}
+/* ================================================================== */
+
 .subpage__photo img {
   width: 100%;
   max-width: 360px;
@@ -1197,6 +1225,29 @@ h2.section__title {
   .talks__format { flex-basis: auto; }
 }
 
+/* Reserve each nav item's *selected* footprint at all times, so a link
+   never changes width when it becomes active (bold + larger padding).
+   Every link gets the active padding, and a hidden bold "ghost" reserves
+   the bold text width even while the visible text is normal weight. */
+.main-nav .nav__list .nav__item .nav__link {
+  padding: 7px 14px;
+}
+.main-nav .nav__list .nav__item .nav__link:hover {
+  padding-left: 14px;
+}
+.main-nav .nav__link__label {
+  display: inline-flex;
+  flex-direction: column;
+}
+.main-nav .nav__link__label::after {
+  content: attr(data-text);
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
+  pointer-events: none;
+}
+
 /* =====================================================================
    Active nav item: clear accent highlight for the current page
    (overrides the theme's faint default; high specificity to win)
@@ -1297,33 +1348,8 @@ h2.section__title {
   border: 1px solid var(--border-color);
 }
 
-/* Footer "Follow me for more" connect button – gradient, auto width */
 .subscribe__inner {
   text-align: center;
-}
-.subscribe__button {
-  width: auto;
-  margin: 0 auto;
-  padding: 12px 28px;
-  color: #fff;
-  font-weight: 600;
-  background: linear-gradient(100deg, var(--accent) 0%, #6d28d9 45%, var(--primary-color) 100%);
-  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.28);
-}
-.subscribe__button:hover {
-  color: #fff;
-  opacity: 1;
-  background: linear-gradient(100deg, #6d28d9 0%, var(--accent) 45%, var(--primary-color) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.35);
-}
-.subscribe__button-arrow {
-  display: inline-block;
-  margin-left: 0.5rem;
-  transition: transform 0.2s ease;
-}
-.subscribe__button:hover .subscribe__button-arrow {
-  transform: translateX(4px);
 }
 .subscribe__cta-line {
   margin: 1.25rem 0 1.5rem;
