@@ -393,7 +393,7 @@
   font-size: 0.95rem;
   line-height: 1.6;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 8;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -502,7 +502,7 @@ html.view-list .post-card .article__excerpt {
   letter-spacing: 0.04em;
 }
 .featured-project .post-card .article__title {
-  margin: 0;
+  margin: 0 0 0.5rem;
   font-size: 1.05rem;
   line-height: 1.35;
 }
@@ -983,13 +983,23 @@ h2.section__title {
   text-decoration: none;
 }
 .subpage__btn--ghost {
-  border: 1px solid var(--border-color);
-  color: var(--heading-font-color);
+  border: 1px solid var(--accent);
+  color: var(--accent);
 }
 .subpage__btn--ghost:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  background-color: rgba(124, 58, 237, 0.08);
+  color: #6d28d9;
   text-decoration: none;
+}
+.dark-mode .subpage__btn--ghost {
+  border-color: var(--accent-dark);
+  color: var(--accent-dark);
+}
+.dark-mode .subpage__btn--ghost:hover {
+  border-color: var(--accent-dark);
+  background-color: rgba(167, 139, 250, 0.14);
+  color: var(--accent-dark);
 }
 
 /* === Unified CTA interactions ====================================== */

@@ -52,7 +52,7 @@ pagination:
                         {% endfor %}
                       </div>
                       {% endif %}
-                      <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 45 }}</p>
+                      <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 75 }}</p>
                     </div>
                   </div>
                 </div>
@@ -84,7 +84,7 @@ pagination:
                         {% endfor %}
                       </div>
                       {% endif %}
-                      <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 45 }}</p>
+                      <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 75 }}</p>
                     </div>
                   </div>
                 </div>

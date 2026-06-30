@@ -150,7 +150,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
                 <h3 class="article__title">
                   <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
                 </h3>
-                <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 24 }}</p>
+                <p class="article__excerpt">{{ post.description | default: post.excerpt | strip_html | truncatewords: 75 }}</p>
               </div>
             </div>
           </div>
