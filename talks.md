@@ -20,10 +20,10 @@ cta:
 
 ## Countries
 
-{%- assign country_list = site.data.visited.country_names | sort -%}
+{% assign country_list = site.data.visited.country_names | sort %}
 {{ country_list | join: ", " }}.
 
 ## Cities
 
-{%- assign city_list = site.data.visited.cities | map: "name" -%}
+{% assign city_list = site.data.visited.cities | map: "name" %}
 {{ city_list | join: ", " }}.
