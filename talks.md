@@ -20,8 +20,10 @@ cta:
 
 ## Countries
 
-Belarus, Belgium, Bosnia and Herzegovina, Brazil, Bulgaria, Canada, Czechia, Denmark, Estonia, Germany, Greece, Ireland, Italy, Kosovo, Latvia, Lithuania, Morocco, The Netherlands, Norway, Peru, Poland, Portugal, Romania, Russia, Serbia, Slovenia, Spain, Sweden, Switzerland, Türkiye, Ukraine, UK, USA.
+{%- assign country_list = site.data.visited.country_names | sort -%}
+{{ country_list | join: ", " }}.
 
 ## Cities
 
-Oslo, Bucharest, Bergen, Barcelona, Stockholm, Riga, Brühl, Kyiv, Belgrade, Trondheim, San Francisco, Istanbul, Kraków, São Paulo, Portorož, Moscow, Vilnius, New York, Atlanta, Coimbra, Antwerp, Prague, Sofia, Minsk, Grimstad, Iași, Chicago, Broomfield, Lublin, Agadir, Århus, Copenhagen, Madrid, Stavanger, Tallinn, Hamburg, Prishtina, Las Vegas, Bydgoszcz, Pittsburgh, Cluj-Napoca, Kansas City, Madison, Athens, Dublin, Southampton, Ede, Ludwigsburg, Gothenburg, Tucson, St.Petersburg, Düsseldorf, Lima, Bern, Wrocław, Berlin, Brno, Toronto.
+{%- assign city_list = site.data.visited.cities | map: "name" -%}
+{{ city_list | join: ", " }}.

@@ -19,14 +19,15 @@
 {
   "countries":     ["..."],
   "country_flags": ["..."],
+  "country_names": ["..."],
   "cities":        [ { } ],
   "stats":         { }
 }
 ```
 
-`countries`, `country_flags`, and `cities` are required (even if
-`cities` is empty: `"cities": []`). `stats` is **optional**; see §4.
-No other top-level keys are permitted.
+`countries`, `country_flags`, `country_names`, and `cities` are required
+(even if `cities` is empty: `"cities": []`). `stats` is **optional**;
+see §5. No other top-level keys are permitted.
 
 ---
 
@@ -225,13 +226,14 @@ One-shot all-in-one validator (run from repo root):
 python3 - <<'PY'
 import json
 d = json.load(open("_data/visited.json"))
-allowed = {"countries", "country_flags", "cities", "stats"}
-required = {"countries", "country_flags", "cities"}
+allowed = {"countries", "country_flags", "country_names", "cities", "stats"}
+required = {"countries", "country_flags", "country_names", "cities"}
 assert set(d) <= allowed and required <= set(d), "bad top-level keys"
 c = d["countries"]
 assert c == sorted(c) and len(c) == len(set(c)), "countries not sorted/unique"
 assert all(len(x) == 2 and x.isupper() for x in c), "bad country codes"
 assert len(d["country_flags"]) == len(c), "flags length mismatch"
+assert len(d["country_names"]) == len(c), "names length mismatch"
 known, seen = set(c), set()
 for city in d["cities"]:
     for k in ("name", "country", "lat", "lng"):
