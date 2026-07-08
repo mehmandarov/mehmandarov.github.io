@@ -741,16 +741,19 @@ h2.section__title {
   padding: 0;
 }
 .tags-index .tag-posts__item { margin: 0; }
+/* Hanging indent keeps wrapped titles aligned; the title stays inline so
+   its underline follows each text line instead of the whole box. */
 .tags-index .tag-posts__link {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 0.5rem 0;
+  display: block;
+  padding: 0.5rem 0 0.5rem 8.5rem;
+  text-indent: -8.5rem;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
 }
 .tags-index .tag-posts__date {
-  flex: 0 0 7.5rem;
+  display: inline-block;
+  width: 7.5rem;
+  margin-right: 1rem;
+  text-indent: 0;
   color: var(--text-alt-color);
   font-size: 0.85rem;
   font-variant-numeric: tabular-nums;
@@ -760,8 +763,8 @@ h2.section__title {
 }
 
 @media (max-width: 600px) {
-  .tags-index .tag-posts__link { flex-direction: column; gap: 0.15rem; }
-  .tags-index .tag-posts__date { flex-basis: auto; }
+  .tags-index .tag-posts__link { padding-left: 0; text-indent: 0; }
+  .tags-index .tag-posts__date { display: block; width: auto; margin: 0 0 0.15rem; }
 }
 
 /* =====================================================================

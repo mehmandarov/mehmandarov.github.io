@@ -55,8 +55,7 @@ description: "Browse all topics for all blog posts. Each tag has its own page an
             {% if post.title != null %}
                 <li class="tag-posts__item">
                     <a class="tag-posts__link" href="{{ post.url | relative_url }}">
-                        <time class="tag-posts__date" datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d, %Y' }}</time>
-                        <span class="tag-posts__title">{{ post.title }}</span>
+                        <time class="tag-posts__date" datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d, %Y' }}</time><span class="tag-posts__title">{{ post.title }}</span>
                     </a>
                 </li>
             {% endif %}
@@ -92,8 +91,7 @@ description: "Browse all topics for all blog posts. Each tag has its own page an
             {% if post.title != null %}
                 <li class="tag-posts__item">
                     <a class="tag-posts__link" href="{{ post.url | relative_url }}">
-                        <time class="tag-posts__date" datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d, %Y' }}</time>
-                        <span class="tag-posts__title">{{ post.title }}</span>
+                        <time class="tag-posts__date" datetime="{{ post.date | date: '%d-%m-%Y' }}">{{ post.date | date: '%b %d, %Y' }}</time><span class="tag-posts__title">{{ post.title }}</span>
                     </a>
                 </li>
             {% endif %}
