@@ -30,11 +30,13 @@ EXPOSE 4000 35729
 
 # --force_polling makes the watcher reliable on macOS / Windows bind mounts.
 # --livereload auto-refreshes the browser on rebuilds.
+# Incremental rebuilds are intentionally NOT used here: Jekyll's incremental
+# mode does not reliably detect changes in _includes/layouts/static assets
+# across a long-running watch session, which can silently serve stale pages.
 CMD ["bundle", "exec", "jekyll", "serve", \
      "--host", "0.0.0.0", \
      "--port", "4000", \
      "--livereload", \
      "--livereload-port", "35729", \
-     "--force_polling", \
-     "--incremental"]
+     "--force_polling"]
 

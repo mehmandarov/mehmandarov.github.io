@@ -1396,8 +1396,8 @@ button:hover .cta-arrow {
   color: #fff;
 }
 
-/* Inline prose link styling (Option 10: accent color + offset bottom border + hover tint).
-   Shared site-wide: prose links + tag-page post titles. */
+/* Inline prose link styling: accent color + bottom border + hover tint.
+   Real border (not ::after) so wrapped links keep the line on every row. */
 .post a:not([class]),
 .page a:not([class]),
 .subscribe__description a:not([class]),
@@ -1405,7 +1405,7 @@ button:hover .cta-arrow {
   color: var(--accent);
   font-weight: 500;
   text-decoration: none;
-  border-bottom: 1.5px solid rgba(124, 58, 237, 0.35);
+  border-bottom: 4px solid rgba(124, 58, 237, 0.35);
   border-radius: 2px;
   transition: border-color 0.2s ease, background 0.2s ease;
 }
@@ -1432,6 +1432,48 @@ button:hover .cta-arrow {
   color: #c4b5fd;
   border-bottom-color: var(--accent-dark);
   background: rgba(167, 139, 250, 0.12);
+}
+
+/* Chips in links: inline-block + text-bottom keeps the chip box above the
+   anchor's underline (so the line stays continuous); no side margins so a
+   chip-only link's underline is exactly chip-width. */
+.post a:not([class]) code,
+.page a:not([class]) code {
+  display: inline-block;
+  vertical-align: text-bottom;
+  line-height: 1.2;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Code chips: slimmer padding, darker gray than the TOC box so the two
+   surfaces don't blend. Bold text inside links inherits the link color. */
+.post code,
+.page code {
+  padding: 2px 6px;
+  background: #dde0e6;
+}
+.dark-mode .post code,
+.dark-mode .page code {
+  background: #383a42;
+}
+.post a:not([class]) strong,
+.page a:not([class]) strong {
+  color: inherit;
+}
+
+/* TOC box: lighter than code chips, with border/shadow so it reads as its
+   own surface against the page. */
+.post__toc,
+.page__toc {
+  background: #f2f3f5;
+  border-color: #d5d8dd;
+  box-shadow: 0 1px 3px rgba(16, 20, 31, 0.06);
+}
+.dark-mode .post__toc,
+.dark-mode .page__toc {
+  background: #26282e;
+  border-color: #3a3c44;
 }
 
 /* Mobile/tablet: don't keep the floating nav sticky — let it scroll away
@@ -1529,10 +1571,26 @@ button:hover .cta-arrow {
 .post__content blockquote.caution::before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
+  /* override theme's blockquote::before font-size:300%/line-height:.3 */
+  font-size: 1.1rem;
+  line-height: 1;
   position: absolute;
   margin-left: -2.2rem;
-  top: 0.1rem;
+  top: 1rem;
   color: var(--co-accent);
+}
+/* suppress the theme's own 💡 ::after decoration on callouts */
+.post .note::after,
+.post .tip::after,
+.post .important::after,
+.post .warning::after,
+.post .caution::after,
+.page .note::after,
+.page .tip::after,
+.page .important::after,
+.page .warning::after,
+.page .caution::after {
+  content: none;
 }
 .post__content blockquote.note,
 .post__content blockquote.tip,
