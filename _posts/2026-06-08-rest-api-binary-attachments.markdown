@@ -1,7 +1,7 @@
 ---
 title: "Binary file uploads to REST endpoints using Jakarta EE or Quarkus"
 layout: post
-date: 2026-07-08 14:00
+date: 2026-07-08 19:00
 description: How to build a REST API that accepts binary attachments? As part of a multipart payload, or as the whole body. Standard Jakarta REST 3.1 EntityPart, the Quarkus @RestForm approach, and the raw application/octet-stream case, with code examples and the usual pros and cons.
 image: '/assets/images/posts-images/binarycode.jpg'
 tag:

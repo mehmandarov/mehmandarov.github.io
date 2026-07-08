@@ -706,6 +706,13 @@ h2.section__title {
 .tags-index .tag-heading::before {
   margin-bottom: 0.75rem;
 }
+/* Keep the accent line 3px when :target (theme inflates ::before to 80px
+   as a scroll-offset hack); offset the anchor with scroll-margin instead. */
+.tags-index .tag-heading { scroll-margin-top: 90px; }
+.page .tags-index .tag-heading:target::before {
+  height: 3px;
+  margin-top: 0;
+}
 /* Generic title-link: heading color, underline reveals on hover. Reusable
    anywhere a heading-styled link needs the theme's article-title behaviour. */
 .link-title a {
