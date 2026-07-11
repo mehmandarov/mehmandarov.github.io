@@ -468,13 +468,16 @@ html.view-list .post-card .article__excerpt {
   border-color: var(--accent);
   background: rgba(124, 58, 237, 0.04);
 }
-.post-card--cta .post-card__cta-link:hover .post-card__cta-icon,
 .post-card--cta .post-card__cta-link:hover .post-card__cta-text,
 .post-card--cta .post-card__cta-link:hover .post-card__cta-arrow {
   background: var(--accent-text-fill);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+/* background-clip:text doesn't apply to SVG fills – use a solid accent instead */
+.post-card--cta .post-card__cta-link:hover .post-card__cta-icon {
+  color: var(--accent);
 }
 .post-card--cta .post-card__cta-icon { font-size: 2rem; }
 .post-card--cta .post-card__cta-text { font-size: 1.2rem; font-weight: 600; }
