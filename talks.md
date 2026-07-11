@@ -8,7 +8,7 @@ pre_content: talks-stats.html
 cta:
   - label: "Invite me to speak"
     url: "https://rustam.no/contact"
-    icon: "fa-solid fa-arrow-right"
+    icon: "arrow-right"
     style: primary
     external: true
   - label: "See the map"

@@ -17,32 +17,32 @@
             <ul class="subscribe__social list-reset">
               {% if site.github %}
               <li class="subscribe__social-item">
-                <a class="subscribe__social-link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a class="subscribe__social-link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener" aria-label="GitHub">{% include icon.html name="github" %}</a>
               </li>
               {% endif %}
               {% if site.bluesky %}
               <li class="subscribe__social-item">
-                <a class="subscribe__social-link" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+                <a class="subscribe__social-link" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky">{% include icon.html name="bluesky" %}</a>
               </li>
               {% endif %}
               {% if site.mastodon %}
               <li class="subscribe__social-item">
-                <a class="subscribe__social-link" href="{{ site.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon"><i class="fa-brands fa-mastodon"></i></a>
+                <a class="subscribe__social-link" href="{{ site.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon">{% include icon.html name="mastodon" %}</a>
               </li>
               {% endif %}
               {% if site.twitter.username %}
               <li class="subscribe__social-item">
-                <a class="subscribe__social-link" href="https://twitter.com/{{ site.twitter.username }}" target="_blank" rel="noopener" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                <a class="subscribe__social-link" href="https://twitter.com/{{ site.twitter.username }}" target="_blank" rel="noopener" aria-label="Twitter">{% include icon.html name="x-twitter" %}</a>
               </li>
               {% endif %}
               {% if site.linkedin %}
               <li class="subscribe__social-item">
-                <a class="subscribe__social-link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a class="subscribe__social-link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">{% include icon.html name="linkedin-in" %}</a>
               </li>
               {% endif %}
               {% if site.myLinks %}
               <li class="subscribe__social-item">
-                <a class="subscribe__social-link" href="{{ site.myLinks }}" target="_blank" rel="noopener" aria-label="All my links"><i class="fa-solid fa-link"></i></a>
+                <a class="subscribe__social-link" href="{{ site.myLinks }}" target="_blank" rel="noopener" aria-label="All my links">{% include icon.html name="link" %}</a>
               </li>
               {% endif %}
             </ul>
@@ -59,7 +59,7 @@
         <div class="footer__inner">
           
           <div class="copyright">
-            <span class="copyright__line">{{ site.title }} &copy; {{ 'now' | date: "%Y" }} <a class="copyright__rss" href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener" aria-label="RSS feed"><i class="fa-solid fa-rss"></i></a></span>
+            <span class="copyright__line">{{ site.title }} &copy; {{ 'now' | date: "%Y" }} <a class="copyright__rss" href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener" aria-label="RSS feed">{% include icon.html name="rss" %}</a></span>
             {% if site.analytics-posthog %}
             <a class="copyright__cookies" href="javascript:void(0)" onclick="window.__phShowConsent()" title="Change analytics consent">Cookie Settings</a>
             {% endif %}

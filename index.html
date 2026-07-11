@@ -22,7 +22,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
       </div>
 
       <div class="subpage__btns hero__btns">
-        <a class="subpage__btn subpage__btn--primary" href="https://rustam.no/contact" target="_blank" rel="noopener">Invite me to speak <i class="fa-solid fa-arrow-right cta-arrow"></i></a>
+        <a class="subpage__btn subpage__btn--primary" href="https://rustam.no/contact" target="_blank" rel="noopener">Invite me to speak {% include icon.html name="arrow-right" class="cta-arrow" %}</a>
         <a class="subpage__btn subpage__btn--ghost" href="{{ '/blog/' | relative_url }}">Read the blog</a>
       </div>
 
@@ -30,32 +30,32 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
         <ul class="hero__social__list list-reset">
           {% if site.github %}
           <li class="hero__social__item">
-            <a class="hero__social__link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener" aria-label="Github link"><i class="fa-brands fa-github"></i><span>GitHub</span></a>
+            <a class="hero__social__link" href="https://github.com/{{ site.github }}" target="_blank" rel="noopener" aria-label="Github link">{% include icon.html name="github" %}<span>GitHub</span></a>
           </li>
           {% endif %}
           {% if site.bluesky %}
           <li class="hero__social__item">
-            <a class="hero__social__link" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky link"><i class="fa-brands fa-bluesky"></i><span>Bluesky</span></a>
+            <a class="hero__social__link" href="https://bsky.app/profile/{{ site.bluesky }}" target="_blank" rel="noopener" aria-label="Bluesky link">{% include icon.html name="bluesky" %}<span>Bluesky</span></a>
           </li>
           {% endif %}
           {% if site.mastodon %}
           <li class="hero__social__item">
-            <a class="hero__social__link" href="{{ site.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon link"><i class="fa-brands fa-mastodon"></i><span>Mastodon</span></a>
+            <a class="hero__social__link" href="{{ site.mastodon }}" target="_blank" rel="me noopener" aria-label="Mastodon link">{% include icon.html name="mastodon" %}<span>Mastodon</span></a>
           </li>
           {% endif %}
           {% if site.twitter.username %}
           <li class="hero__social__item">
-            <a class="hero__social__link" href="https://twitter.com/{{ site.twitter.username }}" target="_blank" rel="noopener" aria-label="Twitter link"><i class="fa-brands fa-x-twitter"></i><span>Twitter</span></a>
+            <a class="hero__social__link" href="https://twitter.com/{{ site.twitter.username }}" target="_blank" rel="noopener" aria-label="Twitter link">{% include icon.html name="x-twitter" %}<span>Twitter</span></a>
           </li>
           {% endif %}
           {% if site.linkedin %}
           <li class="hero__social__item">
-            <a class="hero__social__link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn link"><i class="fa-brands fa-linkedin-in"></i><span>LinkedIn</span></a>
+            <a class="hero__social__link" href="https://www.linkedin.com/in/{{ site.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn link">{% include icon.html name="linkedin-in" %}<span>LinkedIn</span></a>
           </li>
           {% endif %}
           {% if site.myLinks %}
           <li class="hero__social__item">
-            <a class="hero__social__link" href="{{ site.myLinks }}" target="_blank" rel="noopener" aria-label="Links"><i class="fa-solid fa-link"></i><span>Links</span></a>
+            <a class="hero__social__link" href="{{ site.myLinks }}" target="_blank" rel="noopener" aria-label="Links">{% include icon.html name="link" %}<span>Links</span></a>
           </li>
           {% endif %}
         </ul>
@@ -79,7 +79,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
               <div class="service">
                 <div class="service__content">
                   <div class="service__head">
-                    <div class="service__icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <div class="service__icon">{% include icon.html name="laptop-code" %}</div>
                   </div>
                   <h3 class="service__title">Software Development &amp; Architecture Advisory</h3>
                   <p class="service__description">Helping teams design and build business-critical systems – cloud architecture, modernization, secure platforms, and delivery pipelines that scale and last.</p>
@@ -94,7 +94,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
               <div class="service">
                 <div class="service__content">
                   <div class="service__head">
-                    <div class="service__icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <div class="service__icon">{% include icon.html name="microphone-lines" %}</div>
                   </div>
                   <h3 class="service__title">Speaking, Keynotes,<br>Workshops &amp; Training</h3>
                   <p class="service__description">Engaging talks and keynotes worldwide on cloud, architecture, AI, and security. Hands-on workshops and deep-dive training.</p>
@@ -109,7 +109,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
               <div class="service">
                 <div class="service__content">
                   <div class="service__head">
-                    <div class="service__icon"><i class="fa-solid fa-people-group"></i></div>
+                    <div class="service__icon">{% include icon.html name="people-group" %}</div>
                   </div>
                   <h3 class="service__title">Developer Community Work</h3>
                   <p class="service__description">Lead organiser of Google Developer Group (GDG) Cloud Oslo. Working with GDGs and JUGs worldwide to grow and connect developer communities.</p>
@@ -157,7 +157,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
           {% endfor %}
           <div class="article col col-3 col-d-6 col-t-12 grid__post post-card post-card--cta">
             <a class="post-card__cta-link" href="{{ '/blog/' | relative_url }}">
-              <span class="post-card__cta-icon"><i class="fa-solid fa-newspaper"></i></span>
+              <span class="post-card__cta-icon">{% include icon.html name="newspaper" %}</span>
               <span class="post-card__cta-text">All blog posts</span>
               <span class="post-card__cta-arrow cta-arrow">&rarr;</span>
             </a>
@@ -193,11 +193,11 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
               <a href="{{ '/tag/' | relative_url }}{{ tag_name | slugify }}/" class="resource__image" style="--tag-color: {{ tag_color }}; --tag-color-bg: {{ tag_color }}0f; --tag-color-border: {{ tag_color }}33; --tag-color-hover: {{ tag_color }}22;">
                 <div class="resource__icon-wrap">
                   {% if tag_icon %}
-                    <i class="{{ tag_icon }}"></i>
+                    {% include icon.html name=tag_icon %}
                   {% elsif tag_image %}
                     <img src="{{ tag_image | relative_url }}" alt="{{ tag_name }}" loading="lazy">
                   {% else %}
-                    <i class="fa-solid fa-tag"></i>
+                    {% include icon.html name="tag" %}
                   {% endif %}
                 </div>
                 <span class="resource__name"><span class="resource__hash">#</span>{{ tag_name }}</span>
@@ -210,7 +210,7 @@ description: "Rustam Mehmandarov – senior technologist, architect, speaker, an
           <div class="resource col col-3 col-d-6 col-m-12">
             <a href="{{ '/tags/' | relative_url }}" class="resource__image" style="--tag-color: {{ all_tags_color }}; --tag-color-bg: {{ all_tags_color }}0f; --tag-color-border: {{ all_tags_color }}33; --tag-color-hover: {{ all_tags_color }}22;">
               <div class="resource__icon-wrap">
-                <i class="fa-solid fa-tags"></i>
+                {% include icon.html name="tags" %}
               </div>
               <span class="resource__name">All Tags <span class="cta-arrow">&rarr;</span></span>
             </a>

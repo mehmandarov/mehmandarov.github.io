@@ -8,7 +8,7 @@ layout: default
         <h1 class="page__title">#{{ page.tag }}</h1>
         <p class="page__description">
           <a href="{{ '/tag/' | relative_url }}{{ page.slug }}/feed.xml" title="RSS feed for tag: {{ page.tag }}">
-            <i class="fa-solid fa-rss"></i> RSS feed for this tag
+            {% include icon.html name="rss" %} RSS feed for this tag
           </a>
           &nbsp;·&nbsp;
           <a href="{{ '/tags/' | relative_url }}">All tags</a>

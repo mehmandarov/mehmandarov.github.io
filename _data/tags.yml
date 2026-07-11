@@ -3,8 +3,8 @@ java:
   image: /assets/images/tags/java_duke.svg
   color: "#e26a54" # Classy warm terracotta
 cloud:
-  icon: fa-solid fa-cloud
+  icon: cloud
   color: "#2b6cb0" # Deep elegant blue
 security:
-  icon: fa-solid fa-shield-halved
+  icon: shield-halved
   color: "#0d9488" # Professional teal

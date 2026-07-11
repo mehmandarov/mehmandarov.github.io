@@ -21,7 +21,7 @@ layout: default
             {% if page.cta %}
             <div class="subpage__btns">
               {% for b in page.cta %}
-              <a class="subpage__btn subpage__btn--{{ b.style | default: 'primary' }}" href="{{ b.url }}"{% if b.external %} target="_blank" rel="noopener"{% endif %}>{{ b.label }}{% if b.icon %} <i class="{{ b.icon }} cta-arrow"></i>{% endif %}</a>
+              <a class="subpage__btn subpage__btn--{{ b.style | default: 'primary' }}" href="{{ b.url }}"{% if b.external %} target="_blank" rel="noopener"{% endif %}>{{ b.label }}{% if b.icon %} {% include icon.html name=b.icon class="cta-arrow" %}{% endif %}</a>
               {% endfor %}
             </div>
             {% endif %}
@@ -54,7 +54,7 @@ layout: default
         <div class="subpage__grid">
           {% for c in page.cards %}
           <div class="subpage__card">
-            {% if c.icon %}<i class="{{ c.icon }} subpage__card-icon"></i>{% endif %}
+            {% if c.icon %}{% include icon.html name=c.icon class="subpage__card-icon" %}{% endif %}
             <h3 class="subpage__card-title">{{ c.title }}</h3>
             <p class="subpage__card-text">{{ c.text }}</p>
           </div>
@@ -74,7 +74,7 @@ layout: default
           <h2 class="subpage__connect-title">{{ page.connect.title }}</h2>
           <div class="subpage__connect-text">{{ page.connect.text | markdownify }}</div>
           {% if page.connect.button %}
-          <a class="subpage__btn subpage__btn--primary subpage__connect-btn" href="{{ page.connect.button.url }}"{% if page.connect.button.external %} target="_blank" rel="noopener"{% endif %}>{{ page.connect.button.label }}{% if page.connect.button.icon %} <i class="{{ page.connect.button.icon }} cta-arrow"></i>{% endif %}</a>
+          <a class="subpage__btn subpage__btn--primary subpage__connect-btn" href="{{ page.connect.button.url }}"{% if page.connect.button.external %} target="_blank" rel="noopener"{% endif %}>{{ page.connect.button.label }}{% if page.connect.button.icon %} {% include icon.html name=page.connect.button.icon class="cta-arrow" %}{% endif %}</a>
           {% endif %}
         </div>
         {% endif %}
