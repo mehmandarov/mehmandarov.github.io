@@ -6,5 +6,7 @@
     </linearGradient>
   </defs>
   <rect width="256" height="256" rx="52" fill="url(#g)"/>
-  <text x="128" y="138" font-family="Menlo, Consolas, monospace" font-size="104" font-weight="bold" fill="#fff" text-anchor="middle" dominant-baseline="middle">[RM]</text>
+  <path transform="translate(11.50,176.00) scale(0.135000,-0.135000)" d="M359 0 264 282H217V0H63V708H290Q393 708 450.0 654.5Q507 601 507 495Q507 456 498.0 425.0Q489 394 474.5 372.0Q460 350 442.0 336.0Q424 322 407 316L528 0ZM349 486Q349 513 341.5 530.0Q334 547 322.0 557.0Q310 567 295.5 570.5Q281 574 267 574H217V395H264Q298 395 323.5 416.5Q349 438 349 486Z" fill="#fff"/>
+<path transform="translate(78.50,176.00) scale(0.135000,-0.135000)" d="M551 0 557 486H553L434 0H321L206 486H203L208 0H63V708H265L379 252H383L494 708H708V0Z" fill="#fff"/>
+<path transform="translate(176.50,176.00) scale(0.135000,-0.135000)" d="M0 -164V-75H500V-164Z" fill="#fff"/>
 </svg>
