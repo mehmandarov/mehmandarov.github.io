@@ -1661,3 +1661,28 @@ svg.icon {
   vertical-align: -0.125em;
   fill: currentColor;
 }
+
+/* =====================================================================
+   Image captions — <figcaption class="caption"> under post images
+   ===================================================================== */
+.post__content figcaption.caption,
+.page figcaption.caption {
+  margin: -1rem 0 2rem;
+  font-size: 0.875rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--text-alt-color);
+}
+
+/* =====================================================================
+   Screenshots — add {: class="screenshot" } to images that would
+   otherwise blend into the page background
+   ===================================================================== */
+.post__content img.screenshot,
+.page img.screenshot {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 0.25rem;
+  background: var(--background-color, transparent);
+}
