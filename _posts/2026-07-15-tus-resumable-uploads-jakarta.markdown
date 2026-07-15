@@ -1,7 +1,7 @@
 ---
 title: "Resumable file uploads with plain Jakarta EE and TUS protocol"
 layout: post
-date: 2026-07-15 07:00
+date: 2026-07-15 07:00 +0200
 description: Plain uploads break when connections drop. The TUS protocol fixes that with resumable uploads. Here we will implement it with pure Jakarta REST using POST, HEAD, PATCH, and a few headers.
 image: '/assets/images/posts-images/floppies.jpg'
 tag:
